@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="ChatWootApi.Tests/ChatWootApi.Tests.csproj" />
+  <Project Path="ChatWootApi.Extensions/ChatWootApi.Extensions.csproj" />
+  <Project Path="ChatWootApi/ChatWootApi.csproj" />
+</Solution>
