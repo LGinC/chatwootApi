@@ -3,17 +3,48 @@ using Refit;
 
 namespace ChatWootApi.Application;
 
+/// <summary>
+/// Chatwoot 应用 API：应用坐席API。
+/// </summary>
 public interface IApplicationAgentsApi
 {
+    /// <summary>
+    /// 调用 Chatwoot 应用 API：获取账号坐席。
+    /// </summary>
+    /// <param name="accountId">账号 ID。</param>
+    /// <param name="cancellationToken">用于取消异步操作的令牌。</param>
+    /// <returns>API 响应。</returns>
     [Get("/api/v1/accounts/{accountId}/agents")]
     Task<IReadOnlyList<Agent>> GetAccountAgentsAsync(long accountId, CancellationToken cancellationToken = default);
 
+    /// <summary>
+    /// 调用 Chatwoot 应用 API：添加新坐席账号。
+    /// </summary>
+    /// <param name="accountId">账号 ID。</param>
+    /// <param name="payload">请求载荷。</param>
+    /// <param name="cancellationToken">用于取消异步操作的令牌。</param>
+    /// <returns>API 响应。</returns>
     [Post("/api/v1/accounts/{accountId}/agents")]
     Task<Agent> AddNewAgentToAccountAsync(long accountId, [Body] AgentCreatePayload payload, CancellationToken cancellationToken = default);
 
+    /// <summary>
+    /// 调用 Chatwoot 应用 API：更新坐席账号。
+    /// </summary>
+    /// <param name="accountId">账号 ID。</param>
+    /// <param name="id">资源 ID。</param>
+    /// <param name="payload">请求载荷。</param>
+    /// <param name="cancellationToken">用于取消异步操作的令牌。</param>
+    /// <returns>API 响应。</returns>
     [Patch("/api/v1/accounts/{accountId}/agents/{id}")]
     Task<Agent> UpdateAgentInAccountAsync(long accountId, long id, [Body] AgentUpdatePayload payload, CancellationToken cancellationToken = default);
 
+    /// <summary>
+    /// 调用 Chatwoot 应用 API：删除坐席账号。
+    /// </summary>
+    /// <param name="accountId">账号 ID。</param>
+    /// <param name="id">资源 ID。</param>
+    /// <param name="cancellationToken">用于取消异步操作的令牌。</param>
+    /// <returns>异步操作。</returns>
     [Delete("/api/v1/accounts/{accountId}/agents/{id}")]
     Task DeleteAgentFromAccountAsync(long accountId, long id, CancellationToken cancellationToken = default);
 }

@@ -3,20 +3,38 @@ using System.Text.Json.Serialization;
 
 namespace ChatWootApi.Application;
 
+/// <summary>
+/// Chatwoot 应用模型：标签创建更新载荷。
+/// </summary>
 public sealed record LabelCreateUpdatePayload
 {
+    /// <summary>
+    /// 标题。
+    /// </summary>
     [JsonPropertyName("title")]
     public string? Title { get; init; }
 
+    /// <summary>
+    /// Description。
+    /// </summary>
     [JsonPropertyName("description")]
     public string? Description { get; init; }
 
+    /// <summary>
+    /// 颜色。
+    /// </summary>
     [JsonPropertyName("color")]
     public string? Color { get; init; }
 
+    /// <summary>
+    /// 详情OnSidebar。
+    /// </summary>
     [JsonPropertyName("show_on_sidebar")]
     public bool? ShowOnSidebar { get; init; }
 
+    /// <summary>
+    /// Swagger 未显式建模的附加 JSON 字段。
+    /// </summary>
     [JsonExtensionData]
     public IDictionary<string, JsonElement>? ExtensionData { get; init; }
 }

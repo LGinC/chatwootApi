@@ -1,26 +1,28 @@
 # ChatWootApi
 
-Chatwoot API 的强类型 .NET 客户端接口与数据模型，基于 [Refit](https://github.com/reactiveui/refit) 构建，覆盖 Application、Client 和 Platform API。
+English | [简体中文](README.zh-CN.md)
 
-## 安装
+Strongly typed .NET interfaces and models for the Chatwoot REST APIs, built on [Refit](https://github.com/reactiveui/refit). The package covers Application, Client, and Platform API surfaces.
 
-仅安装 API 接口与模型：
+## Installation
+
+Install the API interfaces and models:
 
 ```bash
 dotnet add package ChatWootApi
 ```
 
-推荐同时安装依赖注入扩展：
+Most applications should also install the dependency-injection extensions:
 
 ```bash
 dotnet add package ChatWootApi.Extensions
 ```
 
-## 使用依赖注入
+## Dependency injection
 
-`ChatWootApi.Extensions` 会配置 Refit、`HttpClient`、JSON 序列化以及 `api_access_token` 请求头。
+`ChatWootApi.Extensions` configures Refit, `HttpClient`, JSON serialization, and the `api_access_token` request header.
 
-在 `appsettings.json` 中配置 Chatwoot 地址和令牌：
+Configure the Chatwoot base URL and tokens in `appsettings.json`:
 
 ```json
 {
@@ -32,7 +34,7 @@ dotnet add package ChatWootApi.Extensions
 }
 ```
 
-按需注册 API：
+Register the API groups you need:
 
 ```csharp
 using ChatWootApi.Extensions;
@@ -42,7 +44,7 @@ builder.Services.AddChatWootClientApi(builder.Configuration);
 builder.Services.AddChatWootPlatformApi(builder.Configuration);
 ```
 
-注入对应接口后即可调用：
+Inject a specific API interface and call it directly:
 
 ```csharp
 using ChatWootApi.Application;
@@ -58,38 +60,210 @@ public sealed class ContactService(IApplicationContactsApi contactsApi)
 }
 ```
 
-Application API 还提供聚合接口 `IChatWootApplicationApi`，可以通过单个服务访问所有已实现的 Application API。
+Application API also provides the aggregate `IChatWootApplicationApi` interface for accessing all implemented Application API methods through one service.
 
-## 自定义 Access Token
+## Handling Chatwoot webhooks
 
-默认的 `IAccessTokenProvider` 从 `ChatWootApiOptions` 读取 Account 或 Platform token。若 token 来自数据库、租户上下文或密钥服务，可自行实现该接口：
+Chatwoot webhooks are account-level HTTP callbacks. In Chatwoot, go to **Settings → Integrations → Webhooks**, add a URL that accepts `POST` requests, and subscribe to the events you need. Chatwoot sends the event name in the JSON `event` field, such as `message_created`, `conversation_updated`, `conversation_status_changed`, `message_updated`, `webwidget_triggered`, `conversation_typing_on`, and `conversation_typing_off`.
+
+`ChatWootApi.Application.WebhookRequest` receives those webhook payloads. It models the Account, Inbox, Contact/User, Conversation, Message, `changed_attributes`, and `event_info` structures documented by Chatwoot. Unknown or future fields are preserved through `ExtensionData`. Numeric fields that Chatwoot may send either as JSON strings or numbers are supported.
+
+### Controller example
+
+The following ASP.NET Core Controller reads the raw request body, verifies the Chatwoot signature, deserializes `WebhookRequest`, and dispatches by event name.
 
 ```csharp
-using ChatWootApi;
+using System.Text.Json;
+using ChatWootApi.Application;
+using ChatWootApi.Serialization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 
-public sealed class TenantAccessTokenProvider : IAccessTokenProvider
+public sealed class ChatwootWebhookOptions
 {
-    public async ValueTask<string> GetAccessTokenAsync(
-        AccessTokenKind tokenKind,
-        CancellationToken cancellationToken = default)
+    public required string Secret { get; init; }
+}
+
+[ApiController]
+[Route("api/chatwoot/webhooks")]
+public sealed class ChatwootWebhookController(
+    IOptions<ChatwootWebhookOptions> options,
+    ILogger<ChatwootWebhookController> logger) : ControllerBase
+{
+    private static readonly TimeSpan SignatureTolerance = TimeSpan.FromMinutes(5);
+
+    [HttpPost]
+    public async Task<IActionResult> PostAsync(CancellationToken cancellationToken)
     {
-        return tokenKind switch
+        Request.EnableBuffering();
+
+        byte[] rawBody;
+        using (var buffer = new MemoryStream())
         {
-            AccessTokenKind.Account => await LoadAccountTokenAsync(cancellationToken),
-            AccessTokenKind.Platform => await LoadPlatformTokenAsync(cancellationToken),
-            _ => throw new ArgumentOutOfRangeException(nameof(tokenKind), tokenKind, null)
-        };
+            await Request.Body.CopyToAsync(buffer, cancellationToken);
+            rawBody = buffer.ToArray();
+        }
+
+        Request.Body.Position = 0;
+
+        if (!ChatwootWebhookSignatureHelper.VerifySignature(
+            Request.Headers["X-Chatwoot-Signature"].ToString(),
+            Request.Headers["X-Chatwoot-Timestamp"].ToString(),
+            rawBody,
+            options.Value.Secret,
+            DateTimeOffset.UtcNow,
+            SignatureTolerance))
+        {
+            return Unauthorized();
+        }
+
+        var webhook = JsonSerializer.Deserialize(
+            rawBody,
+            ChatWootJsonSerializerContext.Default.ChatWootApiApplicationWebhookRequest);
+
+        if (webhook is null || string.IsNullOrWhiteSpace(webhook.Event))
+        {
+            return BadRequest();
+        }
+
+        switch (webhook.Event)
+        {
+            case "message_created":
+            case "message_updated":
+                await HandleMessageAsync(webhook, cancellationToken);
+                break;
+
+            case "conversation_created":
+            case "conversation_updated":
+            case "conversation_status_changed":
+                await HandleConversationAsync(webhook, cancellationToken);
+                break;
+
+            case "webwidget_triggered":
+                await HandleWebWidgetTriggeredAsync(webhook, cancellationToken);
+                break;
+
+            case "conversation_typing_on":
+            case "conversation_typing_off":
+                await HandleTypingAsync(webhook, cancellationToken);
+                break;
+
+            default:
+                logger.LogInformation("Ignored Chatwoot webhook event {Event}", webhook.Event);
+                break;
+        }
+
+        return Ok();
     }
 
-    private static Task<string> LoadAccountTokenAsync(CancellationToken cancellationToken) =>
-        Task.FromResult("account-token");
+    private Task HandleMessageAsync(WebhookRequest webhook, CancellationToken cancellationToken)
+    {
+        logger.LogInformation(
+            "Chatwoot message {MessageId} in conversation {ConversationDisplayId}: {Content}",
+            webhook.Id,
+            webhook.Conversation?.DisplayId ?? webhook.DisplayId,
+            webhook.Content);
 
-    private static Task<string> LoadPlatformTokenAsync(CancellationToken cancellationToken) =>
-        Task.FromResult("platform-token");
+        return Task.CompletedTask;
+    }
+
+    private Task HandleConversationAsync(WebhookRequest webhook, CancellationToken cancellationToken)
+    {
+        logger.LogInformation(
+            "Chatwoot conversation {ConversationId} status changed to {Status}",
+            webhook.Id,
+            webhook.Status);
+
+        if (webhook.ChangedAttributes is not null)
+        {
+            foreach (var changedAttribute in webhook.ChangedAttributes)
+            {
+                if (changedAttribute is null)
+                {
+                    continue;
+                }
+
+                foreach (var (name, value) in changedAttribute)
+                {
+                    logger.LogInformation(
+                        "Changed {Name}: {PreviousValue} -> {CurrentValue}",
+                        name,
+                        value.PreviousValue,
+                        value.CurrentValue);
+                }
+            }
+        }
+
+        return Task.CompletedTask;
+    }
+
+    private Task HandleWebWidgetTriggeredAsync(WebhookRequest webhook, CancellationToken cancellationToken)
+    {
+        logger.LogInformation(
+            "Chatwoot widget opened by contact {ContactId} from {Referer}",
+            webhook.Contact?.Id,
+            webhook.EventInfo?.Referer);
+
+        return Task.CompletedTask;
+    }
+
+    private Task HandleTypingAsync(WebhookRequest webhook, CancellationToken cancellationToken)
+    {
+        logger.LogInformation(
+            "Chatwoot typing event {Event} by {UserName}; private note: {IsPrivate}",
+            webhook.Event,
+            webhook.User?.Name,
+            webhook.IsPrivate);
+
+        return Task.CompletedTask;
+    }
 }
 ```
 
-在调用 ChatWoot 注册扩展前注册自定义实现。扩展使用 `TryAddSingleton`，因此不会覆盖它：
+### Signature verification notes
+
+- Always verify with the raw request body. Parsing and re-serializing JSON can change property order, whitespace, or Unicode escaping and break the signature.
+- Chatwoot computes signatures as `sha256=HMAC-SHA256(secret, "{timestamp}.{raw_body}")`.
+- Headers: `X-Chatwoot-Signature`, `X-Chatwoot-Timestamp`, and `X-Chatwoot-Delivery` for idempotency when available.
+- `ChatwootWebhookSignatureHelper` uses constant-time comparison internally.
+- Rejecting timestamps older than five minutes is recommended to reduce replay risk.
+
+### Event-to-model field map
+
+| Chatwoot event | Main fields |
+| --- | --- |
+| `message_created` / `message_updated` | `Id`, `Content`, `MessageType`, `ContentType`, `ContentAttributes`, `Sender`, `Contact`, `Conversation`, `Account`, `Inbox` |
+| `conversation_created` / `conversation_status_changed` | `Id`, `DisplayId`, `Status`, `Channel`, `CanReply`, `UnreadCount`, `AccountId`, `InboxId`, `AdditionalAttributes` |
+| `conversation_updated` | Conversation fields above plus `ChangedAttributes` for previous/current values |
+| `webwidget_triggered` | `Contact`, `Inbox`, `Account`, `CurrentConversation`, `SourceId`, `EventInfo` |
+| `conversation_typing_on` / `conversation_typing_off` | `Conversation`, `User`, `IsPrivate` |
+
+Unknown fields are captured in the corresponding `ExtensionData` dictionary, so new Chatwoot fields do not break deserialization.
+
+## Temporarily switching Application API access tokens
+
+Application API `api_access_token` values are user-level tokens and often need to switch per request. With `ChatWootApi.Extensions`, inject the default `AccessTokenProvider` and scope the Application access token to the current async flow with `using`:
+
+```csharp
+using ChatWootApi.Application;
+using ChatWootApi.Extensions;
+
+app.MapGet("/contacts", async (
+    long accountId,
+    string userAccessToken,
+    AccessTokenProvider accessTokenProvider,
+    IApplicationContactsApi contactsApi,
+    CancellationToken cancellationToken) =>
+{
+    using var applicationAccessToken = accessTokenProvider.UseApplicationAccessToken(userAccessToken);
+
+    return await contactsApi.ContactListAsync(accountId, cancellationToken);
+});
+```
+
+The scope uses `AsyncLocal`: an inner scope temporarily overrides the outer token and restores it when disposed. Platform API calls continue to use the configured `PlatformAccessToken`. If no scope exists and no `AccountAccessToken` is configured, Application API calls throw the same missing-configuration exception.
+
+You can also replace the token source entirely by registering your own `IAccessTokenProvider` before calling the Chatwoot registration extensions. The extensions use `TryAddSingleton`, so they do not override an existing implementation:
 
 ```csharp
 builder.Services.AddSingleton<IAccessTokenProvider, TenantAccessTokenProvider>();
@@ -97,57 +271,56 @@ builder.Services.AddChatWootApplicationApi(builder.Configuration);
 builder.Services.AddChatWootPlatformApi(builder.Configuration);
 ```
 
-Client API 使用公开 inbox 标识，不需要 Account 或 Platform access token。
+Client API uses public inbox identifiers and does not require Account or Platform access tokens.
 
-## 已实现的 API
+## Implemented APIs
 
-以下列表按 Chatwoot API Tag 分类
+The following list is grouped by Chatwoot API tag.
 
 <details>
 <summary><strong>Application API</strong></summary>
 
-- `IChatWootApplicationApi`：所有 Application API 的聚合接口
-- `IApplicationAccountApi`：Account
-- `IApplicationAccountAgentBotsApi`：Account Agent Bots
-- `IApplicationAgentsApi`：Agents
-- `IApplicationAuditLogsApi`：Audit Logs
-- `IApplicationAutomationRuleApi`：Automation Rules
-- `IApplicationCannedResponsesApi`：Canned Responses
-- `IApplicationContactLabelsApi`：Contact Labels
-- `IApplicationContactsApi`：Contacts
-- `IApplicationConversationAssignmentsApi`：Conversation Assignments
-- `IApplicationConversationsApi`：Conversations
-- `IApplicationCustomAttributesApi`：Custom Attributes
-- `IApplicationCustomFiltersApi`：Custom Filters
-- `IApplicationHelpCenterApi`：Help Center
-- `IApplicationInboxesApi`：Inboxes
-- `IApplicationIntegrationsApi`：Integrations
-- `IApplicationLabelsApi`：Labels
-- `IApplicationMessagesApi`：Messages
-- `IApplicationProfileApi`：Profile
-- `IApplicationReportsApi`：Reports
-- `IApplicationTeamsApi`：Teams
-- `IApplicationWebhooksApi`：Webhooks
+- `IChatWootApplicationApi`: aggregate interface for all Application APIs
+- `IApplicationAccountApi`: Account
+- `IApplicationAccountAgentBotsApi`: Account Agent Bots
+- `IApplicationAgentsApi`: Agents
+- `IApplicationAuditLogsApi`: Audit Logs
+- `IApplicationAutomationRuleApi`: Automation Rules
+- `IApplicationCannedResponsesApi`: Canned Responses
+- `IApplicationContactLabelsApi`: Contact Labels
+- `IApplicationContactsApi`: Contacts
+- `IApplicationConversationAssignmentsApi`: Conversation Assignments
+- `IApplicationConversationsApi`: Conversations
+- `IApplicationCustomAttributesApi`: Custom Attributes
+- `IApplicationCustomFiltersApi`: Custom Filters
+- `IApplicationHelpCenterApi`: Help Center
+- `IApplicationInboxesApi`: Inboxes
+- `IApplicationIntegrationsApi`: Integrations
+- `IApplicationLabelsApi`: Labels
+- `IApplicationMessagesApi`: Messages
+- `IApplicationProfileApi`: Profile
+- `IApplicationReportsApi`: Reports
+- `IApplicationTeamsApi`: Teams
+- `IApplicationWebhooksApi`: Webhooks
 
 </details>
 
 <details>
 <summary><strong>Client API</strong></summary>
 
-- `IClientInboxApi`：Inbox
-- `IClientContactApi`：Contacts
-- `IClientConversationApi`：Conversations
-- `IClientMessageApi`：Messages
+- `IClientInboxApi`: Inbox
+- `IClientContactApi`: Contacts
+- `IClientConversationApi`: Conversations
+- `IClientMessageApi`: Messages
 
 </details>
 
 <details>
 <summary><strong>Platform API</strong></summary>
 
-- `IPlatformAccountApi`：Accounts
-- `IPlatformAccountUserApi`：Account Users
-- `IPlatformAgentBotApi`：Agent Bots
-- `IPlatformUserApi`：Users 与用户登录链接
+- `IPlatformAccountApi`: Accounts
+- `IPlatformAccountUserApi`: Account Users
+- `IPlatformAgentBotApi`: Agent Bots
+- `IPlatformUserApi`: Users and user login links
 
 </details>
-

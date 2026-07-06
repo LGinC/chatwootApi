@@ -4,6 +4,9 @@ using System.Text.Json.Serialization;
 
 namespace ChatWootApi.Serialization;
 
+/// <summary>
+/// Chatwoot API 的 System.Text.Json 源生成序列化上下文。
+/// </summary>
 [JsonSerializable(typeof(IDictionary<string, JsonElement>), TypeInfoPropertyName = "StringJsonElementDictionary")]
 [JsonSerializable(typeof(Account), TypeInfoPropertyName = "ChatWootApiApplicationAccount")]
 [JsonSerializable(typeof(IReadOnlyList<Account>), TypeInfoPropertyName = "IReadOnlyListChatWootApiApplicationAccount")]
@@ -247,6 +250,24 @@ namespace ChatWootApi.Serialization;
 [JsonSerializable(typeof(IReadOnlyList<Webhook>), TypeInfoPropertyName = "IReadOnlyListChatWootApiApplicationWebhook")]
 [JsonSerializable(typeof(WebhookCreateUpdatePayload), TypeInfoPropertyName = "ChatWootApiApplicationWebhookCreateUpdatePayload")]
 [JsonSerializable(typeof(IReadOnlyList<WebhookCreateUpdatePayload>), TypeInfoPropertyName = "IReadOnlyListChatWootApiApplicationWebhookCreateUpdatePayload")]
+[JsonSerializable(typeof(WebhookRequest), TypeInfoPropertyName = "ChatWootApiApplicationWebhookRequest")]
+[JsonSerializable(typeof(IReadOnlyList<WebhookRequest>), TypeInfoPropertyName = "IReadOnlyListChatWootApiApplicationWebhookRequest")]
+[JsonSerializable(typeof(WebhookAccount), TypeInfoPropertyName = "ChatWootApiApplicationWebhookAccount")]
+[JsonSerializable(typeof(IReadOnlyList<WebhookAccount>), TypeInfoPropertyName = "IReadOnlyListChatWootApiApplicationWebhookAccount")]
+[JsonSerializable(typeof(WebhookInbox), TypeInfoPropertyName = "ChatWootApiApplicationWebhookInbox")]
+[JsonSerializable(typeof(IReadOnlyList<WebhookInbox>), TypeInfoPropertyName = "IReadOnlyListChatWootApiApplicationWebhookInbox")]
+[JsonSerializable(typeof(WebhookActor), TypeInfoPropertyName = "ChatWootApiApplicationWebhookActor")]
+[JsonSerializable(typeof(IReadOnlyList<WebhookActor>), TypeInfoPropertyName = "IReadOnlyListChatWootApiApplicationWebhookActor")]
+[JsonSerializable(typeof(WebhookConversation), TypeInfoPropertyName = "ChatWootApiApplicationWebhookConversation")]
+[JsonSerializable(typeof(IReadOnlyList<WebhookConversation>), TypeInfoPropertyName = "IReadOnlyListChatWootApiApplicationWebhookConversation")]
+[JsonSerializable(typeof(WebhookContactInbox), TypeInfoPropertyName = "ChatWootApiApplicationWebhookContactInbox")]
+[JsonSerializable(typeof(IReadOnlyList<WebhookContactInbox>), TypeInfoPropertyName = "IReadOnlyListChatWootApiApplicationWebhookContactInbox")]
+[JsonSerializable(typeof(WebhookConversationMeta), TypeInfoPropertyName = "ChatWootApiApplicationWebhookConversationMeta")]
+[JsonSerializable(typeof(IReadOnlyList<WebhookConversationMeta>), TypeInfoPropertyName = "IReadOnlyListChatWootApiApplicationWebhookConversationMeta")]
+[JsonSerializable(typeof(WebhookChangedAttributeValue), TypeInfoPropertyName = "ChatWootApiApplicationWebhookChangedAttributeValue")]
+[JsonSerializable(typeof(IReadOnlyList<WebhookChangedAttributeValue>), TypeInfoPropertyName = "IReadOnlyListChatWootApiApplicationWebhookChangedAttributeValue")]
+[JsonSerializable(typeof(WebhookEventInfo), TypeInfoPropertyName = "ChatWootApiApplicationWebhookEventInfo")]
+[JsonSerializable(typeof(IReadOnlyList<WebhookEventInfo>), TypeInfoPropertyName = "IReadOnlyListChatWootApiApplicationWebhookEventInfo")]
 [JsonSerializable(typeof(Client.Contact), TypeInfoPropertyName = "ChatWootApiClientContact")]
 [JsonSerializable(typeof(IReadOnlyList<Client.Contact>), TypeInfoPropertyName = "IReadOnlyListChatWootApiClientContact")]
 [JsonSerializable(typeof(Client.ContactCreateUpdatePayload), TypeInfoPropertyName = "ChatWootApiClientContactCreateUpdatePayload")]

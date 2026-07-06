@@ -8,15 +8,85 @@
 	<IncludeSymbols>true</IncludeSymbols>
 	<SymbolPackageFormat>snupkg</SymbolPackageFormat>
 	<IsAotCompatible>true</IsAotCompatible>
+	<NoWarn>$(NoWarn);IL2026;IL3050</NoWarn>
 	<PackageReadmeFile>README.md</PackageReadmeFile>
+	<TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);AddLocalizedXmlDocumentationToPackage</TargetsForTfmSpecificBuildOutput>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Refit" Version="12.1.0" />
   </ItemGroup>
 
+  <UsingTask TaskName="MergeLocalizedXmlDocumentation" TaskFactory="RoslynCodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.Core.dll">
+    <ParameterGroup>
+      <SourceXml ParameterType="System.String" Required="true" />
+      <OverridesXml ParameterType="System.String" Required="true" />
+      <DestinationXml ParameterType="System.String" Required="true" />
+    </ParameterGroup>
+    <Task>
+      <Using Namespace="System.IO" />
+      <Using Namespace="System.Linq" />
+      <Using Namespace="System.Xml.Linq" />
+      <Code Type="Fragment" Language="cs"><![CDATA[
+        var source = XDocument.Load(SourceXml, LoadOptions.PreserveWhitespace);
+        var overrides = XDocument.Load(OverridesXml, LoadOptions.PreserveWhitespace);
+        var sourceMembers = source.Root!.Element("members")!;
+        var sourceByName = sourceMembers.Elements("member")
+            .Where(member => member.Attribute("name") is not null)
+            .ToDictionary(member => member.Attribute("name")!.Value, member => member);
+
+        foreach (var localizedMember in overrides.Root!.Element("members")!.Elements("member"))
+        {
+            var name = localizedMember.Attribute("name")?.Value;
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                continue;
+            }
+
+            if (sourceByName.TryGetValue(name, out var sourceMember))
+            {
+                sourceMember.ReplaceNodes(localizedMember.Nodes());
+            }
+            else
+            {
+                sourceMembers.Add(new XElement(localizedMember));
+            }
+        }
+
+        Directory.CreateDirectory(Path.GetDirectoryName(DestinationXml)!);
+        source.Save(DestinationXml);
+      ]]></Code>
+    </Task>
+  </UsingTask>
+
+  <Target Name="GenerateLocalizedXmlDocumentation" AfterTargets="CoreCompile" Condition="'$(GenerateDocumentationFile)' == 'true'">
+    <PropertyGroup>
+      <LocalizedEnglishXml>$(TargetDir)en\$(AssemblyName).xml</LocalizedEnglishXml>
+      <LocalizedEnglishUsXml>$(TargetDir)en-US\$(AssemblyName).xml</LocalizedEnglishUsXml>
+      <LocalizedChineseXml>$(TargetDir)zh-Hans\$(AssemblyName).xml</LocalizedChineseXml>
+    </PropertyGroup>
+    <MergeLocalizedXmlDocumentation SourceXml="$(DocumentationFile)" OverridesXml="$(MSBuildProjectDirectory)\Documentation\$(AssemblyName).en.xml" DestinationXml="$(LocalizedEnglishXml)" />
+    <Copy SourceFiles="$(LocalizedEnglishXml)" DestinationFiles="$(LocalizedEnglishUsXml)" />
+    <Copy SourceFiles="$(DocumentationFile)" DestinationFiles="$(LocalizedChineseXml)" />
+  </Target>
+
+  <Target Name="AddLocalizedXmlDocumentationToPackage" DependsOnTargets="GenerateLocalizedXmlDocumentation">
+    <ItemGroup>
+      <BuildOutputInPackage Include="$(TargetDir)en\$(AssemblyName).xml">
+        <TargetPath>en\$(AssemblyName).xml</TargetPath>
+      </BuildOutputInPackage>
+      <BuildOutputInPackage Include="$(TargetDir)en-US\$(AssemblyName).xml">
+        <TargetPath>en-US\$(AssemblyName).xml</TargetPath>
+      </BuildOutputInPackage>
+      <BuildOutputInPackage Include="$(TargetDir)zh-Hans\$(AssemblyName).xml">
+        <TargetPath>zh-Hans\$(AssemblyName).xml</TargetPath>
+      </BuildOutputInPackage>
+    </ItemGroup>
+  </Target>
+
   <ItemGroup>
     <None Include="README.md" Pack="true" PackagePath="\" />
+    <None Include="README.zh-CN.md" Pack="true" PackagePath="\" />
   </ItemGroup>
 
 </Project>

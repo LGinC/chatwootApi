@@ -1,5 +1,6 @@
 using ChatWootApi.Application;
 using ChatWootApi.Client;
+using ChatWootApi.Other;
 using ChatWootApi.Platform;
 using ChatWootApi.Serialization;
 using Microsoft.Extensions.Configuration;
@@ -53,6 +54,26 @@ public static class ServiceCollectionExtensions
         return services.AddChatWootClientApiCore();
     }
 
+    public static IServiceCollection AddChatWootOtherApi(
+        this IServiceCollection services,
+        IConfiguration configuration,
+        string sectionName = ChatWootApiOptions.DefaultSectionName)
+    {
+        services.AddChatWootApiOptions(configuration, sectionName);
+
+        return services.AddChatWootOtherApiCore();
+    }
+
+    public static IServiceCollection AddChatWootOtherApi(
+        this IServiceCollection services,
+        Action<ChatWootApiOptions> configureOptions)
+    {
+        services.Configure(configureOptions);
+
+        return services.AddChatWootOtherApiCore();
+    }
+
+
     public static IServiceCollection AddChatWootPlatformApi(
         this IServiceCollection services,
         IConfiguration configuration,
@@ -102,11 +123,17 @@ public static class ServiceCollectionExtensions
         return services;
     }
 
+    private static IServiceCollection AddChatWootOtherApiCore(this IServiceCollection services)
+    {
+        services.AddOtherRefitClient<IOtherCsatSurveyPageApi>();
+
+        return services;
+    }
+
     private static IServiceCollection AddChatWootApplicationApiCore(this IServiceCollection services)
     {
         services.AddAccessTokenServices();
 
-        services.AddApplicationRefitClient<IChatWootApplicationApi>();
         services.AddApplicationRefitClient<IApplicationAccountApi>();
         services.AddApplicationRefitClient<IApplicationAccountAgentBotsApi>();
         services.AddApplicationRefitClient<IApplicationAgentsApi>();
@@ -146,7 +173,8 @@ public static class ServiceCollectionExtensions
 
     private static IServiceCollection AddAccessTokenServices(this IServiceCollection services)
     {
-        services.TryAddSingleton<IAccessTokenProvider, AccessTokenProvider>();
+        services.TryAddSingleton<AccessTokenProvider>();
+        services.TryAddSingleton<IAccessTokenProvider>(serviceProvider => serviceProvider.GetRequiredService<AccessTokenProvider>());
         services.TryAddTransient<AccountAccessTokenDelegatingHandler>();
         services.TryAddTransient<PlatformAccessTokenDelegatingHandler>();
 
@@ -154,6 +182,13 @@ public static class ServiceCollectionExtensions
     }
 
     private static IHttpClientBuilder AddClientRefitClient<TApi>(this IServiceCollection services)
+        where TApi : class
+    {
+        return services.AddRefitGeneratedClient<TApi>(CreateRefitSettings())
+            .ConfigureHttpClient(ConfigureBaseAddress);
+    }
+
+    private static IHttpClientBuilder AddOtherRefitClient<TApi>(this IServiceCollection services)
         where TApi : class
     {
         return services.AddRefitGeneratedClient<TApi>(CreateRefitSettings())

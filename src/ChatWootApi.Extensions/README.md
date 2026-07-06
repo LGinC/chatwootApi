@@ -1,18 +1,20 @@
 # ChatWootApi.Extensions
 
-`ChatWootApi` 的依赖注入扩展，负责注册 Refit 客户端、配置 Chatwoot 服务地址，并为 Application 和 Platform API 自动添加 `api_access_token` 请求头。
+English | [简体中文](README.zh-CN.md)
 
-## 安装
+Dependency-injection extensions for `ChatWootApi`. This package registers Refit clients, configures the Chatwoot base address, and automatically adds the `api_access_token` request header for Application and Platform APIs.
+
+## Installation
 
 ```bash
 dotnet add package ChatWootApi.Extensions
 ```
 
-该包会传递引用核心包 `ChatWootApi`，通常不需要再次单独安装。
+This package transitively references the core `ChatWootApi` package, so most applications do not need to install the core package separately.
 
-## 配置方式一：使用 IConfiguration
+## Configuration option 1: IConfiguration
 
-`appsettings.json`：
+`appsettings.json`:
 
 ```json
 {
@@ -24,7 +26,7 @@ dotnet add package ChatWootApi.Extensions
 }
 ```
 
-在应用启动时按需注册：
+Register the API groups you need during application startup:
 
 ```csharp
 using ChatWootApi.Extensions;
@@ -34,7 +36,7 @@ builder.Services.AddChatWootClientApi(builder.Configuration);
 builder.Services.AddChatWootPlatformApi(builder.Configuration);
 ```
 
-配置节名称默认为 `ChatWootApi`，也可以指定其他名称：
+The default configuration section name is `ChatWootApi`. You can use another section name when needed:
 
 ```csharp
 builder.Services.AddChatWootApplicationApi(
@@ -42,7 +44,7 @@ builder.Services.AddChatWootApplicationApi(
     sectionName: "Services:Chatwoot");
 ```
 
-## 配置方式二：使用委托
+## Configuration option 2: delegate
 
 ```csharp
 builder.Services.AddChatWootApplicationApi(options =>
@@ -58,9 +60,9 @@ builder.Services.AddChatWootPlatformApi(options =>
 });
 ```
 
-## 调用 API
+## Calling APIs
 
-注册后直接注入细分接口：
+After registration, inject a specific API interface:
 
 ```csharp
 using ChatWootApi.Application;
@@ -74,7 +76,7 @@ app.MapGet("/contacts", async (
 });
 ```
 
-Application API 也可以注入聚合接口：
+Application API also provides an aggregate interface:
 
 ```csharp
 app.MapGet("/account", async (
@@ -86,15 +88,38 @@ app.MapGet("/account", async (
 });
 ```
 
-可用的注册方法：
+Available registration methods:
 
-- `AddChatWootApplicationApi`：注册 Application API，使用 Account access token。
-- `AddChatWootClientApi`：注册公开 Client API，不添加 access token。
-- `AddChatWootPlatformApi`：注册 Platform API，使用 Platform access token。
+- `AddChatWootApplicationApi`: registers Application API and uses Account access tokens.
+- `AddChatWootClientApi`: registers public Client API and does not add an access token.
+- `AddChatWootPlatformApi`: registers Platform API and uses Platform access tokens.
 
-## 使用自定义 IAccessTokenProvider
+## Temporarily switching Application API access tokens
 
-若令牌需要按租户或请求动态获取，实现 `IAccessTokenProvider`，并在调用扩展方法前注册：
+Application API `api_access_token` values are usually user-level tokens. The default `AccessTokenProvider` supports a temporary Application access token scoped to the current async flow. When the scope is disposed, the previous outer token or configured `AccountAccessToken` is restored.
+
+```csharp
+using ChatWootApi.Application;
+using ChatWootApi.Extensions;
+
+app.MapGet("/contacts", async (
+    long accountId,
+    string userAccessToken,
+    AccessTokenProvider accessTokenProvider,
+    IApplicationContactsApi contactsApi,
+    CancellationToken cancellationToken) =>
+{
+    using var applicationAccessToken = accessTokenProvider.UseApplicationAccessToken(userAccessToken);
+
+    return await contactsApi.ContactListAsync(accountId, cancellationToken);
+});
+```
+
+Nested calls restore the outer token after the inner `using` is disposed. Platform API always uses `PlatformAccessToken` and is not affected by Application token scopes. If `AccountAccessToken` is not configured and there is no active Application token scope, Application API calls throw `InvalidOperationException`.
+
+## Custom IAccessTokenProvider
+
+If tokens must come entirely from tenant or request context, implement `IAccessTokenProvider` and register it before calling the Chatwoot registration extensions:
 
 ```csharp
 using ChatWootApi;
@@ -105,5 +130,4 @@ builder.Services.AddChatWootApplicationApi(builder.Configuration);
 builder.Services.AddChatWootPlatformApi(builder.Configuration);
 ```
 
-扩展通过 `TryAddSingleton` 注册默认 provider，已有的自定义实现会被保留。每次请求都会根据 `AccessTokenKind.Account` 或 `AccessTokenKind.Platform` 获取相应令牌。
-
+The extensions register the default provider with `TryAddSingleton`, so an existing custom implementation is preserved. Each request asks for a token by `AccessTokenKind.Account` or `AccessTokenKind.Platform`.

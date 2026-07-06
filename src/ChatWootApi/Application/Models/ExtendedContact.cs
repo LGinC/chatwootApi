@@ -3,8 +3,14 @@ using System.Text.Json.Serialization;
 
 namespace ChatWootApi.Application;
 
+/// <summary>
+/// Chatwoot 应用模型：扩展联系人。
+/// </summary>
 public sealed record ExtendedContact
 {
+    /// <summary>
+    /// Swagger 未显式建模的附加 JSON 字段。
+    /// </summary>
     [JsonExtensionData]
     public IDictionary<string, JsonElement>? ExtensionData { get; init; }
 }
