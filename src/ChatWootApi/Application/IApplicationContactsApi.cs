@@ -44,9 +44,9 @@ public interface IApplicationContactsApi
     /// <param name="id">资源 ID。</param>
     /// <param name="payload">请求载荷。</param>
     /// <param name="cancellationToken">用于取消异步操作的令牌。</param>
-    /// <returns>异步操作。</returns>
+    /// <returns>API 响应。</returns>
     [Put("/api/v1/accounts/{accountId}/contacts/{id}")]
-    Task ContactUpdateAsync(long accountId, long id, [Body] ContactUpdatePayload payload, CancellationToken cancellationToken = default);
+    Task<ContactBase> ContactUpdateAsync(long accountId, long id, [Body] ContactUpdatePayload payload, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// 调用 Chatwoot 应用 API：删除联系人。

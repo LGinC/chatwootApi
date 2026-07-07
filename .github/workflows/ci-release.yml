@@ -99,6 +99,9 @@ jobs:
             --no-restore
             --output "${PACKAGE_OUTPUT_PATH}"
             -p:PackageVersion="${PACKAGE_VERSION}"
+            -p:Version="${PACKAGE_VERSION}"
+            -p:InformationalVersion="${PACKAGE_VERSION}"
+            -p:IncludeSourceRevisionInInformationalVersion=false
             -p:Authors="${PACKAGE_AUTHORS}"
             -p:Company="${PACKAGE_COMPANY}"
             -p:Description="${PACKAGE_DESCRIPTION}"

@@ -1,6 +1,6 @@
 # ChatWootApi.Extensions
 
-English | [简体中文](https://github.com/LGinC/chatwootApi/blob/main/src/ChatWootApi.Extensions/README.zh-CN.md)
+English | [简体中文](README.zh-CN.md)
 
 Dependency-injection extensions for `ChatWootApi`. This package registers Refit clients, configures the Chatwoot base address, and automatically adds the `api_access_token` request header for Application and Platform APIs.
 

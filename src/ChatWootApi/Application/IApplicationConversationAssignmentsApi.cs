@@ -1,4 +1,3 @@
-using System.Text.Json;
 using Refit;
 
 namespace ChatWootApi.Application;
@@ -17,5 +16,5 @@ public interface IApplicationConversationAssignmentsApi
     /// <param name="cancellationToken">用于取消异步操作的令牌。</param>
     /// <returns>API 响应。</returns>
     [Post("/api/v1/accounts/{accountId}/conversations/{conversationId}/assignments")]
-    Task<User> AssignAConversationAsync(long accountId, long conversationId, [Body] JsonElement payload, CancellationToken cancellationToken = default);
+    Task<User> AssignAConversationAsync(long accountId, long conversationId, [Body] ConversationAssignmentPayload payload, CancellationToken cancellationToken = default);
 }

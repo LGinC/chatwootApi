@@ -56,10 +56,12 @@ public interface IClientConversationApi
     /// <param name="inboxIdentifier">收件箱标识符。</param>
     /// <param name="contactIdentifier">联系人标识符。</param>
     /// <param name="conversationId">会话 ID。</param>
+    /// <param name="typingStatus">输入状态，on 或 off。</param>
+    /// <param name="payload">请求载荷。</param>
     /// <param name="cancellationToken">用于取消异步操作的令牌。</param>
     /// <returns>异步操作。</returns>
     [Post("/public/api/v1/inboxes/{inboxIdentifier}/contacts/{contactIdentifier}/conversations/{conversationId}/toggle_typing")]
-    Task ToggleTypingAsync(string inboxIdentifier, string contactIdentifier, long conversationId, CancellationToken cancellationToken = default);
+    Task ToggleTypingAsync(string inboxIdentifier, string contactIdentifier, long conversationId, [AliasAs("typing_status")] string typingStatus, [Body] ConversationTypingStatusPayload payload, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// 调用 Chatwoot 客户端 API：更新最后查看。

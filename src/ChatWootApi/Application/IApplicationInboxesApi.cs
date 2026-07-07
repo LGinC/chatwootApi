@@ -54,9 +54,9 @@ public interface IApplicationInboxesApi
     /// <param name="accountId">账号 ID。</param>
     /// <param name="id">资源 ID。</param>
     /// <param name="cancellationToken">用于取消异步操作的令牌。</param>
-    /// <returns>异步操作。</returns>
+    /// <returns>API 响应。</returns>
     [Get("/api/v1/accounts/{accountId}/inboxes/{id}/agent_bot")]
-    Task GetInboxAgentBotAsync(long accountId, long id, CancellationToken cancellationToken = default);
+    Task<AgentBot> GetInboxAgentBotAsync(long accountId, long id, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// 调用 Chatwoot 应用 API：更新坐席机器人。
