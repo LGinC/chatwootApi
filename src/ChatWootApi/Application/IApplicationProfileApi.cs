@@ -1,7 +1,6 @@
 using System.Text.Json;
 using Refit;
-ChatWootApi.Application.Models;
-ChatWootApi.Application.Models;
+using ChatWootApi.Application.Models;
 
 namespace ChatWootApi.Application;
 

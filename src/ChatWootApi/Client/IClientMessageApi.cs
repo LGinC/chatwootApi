@@ -1,7 +1,5 @@
 using Refit;
 using ChatWootApi.Client.Models;
-ChatWootApi.Application.Models;
-ChatWootApi.Application.Models;
 
 namespace ChatWootApi.Client;
 

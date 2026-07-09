@@ -1,4 +1,5 @@
 using ChatWootApi.Application;
+using ChatWootApi.Application.Models;
 using ChatWootApi.Serialization;
 using System.Text.Json;
 

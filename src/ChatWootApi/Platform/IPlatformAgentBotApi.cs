@@ -1,6 +1,5 @@
 using Refit;
-ChatWootApi.Application.Models;
-ChatWootApi.Application.Models;
+using ChatWootApi.Platform.Models;
 
 namespace ChatWootApi.Platform;
 

@@ -1,6 +1,7 @@
 using System.Net.Http;
 using System.Reflection;
 using ChatWootApi;
+using ChatWootApi.AccessTokens;
 using ChatWootApi.Extensions;
 using ChatWootApi.Other;
 using Microsoft.Extensions.DependencyInjection;

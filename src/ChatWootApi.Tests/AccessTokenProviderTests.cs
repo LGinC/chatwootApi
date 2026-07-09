@@ -2,6 +2,7 @@ using ChatWootApi;
 using ChatWootApi.Extensions;
 using Microsoft.Extensions.Options;
 using Microsoft.Extensions.DependencyInjection;
+using ChatWootApi.AccessTokens;
 
 namespace ChatWootApi.Tests;
 

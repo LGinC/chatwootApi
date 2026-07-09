@@ -1,4 +1,4 @@
-using System.Net.Http.Headers;
+using ChatWootApi.AccessTokens;
 
 namespace ChatWootApi.Extensions;
 

@@ -2,6 +2,7 @@ using ChatWootApi.Client;
 using System.Reflection;
 using System.Text.Json;
 using Refit;
+using ChatWootApi.Client.Models;
 
 namespace ChatWootApi.Tests;
 
