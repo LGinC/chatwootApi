@@ -1,6 +1,6 @@
 # ChatWootApi.Extensions
 
-`ChatWootApi` 的依赖注入扩展，负责注册 Refit 客户端、配置 Chatwoot 服务地址，并为 Application 和 Platform API 自动添加 `api_access_token` 请求头。
+`ChatWootApi` 的依赖注入扩展，负责注册 Refit 客户端、配置 Chatwoot 服务地址，并为 Application 和 Platform API 自动添加 `api_access_token` 请求头
 
 ## 安装
 
@@ -8,7 +8,7 @@
 dotnet add package ChatWootApi.Extensions
 ```
 
-该包会传递引用核心包 `ChatWootApi`，通常不需要再次单独安装。
+该包会传递引用核心包 `ChatWootApi`，通常不需要再次单独安装
 
 ## 配置方式一：使用 IConfiguration
 
@@ -88,13 +88,13 @@ app.MapGet("/account", async (
 
 可用的注册方法：
 
-- `AddChatWootApplicationApi`：注册 Application API，使用 Account access token。
-- `AddChatWootClientApi`：注册公开 Client API，不添加 access token。
-- `AddChatWootPlatformApi`：注册 Platform API，使用 Platform access token。
+- `AddChatWootApplicationApi`：注册 Application API，使用 Account access token
+- `AddChatWootClientApi`：注册公开 Client API，不添加 access token
+- `AddChatWootPlatformApi`：注册 Platform API，使用 Platform access token
 
 ## Application API 临时切换 access token
 
-Application API 的 `api_access_token` 通常是用户级令牌。默认 `AccessTokenProvider` 支持通过 `using` 创建异步上下文范围内的临时 Application access token，范围结束后自动恢复外层令牌或配置中的 `AccountAccessToken`。
+Application API 的 `api_access_token` 通常是用户级令牌默认 `AccessTokenProvider` 支持通过 `using` 创建异步上下文范围内的临时 Application access token，范围结束后自动恢复外层令牌或配置中的 `AccountAccessToken`
 
 ```csharp
 using ChatWootApi.Extensions;
@@ -112,7 +112,7 @@ app.MapGet("/contacts", async (
 });
 ```
 
-嵌套调用会在内层 `using` 释放后恢复外层 token；Platform API 始终使用 `PlatformAccessToken`，不会受 Application token scope 影响。若未配置 `AccountAccessToken` 且当前没有 Application token scope，调用 Application API 会抛出 `InvalidOperationException`。
+嵌套调用会在内层 `using` 释放后恢复外层 token；Platform API 始终使用 `PlatformAccessToken`，不会受 Application token scope 影响若未配置 `AccountAccessToken` 且当前没有 Application token scope，调用 Application API 会抛出 `InvalidOperationException`
 
 ## 使用自定义 IAccessTokenProvider
 
@@ -127,5 +127,5 @@ builder.Services.AddChatWootApplicationApi(builder.Configuration);
 builder.Services.AddChatWootPlatformApi(builder.Configuration);
 ```
 
-扩展通过 `TryAddSingleton` 注册默认 provider，已有的自定义实现会被保留。每次请求都会根据 `AccessTokenKind.Account` 或 `AccessTokenKind.Platform` 获取相应令牌。
+扩展通过 `TryAddSingleton` 注册默认 provider，已有的自定义实现会被保留每次请求都会根据 `AccessTokenKind.Account` 或 `AccessTokenKind.Platform` 获取相应令牌
 

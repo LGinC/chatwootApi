@@ -1,45 +1,45 @@
 using System.Text.Json.Serialization;
 
-namespace ChatWootApi.Platform;
+namespace ChatWootApi.Platform.Models;
 
 /// <summary>
-/// Chatwoot 平台模型：坐席机器人创建更新载荷。
+/// Chatwoot 平台模型：坐席机器人创建更新载荷
 /// </summary>
 public sealed record AgentBotCreateUpdatePayload
 {
     /// <summary>
-    /// 名称。
+    /// 名称
     /// </summary>
     [JsonPropertyName("name")]
-    public string? Name { get; init; }
+    public string? Name { get; set; }
 
     /// <summary>
-    /// Description。
+    /// Description
     /// </summary>
     [JsonPropertyName("description")]
-    public string? Description { get; init; }
+    public string? Description { get; set; }
 
     /// <summary>
-    /// 外发URL。
+    /// 外发URL
     /// </summary>
     [JsonPropertyName("outgoing_url")]
-    public string? OutgoingUrl { get; init; }
+    public string? OutgoingUrl { get; set; }
 
     /// <summary>
-    /// 账号ID。
+    /// 账号ID
     /// </summary>
     [JsonPropertyName("account_id")]
-    public long? AccountId { get; init; }
+    public long? AccountId { get; set; }
 
     /// <summary>
-    /// 头像。
+    /// 头像
     /// </summary>
     [JsonPropertyName("avatar")]
-    public string? Avatar { get; init; }
+    public string? Avatar { get; set; }
 
     /// <summary>
-    /// 头像URL。
+    /// 头像URL
     /// </summary>
     [JsonPropertyName("avatar_url")]
-    public string? AvatarUrl { get; init; }
+    public string? AvatarUrl { get; set; }
 }

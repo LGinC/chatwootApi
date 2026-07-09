@@ -1,26 +1,26 @@
 using System.Text.Json.Serialization;
 
-namespace ChatWootApi.Platform;
+namespace ChatWootApi.Platform.Models;
 
 /// <summary>
-/// Chatwoot 平台模型：账号用户。
+/// Chatwoot 平台模型：账号用户
 /// </summary>
 public sealed record AccountUser
 {
     /// <summary>
-    /// 账号ID。
+    /// 账号ID
     /// </summary>
     [JsonPropertyName("account_id")]
     public long? AccountId { get; init; }
 
     /// <summary>
-    /// 用户ID。
+    /// 用户ID
     /// </summary>
     [JsonPropertyName("user_id")]
     public long? UserId { get; init; }
 
     /// <summary>
-    /// 角色。
+    /// 角色
     /// </summary>
     [JsonPropertyName("role")]
     public string? Role { get; init; }

@@ -1,7 +1,7 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace ChatWootApi.Application;
+namespace ChatWootApi.Application.Models;
 
 /// <summary>
 /// Chatwoot 应用模型：收件箱更新载荷。
@@ -12,107 +12,107 @@ public sealed record InboxUpdatePayload
     /// 名称。
     /// </summary>
     [JsonPropertyName("name")]
-    public string? Name { get; init; }
+    public string? Name { get; set; }
 
     /// <summary>
     /// 头像。
     /// </summary>
     [JsonPropertyName("avatar")]
-    public string? Avatar { get; init; }
+    public string? Avatar { get; set; }
 
     /// <summary>
     /// GreetingEnabled。
     /// </summary>
     [JsonPropertyName("greeting_enabled")]
-    public bool? GreetingEnabled { get; init; }
+    public bool? GreetingEnabled { get; set; }
 
     /// <summary>
     /// Greeting消息。
     /// </summary>
     [JsonPropertyName("greeting_message")]
-    public string? GreetingMessage { get; init; }
+    public string? GreetingMessage { get; set; }
 
     /// <summary>
     /// Enable邮箱Collect。
     /// </summary>
     [JsonPropertyName("enable_email_collect")]
-    public bool? EnableEmailCollect { get; init; }
+    public bool? EnableEmailCollect { get; set; }
 
     /// <summary>
     /// CSAT调查Enabled。
     /// </summary>
     [JsonPropertyName("csat_survey_enabled")]
-    public bool? CsatSurveyEnabled { get; init; }
+    public bool? CsatSurveyEnabled { get; set; }
 
     /// <summary>
     /// CSAT配置。
     /// </summary>
     [JsonPropertyName("csat_config")]
-    public IDictionary<string, JsonElement>? CsatConfig { get; init; }
+    public IDictionary<string, object>? CsatConfig { get; set; }
 
     /// <summary>
     /// EnableAuto分配。
     /// </summary>
     [JsonPropertyName("enable_auto_assignment")]
-    public bool? EnableAutoAssignment { get; init; }
+    public bool? EnableAutoAssignment { get; set; }
 
     /// <summary>
     /// 工作时间Enabled。
     /// </summary>
     [JsonPropertyName("working_hours_enabled")]
-    public bool? WorkingHoursEnabled { get; init; }
+    public bool? WorkingHoursEnabled { get; set; }
 
     /// <summary>
     /// OutOffice消息。
     /// </summary>
     [JsonPropertyName("out_of_office_message")]
-    public string? OutOfOfficeMessage { get; init; }
+    public string? OutOfOfficeMessage { get; set; }
 
     /// <summary>
     /// Timezone。
     /// </summary>
     [JsonPropertyName("timezone")]
-    public string? Timezone { get; init; }
+    public string? Timezone { get; set; }
 
     /// <summary>
     /// Allow消息After已解析。
     /// </summary>
     [JsonPropertyName("allow_messages_after_resolved")]
-    public bool? AllowMessagesAfterResolved { get; init; }
+    public bool? AllowMessagesAfterResolved { get; set; }
 
     /// <summary>
     /// Lock单个会话。
     /// </summary>
     [JsonPropertyName("lock_to_single_conversation")]
-    public bool? LockToSingleConversation { get; init; }
+    public bool? LockToSingleConversation { get; set; }
 
     /// <summary>
     /// 门户ID。
     /// </summary>
     [JsonPropertyName("portal_id")]
-    public long? PortalId { get; init; }
+    public long? PortalId { get; set; }
 
     /// <summary>
     /// 发送者名称类型。
     /// </summary>
     [JsonPropertyName("sender_name_type")]
-    public string? SenderNameType { get; init; }
+    public string? SenderNameType { get; set; }
 
     /// <summary>
     /// Business名称。
     /// </summary>
     [JsonPropertyName("business_name")]
-    public string? BusinessName { get; init; }
+    public string? BusinessName { get; set; }
 
     /// <summary>
     /// 渠道。
     /// </summary>
     [JsonPropertyName("channel")]
-    public JsonElement? Channel { get; init; }
+    public JsonElement? Channel { get; set; }
 
     /// <summary>
     /// Swagger 未显式建模的附加 JSON 字段。
     /// </summary>
     [JsonExtensionData]
-    public IDictionary<string, JsonElement>? ExtensionData { get; init; }
+    public IDictionary<string, object>? ExtensionData { get; set; }
 }

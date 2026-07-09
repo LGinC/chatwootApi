@@ -1,7 +1,7 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace ChatWootApi.Application;
+namespace ChatWootApi.Application.Models;
 
 /// <summary>
 /// Chatwoot 应用模型：联系人创建载荷。
@@ -12,65 +12,65 @@ public sealed record ContactCreatePayload
     /// 收件箱ID。
     /// </summary>
     [JsonPropertyName("inbox_id")]
-    public decimal? InboxId { get; init; }
+    public decimal? InboxId { get; set; }
 
     /// <summary>
     /// 名称。
     /// </summary>
     [JsonPropertyName("name")]
-    public string? Name { get; init; }
+    public string? Name { get; set; }
 
     /// <summary>
     /// 邮箱。
     /// </summary>
     [JsonPropertyName("email")]
-    public string? Email { get; init; }
+    public string? Email { get; set; }
 
     /// <summary>
     /// Blocked。
     /// </summary>
     [JsonPropertyName("blocked")]
-    public bool? Blocked { get; init; }
+    public bool? Blocked { get; set; }
 
     /// <summary>
     /// 电话号码。
     /// </summary>
     [JsonPropertyName("phone_number")]
-    public string? PhoneNumber { get; init; }
+    public string? PhoneNumber { get; set; }
 
     /// <summary>
     /// 头像。
     /// </summary>
     [JsonPropertyName("avatar")]
-    public string? Avatar { get; init; }
+    public string? Avatar { get; set; }
 
     /// <summary>
     /// 头像URL。
     /// </summary>
     [JsonPropertyName("avatar_url")]
-    public string? AvatarUrl { get; init; }
+    public string? AvatarUrl { get; set; }
 
     /// <summary>
     /// 标识符。
     /// </summary>
     [JsonPropertyName("identifier")]
-    public string? Identifier { get; init; }
+    public string? Identifier { get; set; }
 
     /// <summary>
     /// 附加属性。
     /// </summary>
     [JsonPropertyName("additional_attributes")]
-    public IDictionary<string, JsonElement>? AdditionalAttributes { get; init; }
+    public IDictionary<string, object>? AdditionalAttributes { get; set; }
 
     /// <summary>
     /// 自定义属性。
     /// </summary>
     [JsonPropertyName("custom_attributes")]
-    public IDictionary<string, JsonElement>? CustomAttributes { get; init; }
+    public IDictionary<string, object>? CustomAttributes { get; set; }
 
     /// <summary>
     /// Swagger 未显式建模的附加 JSON 字段。
     /// </summary>
     [JsonExtensionData]
-    public IDictionary<string, JsonElement>? ExtensionData { get; init; }
+    public IDictionary<string, object>? ExtensionData { get; set; }
 }

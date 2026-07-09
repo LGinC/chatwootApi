@@ -1,11 +1,14 @@
 using ChatWootApi.Application;
+using ChatWootApi.Platform.Models;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using ChatWootApi.Application.Models;
+using ChatWootApi.Client.Models;
 
 namespace ChatWootApi.Serialization;
 
 /// <summary>
-/// Chatwoot API 的 System.Text.Json 源生成序列化上下文。
+/// Chatwoot API 的 System.Text.Json 源生成序列化上下文
 /// </summary>
 [JsonSerializable(typeof(IDictionary<string, JsonElement>), TypeInfoPropertyName = "StringJsonElementDictionary")]
 [JsonSerializable(typeof(Account), TypeInfoPropertyName = "ChatWootApiApplicationAccount")]
@@ -246,8 +249,8 @@ namespace ChatWootApi.Serialization;
 [JsonSerializable(typeof(IReadOnlyList<TeamSummary>), TypeInfoPropertyName = "IReadOnlyListChatWootApiApplicationTeamSummary")]
 [JsonSerializable(typeof(User), TypeInfoPropertyName = "ChatWootApiApplicationUser")]
 [JsonSerializable(typeof(IReadOnlyList<User>), TypeInfoPropertyName = "IReadOnlyListChatWootApiApplicationUser")]
-[JsonSerializable(typeof(UserCreateUpdatePayload), TypeInfoPropertyName = "ChatWootApiApplicationUserCreateUpdatePayload")]
-[JsonSerializable(typeof(IReadOnlyList<UserCreateUpdatePayload>), TypeInfoPropertyName = "IReadOnlyListChatWootApiApplicationUserCreateUpdatePayload")]
+[JsonSerializable(typeof(Application.UserCreateUpdatePayload), TypeInfoPropertyName = "ChatWootApiApplicationUserCreateUpdatePayload")]
+[JsonSerializable(typeof(IReadOnlyList<Application.UserCreateUpdatePayload>), TypeInfoPropertyName = "IReadOnlyListChatWootApiApplicationUserCreateUpdatePayload")]
 [JsonSerializable(typeof(Webhook), TypeInfoPropertyName = "ChatWootApiApplicationWebhook")]
 [JsonSerializable(typeof(IReadOnlyList<Webhook>), TypeInfoPropertyName = "IReadOnlyListChatWootApiApplicationWebhook")]
 [JsonSerializable(typeof(WebhookCreateUpdatePayload), TypeInfoPropertyName = "ChatWootApiApplicationWebhookCreateUpdatePayload")]
@@ -316,8 +319,8 @@ namespace ChatWootApi.Serialization;
 [JsonSerializable(typeof(IReadOnlyList<Platform.User>), TypeInfoPropertyName = "IReadOnlyListChatWootApiPlatformUser")]
 [JsonSerializable(typeof(Platform.UserAccount), TypeInfoPropertyName = "ChatWootApiPlatformUserAccount")]
 [JsonSerializable(typeof(IReadOnlyList<Platform.UserAccount>), TypeInfoPropertyName = "IReadOnlyListChatWootApiPlatformUserAccount")]
-[JsonSerializable(typeof(Platform.UserCreateUpdatePayload), TypeInfoPropertyName = "ChatWootApiPlatformUserCreateUpdatePayload")]
-[JsonSerializable(typeof(IReadOnlyList<Platform.UserCreateUpdatePayload>), TypeInfoPropertyName = "IReadOnlyListChatWootApiPlatformUserCreateUpdatePayload")]
+[JsonSerializable(typeof(Platform.Models.UserCreateUpdatePayload), TypeInfoPropertyName = "ChatWootApiPlatformUserCreateUpdatePayload")]
+[JsonSerializable(typeof(IReadOnlyList<Platform.Models.UserCreateUpdatePayload>), TypeInfoPropertyName = "IReadOnlyListChatWootApiPlatformUserCreateUpdatePayload")]
 [JsonSerializable(typeof(Platform.UserSsoUrl), TypeInfoPropertyName = "ChatWootApiPlatformUserSsoUrl")]
 [JsonSerializable(typeof(IReadOnlyList<Platform.UserSsoUrl>), TypeInfoPropertyName = "IReadOnlyListChatWootApiPlatformUserSsoUrl")]
 public partial class ChatWootJsonSerializerContext : JsonSerializerContext;

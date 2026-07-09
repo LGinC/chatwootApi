@@ -1,75 +1,75 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace ChatWootApi.Platform;
+namespace ChatWootApi.Platform.Models;
 
 /// <summary>
-/// Chatwoot 平台模型：坐席机器人。
+/// Chatwoot 平台模型：坐席机器人
 /// </summary>
 public sealed record AgentBot
 {
     /// <summary>
-    /// ID。
+    /// ID
     /// </summary>
     [JsonPropertyName("id")]
     public long? Id { get; init; }
 
     /// <summary>
-    /// 名称。
+    /// 名称
     /// </summary>
     [JsonPropertyName("name")]
     public string? Name { get; init; }
 
     /// <summary>
-    /// Description。
+    /// Description
     /// </summary>
     [JsonPropertyName("description")]
     public string? Description { get; init; }
 
     /// <summary>
-    /// 缩略图。
+    /// 缩略图
     /// </summary>
     [JsonPropertyName("thumbnail")]
     public string? Thumbnail { get; init; }
 
     /// <summary>
-    /// 外发URL。
+    /// 外发URL
     /// </summary>
     [JsonPropertyName("outgoing_url")]
     public string? OutgoingUrl { get; init; }
 
     /// <summary>
-    /// 机器人类型。
+    /// 机器人类型
     /// </summary>
     [JsonPropertyName("bot_type")]
     public string? BotType { get; init; }
 
     /// <summary>
-    /// 机器人配置。
+    /// 机器人配置
     /// </summary>
     [JsonPropertyName("bot_config")]
     public IDictionary<string, JsonElement>? BotConfig { get; init; }
 
     /// <summary>
-    /// 账号ID。
+    /// 账号ID
     /// </summary>
     [JsonPropertyName("account_id")]
     public long? AccountId { get; init; }
 
     /// <summary>
-    /// 访问令牌。
+    /// 访问令牌
     /// </summary>
     [JsonPropertyName("access_token")]
     public string? AccessToken { get; init; }
 
     /// <summary>
-    /// System机器人。
+    /// System机器人
     /// </summary>
     [JsonPropertyName("system_bot")]
     public bool? SystemBot { get; init; }
 
     /// <summary>
-    /// Swagger 未显式建模的附加 JSON 字段。
+    /// Swagger 未显式建模的附加 JSON 字段
     /// </summary>
     [JsonExtensionData]
     public IDictionary<string, JsonElement>? ExtensionData { get; init; }

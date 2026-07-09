@@ -1,21 +1,21 @@
 using System.Text.Json.Serialization;
 
-namespace ChatWootApi.Client;
+namespace ChatWootApi.Client.Models;
 
 /// <summary>
-/// Chatwoot 客户端模型：消息创建载荷。
+/// Chatwoot 客户端模型：消息创建载荷
 /// </summary>
 public sealed record MessageCreatePayload
 {
     /// <summary>
-    /// 内容。
+    /// 内容
     /// </summary>
     [JsonPropertyName("content")]
-    public string? Content { get; init; }
+    public string? Content { get; set; }
 
     /// <summary>
-    /// EchoID。
+    /// EchoID
     /// </summary>
     [JsonPropertyName("echo_id")]
-    public string? EchoId { get; init; }
+    public string? EchoId { get; set; }
 }

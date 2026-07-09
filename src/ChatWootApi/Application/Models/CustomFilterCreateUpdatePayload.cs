@@ -1,7 +1,7 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace ChatWootApi.Application;
+namespace ChatWootApi.Application.Models;
 
 /// <summary>
 /// Chatwoot 应用模型：自定义筛选器创建更新载荷。
@@ -12,23 +12,23 @@ public sealed record CustomFilterCreateUpdatePayload
     /// 名称。
     /// </summary>
     [JsonPropertyName("name")]
-    public string? Name { get; init; }
+    public string? Name { get; set; }
 
     /// <summary>
     /// 类型。
     /// </summary>
     [JsonPropertyName("type")]
-    public string? Type { get; init; }
+    public string? Type { get; set; }
 
     /// <summary>
     /// Query。
     /// </summary>
     [JsonPropertyName("query")]
-    public IDictionary<string, JsonElement>? Query { get; init; }
+    public IDictionary<string, object>? Query { get; set; }
 
     /// <summary>
     /// Swagger 未显式建模的附加 JSON 字段。
     /// </summary>
     [JsonExtensionData]
-    public IDictionary<string, JsonElement>? ExtensionData { get; init; }
+    public IDictionary<string, object>? ExtensionData { get; set; }
 }

@@ -1,14 +1,14 @@
 using System.Text.Json.Serialization;
 
-namespace ChatWootApi.Platform;
+namespace ChatWootApi.Platform.Models;
 
 /// <summary>
-/// Chatwoot 平台模型：用户SSOURL。
+/// Chatwoot 平台模型：用户SSOURL
 /// </summary>
 public sealed record UserSsoUrl
 {
     /// <summary>
-    /// URL。
+    /// URL
     /// </summary>
     [JsonPropertyName("url")]
     public string? Url { get; init; }

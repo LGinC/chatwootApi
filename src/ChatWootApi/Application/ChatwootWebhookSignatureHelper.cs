@@ -5,7 +5,7 @@ using System.Text;
 namespace ChatWootApi.Application;
 
 /// <summary>
-/// Chatwoot webhook 签名校验辅助方法。
+/// Chatwoot webhook 签名校验辅助方法
 /// </summary>
 public static class ChatwootWebhookSignatureHelper
 {
@@ -13,15 +13,15 @@ public static class ChatwootWebhookSignatureHelper
     private static readonly TimeSpan DefaultTimestampTolerance = TimeSpan.FromMinutes(5);
 
     /// <summary>
-    /// 校验 Chatwoot webhook 请求签名是否匹配原始请求体。
+    /// 校验 Chatwoot webhook 请求签名是否匹配原始请求体
     /// </summary>
-    /// <param name="receivedSignature">来自 <c>X-Chatwoot-Signature</c> 请求头的签名。</param>
-    /// <param name="timestamp">来自 <c>X-Chatwoot-Timestamp</c> 请求头的 Unix 秒级时间戳。</param>
-    /// <param name="rawBody">原始 JSON 请求体字节。</param>
-    /// <param name="secret">Chatwoot webhook secret。</param>
-    /// <param name="now">用于校验重放窗口的当前时间。</param>
-    /// <param name="timestampTolerance">允许的时间戳偏差；未指定时为 5 分钟。</param>
-    /// <returns>签名、时间戳和原始请求体均有效时返回 <see langword="true"/>。</returns>
+    /// <param name="receivedSignature">来自 <c>X-Chatwoot-Signature</c> 请求头的签名</param>
+    /// <param name="timestamp">来自 <c>X-Chatwoot-Timestamp</c> 请求头的 Unix 秒级时间戳</param>
+    /// <param name="rawBody">原始 JSON 请求体字节</param>
+    /// <param name="secret">Chatwoot webhook secret</param>
+    /// <param name="now">用于校验重放窗口的当前时间</param>
+    /// <param name="timestampTolerance">允许的时间戳偏差；未指定时为 5 分钟</param>
+    /// <returns>签名、时间戳和原始请求体均有效时返回 <see langword="true"/></returns>
     public static bool VerifySignature(
         string? receivedSignature,
         string? timestamp,

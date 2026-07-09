@@ -1,7 +1,7 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace ChatWootApi.Application;
+namespace ChatWootApi.Application.Models;
 
 /// <summary>
 /// Chatwoot 应用模型：预置响应创建更新载荷。
@@ -12,17 +12,17 @@ public sealed record CannedResponseCreateUpdatePayload
     /// 内容。
     /// </summary>
     [JsonPropertyName("content")]
-    public string? Content { get; init; }
+    public string? Content { get; set; }
 
     /// <summary>
     /// 短代码。
     /// </summary>
     [JsonPropertyName("short_code")]
-    public string? ShortCode { get; init; }
+    public string? ShortCode { get; set; }
 
     /// <summary>
     /// Swagger 未显式建模的附加 JSON 字段。
     /// </summary>
     [JsonExtensionData]
-    public IDictionary<string, JsonElement>? ExtensionData { get; init; }
+    public IDictionary<string, object>? ExtensionData { get; set; }
 }
