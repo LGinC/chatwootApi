@@ -9,34 +9,34 @@ namespace ChatWootApi.Application.Models;
 public sealed record Message
 {
     /// <summary>
-    /// ID
+    /// 消息ID
     /// </summary>
     [JsonPropertyName("id")]
-    public decimal? Id { get; init; }
+    public long? Id { get; init; }
 
     /// <summary>
-    /// 内容
+    /// 消息的文本内容
     /// </summary>
     [JsonPropertyName("content")]
     public string? Content { get; init; }
 
     /// <summary>
-    /// 账号ID
+    /// 账户ID
     /// </summary>
     [JsonPropertyName("account_id")]
-    public decimal? AccountId { get; init; }
+    public long? AccountId { get; init; }
 
     /// <summary>
-    /// 收件箱ID
+    /// 收件箱 ID
     /// </summary>
     [JsonPropertyName("inbox_id")]
-    public decimal? InboxId { get; init; }
+    public long? InboxId { get; init; }
 
     /// <summary>
-    /// 会话ID
+    /// 对话的ID
     /// </summary>
     [JsonPropertyName("conversation_id")]
-    public decimal? ConversationId { get; init; }
+    public long? ConversationId { get; init; }
 
     /// <summary>
     /// 消息类型
@@ -45,97 +45,97 @@ public sealed record Message
     public long? MessageType { get; init; }
 
     /// <summary>
-    /// 创建时间
+    /// 消息创建时间
     /// </summary>
     [JsonPropertyName("created_at")]
     public long? CreatedAt { get; init; }
 
     /// <summary>
-    /// 更新时间
+    /// 消息更新时间
     /// </summary>
     [JsonPropertyName("updated_at")]
     public long? UpdatedAt { get; init; }
 
     /// <summary>
-    /// 私有
+    /// 显示消息是否私有的标志
     /// </summary>
     [JsonPropertyName("private")]
     public bool? Private { get; init; }
 
     /// <summary>
-    /// 状态
+    /// 消息的状态
     /// </summary>
     [JsonPropertyName("status")]
     public string? Status { get; init; }
 
     /// <summary>
-    /// 来源ID
+    /// 消息的源ID
     /// </summary>
     [JsonPropertyName("source_id")]
     public string? SourceId { get; init; }
 
     /// <summary>
-    /// 内容类型
+    /// 模板消息类型
     /// </summary>
     [JsonPropertyName("content_type")]
     public string? ContentType { get; init; }
 
     /// <summary>
-    /// 内容属性
+    /// 每个 content_type 的内容属性
     /// </summary>
     [JsonPropertyName("content_attributes")]
     public IDictionary<string, JsonElement>? ContentAttributes { get; init; }
 
     /// <summary>
-    /// 发送者类型
+    /// 发件人类型
     /// </summary>
     [JsonPropertyName("sender_type")]
     public string? SenderType { get; init; }
 
     /// <summary>
-    /// 发送者ID
+    /// 发件人 ID
     /// </summary>
     [JsonPropertyName("sender_id")]
-    public decimal? SenderId { get; init; }
+    public long? SenderId { get; init; }
 
     /// <summary>
-    /// External来源Ids
+    /// 消息的外部源 ID
     /// </summary>
     [JsonPropertyName("external_source_ids")]
     public IDictionary<string, JsonElement>? ExternalSourceIds { get; init; }
 
     /// <summary>
-    /// 附加属性
+    /// 消息的附加属性
     /// </summary>
     [JsonPropertyName("additional_attributes")]
     public IDictionary<string, JsonElement>? AdditionalAttributes { get; init; }
 
     /// <summary>
-    /// Processed消息内容
+    /// 处理后的消息内容
     /// </summary>
     [JsonPropertyName("processed_message_content")]
     public string? ProcessedMessageContent { get; init; }
 
     /// <summary>
-    /// Sentiment
+    /// 消息中的情绪
     /// </summary>
     [JsonPropertyName("sentiment")]
     public IDictionary<string, JsonElement>? Sentiment { get; init; }
 
     /// <summary>
-    /// 会话
+    /// 对话对象
     /// </summary>
     [JsonPropertyName("conversation")]
     public IDictionary<string, JsonElement>? Conversation { get; init; }
 
     /// <summary>
-    /// 附件
+    /// 附加到图像的文件对象
     /// </summary>
     [JsonPropertyName("attachment")]
     public IDictionary<string, JsonElement>? Attachment { get; init; }
 
     /// <summary>
-    /// 发送者
+    /// 用户/代理/AgentBot 对象
     /// </summary>
     [JsonPropertyName("sender")]
     public IDictionary<string, JsonElement>? Sender { get; init; }
@@ -144,5 +144,5 @@ public sealed record Message
     /// Swagger 未显式建模的附加 JSON 字段
     /// </summary>
     [JsonExtensionData]
-    public IDictionary<string, JsonElement>? ExtensionData { get; init; }
+    public IDictionary<string, JsonElement>? ExtensionData { get; set; }
 }

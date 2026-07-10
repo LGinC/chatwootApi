@@ -9,49 +9,49 @@ namespace ChatWootApi.Application.Models;
 public sealed record CategoryCreateUpdatePayload
 {
     /// <summary>
-    /// 名称。
+    /// 类别名称
     /// </summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
     /// <summary>
-    /// Description。
+    /// 类别的描述
     /// </summary>
     [JsonPropertyName("description")]
     public string? Description { get; set; }
 
     /// <summary>
-    /// 位置。
+    /// 要排序的门户列表中的类别位置
     /// </summary>
     [JsonPropertyName("position")]
     public long? Position { get; set; }
 
     /// <summary>
-    /// Slug。
+    /// URL 中使用的类别 slug
     /// </summary>
     [JsonPropertyName("slug")]
     public string? Slug { get; set; }
 
     /// <summary>
-    /// 区域设置。
+    /// 类别的区域设置
     /// </summary>
     [JsonPropertyName("locale")]
     public string? Locale { get; set; }
 
     /// <summary>
-    /// Icon。
+    /// 字符串形式的类别图标（表情符号）
     /// </summary>
     [JsonPropertyName("icon")]
     public string? Icon { get; set; }
 
     /// <summary>
-    /// Parent分类ID。
+    /// 定义父类别，例如产品文档在销售类别或工程类别中具有多个级别的功能。
     /// </summary>
     [JsonPropertyName("parent_category_id")]
     public long? ParentCategoryId { get; set; }
 
     /// <summary>
-    /// Associated分类ID。
+    /// 将相似的类别相互关联，例如不同语言的相同类别的产品文档
     /// </summary>
     [JsonPropertyName("associated_category_id")]
     public long? AssociatedCategoryId { get; set; }

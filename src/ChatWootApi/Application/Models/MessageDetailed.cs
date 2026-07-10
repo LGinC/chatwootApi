@@ -9,85 +9,85 @@ namespace ChatWootApi.Application.Models;
 public sealed record MessageDetailed
 {
     /// <summary>
-    /// ID
+    /// 消息ID
     /// </summary>
     [JsonPropertyName("id")]
-    public decimal? Id { get; init; }
+    public long? Id { get; init; }
 
     /// <summary>
-    /// 内容
+    /// 消息的文本内容
     /// </summary>
     [JsonPropertyName("content")]
     public string? Content { get; init; }
 
     /// <summary>
-    /// 收件箱ID
+    /// 收件箱 ID
     /// </summary>
     [JsonPropertyName("inbox_id")]
-    public decimal? InboxId { get; init; }
+    public long? InboxId { get; init; }
 
     /// <summary>
-    /// 会话ID
+    /// 对话的ID
     /// </summary>
     [JsonPropertyName("conversation_id")]
-    public decimal? ConversationId { get; init; }
+    public long? ConversationId { get; init; }
 
     /// <summary>
-    /// 消息类型
+    /// 消息类型（0：传入、1：传出、2：活动、3：模板）
     /// </summary>
     [JsonPropertyName("message_type")]
     public long? MessageType { get; init; }
 
     /// <summary>
-    /// 内容类型
+    /// 消息内容的类型
     /// </summary>
     [JsonPropertyName("content_type")]
     public string? ContentType { get; init; }
 
     /// <summary>
-    /// 状态
+    /// 消息的状态
     /// </summary>
     [JsonPropertyName("status")]
     public string? Status { get; init; }
 
     /// <summary>
-    /// 内容属性
+    /// 每个 content_type 的内容属性
     /// </summary>
     [JsonPropertyName("content_attributes")]
     public IDictionary<string, JsonElement>? ContentAttributes { get; init; }
 
     /// <summary>
-    /// EchoID
+    /// 消息的echo ID，用于重复数据删除
     /// </summary>
     [JsonPropertyName("echo_id")]
     public string? EchoId { get; init; }
 
     /// <summary>
-    /// 创建时间
+    /// 消息创建时的时间戳
     /// </summary>
     [JsonPropertyName("created_at")]
     public long? CreatedAt { get; init; }
 
     /// <summary>
-    /// 私有
+    /// 显示消息是否私密的标志
     /// </summary>
     [JsonPropertyName("private")]
     public bool? Private { get; init; }
 
     /// <summary>
-    /// 来源ID
+    /// 消息的源ID
     /// </summary>
     [JsonPropertyName("source_id")]
     public string? SourceId { get; init; }
 
     /// <summary>
-    /// 发送者
+    /// 消息的发送者（仅适用于传入消息）
     /// </summary>
     [JsonPropertyName("sender")]
     public ContactDetail? Sender { get; init; }
 
     /// <summary>
-    /// 附件
+    /// 与邮件关联的附件列表
     /// </summary>
     [JsonPropertyName("attachments")]
     public IReadOnlyList<IDictionary<string, JsonElement>?>? Attachments { get; init; }
@@ -96,5 +96,5 @@ public sealed record MessageDetailed
     /// Swagger 未显式建模的附加 JSON 字段
     /// </summary>
     [JsonExtensionData]
-    public IDictionary<string, JsonElement>? ExtensionData { get; init; }
+    public IDictionary<string, JsonElement>? ExtensionData { get; set; }
 }

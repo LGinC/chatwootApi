@@ -9,25 +9,25 @@ namespace ChatWootApi.Application.Models;
 public sealed record IntegrationsHookCreatePayload
 {
     /// <summary>
-    /// AppID。
+    /// 正在为其创建集成挂钩的应用程序的 ID
     /// </summary>
     [JsonPropertyName("app_id")]
     public long? AppId { get; set; }
 
     /// <summary>
-    /// 收件箱ID。
+    /// 收件箱 ID（如果挂钩是收件箱挂钩）
     /// </summary>
     [JsonPropertyName("inbox_id")]
     public long? InboxId { get; set; }
 
     /// <summary>
-    /// 状态。
+    /// 集成的状态（0 表示不活动，1 表示活动）
     /// </summary>
     [JsonPropertyName("status")]
     public long? Status { get; set; }
 
     /// <summary>
-    /// 设置。
+    /// 集成所需的设置
     /// </summary>
     [JsonPropertyName("settings")]
     public IDictionary<string, object>? Settings { get; set; }

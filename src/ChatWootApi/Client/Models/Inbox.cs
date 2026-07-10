@@ -14,37 +14,37 @@ public sealed record Inbox
     public string? Identifier { get; init; }
 
     /// <summary>
-    /// 名称
+    /// 收件箱名称
     /// </summary>
     [JsonPropertyName("name")]
     public string? Name { get; init; }
 
     /// <summary>
-    /// Timezone
+    /// 收件箱的时区配置
     /// </summary>
     [JsonPropertyName("timezone")]
     public string? Timezone { get; init; }
 
     /// <summary>
-    /// 工作时间
+    /// 收件箱工作时间配置
     /// </summary>
     [JsonPropertyName("working_hours")]
     public IReadOnlyList<InboxWorkingHour>? WorkingHours { get; init; }
 
     /// <summary>
-    /// 工作时间Enabled
+    /// 显示工作时间功能是否启用的标志
     /// </summary>
     [JsonPropertyName("working_hours_enabled")]
     public bool? WorkingHoursEnabled { get; init; }
 
     /// <summary>
-    /// CSAT调查Enabled
+    /// 启用 CSAT 调查的标志
     /// </summary>
     [JsonPropertyName("csat_survey_enabled")]
     public bool? CsatSurveyEnabled { get; init; }
 
     /// <summary>
-    /// GreetingEnabled
+    /// 显示是否启用问候语的标志
     /// </summary>
     [JsonPropertyName("greeting_enabled")]
     public bool? GreetingEnabled { get; init; }

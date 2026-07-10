@@ -9,19 +9,19 @@ namespace ChatWootApi.Application.Models;
 public sealed record WebhookCreateUpdatePayload
 {
     /// <summary>
-    /// URL。
+    /// 应发送事件的 url
     /// </summary>
     [JsonPropertyName("url")]
     public string? Url { get; set; }
 
     /// <summary>
-    /// 名称。
+    /// Webhook 的名称
     /// </summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
     /// <summary>
-    /// Subscriptions。
+    /// 您想要订阅的事件。
     /// </summary>
     [JsonPropertyName("subscriptions")]
     public IReadOnlyList<string?>? Subscriptions { get; set; }

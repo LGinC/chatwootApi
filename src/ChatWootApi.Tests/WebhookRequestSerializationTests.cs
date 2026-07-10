@@ -183,6 +183,45 @@ namespace ChatWootApi.Tests
             Assert.Same(typeof(WebhookRequest), ChatWootJsonSerializerContext.Default.ChatWootApiApplicationWebhookRequest.Type);
         }
 
+        [Fact]
+        public void PlatformUserDeserializesExtensionDataWithSourceGeneratedContext()
+        {
+            const string json = """
+                {
+                  "id": 7,
+                  "name": "Agent Smith",
+                  "undocumented_flag": true
+                }
+                """;
+
+            var user = JsonSerializer.Deserialize(
+                json,
+                ChatWootJsonSerializerContext.Default.ChatWootApiPlatformUser)
+                ?? throw new JsonException("Platform user deserialized to null.");
+
+            Assert.Equal(7, user.Id);
+            Assert.True(user.ExtensionData!["undocumented_flag"].GetBoolean());
+        }
+
+        [Fact]
+        public void AccountShowResponseDeserializesAdditionalYamlProperties()
+        {
+            const string json = """
+                {
+                  "latest_chatwoot_version": "3.0.0",
+                  "subscribed_features": ["audit_logs", "custom_roles"]
+                }
+                """;
+
+            var response = JsonSerializer.Deserialize(
+                json,
+                ChatWootJsonSerializerContext.Default.ChatWootApiApplicationAccountShowResponse)
+                ?? throw new JsonException("Account show response deserialized to null.");
+
+            Assert.Equal("3.0.0", response.LatestChatwootVersion);
+            Assert.Equal(["audit_logs", "custom_roles"], response.SubscribedFeatures);
+        }
+
         private static WebhookRequest DeserializeWebhook(string json)
         {
             return JsonSerializer.Deserialize(json, ChatWootJsonSerializerContext.Default.ChatWootApiApplicationWebhookRequest)

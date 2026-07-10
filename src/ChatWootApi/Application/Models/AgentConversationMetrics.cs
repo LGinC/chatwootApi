@@ -12,7 +12,7 @@ public sealed record AgentConversationMetrics
     /// ID
     /// </summary>
     [JsonPropertyName("id")]
-    public decimal? Id { get; init; }
+    public long? Id { get; init; }
 
     /// <summary>
     /// 名称
@@ -48,5 +48,5 @@ public sealed record AgentConversationMetrics
     /// Swagger 未显式建模的附加 JSON 字段
     /// </summary>
     [JsonExtensionData]
-    public IDictionary<string, JsonElement>? ExtensionData { get; init; }
+    public IDictionary<string, JsonElement>? ExtensionData { get; set; }
 }

@@ -9,13 +9,13 @@ namespace ChatWootApi.Application.Models;
 public sealed record IntegrationsHookUpdatePayload
 {
     /// <summary>
-    /// 状态。
+    /// 集成的状态（0 表示不活动，1 表示活动）
     /// </summary>
     [JsonPropertyName("status")]
     public long? Status { get; set; }
 
     /// <summary>
-    /// 设置。
+    /// 集成所需的设置
     /// </summary>
     [JsonPropertyName("settings")]
     public IDictionary<string, object>? Settings { get; set; }

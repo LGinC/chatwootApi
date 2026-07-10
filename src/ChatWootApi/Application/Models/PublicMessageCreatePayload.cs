@@ -9,13 +9,13 @@ namespace ChatWootApi.Application.Models;
 public sealed record PublicMessageCreatePayload
 {
     /// <summary>
-    /// 内容
+    /// 消息内容
     /// </summary>
     [JsonPropertyName("content")]
     public string? Content { get; init; }
 
     /// <summary>
-    /// EchoID
+    /// 临时标识符将通过 websockets 传回
     /// </summary>
     [JsonPropertyName("echo_id")]
     public string? EchoId { get; init; }
@@ -24,5 +24,5 @@ public sealed record PublicMessageCreatePayload
     /// Swagger 未显式建模的附加 JSON 字段
     /// </summary>
     [JsonExtensionData]
-    public IDictionary<string, JsonElement>? ExtensionData { get; init; }
+    public IDictionary<string, JsonElement>? ExtensionData { get; set; }
 }

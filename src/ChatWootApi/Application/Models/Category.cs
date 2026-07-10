@@ -15,7 +15,7 @@ public sealed record Category
     public long? Id { get; init; }
 
     /// <summary>
-    /// Description
+    /// 文字内容。
     /// </summary>
     [JsonPropertyName("description")]
     public string? Description { get; init; }
@@ -57,13 +57,13 @@ public sealed record Category
     public long? AccountId { get; init; }
 
     /// <summary>
-    /// Associated分类ID
+    /// 将相似的类别相互关联，例如不同语言的相同类别的产品文档
     /// </summary>
     [JsonPropertyName("associated_category_id")]
     public long? AssociatedCategoryId { get; init; }
 
     /// <summary>
-    /// Parent分类ID
+    /// 定义父类别，例如产品文档在销售类别或工程类别中具有多个级别的功能。
     /// </summary>
     [JsonPropertyName("parent_category_id")]
     public long? ParentCategoryId { get; init; }
@@ -72,5 +72,5 @@ public sealed record Category
     /// Swagger 未显式建模的附加 JSON 字段
     /// </summary>
     [JsonExtensionData]
-    public IDictionary<string, JsonElement>? ExtensionData { get; init; }
+    public IDictionary<string, JsonElement>? ExtensionData { get; set; }
 }

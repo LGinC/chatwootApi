@@ -15,13 +15,13 @@ public sealed record InboxCreateSmsChannelPayload
     public string? Type { get; init; }
 
     /// <summary>
-    /// 电话号码
+    /// 短信电话号码
     /// </summary>
     [JsonPropertyName("phone_number")]
     public string? PhoneNumber { get; init; }
 
     /// <summary>
-    /// 提供者配置
+    /// 提供商特定的 SMS 配置
     /// </summary>
     [JsonPropertyName("provider_config")]
     public IDictionary<string, JsonElement>? ProviderConfig { get; init; }
@@ -30,5 +30,5 @@ public sealed record InboxCreateSmsChannelPayload
     /// Swagger 未显式建模的附加 JSON 字段
     /// </summary>
     [JsonExtensionData]
-    public IDictionary<string, JsonElement>? ExtensionData { get; init; }
+    public IDictionary<string, JsonElement>? ExtensionData { get; set; }
 }

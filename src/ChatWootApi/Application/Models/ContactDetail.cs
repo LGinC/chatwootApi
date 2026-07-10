@@ -9,61 +9,61 @@ namespace ChatWootApi.Application.Models;
 public sealed record ContactDetail
 {
     /// <summary>
-    /// 附加属性
+    /// 包含与联系人相关的附加属性的对象
     /// </summary>
     [JsonPropertyName("additional_attributes")]
     public IDictionary<string, JsonElement>? AdditionalAttributes { get; init; }
 
     /// <summary>
-    /// 自定义属性
+    /// 联系人的自定义属性
     /// </summary>
     [JsonPropertyName("custom_attributes")]
     public IDictionary<string, JsonElement>? CustomAttributes { get; init; }
 
     /// <summary>
-    /// 邮箱
+    /// 联系人的电子邮件地址
     /// </summary>
     [JsonPropertyName("email")]
     public string? Email { get; init; }
 
     /// <summary>
-    /// ID
+    /// 联系人 ID
     /// </summary>
     [JsonPropertyName("id")]
     public long? Id { get; init; }
 
     /// <summary>
-    /// 标识符
+    /// 联系人的标识符
     /// </summary>
     [JsonPropertyName("identifier")]
     public string? Identifier { get; init; }
 
     /// <summary>
-    /// 名称
+    /// 联系人姓名
     /// </summary>
     [JsonPropertyName("name")]
     public string? Name { get; init; }
 
     /// <summary>
-    /// 电话号码
+    /// 联系人的电话号码
     /// </summary>
     [JsonPropertyName("phone_number")]
     public string? PhoneNumber { get; init; }
 
     /// <summary>
-    /// 缩略图
+    /// 联系人的缩略图
     /// </summary>
     [JsonPropertyName("thumbnail")]
     public string? Thumbnail { get; init; }
 
     /// <summary>
-    /// Blocked
+    /// 联系人是否被屏蔽
     /// </summary>
     [JsonPropertyName("blocked")]
     public bool? Blocked { get; init; }
 
     /// <summary>
-    /// 类型
+    /// 实体类型
     /// </summary>
     [JsonPropertyName("type")]
     public string? Type { get; init; }
@@ -72,5 +72,5 @@ public sealed record ContactDetail
     /// Swagger 未显式建模的附加 JSON 字段
     /// </summary>
     [JsonExtensionData]
-    public IDictionary<string, JsonElement>? ExtensionData { get; init; }
+    public IDictionary<string, JsonElement>? ExtensionData { get; set; }
 }

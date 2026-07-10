@@ -9,7 +9,7 @@ namespace ChatWootApi.Application.Models;
 public sealed record ContactInboxes
 {
     /// <summary>
-    /// 来源ID
+    /// 联系收件箱来源 ID
     /// </summary>
     [JsonPropertyName("source_id")]
     public string? SourceId { get; init; }
@@ -24,5 +24,5 @@ public sealed record ContactInboxes
     /// Swagger 未显式建模的附加 JSON 字段
     /// </summary>
     [JsonExtensionData]
-    public IDictionary<string, JsonElement>? ExtensionData { get; init; }
+    public IDictionary<string, JsonElement>? ExtensionData { get; set; }
 }

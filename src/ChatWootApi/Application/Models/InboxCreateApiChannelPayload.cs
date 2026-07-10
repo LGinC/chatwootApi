@@ -15,19 +15,19 @@ public sealed record InboxCreateApiChannelPayload
     public string? Type { get; init; }
 
     /// <summary>
-    /// WebhookURL
+    /// API 通道收件箱回调的 Webhook URL
     /// </summary>
     [JsonPropertyName("webhook_url")]
     public string? WebhookUrl { get; init; }
 
     /// <summary>
-    /// HMACMandatory
+    /// 需要对传入的 API 通道消息进行 HMAC 验证
     /// </summary>
     [JsonPropertyName("hmac_mandatory")]
     public bool? HmacMandatory { get; init; }
 
     /// <summary>
-    /// 附加属性
+    /// 存储在通过 API 通道创建的联系人上的其他属性
     /// </summary>
     [JsonPropertyName("additional_attributes")]
     public IDictionary<string, JsonElement>? AdditionalAttributes { get; init; }
@@ -36,5 +36,5 @@ public sealed record InboxCreateApiChannelPayload
     /// Swagger 未显式建模的附加 JSON 字段
     /// </summary>
     [JsonExtensionData]
-    public IDictionary<string, JsonElement>? ExtensionData { get; init; }
+    public IDictionary<string, JsonElement>? ExtensionData { get; set; }
 }

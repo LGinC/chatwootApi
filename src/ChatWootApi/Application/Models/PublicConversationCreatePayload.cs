@@ -9,7 +9,7 @@ namespace ChatWootApi.Application.Models;
 public sealed record PublicConversationCreatePayload
 {
     /// <summary>
-    /// 自定义属性
+    /// 对话的自定义属性
     /// </summary>
     [JsonPropertyName("custom_attributes")]
     public IDictionary<string, JsonElement>? CustomAttributes { get; init; }
@@ -18,5 +18,5 @@ public sealed record PublicConversationCreatePayload
     /// Swagger 未显式建模的附加 JSON 字段
     /// </summary>
     [JsonExtensionData]
-    public IDictionary<string, JsonElement>? ExtensionData { get; init; }
+    public IDictionary<string, JsonElement>? ExtensionData { get; set; }
 }

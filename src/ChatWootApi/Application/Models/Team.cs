@@ -9,37 +9,37 @@ namespace ChatWootApi.Application.Models;
 public sealed record Team
 {
     /// <summary>
-    /// ID
+    /// 团队ID
     /// </summary>
     [JsonPropertyName("id")]
-    public decimal? Id { get; init; }
+    public long? Id { get; init; }
 
     /// <summary>
-    /// 名称
+    /// 团队名称
     /// </summary>
     [JsonPropertyName("name")]
     public string? Name { get; init; }
 
     /// <summary>
-    /// Description
+    /// 关于团队的描述
     /// </summary>
     [JsonPropertyName("description")]
     public string? Description { get; init; }
 
     /// <summary>
-    /// AllowAutoAssign
+    /// 如果开启此设置，系统在将对话分配给团队的同时，会自动将对话分配给团队中的座席
     /// </summary>
     [JsonPropertyName("allow_auto_assign")]
     public bool? AllowAutoAssign { get; init; }
 
     /// <summary>
-    /// 账号ID
+    /// 团队帐户的 ID 是以下内容的一部分
     /// </summary>
     [JsonPropertyName("account_id")]
-    public decimal? AccountId { get; init; }
+    public long? AccountId { get; init; }
 
     /// <summary>
-    /// Is成员
+    /// 该字段显示当前用户是否是团队的一部分
     /// </summary>
     [JsonPropertyName("is_member")]
     public bool? IsMember { get; init; }
@@ -48,5 +48,5 @@ public sealed record Team
     /// Swagger 未显式建模的附加 JSON 字段
     /// </summary>
     [JsonExtensionData]
-    public IDictionary<string, JsonElement>? ExtensionData { get; init; }
+    public IDictionary<string, JsonElement>? ExtensionData { get; set; }
 }

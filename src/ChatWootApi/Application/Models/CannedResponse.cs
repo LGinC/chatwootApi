@@ -9,37 +9,37 @@ namespace ChatWootApi.Application.Models;
 public sealed record CannedResponse
 {
     /// <summary>
-    /// ID
+    /// 预设回复的 ID
     /// </summary>
     [JsonPropertyName("id")]
     public long? Id { get; init; }
 
     /// <summary>
-    /// 账号ID
+    /// 账户编号
     /// </summary>
     [JsonPropertyName("account_id")]
     public long? AccountId { get; init; }
 
     /// <summary>
-    /// 短代码
+    /// 用于快速访问预设回复的短代码
     /// </summary>
     [JsonPropertyName("short_code")]
     public string? ShortCode { get; init; }
 
     /// <summary>
-    /// 内容
+    /// 预设回复的消息内容
     /// </summary>
     [JsonPropertyName("content")]
     public string? Content { get; init; }
 
     /// <summary>
-    /// 创建时间
+    /// 创建预设回复的日期和时间
     /// </summary>
     [JsonPropertyName("created_at")]
     public string? CreatedAt { get; init; }
 
     /// <summary>
-    /// 更新时间
+    /// 更新预设回复的日期和时间
     /// </summary>
     [JsonPropertyName("updated_at")]
     public string? UpdatedAt { get; init; }
@@ -48,5 +48,5 @@ public sealed record CannedResponse
     /// Swagger 未显式建模的附加 JSON 字段
     /// </summary>
     [JsonExtensionData]
-    public IDictionary<string, JsonElement>? ExtensionData { get; init; }
+    public IDictionary<string, JsonElement>? ExtensionData { get; set; }
 }

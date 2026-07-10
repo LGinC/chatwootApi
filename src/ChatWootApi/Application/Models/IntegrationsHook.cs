@@ -9,43 +9,43 @@ namespace ChatWootApi.Application.Models;
 public sealed record IntegrationsHook
 {
     /// <summary>
-    /// ID
+    /// 集成钩子的ID
     /// </summary>
     [JsonPropertyName("id")]
     public string? Id { get; init; }
 
     /// <summary>
-    /// AppID
+    /// 集成应用程序的ID
     /// </summary>
     [JsonPropertyName("app_id")]
     public string? AppId { get; init; }
 
     /// <summary>
-    /// 收件箱ID
+    /// 收件箱 ID（如果是收件箱集成）
     /// </summary>
     [JsonPropertyName("inbox_id")]
     public string? InboxId { get; init; }
 
     /// <summary>
-    /// 账号ID
+    /// 集成的帐户 ID
     /// </summary>
     [JsonPropertyName("account_id")]
     public string? AccountId { get; init; }
 
     /// <summary>
-    /// 状态
+    /// 账户是否启用集成钩子
     /// </summary>
     [JsonPropertyName("status")]
     public bool? Status { get; init; }
 
     /// <summary>
-    /// 钩子类型
+    /// 无论是帐户还是收件箱集成挂钩
     /// </summary>
     [JsonPropertyName("hook_type")]
     public bool? HookType { get; init; }
 
     /// <summary>
-    /// 设置
+    /// 集成的相关设置
     /// </summary>
     [JsonPropertyName("settings")]
     public IDictionary<string, JsonElement>? Settings { get; init; }
@@ -54,5 +54,5 @@ public sealed record IntegrationsHook
     /// Swagger 未显式建模的附加 JSON 字段
     /// </summary>
     [JsonExtensionData]
-    public IDictionary<string, JsonElement>? ExtensionData { get; init; }
+    public IDictionary<string, JsonElement>? ExtensionData { get; set; }
 }

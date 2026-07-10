@@ -9,61 +9,61 @@ namespace ChatWootApi.Application.Models;
 public sealed record AgentBot
 {
     /// <summary>
-    /// ID
+    /// 代理机器人的 ID
     /// </summary>
     [JsonPropertyName("id")]
-    public decimal? Id { get; init; }
+    public long? Id { get; init; }
 
     /// <summary>
-    /// 名称
+    /// 代理机器人的名称
     /// </summary>
     [JsonPropertyName("name")]
     public string? Name { get; init; }
 
     /// <summary>
-    /// Description
+    /// 关于代理机器人的描述
     /// </summary>
     [JsonPropertyName("description")]
     public string? Description { get; init; }
 
     /// <summary>
-    /// 缩略图
+    /// 代理机器人的缩略图
     /// </summary>
     [JsonPropertyName("thumbnail")]
     public string? Thumbnail { get; init; }
 
     /// <summary>
-    /// 外发URL
+    /// 机器人的 Webhook URL
     /// </summary>
     [JsonPropertyName("outgoing_url")]
     public string? OutgoingUrl { get; init; }
 
     /// <summary>
-    /// 机器人类型
+    /// 机器人的类型
     /// </summary>
     [JsonPropertyName("bot_type")]
     public string? BotType { get; init; }
 
     /// <summary>
-    /// 机器人配置
+    /// 机器人的配置
     /// </summary>
     [JsonPropertyName("bot_config")]
     public IDictionary<string, JsonElement>? BotConfig { get; init; }
 
     /// <summary>
-    /// 账号ID
+    /// 帐户 ID（如果是帐户特定机器人）
     /// </summary>
     [JsonPropertyName("account_id")]
-    public decimal? AccountId { get; init; }
+    public long? AccountId { get; init; }
 
     /// <summary>
-    /// 访问令牌
+    /// 机器人的访问令牌
     /// </summary>
     [JsonPropertyName("access_token")]
     public string? AccessToken { get; init; }
 
     /// <summary>
-    /// System机器人
+    /// 机器人是否为系统机器人
     /// </summary>
     [JsonPropertyName("system_bot")]
     public bool? SystemBot { get; init; }
@@ -72,5 +72,5 @@ public sealed record AgentBot
     /// Swagger 未显式建模的附加 JSON 字段
     /// </summary>
     [JsonExtensionData]
-    public IDictionary<string, JsonElement>? ExtensionData { get; init; }
+    public IDictionary<string, JsonElement>? ExtensionData { get; set; }
 }

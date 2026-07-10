@@ -9,19 +9,19 @@ namespace ChatWootApi.Application.Models;
 public sealed record InboxUpdateLineChannelPayload
 {
     /// <summary>
-    /// Line渠道ID
+    /// LINE 频道 ID
     /// </summary>
     [JsonPropertyName("line_channel_id")]
     public string? LineChannelId { get; init; }
 
     /// <summary>
-    /// Line渠道密钥
+    /// LINE频道秘密
     /// </summary>
     [JsonPropertyName("line_channel_secret")]
     public string? LineChannelSecret { get; init; }
 
     /// <summary>
-    /// Line渠道令牌
+    /// LINE 通道访问令牌
     /// </summary>
     [JsonPropertyName("line_channel_token")]
     public string? LineChannelToken { get; init; }
@@ -30,5 +30,5 @@ public sealed record InboxUpdateLineChannelPayload
     /// Swagger 未显式建模的附加 JSON 字段
     /// </summary>
     [JsonExtensionData]
-    public IDictionary<string, JsonElement>? ExtensionData { get; init; }
+    public IDictionary<string, JsonElement>? ExtensionData { get; set; }
 }

@@ -9,43 +9,43 @@ namespace ChatWootApi.Application.Models;
 public sealed record AccountCreateUpdatePayload
 {
     /// <summary>
-    /// 名称。
+    /// 账户名称
     /// </summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
     /// <summary>
-    /// 区域设置。
+    /// 帐户的区域设置
     /// </summary>
     [JsonPropertyName("locale")]
     public string? Locale { get; set; }
 
     /// <summary>
-    /// 域名。
+    /// 账户的域名
     /// </summary>
     [JsonPropertyName("domain")]
     public string? Domain { get; set; }
 
     /// <summary>
-    /// 支持邮箱。
+    /// 帐户的支持电子邮件
     /// </summary>
     [JsonPropertyName("support_email")]
     public string? SupportEmail { get; set; }
 
     /// <summary>
-    /// 状态。
+    /// 账户状态
     /// </summary>
     [JsonPropertyName("status")]
     public string? Status { get; set; }
 
     /// <summary>
-    /// Limits。
+    /// 账户的限制
     /// </summary>
     [JsonPropertyName("limits")]
     public IDictionary<string, object>? Limits { get; set; }
 
     /// <summary>
-    /// 自定义属性。
+    /// 账户的自定义属性
     /// </summary>
     [JsonPropertyName("custom_attributes")]
     public IDictionary<string, object>? CustomAttributes { get; set; }

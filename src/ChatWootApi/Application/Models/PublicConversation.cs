@@ -9,43 +9,43 @@ namespace ChatWootApi.Application.Models;
 public sealed record PublicConversation
 {
     /// <summary>
-    /// ID
+    /// 对话 ID
     /// </summary>
     [JsonPropertyName("id")]
     public long? Id { get; init; }
 
     /// <summary>
-    /// UUID
+    /// 对话的 UUID
     /// </summary>
     [JsonPropertyName("uuid")]
     public string? Uuid { get; init; }
 
     /// <summary>
-    /// 收件箱ID
+    /// 对话的收件箱 ID
     /// </summary>
     [JsonPropertyName("inbox_id")]
     public long? InboxId { get; init; }
 
     /// <summary>
-    /// 联系人最后查看时间
+    /// 联系人最后一次看到对话的时间戳（Unix 时间戳）
     /// </summary>
     [JsonPropertyName("contact_last_seen_at")]
     public long? ContactLastSeenAt { get; init; }
 
     /// <summary>
-    /// 状态
+    /// 对话状态
     /// </summary>
     [JsonPropertyName("status")]
     public string? Status { get; init; }
 
     /// <summary>
-    /// 坐席最后查看时间
+    /// 代理上次看到对话的时间戳（Unix 时间戳）
     /// </summary>
     [JsonPropertyName("agent_last_seen_at")]
     public long? AgentLastSeenAt { get; init; }
 
     /// <summary>
-    /// 消息
+    /// 对话中的消息
     /// </summary>
     [JsonPropertyName("messages")]
     public IReadOnlyList<PublicMessage>? Messages { get; init; }
@@ -60,5 +60,5 @@ public sealed record PublicConversation
     /// Swagger 未显式建模的附加 JSON 字段
     /// </summary>
     [JsonExtensionData]
-    public IDictionary<string, JsonElement>? ExtensionData { get; init; }
+    public IDictionary<string, JsonElement>? ExtensionData { get; set; }
 }

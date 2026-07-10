@@ -9,37 +9,37 @@ namespace ChatWootApi.Application.Models;
 public sealed record InboxContact
 {
     /// <summary>
-    /// ID
+    /// 收件箱 ID
     /// </summary>
     [JsonPropertyName("id")]
-    public decimal? Id { get; init; }
+    public long? Id { get; init; }
 
     /// <summary>
-    /// 头像URL
+    /// 收件箱的头像图片
     /// </summary>
     [JsonPropertyName("avatar_url")]
     public string? AvatarUrl { get; init; }
 
     /// <summary>
-    /// 渠道ID
+    /// 频道ID
     /// </summary>
     [JsonPropertyName("channel_id")]
-    public decimal? ChannelId { get; init; }
+    public long? ChannelId { get; init; }
 
     /// <summary>
-    /// 名称
+    /// 收件箱名称
     /// </summary>
     [JsonPropertyName("name")]
     public string? Name { get; init; }
 
     /// <summary>
-    /// 渠道类型
+    /// 收件箱类型
     /// </summary>
     [JsonPropertyName("channel_type")]
     public string? ChannelType { get; init; }
 
     /// <summary>
-    /// 提供者
+    /// 收件箱的提供者
     /// </summary>
     [JsonPropertyName("provider")]
     public string? Provider { get; init; }
@@ -48,5 +48,5 @@ public sealed record InboxContact
     /// Swagger 未显式建模的附加 JSON 字段
     /// </summary>
     [JsonExtensionData]
-    public IDictionary<string, JsonElement>? ExtensionData { get; init; }
+    public IDictionary<string, JsonElement>? ExtensionData { get; set; }
 }

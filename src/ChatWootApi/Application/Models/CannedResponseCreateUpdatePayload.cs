@@ -9,13 +9,13 @@ namespace ChatWootApi.Application.Models;
 public sealed record CannedResponseCreateUpdatePayload
 {
     /// <summary>
-    /// 内容。
+    /// 预设回复的消息内容
     /// </summary>
     [JsonPropertyName("content")]
     public string? Content { get; set; }
 
     /// <summary>
-    /// 短代码。
+    /// 用于快速访问预设回复的短代码
     /// </summary>
     [JsonPropertyName("short_code")]
     public string? ShortCode { get; set; }

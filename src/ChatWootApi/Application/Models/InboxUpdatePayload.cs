@@ -9,97 +9,97 @@ namespace ChatWootApi.Application.Models;
 public sealed record InboxUpdatePayload
 {
     /// <summary>
-    /// 名称。
+    /// 收件箱的名称。
     /// </summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
     /// <summary>
-    /// 头像。
+    /// 头像的图像文件。
     /// </summary>
     [JsonPropertyName("avatar")]
     public string? Avatar { get; set; }
 
     /// <summary>
-    /// GreetingEnabled。
+    /// 启用问候消息。
     /// </summary>
     [JsonPropertyName("greeting_enabled")]
     public bool? GreetingEnabled { get; set; }
 
     /// <summary>
-    /// Greeting消息。
+    /// 启用问候消息时发送的问候消息。
     /// </summary>
     [JsonPropertyName("greeting_message")]
     public string? GreetingMessage { get; set; }
 
     /// <summary>
-    /// Enable邮箱Collect。
+    /// 启用电子邮件收集。 可用于：“网站”
     /// </summary>
     [JsonPropertyName("enable_email_collect")]
     public bool? EnableEmailCollect { get; set; }
 
     /// <summary>
-    /// CSAT调查Enabled。
+    /// 启用 CSAT 调查。
     /// </summary>
     [JsonPropertyName("csat_survey_enabled")]
     public bool? CsatSurveyEnabled { get; set; }
 
     /// <summary>
-    /// CSAT配置。
+    /// CSAT 调查配置。
     /// </summary>
     [JsonPropertyName("csat_config")]
     public IDictionary<string, object>? CsatConfig { get; set; }
 
     /// <summary>
-    /// EnableAuto分配。
+    /// 启用自动分配。
     /// </summary>
     [JsonPropertyName("enable_auto_assignment")]
     public bool? EnableAutoAssignment { get; set; }
 
     /// <summary>
-    /// 工作时间Enabled。
+    /// 启用工作时间。
     /// </summary>
     [JsonPropertyName("working_hours_enabled")]
     public bool? WorkingHoursEnabled { get; set; }
 
     /// <summary>
-    /// OutOffice消息。
+    /// 在工作时间之外发送外出消息。
     /// </summary>
     [JsonPropertyName("out_of_office_message")]
     public string? OutOfOfficeMessage { get; set; }
 
     /// <summary>
-    /// Timezone。
+    /// 收件箱的时区。
     /// </summary>
     [JsonPropertyName("timezone")]
     public string? Timezone { get; set; }
 
     /// <summary>
-    /// Allow消息After已解析。
+    /// 对话解决后允许消息。 可用于：“网站”
     /// </summary>
     [JsonPropertyName("allow_messages_after_resolved")]
     public bool? AllowMessagesAfterResolved { get; set; }
 
     /// <summary>
-    /// Lock单个会话。
+    /// 将联系人消息锁定到单个活动对话。 适用于： `API` `LINE` `Telegram` `WhatsApp` `SMS`
     /// </summary>
     [JsonPropertyName("lock_to_single_conversation")]
     public bool? LockToSingleConversation { get; set; }
 
     /// <summary>
-    /// 门户ID。
+    /// 要附加到收件箱的帮助中心门户的 ID。
     /// </summary>
     [JsonPropertyName("portal_id")]
     public long? PortalId { get; set; }
 
     /// <summary>
-    /// 发送者名称类型。
+    /// 出站电子邮件回复的发件人姓名类型。 适用于：`网站``电子邮件`
     /// </summary>
     [JsonPropertyName("sender_name_type")]
     public string? SenderNameType { get; set; }
 
     /// <summary>
-    /// Business名称。
+    /// 出站电子邮件回复的公司名称。 适用于：`网站``电子邮件`
     /// </summary>
     [JsonPropertyName("business_name")]
     public string? BusinessName { get; set; }

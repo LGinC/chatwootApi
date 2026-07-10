@@ -12,7 +12,7 @@ public sealed record User
     /// ID
     /// </summary>
     [JsonPropertyName("id")]
-    public decimal? Id { get; init; }
+    public long? Id { get; init; }
 
     /// <summary>
     /// 访问令牌
@@ -24,7 +24,7 @@ public sealed record User
     /// 账号ID
     /// </summary>
     [JsonPropertyName("account_id")]
-    public decimal? AccountId { get; init; }
+    public long? AccountId { get; init; }
 
     /// <summary>
     /// 可用名称
@@ -72,7 +72,7 @@ public sealed record User
     /// 邀请人ID
     /// </summary>
     [JsonPropertyName("inviter_id")]
-    public decimal? InviterId { get; init; }
+    public long? InviterId { get; init; }
 
     /// <summary>
     /// 名称
@@ -117,7 +117,7 @@ public sealed record User
     public string? Type { get; init; }
 
     /// <summary>
-    /// 自定义属性
+    /// 适用于通过平台 API 创建并具有关联的自定义属性的用户。
     /// </summary>
     [JsonPropertyName("custom_attributes")]
     public IDictionary<string, JsonElement>? CustomAttributes { get; init; }
@@ -132,5 +132,5 @@ public sealed record User
     /// Swagger 未显式建模的附加 JSON 字段
     /// </summary>
     [JsonExtensionData]
-    public IDictionary<string, JsonElement>? ExtensionData { get; init; }
+    public IDictionary<string, JsonElement>? ExtensionData { get; set; }
 }

@@ -9,19 +9,19 @@ namespace ChatWootApi.Application.Models;
 public sealed record PortalItem
 {
     /// <summary>
-    /// ID
+    /// 门户 ID
     /// </summary>
     [JsonPropertyName("id")]
     public long? Id { get; init; }
 
     /// <summary>
-    /// 归档
+    /// 门户是否存档
     /// </summary>
     [JsonPropertyName("archived")]
     public bool? Archived { get; init; }
 
     /// <summary>
-    /// 颜色
+    /// 门户的颜色代码
     /// </summary>
     [JsonPropertyName("color")]
     public string? Color { get; init; }
@@ -33,43 +33,43 @@ public sealed record PortalItem
     public PortalConfig? Config { get; init; }
 
     /// <summary>
-    /// 自定义域名
+    /// 门户的自定义域
     /// </summary>
     [JsonPropertyName("custom_domain")]
     public string? CustomDomain { get; init; }
 
     /// <summary>
-    /// HeaderText
+    /// 门户的标题文本
     /// </summary>
     [JsonPropertyName("header_text")]
     public string? HeaderText { get; init; }
 
     /// <summary>
-    /// HomepageLink
+    /// 门户网站的主页链接
     /// </summary>
     [JsonPropertyName("homepage_link")]
     public string? HomepageLink { get; init; }
 
     /// <summary>
-    /// 名称
+    /// 门户名称
     /// </summary>
     [JsonPropertyName("name")]
     public string? Name { get; init; }
 
     /// <summary>
-    /// Slug
+    /// 门户的 URL slug
     /// </summary>
     [JsonPropertyName("slug")]
     public string? Slug { get; init; }
 
     /// <summary>
-    /// Page标题
+    /// 门户的页面标题
     /// </summary>
     [JsonPropertyName("page_title")]
     public string? PageTitle { get; init; }
 
     /// <summary>
-    /// 账号ID
+    /// 门户所属账户ID
     /// </summary>
     [JsonPropertyName("account_id")]
     public long? AccountId { get; init; }
@@ -96,5 +96,5 @@ public sealed record PortalItem
     /// Swagger 未显式建模的附加 JSON 字段
     /// </summary>
     [JsonExtensionData]
-    public IDictionary<string, JsonElement>? ExtensionData { get; init; }
+    public IDictionary<string, JsonElement>? ExtensionData { get; set; }
 }

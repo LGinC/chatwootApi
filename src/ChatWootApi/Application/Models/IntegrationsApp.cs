@@ -9,43 +9,43 @@ namespace ChatWootApi.Application.Models;
 public sealed record IntegrationsApp
 {
     /// <summary>
-    /// ID
+    /// 集成的 ID
     /// </summary>
     [JsonPropertyName("id")]
     public string? Id { get; init; }
 
     /// <summary>
-    /// 名称
+    /// 集成的名称
     /// </summary>
     [JsonPropertyName("name")]
     public string? Name { get; init; }
 
     /// <summary>
-    /// Description
+    /// 关于团队的描述
     /// </summary>
     [JsonPropertyName("description")]
     public string? Description { get; init; }
 
     /// <summary>
-    /// 钩子类型
+    /// 集成是帐户集成还是收件箱集成
     /// </summary>
     [JsonPropertyName("hook_type")]
     public string? HookType { get; init; }
 
     /// <summary>
-    /// Enabled
+    /// 账户是否启用集成
     /// </summary>
     [JsonPropertyName("enabled")]
     public bool? Enabled { get; init; }
 
     /// <summary>
-    /// AllowMultiple钩子
+    /// 是否可以创建多个hook进行集成
     /// </summary>
     [JsonPropertyName("allow_multiple_hooks")]
     public bool? AllowMultipleHooks { get; init; }
 
     /// <summary>
-    /// 钩子
+    /// 如果有为此集成创建的任何挂钩
     /// </summary>
     [JsonPropertyName("hooks")]
     public IReadOnlyList<IDictionary<string, JsonElement>?>? Hooks { get; init; }
@@ -54,5 +54,5 @@ public sealed record IntegrationsApp
     /// Swagger 未显式建模的附加 JSON 字段
     /// </summary>
     [JsonExtensionData]
-    public IDictionary<string, JsonElement>? ExtensionData { get; init; }
+    public IDictionary<string, JsonElement>? ExtensionData { get; set; }
 }

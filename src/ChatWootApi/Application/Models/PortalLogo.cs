@@ -9,43 +9,43 @@ namespace ChatWootApi.Application.Models;
 public sealed record PortalLogo
 {
     /// <summary>
-    /// ID
+    /// 徽标文件的 ID
     /// </summary>
     [JsonPropertyName("id")]
     public long? Id { get; init; }
 
     /// <summary>
-    /// 门户ID
+    /// 该徽标所属门户的 ID
     /// </summary>
     [JsonPropertyName("portal_id")]
     public long? PortalId { get; init; }
 
     /// <summary>
-    /// 文件类型
+    /// 文件的 MIME 类型
     /// </summary>
     [JsonPropertyName("file_type")]
     public string? FileType { get; init; }
 
     /// <summary>
-    /// 账号ID
+    /// 账户ID
     /// </summary>
     [JsonPropertyName("account_id")]
     public long? AccountId { get; init; }
 
     /// <summary>
-    /// 文件URL
+    /// 访问徽标文件的 URL
     /// </summary>
     [JsonPropertyName("file_url")]
     public string? FileUrl { get; init; }
 
     /// <summary>
-    /// BlobID
+    /// 斑点的 ID
     /// </summary>
     [JsonPropertyName("blob_id")]
     public long? BlobId { get; init; }
 
     /// <summary>
-    /// Filename
+    /// 文件名
     /// </summary>
     [JsonPropertyName("filename")]
     public string? Filename { get; init; }
@@ -54,5 +54,5 @@ public sealed record PortalLogo
     /// Swagger 未显式建模的附加 JSON 字段
     /// </summary>
     [JsonExtensionData]
-    public IDictionary<string, JsonElement>? ExtensionData { get; init; }
+    public IDictionary<string, JsonElement>? ExtensionData { get; set; }
 }

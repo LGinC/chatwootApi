@@ -9,19 +9,19 @@ namespace ChatWootApi.Application.Models;
 public sealed record ReportingEventMeta
 {
     /// <summary>
-    /// 数量
+    /// 报告事件总数
     /// </summary>
     [JsonPropertyName("count")]
     public long? Count { get; init; }
 
     /// <summary>
-    /// 当前Page
+    /// 当前页码
     /// </summary>
     [JsonPropertyName("current_page")]
     public long? CurrentPage { get; init; }
 
     /// <summary>
-    /// TotalPages
+    /// 总页数
     /// </summary>
     [JsonPropertyName("total_pages")]
     public long? TotalPages { get; init; }
@@ -30,5 +30,5 @@ public sealed record ReportingEventMeta
     /// Swagger 未显式建模的附加 JSON 字段
     /// </summary>
     [JsonExtensionData]
-    public IDictionary<string, JsonElement>? ExtensionData { get; init; }
+    public IDictionary<string, JsonElement>? ExtensionData { get; set; }
 }

@@ -8,37 +8,37 @@ namespace ChatWootApi.Client.Models;
 public sealed record Conversation
 {
     /// <summary>
-    /// ID
+    /// 对话ID
     /// </summary>
     [JsonPropertyName("id")]
     public long? Id { get; init; }
 
     /// <summary>
-    /// UUID
+    /// 对话的 UUID
     /// </summary>
     [JsonPropertyName("uuid")]
     public string? Uuid { get; init; }
 
     /// <summary>
-    /// 收件箱ID
+    /// 收件箱 ID
     /// </summary>
     [JsonPropertyName("inbox_id")]
     public long? InboxId { get; init; }
 
     /// <summary>
-    /// 联系人最后查看时间
+    /// 联系人的最后活动时间
     /// </summary>
     [JsonPropertyName("contact_last_seen_at")]
     public long? ContactLastSeenAt { get; init; }
 
     /// <summary>
-    /// 状态
+    /// 对话状态
     /// </summary>
     [JsonPropertyName("status")]
     public string? Status { get; init; }
 
     /// <summary>
-    /// 坐席最后查看时间
+    /// 代理的最后一次活动
     /// </summary>
     [JsonPropertyName("agent_last_seen_at")]
     public long? AgentLastSeenAt { get; init; }

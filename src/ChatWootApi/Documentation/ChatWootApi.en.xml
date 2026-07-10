@@ -970,13 +970,13 @@ When grouped by agent, messages sent by bots (AgentBot, Captain::Assistant) are 
       <summary>Chatwoot application Account model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.Account.Id">
-      <summary>Account ID.</summary>
+      <summary>Account ID</summary>
     </member>
     <member name="P:ChatWootApi.Application.Account.Name">
-      <summary>Name of the account.</summary>
+      <summary>Name of the account</summary>
     </member>
     <member name="P:ChatWootApi.Application.Account.Role">
-      <summary>The user role in the account.</summary>
+      <summary>The user role in the account</summary>
     </member>
     <member name="P:ChatWootApi.Application.Account.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -985,25 +985,25 @@ When grouped by agent, messages sent by bots (AgentBot, Captain::Assistant) are 
       <summary>Chatwoot application Account Create Update Payload model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.AccountCreateUpdatePayload.Name">
-      <summary>Name of the account.</summary>
+      <summary>Name of the account</summary>
     </member>
     <member name="P:ChatWootApi.Application.AccountCreateUpdatePayload.Locale">
-      <summary>The locale of the account.</summary>
+      <summary>The locale of the account</summary>
     </member>
     <member name="P:ChatWootApi.Application.AccountCreateUpdatePayload.Domain">
-      <summary>The domain of the account.</summary>
+      <summary>The domain of the account</summary>
     </member>
     <member name="P:ChatWootApi.Application.AccountCreateUpdatePayload.SupportEmail">
-      <summary>The support email of the account.</summary>
+      <summary>The support email of the account</summary>
     </member>
     <member name="P:ChatWootApi.Application.AccountCreateUpdatePayload.Status">
-      <summary>The status of the account.</summary>
+      <summary>The status of the account</summary>
     </member>
     <member name="P:ChatWootApi.Application.AccountCreateUpdatePayload.Limits">
-      <summary>The limits of the account.</summary>
+      <summary>The limits of the account</summary>
     </member>
     <member name="P:ChatWootApi.Application.AccountCreateUpdatePayload.CustomAttributes">
-      <summary>The custom attributes of the account.</summary>
+      <summary>The custom attributes of the account</summary>
     </member>
     <member name="P:ChatWootApi.Application.AccountCreateUpdatePayload.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -1012,43 +1012,49 @@ When grouped by agent, messages sent by bots (AgentBot, Captain::Assistant) are 
       <summary>Chatwoot application Account Detail model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.AccountDetail.Id">
-      <summary>Account ID.</summary>
+      <summary>Account ID</summary>
     </member>
     <member name="P:ChatWootApi.Application.AccountDetail.Name">
-      <summary>Name of the account.</summary>
+      <summary>Name of the account</summary>
     </member>
     <member name="P:ChatWootApi.Application.AccountDetail.Locale">
-      <summary>The locale of the account.</summary>
+      <summary>The locale of the account</summary>
     </member>
     <member name="P:ChatWootApi.Application.AccountDetail.Domain">
-      <summary>The domain of the account.</summary>
+      <summary>The domain of the account</summary>
     </member>
     <member name="P:ChatWootApi.Application.AccountDetail.SupportEmail">
-      <summary>The support email of the account.</summary>
+      <summary>The support email of the account</summary>
     </member>
     <member name="P:ChatWootApi.Application.AccountDetail.Status">
-      <summary>The status of the account.</summary>
+      <summary>The status of the account</summary>
     </member>
     <member name="P:ChatWootApi.Application.AccountDetail.CreatedAt">
-      <summary>The creation date of the account.</summary>
+      <summary>The creation date of the account</summary>
     </member>
     <member name="P:ChatWootApi.Application.AccountDetail.CacheKeys">
-      <summary>Cache keys for the account.</summary>
+      <summary>Cache keys for the account</summary>
     </member>
     <member name="P:ChatWootApi.Application.AccountDetail.Features">
-      <summary>Enabled features for the account.</summary>
+      <summary>Enabled features for the account</summary>
     </member>
     <member name="P:ChatWootApi.Application.AccountDetail.Settings">
-      <summary>Account settings.</summary>
+      <summary>Account settings</summary>
     </member>
     <member name="P:ChatWootApi.Application.AccountDetail.CustomAttributes">
-      <summary>Custom attributes of the account.</summary>
+      <summary>Custom attributes of the account</summary>
     </member>
     <member name="P:ChatWootApi.Application.AccountDetail.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
     </member>
     <member name="T:ChatWootApi.Application.AccountShowResponse">
       <summary>Chatwoot application Account Show Response model.</summary>
+    </member>
+    <member name="P:ChatWootApi.Application.AccountShowResponse.LatestChatwootVersion">
+      <summary>Latest version of Chatwoot available</summary>
+    </member>
+    <member name="P:ChatWootApi.Application.AccountShowResponse.SubscribedFeatures">
+      <summary>List of subscribed enterprise features (if enterprise edition is enabled)</summary>
     </member>
     <member name="P:ChatWootApi.Application.AccountShowResponse.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -1084,34 +1090,34 @@ When grouped by agent, messages sent by bots (AgentBot, Captain::Assistant) are 
       <summary>Chatwoot application Account Update Payload model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.AccountUpdatePayload.Name">
-      <summary>Name of the account.</summary>
+      <summary>Name of the account</summary>
     </member>
     <member name="P:ChatWootApi.Application.AccountUpdatePayload.Locale">
-      <summary>The locale of the account.</summary>
+      <summary>The locale of the account</summary>
     </member>
     <member name="P:ChatWootApi.Application.AccountUpdatePayload.Domain">
-      <summary>The domain of the account.</summary>
+      <summary>The domain of the account</summary>
     </member>
     <member name="P:ChatWootApi.Application.AccountUpdatePayload.SupportEmail">
-      <summary>The support email of the account.</summary>
+      <summary>The support email of the account</summary>
     </member>
     <member name="P:ChatWootApi.Application.AccountUpdatePayload.AutoResolveAfter">
-      <summary>Auto resolve conversations after specified minutes.</summary>
+      <summary>Auto resolve conversations after specified minutes</summary>
     </member>
     <member name="P:ChatWootApi.Application.AccountUpdatePayload.AutoResolveMessage">
-      <summary>Message to send when auto resolving.</summary>
+      <summary>Message to send when auto resolving</summary>
     </member>
     <member name="P:ChatWootApi.Application.AccountUpdatePayload.AutoResolveIgnoreWaiting">
-      <summary>Whether to ignore waiting conversations for auto resolve.</summary>
+      <summary>Whether to ignore waiting conversations for auto resolve</summary>
     </member>
     <member name="P:ChatWootApi.Application.AccountUpdatePayload.Industry">
-      <summary>Industry type.</summary>
+      <summary>Industry type</summary>
     </member>
     <member name="P:ChatWootApi.Application.AccountUpdatePayload.CompanySize">
-      <summary>Company size.</summary>
+      <summary>Company size</summary>
     </member>
     <member name="P:ChatWootApi.Application.AccountUpdatePayload.Timezone">
-      <summary>Account timezone.</summary>
+      <summary>Account timezone</summary>
     </member>
     <member name="P:ChatWootApi.Application.AccountUpdatePayload.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -1126,10 +1132,10 @@ When grouped by agent, messages sent by bots (AgentBot, Captain::Assistant) are 
       <summary>Chatwoot application Account User Create Update Payload model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.AccountUserCreateUpdatePayload.UserId">
-      <summary>The ID of the user.</summary>
+      <summary>The ID of the user</summary>
     </member>
     <member name="P:ChatWootApi.Application.AccountUserCreateUpdatePayload.Role">
-      <summary>whether user is an administrator or agent.</summary>
+      <summary>whether user is an administrator or agent</summary>
     </member>
     <member name="P:ChatWootApi.Application.AccountUserCreateUpdatePayload.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -1153,22 +1159,22 @@ When grouped by agent, messages sent by bots (AgentBot, Captain::Assistant) are 
       <summary>Whether the agent has confirmed their email address.</summary>
     </member>
     <member name="P:ChatWootApi.Application.Agent.Email">
-      <summary>The email of the agent.</summary>
+      <summary>The email of the agent</summary>
     </member>
     <member name="P:ChatWootApi.Application.Agent.AvailableName">
-      <summary>The available name of the agent.</summary>
+      <summary>The available name of the agent</summary>
     </member>
     <member name="P:ChatWootApi.Application.Agent.Name">
-      <summary>The name of the agent.</summary>
+      <summary>The name of the agent</summary>
     </member>
     <member name="P:ChatWootApi.Application.Agent.Role">
-      <summary>The role of the agent.</summary>
+      <summary>The role of the agent</summary>
     </member>
     <member name="P:ChatWootApi.Application.Agent.Thumbnail">
-      <summary>The thumbnail of the agent.</summary>
+      <summary>The thumbnail of the agent</summary>
     </member>
     <member name="P:ChatWootApi.Application.Agent.CustomRoleId">
-      <summary>The custom role id of the agent.</summary>
+      <summary>The custom role id of the agent</summary>
     </member>
     <member name="P:ChatWootApi.Application.Agent.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -1177,34 +1183,34 @@ When grouped by agent, messages sent by bots (AgentBot, Captain::Assistant) are 
       <summary>Chatwoot application Agent Bot model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.AgentBot.Id">
-      <summary>ID of the agent bot.</summary>
+      <summary>ID of the agent bot</summary>
     </member>
     <member name="P:ChatWootApi.Application.AgentBot.Name">
-      <summary>The name of the agent bot.</summary>
+      <summary>The name of the agent bot</summary>
     </member>
     <member name="P:ChatWootApi.Application.AgentBot.Description">
-      <summary>The description about the agent bot.</summary>
+      <summary>The description about the agent bot</summary>
     </member>
     <member name="P:ChatWootApi.Application.AgentBot.Thumbnail">
-      <summary>The thumbnail of the agent bot.</summary>
+      <summary>The thumbnail of the agent bot</summary>
     </member>
     <member name="P:ChatWootApi.Application.AgentBot.OutgoingUrl">
-      <summary>The webhook URL for the bot.</summary>
+      <summary>The webhook URL for the bot</summary>
     </member>
     <member name="P:ChatWootApi.Application.AgentBot.BotType">
-      <summary>The type of the bot.</summary>
+      <summary>The type of the bot</summary>
     </member>
     <member name="P:ChatWootApi.Application.AgentBot.BotConfig">
-      <summary>The configuration of the bot.</summary>
+      <summary>The configuration of the bot</summary>
     </member>
     <member name="P:ChatWootApi.Application.AgentBot.AccountId">
-      <summary>Account ID if it's an account specific bot.</summary>
+      <summary>Account ID if it's an account specific bot</summary>
     </member>
     <member name="P:ChatWootApi.Application.AgentBot.AccessToken">
-      <summary>The access token for the bot.</summary>
+      <summary>The access token for the bot</summary>
     </member>
     <member name="P:ChatWootApi.Application.AgentBot.SystemBot">
-      <summary>Whether the bot is a system bot.</summary>
+      <summary>Whether the bot is a system bot</summary>
     </member>
     <member name="P:ChatWootApi.Application.AgentBot.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -1213,25 +1219,25 @@ When grouped by agent, messages sent by bots (AgentBot, Captain::Assistant) are 
       <summary>Chatwoot application Agent Bot Create Update Payload model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.AgentBotCreateUpdatePayload.Name">
-      <summary>The name of the agent bot.</summary>
+      <summary>The name of the agent bot</summary>
     </member>
     <member name="P:ChatWootApi.Application.AgentBotCreateUpdatePayload.Description">
-      <summary>The description of the agent bot.</summary>
+      <summary>The description of the agent bot</summary>
     </member>
     <member name="P:ChatWootApi.Application.AgentBotCreateUpdatePayload.OutgoingUrl">
-      <summary>The webhook URL for the bot.</summary>
+      <summary>The webhook URL for the bot</summary>
     </member>
     <member name="P:ChatWootApi.Application.AgentBotCreateUpdatePayload.Avatar">
-      <summary>Send the form data with the avatar image binary or use the avatar_url.</summary>
+      <summary>Send the form data with the avatar image binary or use the avatar_url</summary>
     </member>
     <member name="P:ChatWootApi.Application.AgentBotCreateUpdatePayload.AvatarUrl">
-      <summary>The url to a jpeg, png file for the agent bot avatar.</summary>
+      <summary>The url to a jpeg, png file for the agent bot avatar</summary>
     </member>
     <member name="P:ChatWootApi.Application.AgentBotCreateUpdatePayload.BotType">
-      <summary>The type of the bot (0 for webhook).</summary>
+      <summary>The type of the bot (0 for webhook)</summary>
     </member>
     <member name="P:ChatWootApi.Application.AgentBotCreateUpdatePayload.BotConfig">
-      <summary>The configuration for the bot.</summary>
+      <summary>The configuration for the bot</summary>
     </member>
     <member name="P:ChatWootApi.Application.AgentBotCreateUpdatePayload.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -1264,13 +1270,13 @@ When grouped by agent, messages sent by bots (AgentBot, Captain::Assistant) are 
       <summary>Chatwoot application Agent Create Payload model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.AgentCreatePayload.Name">
-      <summary>Full Name of the agent.</summary>
+      <summary>Full Name of the agent</summary>
     </member>
     <member name="P:ChatWootApi.Application.AgentCreatePayload.Email">
-      <summary>Email of the Agent.</summary>
+      <summary>Email of the Agent</summary>
     </member>
     <member name="P:ChatWootApi.Application.AgentCreatePayload.Role">
-      <summary>Whether its administrator or agent.</summary>
+      <summary>Whether its administrator or agent</summary>
     </member>
     <member name="P:ChatWootApi.Application.AgentCreatePayload.Availability">
       <summary>The configured availability of the agent.</summary>
@@ -1291,7 +1297,7 @@ When grouped by agent, messages sent by bots (AgentBot, Captain::Assistant) are 
       <summary>Chatwoot application Agent Update Payload model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.AgentUpdatePayload.Role">
-      <summary>Whether its administrator or agent.</summary>
+      <summary>Whether its administrator or agent</summary>
     </member>
     <member name="P:ChatWootApi.Application.AgentUpdatePayload.Availability">
       <summary>The configured availability of the agent.</summary>
@@ -1354,37 +1360,37 @@ When grouped by agent, messages sent by bots (AgentBot, Captain::Assistant) are 
       <summary>Chatwoot application Article Create Update Payload model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.ArticleCreateUpdatePayload.Title">
-      <summary>The title of the article.</summary>
+      <summary>The title of the article</summary>
     </member>
     <member name="P:ChatWootApi.Application.ArticleCreateUpdatePayload.Slug">
-      <summary>The slug of the article.</summary>
+      <summary>The slug of the article</summary>
     </member>
     <member name="P:ChatWootApi.Application.ArticleCreateUpdatePayload.Position">
-      <summary>article position in category.</summary>
+      <summary>article position in category</summary>
     </member>
     <member name="P:ChatWootApi.Application.ArticleCreateUpdatePayload.Content">
       <summary>The text content.</summary>
     </member>
     <member name="P:ChatWootApi.Application.ArticleCreateUpdatePayload.Description">
-      <summary>The description of the article.</summary>
+      <summary>The description of the article</summary>
     </member>
     <member name="P:ChatWootApi.Application.ArticleCreateUpdatePayload.CategoryId">
-      <summary>The category id of the article.</summary>
+      <summary>The category id of the article</summary>
     </member>
     <member name="P:ChatWootApi.Application.ArticleCreateUpdatePayload.AuthorId">
-      <summary>The author agent id of the article.</summary>
+      <summary>The author agent id of the article</summary>
     </member>
     <member name="P:ChatWootApi.Application.ArticleCreateUpdatePayload.AssociatedArticleId">
       <summary>To associate similar articles to each other, e.g to provide the link for the reference.</summary>
     </member>
     <member name="P:ChatWootApi.Application.ArticleCreateUpdatePayload.Status">
-      <summary>The status of the article. 0 for draft, 1 for published, 2 for archived.</summary>
+      <summary>The status of the article. 0 for draft, 1 for published, 2 for archived</summary>
     </member>
     <member name="P:ChatWootApi.Application.ArticleCreateUpdatePayload.Locale">
-      <summary>The locale of the article.</summary>
+      <summary>The locale of the article</summary>
     </member>
     <member name="P:ChatWootApi.Application.ArticleCreateUpdatePayload.Meta">
-      <summary>Use for search.</summary>
+      <summary>Use for search</summary>
     </member>
     <member name="P:ChatWootApi.Application.ArticleCreateUpdatePayload.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -1393,52 +1399,52 @@ When grouped by agent, messages sent by bots (AgentBot, Captain::Assistant) are 
       <summary>Chatwoot application Audit Log model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.AuditLog.Id">
-      <summary>Unique identifier for the audit log entry.</summary>
+      <summary>Unique identifier for the audit log entry</summary>
     </member>
     <member name="P:ChatWootApi.Application.AuditLog.AuditableId">
-      <summary>The ID of the audited object.</summary>
+      <summary>The ID of the audited object</summary>
     </member>
     <member name="P:ChatWootApi.Application.AuditLog.AuditableType">
-      <summary>The type of the audited object (e.g., Conversation, Contact, User).</summary>
+      <summary>The type of the audited object (e.g., Conversation, Contact, User)</summary>
     </member>
     <member name="P:ChatWootApi.Application.AuditLog.Auditable">
-      <summary>The audited object data.</summary>
+      <summary>The audited object data</summary>
     </member>
     <member name="P:ChatWootApi.Application.AuditLog.AssociatedId">
-      <summary>The ID of the associated object (typically the account ID).</summary>
+      <summary>The ID of the associated object (typically the account ID)</summary>
     </member>
     <member name="P:ChatWootApi.Application.AuditLog.AssociatedType">
-      <summary>The type of the associated object.</summary>
+      <summary>The type of the associated object</summary>
     </member>
     <member name="P:ChatWootApi.Application.AuditLog.UserId">
-      <summary>The ID of the user who performed the action.</summary>
+      <summary>The ID of the user who performed the action</summary>
     </member>
     <member name="P:ChatWootApi.Application.AuditLog.UserType">
-      <summary>The type of user who performed the action.</summary>
+      <summary>The type of user who performed the action</summary>
     </member>
     <member name="P:ChatWootApi.Application.AuditLog.Username">
-      <summary>The email/username of the user who performed the action.</summary>
+      <summary>The email/username of the user who performed the action</summary>
     </member>
     <member name="P:ChatWootApi.Application.AuditLog.Action">
-      <summary>The action performed on the object.</summary>
+      <summary>The action performed on the object</summary>
     </member>
     <member name="P:ChatWootApi.Application.AuditLog.AuditedChanges">
-      <summary>JSON object containing the changes made to the audited object.</summary>
+      <summary>JSON object containing the changes made to the audited object</summary>
     </member>
     <member name="P:ChatWootApi.Application.AuditLog.Version">
-      <summary>Version number of the audit log entry.</summary>
+      <summary>Version number of the audit log entry</summary>
     </member>
     <member name="P:ChatWootApi.Application.AuditLog.Comment">
-      <summary>Optional comment associated with the audit log entry.</summary>
+      <summary>Optional comment associated with the audit log entry</summary>
     </member>
     <member name="P:ChatWootApi.Application.AuditLog.RequestUuid">
-      <summary>UUID to identify the request that generated this audit log.</summary>
+      <summary>UUID to identify the request that generated this audit log</summary>
     </member>
     <member name="P:ChatWootApi.Application.AuditLog.CreatedAt">
-      <summary>Unix timestamp when the audit log entry was created.</summary>
+      <summary>Unix timestamp when the audit log entry was created</summary>
     </member>
     <member name="P:ChatWootApi.Application.AuditLog.RemoteAddress">
-      <summary>IP address from which the action was performed.</summary>
+      <summary>IP address from which the action was performed</summary>
     </member>
     <member name="P:ChatWootApi.Application.AuditLog.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -1447,7 +1453,7 @@ When grouped by agent, messages sent by bots (AgentBot, Captain::Assistant) are 
       <summary>Chatwoot application Automation Rule model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.AutomationRule.Payload">
-      <summary>Response payload that contains automation rule(s).</summary>
+      <summary>Response payload that contains automation rule(s)</summary>
     </member>
     <member name="P:ChatWootApi.Application.AutomationRule.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -1456,16 +1462,16 @@ When grouped by agent, messages sent by bots (AgentBot, Captain::Assistant) are 
       <summary>Chatwoot application Automation Rule Create Update Payload model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.AutomationRuleCreateUpdatePayload.Name">
-      <summary>Rule name.</summary>
+      <summary>Rule name</summary>
     </member>
     <member name="P:ChatWootApi.Application.AutomationRuleCreateUpdatePayload.Description">
-      <summary>The description about the automation and actions.</summary>
+      <summary>The description about the automation and actions</summary>
     </member>
     <member name="P:ChatWootApi.Application.AutomationRuleCreateUpdatePayload.EventName">
-      <summary>The event when you want to execute the automation actions.</summary>
+      <summary>The event when you want to execute the automation actions</summary>
     </member>
     <member name="P:ChatWootApi.Application.AutomationRuleCreateUpdatePayload.Active">
-      <summary>Enable/disable automation rule.</summary>
+      <summary>Enable/disable automation rule</summary>
     </member>
     <member name="P:ChatWootApi.Application.AutomationRuleCreateUpdatePayload.Actions">
       <summary>Array of actions which you want to perform when condition matches, e.g add label support if message contains content help.</summary>
@@ -1480,31 +1486,31 @@ When grouped by agent, messages sent by bots (AgentBot, Captain::Assistant) are 
       <summary>Chatwoot application Automation Rule Item model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.AutomationRuleItem.Id">
-      <summary>The ID of the automation rule.</summary>
+      <summary>The ID of the automation rule</summary>
     </member>
     <member name="P:ChatWootApi.Application.AutomationRuleItem.AccountId">
-      <summary>Account Id.</summary>
+      <summary>Account Id</summary>
     </member>
     <member name="P:ChatWootApi.Application.AutomationRuleItem.Name">
-      <summary>The name of the rule.</summary>
+      <summary>The name of the rule</summary>
     </member>
     <member name="P:ChatWootApi.Application.AutomationRuleItem.Description">
-      <summary>Description to give more context about the rule.</summary>
+      <summary>Description to give more context about the rule</summary>
     </member>
     <member name="P:ChatWootApi.Application.AutomationRuleItem.EventName">
-      <summary>Automation Rule event, on which we call the actions(conversation_created, conversation_updated, message_created).</summary>
+      <summary>Automation Rule event, on which we call the actions(conversation_created, conversation_updated, message_created)</summary>
     </member>
     <member name="P:ChatWootApi.Application.AutomationRuleItem.Conditions">
-      <summary>Array of conditions on which conversation/message filter would work.</summary>
+      <summary>Array of conditions on which conversation/message filter would work</summary>
     </member>
     <member name="P:ChatWootApi.Application.AutomationRuleItem.Actions">
-      <summary>Array of actions which we perform when condition matches.</summary>
+      <summary>Array of actions which we perform when condition matches</summary>
     </member>
     <member name="P:ChatWootApi.Application.AutomationRuleItem.CreatedOn">
-      <summary>The timestamp when the rule was created.</summary>
+      <summary>The timestamp when the rule was created</summary>
     </member>
     <member name="P:ChatWootApi.Application.AutomationRuleItem.Active">
-      <summary>Enable/disable automation rule.</summary>
+      <summary>Enable/disable automation rule</summary>
     </member>
     <member name="P:ChatWootApi.Application.AutomationRuleItem.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -1525,22 +1531,22 @@ When grouped by agent, messages sent by bots (AgentBot, Captain::Assistant) are 
       <summary>Chatwoot application Canned Response model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.CannedResponse.Id">
-      <summary>ID of the canned response.</summary>
+      <summary>ID of the canned response</summary>
     </member>
     <member name="P:ChatWootApi.Application.CannedResponse.AccountId">
-      <summary>Account Id.</summary>
+      <summary>Account Id</summary>
     </member>
     <member name="P:ChatWootApi.Application.CannedResponse.ShortCode">
-      <summary>Short Code for quick access of the canned response.</summary>
+      <summary>Short Code for quick access of the canned response</summary>
     </member>
     <member name="P:ChatWootApi.Application.CannedResponse.Content">
-      <summary>Message content for canned response.</summary>
+      <summary>Message content for canned response</summary>
     </member>
     <member name="P:ChatWootApi.Application.CannedResponse.CreatedAt">
-      <summary>The date and time when the canned response was created.</summary>
+      <summary>The date and time when the canned response was created</summary>
     </member>
     <member name="P:ChatWootApi.Application.CannedResponse.UpdatedAt">
-      <summary>The date and time when the canned response was updated.</summary>
+      <summary>The date and time when the canned response was updated</summary>
     </member>
     <member name="P:ChatWootApi.Application.CannedResponse.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -1549,10 +1555,10 @@ When grouped by agent, messages sent by bots (AgentBot, Captain::Assistant) are 
       <summary>Chatwoot application Canned Response Create Update Payload model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.CannedResponseCreateUpdatePayload.Content">
-      <summary>Message content for canned response.</summary>
+      <summary>Message content for canned response</summary>
     </member>
     <member name="P:ChatWootApi.Application.CannedResponseCreateUpdatePayload.ShortCode">
-      <summary>Short Code for quick access of the canned response.</summary>
+      <summary>Short Code for quick access of the canned response</summary>
     </member>
     <member name="P:ChatWootApi.Application.CannedResponseCreateUpdatePayload.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -1585,7 +1591,7 @@ When grouped by agent, messages sent by bots (AgentBot, Captain::Assistant) are 
       <summary>Account ID.</summary>
     </member>
     <member name="P:ChatWootApi.Application.Category.AssociatedCategoryId">
-      <summary>To associate similar categories to each other, e.g same category of product documentation in different languages.</summary>
+      <summary>To associate similar categories to each other, e.g same category of product documentation in different languages</summary>
     </member>
     <member name="P:ChatWootApi.Application.Category.ParentCategoryId">
       <summary>To define parent category, e.g product documentation has multiple level features in sales category or in engineering category.</summary>
@@ -1597,28 +1603,28 @@ When grouped by agent, messages sent by bots (AgentBot, Captain::Assistant) are 
       <summary>Chatwoot application Category Create Update Payload model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.CategoryCreateUpdatePayload.Name">
-      <summary>The name of the category.</summary>
+      <summary>The name of the category</summary>
     </member>
     <member name="P:ChatWootApi.Application.CategoryCreateUpdatePayload.Description">
-      <summary>A description for the category.</summary>
+      <summary>A description for the category</summary>
     </member>
     <member name="P:ChatWootApi.Application.CategoryCreateUpdatePayload.Position">
-      <summary>Category position in the portal list to sort.</summary>
+      <summary>Category position in the portal list to sort</summary>
     </member>
     <member name="P:ChatWootApi.Application.CategoryCreateUpdatePayload.Slug">
-      <summary>The category slug used in the URL.</summary>
+      <summary>The category slug used in the URL</summary>
     </member>
     <member name="P:ChatWootApi.Application.CategoryCreateUpdatePayload.Locale">
-      <summary>The locale of the category.</summary>
+      <summary>The locale of the category</summary>
     </member>
     <member name="P:ChatWootApi.Application.CategoryCreateUpdatePayload.Icon">
-      <summary>The icon of the category as a string (emoji).</summary>
+      <summary>The icon of the category as a string (emoji)</summary>
     </member>
     <member name="P:ChatWootApi.Application.CategoryCreateUpdatePayload.ParentCategoryId">
       <summary>To define parent category, e.g product documentation has multiple level features in sales category or in engineering category.</summary>
     </member>
     <member name="P:ChatWootApi.Application.CategoryCreateUpdatePayload.AssociatedCategoryId">
-      <summary>To associate similar categories to each other, e.g same category of product documentation in different languages.</summary>
+      <summary>To associate similar categories to each other, e.g same category of product documentation in different languages</summary>
     </member>
     <member name="P:ChatWootApi.Application.CategoryCreateUpdatePayload.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -1642,7 +1648,7 @@ When grouped by agent, messages sent by bots (AgentBot, Captain::Assistant) are 
       <summary>Chatwoot application Contactable Inboxes model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactableInboxes.SourceId">
-      <summary>Contact Inbox Source Id.</summary>
+      <summary>Contact Inbox Source Id</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactableInboxes.Inbox">
       <summary>Inbox.</summary>
@@ -1654,7 +1660,7 @@ When grouped by agent, messages sent by bots (AgentBot, Captain::Assistant) are 
       <summary>Chatwoot application Contactable Inboxes Response model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactableInboxesResponse.Payload">
-      <summary>List of contactable inboxes for the contact.</summary>
+      <summary>List of contactable inboxes for the contact</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactableInboxesResponse.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -1669,67 +1675,67 @@ When grouped by agent, messages sent by bots (AgentBot, Captain::Assistant) are 
       <summary>Chatwoot application Contact Conversation Message model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactConversationMessage.Id">
-      <summary>ID of the message.</summary>
+      <summary>ID of the message</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactConversationMessage.Content">
-      <summary>Content of the message.</summary>
+      <summary>Content of the message</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactConversationMessage.AccountId">
-      <summary>ID of the account.</summary>
+      <summary>ID of the account</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactConversationMessage.InboxId">
-      <summary>ID of the inbox.</summary>
+      <summary>ID of the inbox</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactConversationMessage.ConversationId">
-      <summary>ID of the conversation.</summary>
+      <summary>ID of the conversation</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactConversationMessage.MessageType">
-      <summary>Type of the message.</summary>
+      <summary>Type of the message</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactConversationMessage.CreatedAt">
-      <summary>Timestamp when message was created.</summary>
+      <summary>Timestamp when message was created</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactConversationMessage.UpdatedAt">
-      <summary>Formatted datetime when message was updated.</summary>
+      <summary>Formatted datetime when message was updated</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactConversationMessage.Private">
-      <summary>Whether the message is private.</summary>
+      <summary>Whether the message is private</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactConversationMessage.Status">
-      <summary>Status of the message.</summary>
+      <summary>Status of the message</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactConversationMessage.SourceId">
-      <summary>Source ID of the message.</summary>
+      <summary>Source ID of the message</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactConversationMessage.ContentType">
-      <summary>Type of the content.</summary>
+      <summary>Type of the content</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactConversationMessage.ContentAttributes">
-      <summary>Attributes of the content.</summary>
+      <summary>Attributes of the content</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactConversationMessage.SenderType">
-      <summary>Type of the sender.</summary>
+      <summary>Type of the sender</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactConversationMessage.SenderId">
-      <summary>ID of the sender.</summary>
+      <summary>ID of the sender</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactConversationMessage.ExternalSourceIds">
-      <summary>External source IDs.</summary>
+      <summary>External source IDs</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactConversationMessage.AdditionalAttributes">
-      <summary>Additional attributes of the message.</summary>
+      <summary>Additional attributes of the message</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactConversationMessage.ProcessedMessageContent">
-      <summary>Processed message content.</summary>
+      <summary>Processed message content</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactConversationMessage.Sentiment">
-      <summary>Sentiment analysis of the message.</summary>
+      <summary>Sentiment analysis of the message</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactConversationMessage.Conversation">
-      <summary>Conversation details.</summary>
+      <summary>Conversation details</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactConversationMessage.Sender">
-      <summary>Details of the sender.</summary>
+      <summary>Details of the sender</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactConversationMessage.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -1744,7 +1750,7 @@ When grouped by agent, messages sent by bots (AgentBot, Captain::Assistant) are 
       <summary>Chatwoot application Contact Conversations Response model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactConversationsResponse.Payload">
-      <summary>List of conversations for the contact.</summary>
+      <summary>List of conversations for the contact</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactConversationsResponse.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -1753,31 +1759,31 @@ When grouped by agent, messages sent by bots (AgentBot, Captain::Assistant) are 
       <summary>Chatwoot application Contact Create Payload model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactCreatePayload.InboxId">
-      <summary>ID of the inbox to which the contact belongs.</summary>
+      <summary>ID of the inbox to which the contact belongs</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactCreatePayload.Name">
-      <summary>name of the contact.</summary>
+      <summary>name of the contact</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactCreatePayload.Email">
-      <summary>email of the contact.</summary>
+      <summary>email of the contact</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactCreatePayload.Blocked">
-      <summary>whether the contact is blocked or not.</summary>
+      <summary>whether the contact is blocked or not</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactCreatePayload.PhoneNumber">
-      <summary>phone number of the contact.</summary>
+      <summary>phone number of the contact</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactCreatePayload.Avatar">
-      <summary>Send the form data with the avatar image binary or use the avatar_url.</summary>
+      <summary>Send the form data with the avatar image binary or use the avatar_url</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactCreatePayload.AvatarUrl">
-      <summary>The url to a jpeg, png file for the contact avatar.</summary>
+      <summary>The url to a jpeg, png file for the contact avatar</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactCreatePayload.Identifier">
-      <summary>A unique identifier for the contact in external system.</summary>
+      <summary>A unique identifier for the contact in external system</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactCreatePayload.AdditionalAttributes">
-      <summary>An object where you can store additional attributes for contact. example {"type":"customer", "age":30}.</summary>
+      <summary>An object where you can store additional attributes for contact. example {"type":"customer", "age":30}</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactCreatePayload.CustomAttributes">
       <summary>An object where you can store custom attributes for contact. example {"type":"customer", "age":30}, this should have a valid custom attribute definition.</summary>
@@ -1789,34 +1795,34 @@ When grouped by agent, messages sent by bots (AgentBot, Captain::Assistant) are 
       <summary>Chatwoot application Contact Detail model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactDetail.AdditionalAttributes">
-      <summary>The object containing additional attributes related to the contact.</summary>
+      <summary>The object containing additional attributes related to the contact</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactDetail.CustomAttributes">
-      <summary>The custom attributes of the contact.</summary>
+      <summary>The custom attributes of the contact</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactDetail.Email">
-      <summary>The email address of the contact.</summary>
+      <summary>The email address of the contact</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactDetail.Id">
       <summary>The ID of the contact.</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactDetail.Identifier">
-      <summary>The identifier of the contact.</summary>
+      <summary>The identifier of the contact</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactDetail.Name">
-      <summary>The name of the contact.</summary>
+      <summary>The name of the contact</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactDetail.PhoneNumber">
-      <summary>The phone number of the contact.</summary>
+      <summary>The phone number of the contact</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactDetail.Thumbnail">
-      <summary>The thumbnail of the contact.</summary>
+      <summary>The thumbnail of the contact</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactDetail.Blocked">
-      <summary>Whether the contact is blocked.</summary>
+      <summary>Whether the contact is blocked</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactDetail.Type">
-      <summary>The type of entity.</summary>
+      <summary>The type of entity</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactDetail.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -1825,7 +1831,7 @@ When grouped by agent, messages sent by bots (AgentBot, Captain::Assistant) are 
       <summary>Chatwoot application Contact Inbox model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactInbox.SourceId">
-      <summary>Source identifier for the contact inbox.</summary>
+      <summary>Source identifier for the contact inbox</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactInbox.Inbox">
       <summary>Inbox.</summary>
@@ -1837,7 +1843,7 @@ When grouped by agent, messages sent by bots (AgentBot, Captain::Assistant) are 
       <summary>Chatwoot application Contact Inboxes model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactInboxes.SourceId">
-      <summary>Contact Inbox Source Id.</summary>
+      <summary>Contact Inbox Source Id</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactInboxes.Inbox">
       <summary>Inbox.</summary>
@@ -1849,7 +1855,7 @@ When grouped by agent, messages sent by bots (AgentBot, Captain::Assistant) are 
       <summary>Chatwoot application Contact Labels model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactLabels.Payload">
-      <summary>Array of labels.</summary>
+      <summary>Array of labels</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactLabels.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -1864,43 +1870,43 @@ When grouped by agent, messages sent by bots (AgentBot, Captain::Assistant) are 
       <summary>Chatwoot application Contact List Item model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactListItem.AdditionalAttributes">
-      <summary>The object containing additional attributes related to the contact.</summary>
+      <summary>The object containing additional attributes related to the contact</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactListItem.AvailabilityStatus">
-      <summary>Availability status of the contact.</summary>
+      <summary>Availability status of the contact</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactListItem.Email">
-      <summary>The email address of the contact.</summary>
+      <summary>The email address of the contact</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactListItem.Id">
-      <summary>The ID of the contact.</summary>
+      <summary>The ID of the contact</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactListItem.Name">
-      <summary>The name of the contact.</summary>
+      <summary>The name of the contact</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactListItem.PhoneNumber">
-      <summary>The phone number of the contact.</summary>
+      <summary>The phone number of the contact</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactListItem.Blocked">
-      <summary>Whether the contact is blocked.</summary>
+      <summary>Whether the contact is blocked</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactListItem.Identifier">
-      <summary>The identifier of the contact.</summary>
+      <summary>The identifier of the contact</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactListItem.Thumbnail">
-      <summary>The thumbnail of the contact.</summary>
+      <summary>The thumbnail of the contact</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactListItem.CustomAttributes">
-      <summary>The custom attributes of the contact.</summary>
+      <summary>The custom attributes of the contact</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactListItem.LastActivityAt">
-      <summary>Timestamp of last activity.</summary>
+      <summary>Timestamp of last activity</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactListItem.CreatedAt">
-      <summary>Timestamp when contact was created.</summary>
+      <summary>Timestamp when contact was created</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactListItem.ContactInboxes">
-      <summary>List of inboxes associated with this contact.</summary>
+      <summary>List of inboxes associated with this contact</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactListItem.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -1909,10 +1915,10 @@ When grouped by agent, messages sent by bots (AgentBot, Captain::Assistant) are 
       <summary>Chatwoot application Contact Meta model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactMeta.Count">
-      <summary>Total number of contacts.</summary>
+      <summary>Total number of contacts</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactMeta.CurrentPage">
-      <summary>Current page number.</summary>
+      <summary>Current page number</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactMeta.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -1921,7 +1927,7 @@ When grouped by agent, messages sent by bots (AgentBot, Captain::Assistant) are 
       <summary>Chatwoot application Contact Show Response model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactShowResponse.Payload">
-      <summary>Payload.</summary>
+      <summary>Contact details</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactShowResponse.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -1930,10 +1936,10 @@ When grouped by agent, messages sent by bots (AgentBot, Captain::Assistant) are 
       <summary>Chatwoot application Contacts List Response model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactsListResponse.Meta">
-      <summary>Meta.</summary>
+      <summary>Metadata about the contact list response</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactsListResponse.Payload">
-      <summary>List of contacts.</summary>
+      <summary>List of contacts</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactsListResponse.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -1942,28 +1948,28 @@ When grouped by agent, messages sent by bots (AgentBot, Captain::Assistant) are 
       <summary>Chatwoot application Contact Update Payload model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactUpdatePayload.Name">
-      <summary>name of the contact.</summary>
+      <summary>name of the contact</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactUpdatePayload.Email">
-      <summary>email of the contact.</summary>
+      <summary>email of the contact</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactUpdatePayload.Blocked">
-      <summary>whether the contact is blocked or not.</summary>
+      <summary>whether the contact is blocked or not</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactUpdatePayload.PhoneNumber">
-      <summary>phone number of the contact.</summary>
+      <summary>phone number of the contact</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactUpdatePayload.Avatar">
-      <summary>Send the form data with the avatar image binary or use the avatar_url.</summary>
+      <summary>Send the form data with the avatar image binary or use the avatar_url</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactUpdatePayload.AvatarUrl">
-      <summary>The url to a jpeg, png file for the contact avatar.</summary>
+      <summary>The url to a jpeg, png file for the contact avatar</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactUpdatePayload.Identifier">
-      <summary>A unique identifier for the contact in external system.</summary>
+      <summary>A unique identifier for the contact in external system</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactUpdatePayload.AdditionalAttributes">
-      <summary>An object where you can store additional attributes for contact. example {"type":"customer", "age":30}.</summary>
+      <summary>An object where you can store additional attributes for contact. example {"type":"customer", "age":30}</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactUpdatePayload.CustomAttributes">
       <summary>An object where you can store custom attributes for contact. example {"type":"customer", "age":30}, this should have a valid custom attribute definition.</summary>
@@ -1975,82 +1981,82 @@ When grouped by agent, messages sent by bots (AgentBot, Captain::Assistant) are 
       <summary>Chatwoot application Conversation model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.Conversation.Id">
-      <summary>ID of the conversation.</summary>
+      <summary>ID of the conversation</summary>
     </member>
     <member name="P:ChatWootApi.Application.Conversation.Messages">
       <summary>Messages.</summary>
     </member>
     <member name="P:ChatWootApi.Application.Conversation.AccountId">
-      <summary>Account Id.</summary>
+      <summary>Account Id</summary>
     </member>
     <member name="P:ChatWootApi.Application.Conversation.Uuid">
-      <summary>UUID of the conversation.</summary>
+      <summary>UUID of the conversation</summary>
     </member>
     <member name="P:ChatWootApi.Application.Conversation.AdditionalAttributes">
-      <summary>The object containing additional attributes related to the conversation.</summary>
+      <summary>The object containing additional attributes related to the conversation</summary>
     </member>
     <member name="P:ChatWootApi.Application.Conversation.AgentLastSeenAt">
-      <summary>The last activity at of the agent.</summary>
+      <summary>The last activity at of the agent</summary>
     </member>
     <member name="P:ChatWootApi.Application.Conversation.AssigneeLastSeenAt">
-      <summary>The last activity at of the assignee.</summary>
+      <summary>The last activity at of the assignee</summary>
     </member>
     <member name="P:ChatWootApi.Application.Conversation.CanReply">
-      <summary>Whether the conversation can be replied to.</summary>
+      <summary>Whether the conversation can be replied to</summary>
     </member>
     <member name="P:ChatWootApi.Application.Conversation.ContactLastSeenAt">
-      <summary>The last activity at of the contact.</summary>
+      <summary>The last activity at of the contact</summary>
     </member>
     <member name="P:ChatWootApi.Application.Conversation.CustomAttributes">
-      <summary>The object to save custom attributes for conversation, accepts custom attributes key and value.</summary>
+      <summary>The object to save custom attributes for conversation, accepts custom attributes key and value</summary>
     </member>
     <member name="P:ChatWootApi.Application.Conversation.InboxId">
-      <summary>ID of the inbox.</summary>
+      <summary>ID of the inbox</summary>
     </member>
     <member name="P:ChatWootApi.Application.Conversation.Labels">
-      <summary>The labels of the conversation.</summary>
+      <summary>The labels of the conversation</summary>
     </member>
     <member name="P:ChatWootApi.Application.Conversation.Muted">
-      <summary>Whether the conversation is muted.</summary>
+      <summary>Whether the conversation is muted</summary>
     </member>
     <member name="P:ChatWootApi.Application.Conversation.SnoozedUntil">
-      <summary>The time at which the conversation will be unmuted.</summary>
+      <summary>The time at which the conversation will be unmuted</summary>
     </member>
     <member name="P:ChatWootApi.Application.Conversation.Status">
-      <summary>The status of the conversation.</summary>
+      <summary>The status of the conversation</summary>
     </member>
     <member name="P:ChatWootApi.Application.Conversation.CreatedAt">
-      <summary>The time at which conversation was created.</summary>
+      <summary>The time at which conversation was created</summary>
     </member>
     <member name="P:ChatWootApi.Application.Conversation.UpdatedAt">
-      <summary>The time at which conversation was updated.</summary>
+      <summary>The time at which conversation was updated</summary>
     </member>
     <member name="P:ChatWootApi.Application.Conversation.Timestamp">
-      <summary>The time at which conversation was created.</summary>
+      <summary>The time at which conversation was created</summary>
     </member>
     <member name="P:ChatWootApi.Application.Conversation.FirstReplyCreatedAt">
-      <summary>The time at which the first reply was created.</summary>
+      <summary>The time at which the first reply was created</summary>
     </member>
     <member name="P:ChatWootApi.Application.Conversation.UnreadCount">
-      <summary>The number of unread messages.</summary>
+      <summary>The number of unread messages</summary>
     </member>
     <member name="P:ChatWootApi.Application.Conversation.LastNonActivityMessage">
-      <summary>The last non activity message.</summary>
+      <summary>The last non activity message</summary>
     </member>
     <member name="P:ChatWootApi.Application.Conversation.LastActivityAt">
-      <summary>The last activity at of the conversation.</summary>
+      <summary>The last activity at of the conversation</summary>
     </member>
     <member name="P:ChatWootApi.Application.Conversation.Priority">
-      <summary>The priority of the conversation.</summary>
+      <summary>The priority of the conversation</summary>
     </member>
     <member name="P:ChatWootApi.Application.Conversation.WaitingSince">
-      <summary>The time at which the conversation was waiting.</summary>
+      <summary>The time at which the conversation was waiting</summary>
     </member>
     <member name="P:ChatWootApi.Application.Conversation.SlaPolicyId">
-      <summary>The ID of the SLA policy.</summary>
+      <summary>The ID of the SLA policy</summary>
     </member>
     <member name="P:ChatWootApi.Application.Conversation.AppliedSla">
-      <summary>The applied SLA.</summary>
+      <summary>The applied SLA</summary>
     </member>
     <member name="P:ChatWootApi.Application.Conversation.SlaEvents">
       <summary>Sla Events.</summary>
@@ -2062,34 +2068,34 @@ When grouped by agent, messages sent by bots (AgentBot, Captain::Assistant) are 
       <summary>Chatwoot application Conversation Create Payload model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.ConversationCreatePayload.SourceId">
-      <summary>Conversation source id.</summary>
+      <summary>Conversation source id</summary>
     </member>
     <member name="P:ChatWootApi.Application.ConversationCreatePayload.InboxId">
-      <summary>Id of inbox in which the conversation is created &lt;br/&gt; Allowed Inbox Types: Website, Phone, Api, Email.</summary>
+      <summary>Id of inbox in which the conversation is created &lt;br/&gt; Allowed Inbox Types: Website, Phone, Api, Email</summary>
     </member>
     <member name="P:ChatWootApi.Application.ConversationCreatePayload.ContactId">
-      <summary>Contact Id for which conversation is created.</summary>
+      <summary>Contact Id for which conversation is created</summary>
     </member>
     <member name="P:ChatWootApi.Application.ConversationCreatePayload.AdditionalAttributes">
-      <summary>Lets you specify attributes like browser information.</summary>
+      <summary>Lets you specify attributes like browser information</summary>
     </member>
     <member name="P:ChatWootApi.Application.ConversationCreatePayload.CustomAttributes">
-      <summary>The object to save custom attributes for conversation, accepts custom attributes key and value.</summary>
+      <summary>The object to save custom attributes for conversation, accepts custom attributes key and value</summary>
     </member>
     <member name="P:ChatWootApi.Application.ConversationCreatePayload.Status">
-      <summary>Specify the conversation whether it's pending, open, closed.</summary>
+      <summary>Specify the conversation whether it's pending, open, closed</summary>
     </member>
     <member name="P:ChatWootApi.Application.ConversationCreatePayload.AssigneeId">
-      <summary>Agent Id for assigning a conversation to an agent.</summary>
+      <summary>Agent Id for assigning a conversation to an agent</summary>
     </member>
     <member name="P:ChatWootApi.Application.ConversationCreatePayload.TeamId">
-      <summary>Team Id for assigning a conversation to a team\.</summary>
+      <summary>Team Id for assigning a conversation to a team\</summary>
     </member>
     <member name="P:ChatWootApi.Application.ConversationCreatePayload.SnoozedUntil">
-      <summary>Snoozed until date time.</summary>
+      <summary>Snoozed until date time</summary>
     </member>
     <member name="P:ChatWootApi.Application.ConversationCreatePayload.Message">
-      <summary>The initial message to be sent to the conversation.</summary>
+      <summary>The initial message to be sent to the conversation</summary>
     </member>
     <member name="P:ChatWootApi.Application.ConversationCreatePayload.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -2098,7 +2104,7 @@ When grouped by agent, messages sent by bots (AgentBot, Captain::Assistant) are 
       <summary>Chatwoot application Conversation Labels model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.ConversationLabels.Payload">
-      <summary>Array of labels.</summary>
+      <summary>Array of labels</summary>
     </member>
     <member name="P:ChatWootApi.Application.ConversationLabels.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -2116,25 +2122,25 @@ When grouped by agent, messages sent by bots (AgentBot, Captain::Assistant) are 
       <summary>Chatwoot application Conversation Message Create Payload model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.ConversationMessageCreatePayload.Content">
-      <summary>The content of the message.</summary>
+      <summary>The content of the message</summary>
     </member>
     <member name="P:ChatWootApi.Application.ConversationMessageCreatePayload.MessageType">
-      <summary>The type of the message.</summary>
+      <summary>The type of the message</summary>
     </member>
     <member name="P:ChatWootApi.Application.ConversationMessageCreatePayload.Private">
-      <summary>Flag to identify if it is a private note.</summary>
+      <summary>Flag to identify if it is a private note</summary>
     </member>
     <member name="P:ChatWootApi.Application.ConversationMessageCreatePayload.ContentType">
-      <summary>Content type of the message.</summary>
+      <summary>Content type of the message</summary>
     </member>
     <member name="P:ChatWootApi.Application.ConversationMessageCreatePayload.ContentAttributes">
-      <summary>Attributes based on the content type.</summary>
+      <summary>Attributes based on the content type</summary>
     </member>
     <member name="P:ChatWootApi.Application.ConversationMessageCreatePayload.CampaignId">
-      <summary>The campaign id to which the message belongs.</summary>
+      <summary>The campaign id to which the message belongs</summary>
     </member>
     <member name="P:ChatWootApi.Application.ConversationMessageCreatePayload.TemplateParams">
-      <summary>WhatsApp template parameters for sending structured messages.</summary>
+      <summary>WhatsApp template parameters for sending structured messages</summary>
     </member>
     <member name="P:ChatWootApi.Application.ConversationMessageCreatePayload.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -2143,10 +2149,10 @@ When grouped by agent, messages sent by bots (AgentBot, Captain::Assistant) are 
       <summary>Chatwoot application Conversation Messages model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.ConversationMessages.Meta">
-      <summary>Meta.</summary>
+      <summary>Meta information about the conversation</summary>
     </member>
     <member name="P:ChatWootApi.Application.ConversationMessages.Payload">
-      <summary>List of messages in the conversation.</summary>
+      <summary>List of messages in the conversation</summary>
     </member>
     <member name="P:ChatWootApi.Application.ConversationMessages.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -2155,22 +2161,22 @@ When grouped by agent, messages sent by bots (AgentBot, Captain::Assistant) are 
       <summary>Chatwoot application Conversation Meta model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.ConversationMeta.Labels">
-      <summary>Labels associated with the conversation.</summary>
+      <summary>Labels associated with the conversation</summary>
     </member>
     <member name="P:ChatWootApi.Application.ConversationMeta.AdditionalAttributes">
-      <summary>Additional attributes of the conversation.</summary>
+      <summary>Additional attributes of the conversation</summary>
     </member>
     <member name="P:ChatWootApi.Application.ConversationMeta.Contact">
-      <summary>Contact.</summary>
+      <summary>Contact details</summary>
     </member>
     <member name="P:ChatWootApi.Application.ConversationMeta.Assignee">
-      <summary>The agent assigned to the conversation.</summary>
+      <summary>The agent assigned to the conversation</summary>
     </member>
     <member name="P:ChatWootApi.Application.ConversationMeta.AgentLastSeenAt">
-      <summary>Timestamp when the agent last saw the conversation.</summary>
+      <summary>Timestamp when the agent last saw the conversation</summary>
     </member>
     <member name="P:ChatWootApi.Application.ConversationMeta.AssigneeLastSeenAt">
-      <summary>Timestamp when the assignee last saw the conversation.</summary>
+      <summary>Timestamp when the assignee last saw the conversation</summary>
     </member>
     <member name="P:ChatWootApi.Application.ConversationMeta.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -2197,40 +2203,40 @@ When grouped by agent, messages sent by bots (AgentBot, Captain::Assistant) are 
       <summary>Chatwoot application Custom Attribute model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.CustomAttribute.Id">
-      <summary>Identifier.</summary>
+      <summary>Identifier</summary>
     </member>
     <member name="P:ChatWootApi.Application.CustomAttribute.AttributeDisplayName">
-      <summary>Attribute display name.</summary>
+      <summary>Attribute display name</summary>
     </member>
     <member name="P:ChatWootApi.Application.CustomAttribute.AttributeDisplayType">
-      <summary>Attribute display type (text, number, currency, percent, link, date, list, checkbox).</summary>
+      <summary>Attribute display type (text, number, currency, percent, link, date, list, checkbox)</summary>
     </member>
     <member name="P:ChatWootApi.Application.CustomAttribute.AttributeDescription">
-      <summary>Attribute description.</summary>
+      <summary>Attribute description</summary>
     </member>
     <member name="P:ChatWootApi.Application.CustomAttribute.AttributeKey">
-      <summary>Attribute unique key value.</summary>
+      <summary>Attribute unique key value</summary>
     </member>
     <member name="P:ChatWootApi.Application.CustomAttribute.RegexPattern">
-      <summary>Regex pattern.</summary>
+      <summary>Regex pattern</summary>
     </member>
     <member name="P:ChatWootApi.Application.CustomAttribute.RegexCue">
-      <summary>Regex cue.</summary>
+      <summary>Regex cue</summary>
     </member>
     <member name="P:ChatWootApi.Application.CustomAttribute.AttributeValues">
-      <summary>Attribute values.</summary>
+      <summary>Attribute values</summary>
     </member>
     <member name="P:ChatWootApi.Application.CustomAttribute.AttributeModel">
-      <summary>Attribute type(conversation_attribute/contact_attribute).</summary>
+      <summary>Attribute type(conversation_attribute/contact_attribute)</summary>
     </member>
     <member name="P:ChatWootApi.Application.CustomAttribute.DefaultValue">
-      <summary>Attribute default value.</summary>
+      <summary>Attribute default value</summary>
     </member>
     <member name="P:ChatWootApi.Application.CustomAttribute.CreatedAt">
-      <summary>The date and time when the custom attribute was created.</summary>
+      <summary>The date and time when the custom attribute was created</summary>
     </member>
     <member name="P:ChatWootApi.Application.CustomAttribute.UpdatedAt">
-      <summary>The date and time when the custom attribute was updated.</summary>
+      <summary>The date and time when the custom attribute was updated</summary>
     </member>
     <member name="P:ChatWootApi.Application.CustomAttribute.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -2239,22 +2245,22 @@ When grouped by agent, messages sent by bots (AgentBot, Captain::Assistant) are 
       <summary>Chatwoot application Custom Attribute Create Update Payload model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.CustomAttributeCreateUpdatePayload.AttributeDisplayName">
-      <summary>Attribute display name.</summary>
+      <summary>Attribute display name</summary>
     </member>
     <member name="P:ChatWootApi.Application.CustomAttributeCreateUpdatePayload.AttributeDisplayType">
-      <summary>Attribute display type (text- 0, number- 1, currency- 2, percent- 3, link- 4, date- 5, list- 6, checkbox- 7).</summary>
+      <summary>Attribute display type (text- 0, number- 1, currency- 2, percent- 3, link- 4, date- 5, list- 6, checkbox- 7)</summary>
     </member>
     <member name="P:ChatWootApi.Application.CustomAttributeCreateUpdatePayload.AttributeDescription">
-      <summary>Attribute description.</summary>
+      <summary>Attribute description</summary>
     </member>
     <member name="P:ChatWootApi.Application.CustomAttributeCreateUpdatePayload.AttributeKey">
-      <summary>Attribute unique key value.</summary>
+      <summary>Attribute unique key value</summary>
     </member>
     <member name="P:ChatWootApi.Application.CustomAttributeCreateUpdatePayload.AttributeValues">
-      <summary>Attribute values.</summary>
+      <summary>Attribute values</summary>
     </member>
     <member name="P:ChatWootApi.Application.CustomAttributeCreateUpdatePayload.AttributeModel">
-      <summary>Attribute type(conversation_attribute- 0, contact_attribute- 1).</summary>
+      <summary>Attribute type(conversation_attribute- 0, contact_attribute- 1)</summary>
     </member>
     <member name="P:ChatWootApi.Application.CustomAttributeCreateUpdatePayload.RegexPattern">
       <summary>Regex pattern (Only applicable for type- text). The regex pattern is used to validate the attribute value(s).</summary>
@@ -2269,22 +2275,22 @@ When grouped by agent, messages sent by bots (AgentBot, Captain::Assistant) are 
       <summary>Chatwoot application Custom Filter model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.CustomFilter.Id">
-      <summary>The ID of the custom filter.</summary>
+      <summary>The ID of the custom filter</summary>
     </member>
     <member name="P:ChatWootApi.Application.CustomFilter.Name">
-      <summary>The name of the custom filter.</summary>
+      <summary>The name of the custom filter</summary>
     </member>
     <member name="P:ChatWootApi.Application.CustomFilter.Type">
-      <summary>The description about the custom filter.</summary>
+      <summary>The description about the custom filter</summary>
     </member>
     <member name="P:ChatWootApi.Application.CustomFilter.Query">
-      <summary>A query that needs to be saved as a custom filter.</summary>
+      <summary>A query that needs to be saved as a custom filter</summary>
     </member>
     <member name="P:ChatWootApi.Application.CustomFilter.CreatedAt">
-      <summary>The time at which the custom filter was created.</summary>
+      <summary>The time at which the custom filter was created</summary>
     </member>
     <member name="P:ChatWootApi.Application.CustomFilter.UpdatedAt">
-      <summary>The time at which the custom filter was updated.</summary>
+      <summary>The time at which the custom filter was updated</summary>
     </member>
     <member name="P:ChatWootApi.Application.CustomFilter.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -2293,13 +2299,13 @@ When grouped by agent, messages sent by bots (AgentBot, Captain::Assistant) are 
       <summary>Chatwoot application Custom Filter Create Update Payload model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.CustomFilterCreateUpdatePayload.Name">
-      <summary>The name of the custom filter.</summary>
+      <summary>The name of the custom filter</summary>
     </member>
     <member name="P:ChatWootApi.Application.CustomFilterCreateUpdatePayload.Type">
-      <summary>The description about the custom filter.</summary>
+      <summary>The description about the custom filter</summary>
     </member>
     <member name="P:ChatWootApi.Application.CustomFilterCreateUpdatePayload.Query">
-      <summary>A query that needs to be saved as a custom filter.</summary>
+      <summary>A query that needs to be saved as a custom filter</summary>
     </member>
     <member name="P:ChatWootApi.Application.CustomFilterCreateUpdatePayload.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -2329,103 +2335,103 @@ When grouped by agent, messages sent by bots (AgentBot, Captain::Assistant) are 
       <summary>Chatwoot application Inbox model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.Inbox.Id">
-      <summary>ID of the inbox.</summary>
+      <summary>ID of the inbox</summary>
     </member>
     <member name="P:ChatWootApi.Application.Inbox.Name">
-      <summary>The name of the inbox.</summary>
+      <summary>The name of the inbox</summary>
     </member>
     <member name="P:ChatWootApi.Application.Inbox.WebsiteUrl">
-      <summary>Website URL.</summary>
+      <summary>Website URL</summary>
     </member>
     <member name="P:ChatWootApi.Application.Inbox.ChannelType">
-      <summary>The type of the inbox.</summary>
+      <summary>The type of the inbox</summary>
     </member>
     <member name="P:ChatWootApi.Application.Inbox.AvatarUrl">
-      <summary>The avatar image of the inbox.</summary>
+      <summary>The avatar image of the inbox</summary>
     </member>
     <member name="P:ChatWootApi.Application.Inbox.WidgetColor">
-      <summary>Widget Color used for customization of the widget.</summary>
+      <summary>Widget Color used for customization of the widget</summary>
     </member>
     <member name="P:ChatWootApi.Application.Inbox.WebsiteToken">
-      <summary>Website Token.</summary>
+      <summary>Website Token</summary>
     </member>
     <member name="P:ChatWootApi.Application.Inbox.EnableAutoAssignment">
-      <summary>The flag which shows whether Auto Assignment is enabled or not.</summary>
+      <summary>The flag which shows whether Auto Assignment is enabled or not</summary>
     </member>
     <member name="P:ChatWootApi.Application.Inbox.WebWidgetScript">
-      <summary>Script used to load the website widget.</summary>
+      <summary>Script used to load the website widget</summary>
     </member>
     <member name="P:ChatWootApi.Application.Inbox.WelcomeTitle">
-      <summary>Welcome title to be displayed on the widget.</summary>
+      <summary>Welcome title to be displayed on the widget</summary>
     </member>
     <member name="P:ChatWootApi.Application.Inbox.WelcomeTagline">
-      <summary>Welcome tagline to be displayed on the widget.</summary>
+      <summary>Welcome tagline to be displayed on the widget</summary>
     </member>
     <member name="P:ChatWootApi.Application.Inbox.GreetingEnabled">
-      <summary>The flag which shows whether greeting is enabled.</summary>
+      <summary>The flag which shows whether greeting is enabled</summary>
     </member>
     <member name="P:ChatWootApi.Application.Inbox.GreetingMessage">
-      <summary>A greeting message when the user starts the conversation.</summary>
+      <summary>A greeting message when the user starts the conversation</summary>
     </member>
     <member name="P:ChatWootApi.Application.Inbox.ChannelId">
-      <summary>ID of the channel this inbox belongs to.</summary>
+      <summary>ID of the channel this inbox belongs to</summary>
     </member>
     <member name="P:ChatWootApi.Application.Inbox.WorkingHoursEnabled">
-      <summary>The flag which shows whether working hours feature is enabled.</summary>
+      <summary>The flag which shows whether working hours feature is enabled</summary>
     </member>
     <member name="P:ChatWootApi.Application.Inbox.EnableEmailCollect">
-      <summary>The flag to enable collecting email from contacts.</summary>
+      <summary>The flag to enable collecting email from contacts</summary>
     </member>
     <member name="P:ChatWootApi.Application.Inbox.CsatSurveyEnabled">
-      <summary>The flag to enable CSAT survey.</summary>
+      <summary>The flag to enable CSAT survey</summary>
     </member>
     <member name="P:ChatWootApi.Application.Inbox.AutoAssignmentConfig">
-      <summary>Configuration settings for auto assignment.</summary>
+      <summary>Configuration settings for auto assignment</summary>
     </member>
     <member name="P:ChatWootApi.Application.Inbox.OutOfOfficeMessage">
-      <summary>Message to show when agents are out of office.</summary>
+      <summary>Message to show when agents are out of office</summary>
     </member>
     <member name="P:ChatWootApi.Application.Inbox.WorkingHours">
-      <summary>Configuration for working hours of the inbox.</summary>
+      <summary>Configuration for working hours of the inbox</summary>
     </member>
     <member name="P:ChatWootApi.Application.Inbox.Timezone">
-      <summary>Timezone configuration for the inbox.</summary>
+      <summary>Timezone configuration for the inbox</summary>
     </member>
     <member name="P:ChatWootApi.Application.Inbox.CallbackWebhookUrl">
-      <summary>Webhook URL for callbacks.</summary>
+      <summary>Webhook URL for callbacks</summary>
     </member>
     <member name="P:ChatWootApi.Application.Inbox.AllowMessagesAfterResolved">
-      <summary>Whether to allow messages after a conversation is resolved.</summary>
+      <summary>Whether to allow messages after a conversation is resolved</summary>
     </member>
     <member name="P:ChatWootApi.Application.Inbox.LockToSingleConversation">
-      <summary>Whether to lock a contact to a single conversation.</summary>
+      <summary>Whether to lock a contact to a single conversation</summary>
     </member>
     <member name="P:ChatWootApi.Application.Inbox.SenderNameType">
-      <summary>Type of sender name to display (e.g., friendly).</summary>
+      <summary>Type of sender name to display (e.g., friendly)</summary>
     </member>
     <member name="P:ChatWootApi.Application.Inbox.BusinessName">
-      <summary>Business name associated with the inbox.</summary>
+      <summary>Business name associated with the inbox</summary>
     </member>
     <member name="P:ChatWootApi.Application.Inbox.HmacMandatory">
-      <summary>Whether HMAC verification is mandatory.</summary>
+      <summary>Whether HMAC verification is mandatory</summary>
     </member>
     <member name="P:ChatWootApi.Application.Inbox.SelectedFeatureFlags">
-      <summary>Selected feature flags for the inbox.</summary>
+      <summary>Selected feature flags for the inbox</summary>
     </member>
     <member name="P:ChatWootApi.Application.Inbox.ReplyTime">
-      <summary>Expected reply time.</summary>
+      <summary>Expected reply time</summary>
     </member>
     <member name="P:ChatWootApi.Application.Inbox.MessagingServiceSid">
-      <summary>Messaging service SID for SMS providers.</summary>
+      <summary>Messaging service SID for SMS providers</summary>
     </member>
     <member name="P:ChatWootApi.Application.Inbox.PhoneNumber">
-      <summary>Phone number associated with the inbox.</summary>
+      <summary>Phone number associated with the inbox</summary>
     </member>
     <member name="P:ChatWootApi.Application.Inbox.Medium">
-      <summary>Medium of communication (e.g., sms, email).</summary>
+      <summary>Medium of communication (e.g., sms, email)</summary>
     </member>
     <member name="P:ChatWootApi.Application.Inbox.Provider">
-      <summary>Provider of the channel.</summary>
+      <summary>Provider of the channel</summary>
     </member>
     <member name="P:ChatWootApi.Application.Inbox.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -2434,22 +2440,22 @@ When grouped by agent, messages sent by bots (AgentBot, Captain::Assistant) are 
       <summary>Chatwoot application Inbox Contact model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxContact.Id">
-      <summary>ID of the inbox.</summary>
+      <summary>ID of the inbox</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxContact.AvatarUrl">
-      <summary>The avatar image of the inbox.</summary>
+      <summary>The avatar image of the inbox</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxContact.ChannelId">
-      <summary>The ID of the channel.</summary>
+      <summary>The ID of the channel</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxContact.Name">
-      <summary>The name of the inbox.</summary>
+      <summary>The name of the inbox</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxContact.ChannelType">
-      <summary>The type of the inbox.</summary>
+      <summary>The type of the inbox</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxContact.Provider">
-      <summary>The provider of the inbox.</summary>
+      <summary>The provider of the inbox</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxContact.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -2461,13 +2467,13 @@ When grouped by agent, messages sent by bots (AgentBot, Captain::Assistant) are 
       <summary>Type.</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxCreateApiChannelPayload.WebhookUrl">
-      <summary>Webhook URL for API channel inbox callbacks.</summary>
+      <summary>Webhook URL for API channel inbox callbacks</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxCreateApiChannelPayload.HmacMandatory">
-      <summary>Require HMAC verification for incoming API channel messages.</summary>
+      <summary>Require HMAC verification for incoming API channel messages</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxCreateApiChannelPayload.AdditionalAttributes">
-      <summary>Additional attributes stored on contacts created through the API channel.</summary>
+      <summary>Additional attributes stored on contacts created through the API channel</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxCreateApiChannelPayload.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -2479,64 +2485,64 @@ When grouped by agent, messages sent by bots (AgentBot, Captain::Assistant) are 
       <summary>Type.</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxCreateEmailChannelPayload.Email">
-      <summary>Email address for the inbox.</summary>
+      <summary>Email address for the inbox</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxCreateEmailChannelPayload.ImapEnabled">
-      <summary>Enable IMAP for inbound emails.</summary>
+      <summary>Enable IMAP for inbound emails</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxCreateEmailChannelPayload.ImapLogin">
-      <summary>IMAP login username.</summary>
+      <summary>IMAP login username</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxCreateEmailChannelPayload.ImapPassword">
-      <summary>IMAP login password.</summary>
+      <summary>IMAP login password</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxCreateEmailChannelPayload.ImapAddress">
-      <summary>IMAP server address.</summary>
+      <summary>IMAP server address</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxCreateEmailChannelPayload.ImapPort">
-      <summary>IMAP server port.</summary>
+      <summary>IMAP server port</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxCreateEmailChannelPayload.ImapEnableSsl">
-      <summary>Enable SSL for IMAP.</summary>
+      <summary>Enable SSL for IMAP</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxCreateEmailChannelPayload.ImapAuthentication">
-      <summary>IMAP authentication method.</summary>
+      <summary>IMAP authentication method</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxCreateEmailChannelPayload.SmtpEnabled">
-      <summary>Enable SMTP for outbound emails.</summary>
+      <summary>Enable SMTP for outbound emails</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxCreateEmailChannelPayload.SmtpLogin">
-      <summary>SMTP login username.</summary>
+      <summary>SMTP login username</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxCreateEmailChannelPayload.SmtpPassword">
-      <summary>SMTP login password.</summary>
+      <summary>SMTP login password</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxCreateEmailChannelPayload.SmtpAddress">
-      <summary>SMTP server address.</summary>
+      <summary>SMTP server address</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxCreateEmailChannelPayload.SmtpPort">
-      <summary>SMTP server port.</summary>
+      <summary>SMTP server port</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxCreateEmailChannelPayload.SmtpDomain">
-      <summary>SMTP HELO domain.</summary>
+      <summary>SMTP HELO domain</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxCreateEmailChannelPayload.SmtpEnableStarttlsAuto">
-      <summary>Automatically enable STARTTLS for SMTP.</summary>
+      <summary>Automatically enable STARTTLS for SMTP</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxCreateEmailChannelPayload.SmtpEnableSslTls">
-      <summary>Enable SSL/TLS for SMTP.</summary>
+      <summary>Enable SSL/TLS for SMTP</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxCreateEmailChannelPayload.SmtpOpensslVerifyMode">
-      <summary>OpenSSL certificate verification mode for SMTP.</summary>
+      <summary>OpenSSL certificate verification mode for SMTP</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxCreateEmailChannelPayload.SmtpAuthentication">
-      <summary>SMTP authentication method.</summary>
+      <summary>SMTP authentication method</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxCreateEmailChannelPayload.Provider">
-      <summary>Email provider.</summary>
+      <summary>Email provider</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxCreateEmailChannelPayload.VerifiedForSending">
-      <summary>Whether the inbox is verified for sending emails.</summary>
+      <summary>Whether the inbox is verified for sending emails</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxCreateEmailChannelPayload.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -2548,13 +2554,13 @@ When grouped by agent, messages sent by bots (AgentBot, Captain::Assistant) are 
       <summary>Type.</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxCreateLineChannelPayload.LineChannelId">
-      <summary>LINE channel ID.</summary>
+      <summary>LINE channel ID</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxCreateLineChannelPayload.LineChannelSecret">
-      <summary>LINE channel secret.</summary>
+      <summary>LINE channel secret</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxCreateLineChannelPayload.LineChannelToken">
-      <summary>LINE channel access token.</summary>
+      <summary>LINE channel access token</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxCreateLineChannelPayload.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -2577,7 +2583,8 @@ When grouped by agent, messages sent by bots (AgentBot, Captain::Assistant) are 
     <member name="P:ChatWootApi.Application.InboxCreatePayload.EnableEmailCollect">
       <summary>Enable email collection.
 
-Available for: `Website`.</summary>
+Available for: `Website`
+</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxCreatePayload.CsatSurveyEnabled">
       <summary>Enable CSAT survey.</summary>
@@ -2600,12 +2607,14 @@ Available for: `Website`.</summary>
     <member name="P:ChatWootApi.Application.InboxCreatePayload.AllowMessagesAfterResolved">
       <summary>Allow messages after conversation is resolved.
 
-Available for: `Website`.</summary>
+Available for: `Website`
+</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxCreatePayload.LockToSingleConversation">
       <summary>Lock contact messages to a single active conversation.
 
-Available for: `API` `LINE` `Telegram` `WhatsApp` `SMS`.</summary>
+Available for: `API` `LINE` `Telegram` `WhatsApp` `SMS`
+</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxCreatePayload.PortalId">
       <summary>Id of the help center portal to attach to the inbox.</summary>
@@ -2613,12 +2622,14 @@ Available for: `API` `LINE` `Telegram` `WhatsApp` `SMS`.</summary>
     <member name="P:ChatWootApi.Application.InboxCreatePayload.SenderNameType">
       <summary>Sender name type for outbound email replies.
 
-Available for: `Website` `Email`.</summary>
+Available for: `Website` `Email`
+</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxCreatePayload.BusinessName">
       <summary>Business name for outbound email replies.
 
-Available for: `Website` `Email`.</summary>
+Available for: `Website` `Email`
+</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxCreatePayload.Channel">
       <summary>Channel.</summary>
@@ -2633,10 +2644,10 @@ Available for: `Website` `Email`.</summary>
       <summary>Type.</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxCreateSmsChannelPayload.PhoneNumber">
-      <summary>SMS phone number.</summary>
+      <summary>SMS phone number</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxCreateSmsChannelPayload.ProviderConfig">
-      <summary>Provider-specific SMS configuration.</summary>
+      <summary>Provider-specific SMS configuration</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxCreateSmsChannelPayload.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -2648,7 +2659,7 @@ Available for: `Website` `Email`.</summary>
       <summary>Type.</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxCreateTelegramChannelPayload.BotToken">
-      <summary>Telegram bot token.</summary>
+      <summary>Telegram bot token</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxCreateTelegramChannelPayload.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -2660,37 +2671,37 @@ Available for: `Website` `Email`.</summary>
       <summary>Type.</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxCreateWebWidgetChannelPayload.WebsiteUrl">
-      <summary>URL at which the widget will be loaded.</summary>
+      <summary>URL at which the widget will be loaded</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxCreateWebWidgetChannelPayload.WelcomeTitle">
-      <summary>Welcome title to be displayed on the widget.</summary>
+      <summary>Welcome title to be displayed on the widget</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxCreateWebWidgetChannelPayload.WelcomeTagline">
-      <summary>Welcome tagline to be displayed on the widget.</summary>
+      <summary>Welcome tagline to be displayed on the widget</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxCreateWebWidgetChannelPayload.WidgetColor">
-      <summary>A Hex-color string used to customize the widget.</summary>
+      <summary>A Hex-color string used to customize the widget</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxCreateWebWidgetChannelPayload.ReplyTime">
-      <summary>Expected reply time shown on the widget.</summary>
+      <summary>Expected reply time shown on the widget</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxCreateWebWidgetChannelPayload.PreChatFormEnabled">
-      <summary>Enable the pre-chat form before starting a conversation.</summary>
+      <summary>Enable the pre-chat form before starting a conversation</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxCreateWebWidgetChannelPayload.PreChatFormOptions">
-      <summary>Pre-chat form configuration.</summary>
+      <summary>Pre-chat form configuration</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxCreateWebWidgetChannelPayload.ContinuityViaEmail">
-      <summary>Continue conversations over email when the contact leaves the website.</summary>
+      <summary>Continue conversations over email when the contact leaves the website</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxCreateWebWidgetChannelPayload.HmacMandatory">
-      <summary>Require HMAC verification for contacts using the widget.</summary>
+      <summary>Require HMAC verification for contacts using the widget</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxCreateWebWidgetChannelPayload.AllowedDomains">
-      <summary>Comma-separated list of domains where the widget is allowed to load.</summary>
+      <summary>Comma-separated list of domains where the widget is allowed to load</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxCreateWebWidgetChannelPayload.SelectedFeatureFlags">
-      <summary>Enabled widget feature flags.</summary>
+      <summary>Enabled widget feature flags</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxCreateWebWidgetChannelPayload.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -2705,13 +2716,13 @@ Available for: `Website` `Email`.</summary>
       <summary>Inbox-label matrix report showing the count of conversations for each inbox-label combination.</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxLabelMatrix.Inboxes">
-      <summary>List of inboxes included in the report.</summary>
+      <summary>List of inboxes included in the report</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxLabelMatrix.Labels">
-      <summary>List of labels included in the report.</summary>
+      <summary>List of labels included in the report</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxLabelMatrix.Matrix">
-      <summary>2D array where matrix[i][j] represents the count of conversations in inboxes[i] with labels[j].</summary>
+      <summary>2D array where matrix[i][j] represents the count of conversations in inboxes[i] with labels[j]</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxLabelMatrix.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -2726,13 +2737,13 @@ Available for: `Website` `Email`.</summary>
       <summary>Chatwoot application Inbox Update API Channel Payload model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxUpdateApiChannelPayload.WebhookUrl">
-      <summary>Webhook URL for API channel inbox callbacks.</summary>
+      <summary>Webhook URL for API channel inbox callbacks</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxUpdateApiChannelPayload.HmacMandatory">
-      <summary>Require HMAC verification for incoming API channel messages.</summary>
+      <summary>Require HMAC verification for incoming API channel messages</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxUpdateApiChannelPayload.AdditionalAttributes">
-      <summary>Additional attributes stored on contacts created through the API channel.</summary>
+      <summary>Additional attributes stored on contacts created through the API channel</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxUpdateApiChannelPayload.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -2741,64 +2752,64 @@ Available for: `Website` `Email`.</summary>
       <summary>Chatwoot application Inbox Update Email Channel Payload model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxUpdateEmailChannelPayload.Email">
-      <summary>Email address for the inbox.</summary>
+      <summary>Email address for the inbox</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxUpdateEmailChannelPayload.ImapEnabled">
-      <summary>Enable IMAP for inbound emails.</summary>
+      <summary>Enable IMAP for inbound emails</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxUpdateEmailChannelPayload.ImapLogin">
-      <summary>IMAP login username.</summary>
+      <summary>IMAP login username</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxUpdateEmailChannelPayload.ImapPassword">
-      <summary>IMAP login password.</summary>
+      <summary>IMAP login password</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxUpdateEmailChannelPayload.ImapAddress">
-      <summary>IMAP server address.</summary>
+      <summary>IMAP server address</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxUpdateEmailChannelPayload.ImapPort">
-      <summary>IMAP server port.</summary>
+      <summary>IMAP server port</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxUpdateEmailChannelPayload.ImapEnableSsl">
-      <summary>Enable SSL for IMAP.</summary>
+      <summary>Enable SSL for IMAP</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxUpdateEmailChannelPayload.ImapAuthentication">
-      <summary>IMAP authentication method.</summary>
+      <summary>IMAP authentication method</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxUpdateEmailChannelPayload.SmtpEnabled">
-      <summary>Enable SMTP for outbound emails.</summary>
+      <summary>Enable SMTP for outbound emails</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxUpdateEmailChannelPayload.SmtpLogin">
-      <summary>SMTP login username.</summary>
+      <summary>SMTP login username</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxUpdateEmailChannelPayload.SmtpPassword">
-      <summary>SMTP login password.</summary>
+      <summary>SMTP login password</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxUpdateEmailChannelPayload.SmtpAddress">
-      <summary>SMTP server address.</summary>
+      <summary>SMTP server address</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxUpdateEmailChannelPayload.SmtpPort">
-      <summary>SMTP server port.</summary>
+      <summary>SMTP server port</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxUpdateEmailChannelPayload.SmtpDomain">
-      <summary>SMTP HELO domain.</summary>
+      <summary>SMTP HELO domain</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxUpdateEmailChannelPayload.SmtpEnableStarttlsAuto">
-      <summary>Automatically enable STARTTLS for SMTP.</summary>
+      <summary>Automatically enable STARTTLS for SMTP</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxUpdateEmailChannelPayload.SmtpEnableSslTls">
-      <summary>Enable SSL/TLS for SMTP.</summary>
+      <summary>Enable SSL/TLS for SMTP</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxUpdateEmailChannelPayload.SmtpOpensslVerifyMode">
-      <summary>OpenSSL certificate verification mode for SMTP.</summary>
+      <summary>OpenSSL certificate verification mode for SMTP</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxUpdateEmailChannelPayload.SmtpAuthentication">
-      <summary>SMTP authentication method.</summary>
+      <summary>SMTP authentication method</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxUpdateEmailChannelPayload.Provider">
-      <summary>Email provider.</summary>
+      <summary>Email provider</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxUpdateEmailChannelPayload.VerifiedForSending">
-      <summary>Whether the inbox is verified for sending emails.</summary>
+      <summary>Whether the inbox is verified for sending emails</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxUpdateEmailChannelPayload.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -2807,13 +2818,13 @@ Available for: `Website` `Email`.</summary>
       <summary>Chatwoot application Inbox Update Line Channel Payload model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxUpdateLineChannelPayload.LineChannelId">
-      <summary>LINE channel ID.</summary>
+      <summary>LINE channel ID</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxUpdateLineChannelPayload.LineChannelSecret">
-      <summary>LINE channel secret.</summary>
+      <summary>LINE channel secret</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxUpdateLineChannelPayload.LineChannelToken">
-      <summary>LINE channel access token.</summary>
+      <summary>LINE channel access token</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxUpdateLineChannelPayload.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -2836,7 +2847,8 @@ Available for: `Website` `Email`.</summary>
     <member name="P:ChatWootApi.Application.InboxUpdatePayload.EnableEmailCollect">
       <summary>Enable email collection.
 
-Available for: `Website`.</summary>
+Available for: `Website`
+</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxUpdatePayload.CsatSurveyEnabled">
       <summary>Enable CSAT survey.</summary>
@@ -2859,12 +2871,14 @@ Available for: `Website`.</summary>
     <member name="P:ChatWootApi.Application.InboxUpdatePayload.AllowMessagesAfterResolved">
       <summary>Allow messages after conversation is resolved.
 
-Available for: `Website`.</summary>
+Available for: `Website`
+</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxUpdatePayload.LockToSingleConversation">
       <summary>Lock contact messages to a single active conversation.
 
-Available for: `API` `LINE` `Telegram` `WhatsApp` `SMS`.</summary>
+Available for: `API` `LINE` `Telegram` `WhatsApp` `SMS`
+</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxUpdatePayload.PortalId">
       <summary>Id of the help center portal to attach to the inbox.</summary>
@@ -2872,12 +2886,14 @@ Available for: `API` `LINE` `Telegram` `WhatsApp` `SMS`.</summary>
     <member name="P:ChatWootApi.Application.InboxUpdatePayload.SenderNameType">
       <summary>Sender name type for outbound email replies.
 
-Available for: `Website` `Email`.</summary>
+Available for: `Website` `Email`
+</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxUpdatePayload.BusinessName">
       <summary>Business name for outbound email replies.
 
-Available for: `Website` `Email`.</summary>
+Available for: `Website` `Email`
+</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxUpdatePayload.Channel">
       <summary>Channel.</summary>
@@ -2889,10 +2905,10 @@ Available for: `Website` `Email`.</summary>
       <summary>Chatwoot application Inbox Update Sms Channel Payload model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxUpdateSmsChannelPayload.PhoneNumber">
-      <summary>SMS phone number.</summary>
+      <summary>SMS phone number</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxUpdateSmsChannelPayload.ProviderConfig">
-      <summary>Provider-specific SMS configuration.</summary>
+      <summary>Provider-specific SMS configuration</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxUpdateSmsChannelPayload.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -2901,7 +2917,7 @@ Available for: `Website` `Email`.</summary>
       <summary>Chatwoot application Inbox Update Telegram Channel Payload model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxUpdateTelegramChannelPayload.BotToken">
-      <summary>Telegram bot token.</summary>
+      <summary>Telegram bot token</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxUpdateTelegramChannelPayload.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -2910,37 +2926,37 @@ Available for: `Website` `Email`.</summary>
       <summary>Chatwoot application Inbox Update Web Widget Channel Payload model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxUpdateWebWidgetChannelPayload.WebsiteUrl">
-      <summary>URL at which the widget will be loaded.</summary>
+      <summary>URL at which the widget will be loaded</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxUpdateWebWidgetChannelPayload.WelcomeTitle">
-      <summary>Welcome title to be displayed on the widget.</summary>
+      <summary>Welcome title to be displayed on the widget</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxUpdateWebWidgetChannelPayload.WelcomeTagline">
-      <summary>Welcome tagline to be displayed on the widget.</summary>
+      <summary>Welcome tagline to be displayed on the widget</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxUpdateWebWidgetChannelPayload.WidgetColor">
-      <summary>A Hex-color string used to customize the widget.</summary>
+      <summary>A Hex-color string used to customize the widget</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxUpdateWebWidgetChannelPayload.ReplyTime">
-      <summary>Expected reply time shown on the widget.</summary>
+      <summary>Expected reply time shown on the widget</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxUpdateWebWidgetChannelPayload.PreChatFormEnabled">
-      <summary>Enable the pre-chat form before starting a conversation.</summary>
+      <summary>Enable the pre-chat form before starting a conversation</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxUpdateWebWidgetChannelPayload.PreChatFormOptions">
-      <summary>Pre-chat form configuration.</summary>
+      <summary>Pre-chat form configuration</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxUpdateWebWidgetChannelPayload.ContinuityViaEmail">
-      <summary>Continue conversations over email when the contact leaves the website.</summary>
+      <summary>Continue conversations over email when the contact leaves the website</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxUpdateWebWidgetChannelPayload.HmacMandatory">
-      <summary>Require HMAC verification for contacts using the widget.</summary>
+      <summary>Require HMAC verification for contacts using the widget</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxUpdateWebWidgetChannelPayload.AllowedDomains">
-      <summary>Comma-separated list of domains where the widget is allowed to load.</summary>
+      <summary>Comma-separated list of domains where the widget is allowed to load</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxUpdateWebWidgetChannelPayload.SelectedFeatureFlags">
-      <summary>Enabled widget feature flags.</summary>
+      <summary>Enabled widget feature flags</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxUpdateWebWidgetChannelPayload.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -2949,7 +2965,7 @@ Available for: `Website` `Email`.</summary>
       <summary>Chatwoot application Inbox Update Whatsapp Channel Payload model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxUpdateWhatsappChannelPayload.PhoneNumber">
-      <summary>WhatsApp phone number.</summary>
+      <summary>WhatsApp phone number</summary>
     </member>
     <member name="P:ChatWootApi.Application.InboxUpdateWhatsappChannelPayload.Provider">
       <summary>WhatsApp provider. `default` is supported only for existing deprecated 360dialog setups.</summary>
@@ -2964,25 +2980,25 @@ Available for: `Website` `Email`.</summary>
       <summary>Chatwoot application Integrations App model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.IntegrationsApp.Id">
-      <summary>The ID of the integration.</summary>
+      <summary>The ID of the integration</summary>
     </member>
     <member name="P:ChatWootApi.Application.IntegrationsApp.Name">
-      <summary>The name of the integration.</summary>
+      <summary>The name of the integration</summary>
     </member>
     <member name="P:ChatWootApi.Application.IntegrationsApp.Description">
-      <summary>The description about the team.</summary>
+      <summary>The description about the team</summary>
     </member>
     <member name="P:ChatWootApi.Application.IntegrationsApp.HookType">
-      <summary>Whether the integration is an account or inbox integration.</summary>
+      <summary>Whether the integration is an account or inbox integration</summary>
     </member>
     <member name="P:ChatWootApi.Application.IntegrationsApp.Enabled">
-      <summary>Whether the integration is enabled for the account.</summary>
+      <summary>Whether the integration is enabled for the account</summary>
     </member>
     <member name="P:ChatWootApi.Application.IntegrationsApp.AllowMultipleHooks">
-      <summary>Whether multiple hooks can be created for the integration.</summary>
+      <summary>Whether multiple hooks can be created for the integration</summary>
     </member>
     <member name="P:ChatWootApi.Application.IntegrationsApp.Hooks">
-      <summary>If there are any hooks created for this integration.</summary>
+      <summary>If there are any hooks created for this integration</summary>
     </member>
     <member name="P:ChatWootApi.Application.IntegrationsApp.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -2991,25 +3007,25 @@ Available for: `Website` `Email`.</summary>
       <summary>Chatwoot application Integrations Hook model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.IntegrationsHook.Id">
-      <summary>The ID of the integration hook.</summary>
+      <summary>The ID of the integration hook</summary>
     </member>
     <member name="P:ChatWootApi.Application.IntegrationsHook.AppId">
-      <summary>The ID of the integration app.</summary>
+      <summary>The ID of the integration app</summary>
     </member>
     <member name="P:ChatWootApi.Application.IntegrationsHook.InboxId">
-      <summary>Inbox ID if its an Inbox integration.</summary>
+      <summary>Inbox ID if its an Inbox integration</summary>
     </member>
     <member name="P:ChatWootApi.Application.IntegrationsHook.AccountId">
-      <summary>Account ID of the integration.</summary>
+      <summary>Account ID of the integration</summary>
     </member>
     <member name="P:ChatWootApi.Application.IntegrationsHook.Status">
-      <summary>Whether the integration hook is enabled for the account.</summary>
+      <summary>Whether the integration hook is enabled for the account</summary>
     </member>
     <member name="P:ChatWootApi.Application.IntegrationsHook.HookType">
-      <summary>Whether its an account or inbox integration hook.</summary>
+      <summary>Whether its an account or inbox integration hook</summary>
     </member>
     <member name="P:ChatWootApi.Application.IntegrationsHook.Settings">
-      <summary>The associated settings for the integration.</summary>
+      <summary>The associated settings for the integration</summary>
     </member>
     <member name="P:ChatWootApi.Application.IntegrationsHook.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -3018,16 +3034,16 @@ Available for: `Website` `Email`.</summary>
       <summary>Chatwoot application Integrations Hook Create Payload model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.IntegrationsHookCreatePayload.AppId">
-      <summary>The ID of app for which integration hook is being created.</summary>
+      <summary>The ID of app for which integration hook is being created</summary>
     </member>
     <member name="P:ChatWootApi.Application.IntegrationsHookCreatePayload.InboxId">
-      <summary>The inbox ID, if the hook is an inbox hook.</summary>
+      <summary>The inbox ID, if the hook is an inbox hook</summary>
     </member>
     <member name="P:ChatWootApi.Application.IntegrationsHookCreatePayload.Status">
-      <summary>The status of the integration (0 for inactive, 1 for active).</summary>
+      <summary>The status of the integration (0 for inactive, 1 for active)</summary>
     </member>
     <member name="P:ChatWootApi.Application.IntegrationsHookCreatePayload.Settings">
-      <summary>The settings required by the integration.</summary>
+      <summary>The settings required by the integration</summary>
     </member>
     <member name="P:ChatWootApi.Application.IntegrationsHookCreatePayload.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -3036,10 +3052,10 @@ Available for: `Website` `Email`.</summary>
       <summary>Chatwoot application Integrations Hook Update Payload model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.IntegrationsHookUpdatePayload.Status">
-      <summary>The status of the integration (0 for inactive, 1 for active).</summary>
+      <summary>The status of the integration (0 for inactive, 1 for active)</summary>
     </member>
     <member name="P:ChatWootApi.Application.IntegrationsHookUpdatePayload.Settings">
-      <summary>The settings required by the integration.</summary>
+      <summary>The settings required by the integration</summary>
     </member>
     <member name="P:ChatWootApi.Application.IntegrationsHookUpdatePayload.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -3048,19 +3064,19 @@ Available for: `Website` `Email`.</summary>
       <summary>Chatwoot application Label model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.Label.Id">
-      <summary>The ID of the label.</summary>
+      <summary>The ID of the label</summary>
     </member>
     <member name="P:ChatWootApi.Application.Label.Title">
-      <summary>The title of the label.</summary>
+      <summary>The title of the label</summary>
     </member>
     <member name="P:ChatWootApi.Application.Label.Description">
-      <summary>The description of the label.</summary>
+      <summary>The description of the label</summary>
     </member>
     <member name="P:ChatWootApi.Application.Label.Color">
-      <summary>Hex color code for the label.</summary>
+      <summary>Hex color code for the label</summary>
     </member>
     <member name="P:ChatWootApi.Application.Label.ShowOnSidebar">
-      <summary>Whether the label should appear in the sidebar.</summary>
+      <summary>Whether the label should appear in the sidebar</summary>
     </member>
     <member name="P:ChatWootApi.Application.Label.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -3069,16 +3085,16 @@ Available for: `Website` `Email`.</summary>
       <summary>Chatwoot application Label Create Update Payload model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.LabelCreateUpdatePayload.Title">
-      <summary>The label title.</summary>
+      <summary>The label title</summary>
     </member>
     <member name="P:ChatWootApi.Application.LabelCreateUpdatePayload.Description">
-      <summary>A short description for the label.</summary>
+      <summary>A short description for the label</summary>
     </member>
     <member name="P:ChatWootApi.Application.LabelCreateUpdatePayload.Color">
-      <summary>Hex color code for the label.</summary>
+      <summary>Hex color code for the label</summary>
     </member>
     <member name="P:ChatWootApi.Application.LabelCreateUpdatePayload.ShowOnSidebar">
-      <summary>Whether the label should appear in the sidebar.</summary>
+      <summary>Whether the label should appear in the sidebar</summary>
     </member>
     <member name="P:ChatWootApi.Application.LabelCreateUpdatePayload.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -3087,70 +3103,70 @@ Available for: `Website` `Email`.</summary>
       <summary>Chatwoot application Message model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.Message.Id">
-      <summary>The ID of the message.</summary>
+      <summary>The ID of the message</summary>
     </member>
     <member name="P:ChatWootApi.Application.Message.Content">
-      <summary>The text content of the message.</summary>
+      <summary>The text content of the message</summary>
     </member>
     <member name="P:ChatWootApi.Application.Message.AccountId">
-      <summary>The ID of the account.</summary>
+      <summary>The ID of the account</summary>
     </member>
     <member name="P:ChatWootApi.Application.Message.InboxId">
-      <summary>The ID of the inbox.</summary>
+      <summary>The ID of the inbox</summary>
     </member>
     <member name="P:ChatWootApi.Application.Message.ConversationId">
-      <summary>The ID of the conversation.</summary>
+      <summary>The ID of the conversation</summary>
     </member>
     <member name="P:ChatWootApi.Application.Message.MessageType">
-      <summary>The type of the message.</summary>
+      <summary>The type of the message</summary>
     </member>
     <member name="P:ChatWootApi.Application.Message.CreatedAt">
-      <summary>The time at which message was created.</summary>
+      <summary>The time at which message was created</summary>
     </member>
     <member name="P:ChatWootApi.Application.Message.UpdatedAt">
-      <summary>The time at which message was updated.</summary>
+      <summary>The time at which message was updated</summary>
     </member>
     <member name="P:ChatWootApi.Application.Message.Private">
-      <summary>The flags which shows whether the message is private or not.</summary>
+      <summary>The flags which shows whether the message is private or not</summary>
     </member>
     <member name="P:ChatWootApi.Application.Message.Status">
-      <summary>The status of the message.</summary>
+      <summary>The status of the message</summary>
     </member>
     <member name="P:ChatWootApi.Application.Message.SourceId">
-      <summary>The source ID of the message.</summary>
+      <summary>The source ID of the message</summary>
     </member>
     <member name="P:ChatWootApi.Application.Message.ContentType">
-      <summary>The type of the template message.</summary>
+      <summary>The type of the template message</summary>
     </member>
     <member name="P:ChatWootApi.Application.Message.ContentAttributes">
-      <summary>The content attributes for each content_type.</summary>
+      <summary>The content attributes for each content_type</summary>
     </member>
     <member name="P:ChatWootApi.Application.Message.SenderType">
-      <summary>The type of the sender.</summary>
+      <summary>The type of the sender</summary>
     </member>
     <member name="P:ChatWootApi.Application.Message.SenderId">
-      <summary>The ID of the sender.</summary>
+      <summary>The ID of the sender</summary>
     </member>
     <member name="P:ChatWootApi.Application.Message.ExternalSourceIds">
-      <summary>The external source IDs of the message.</summary>
+      <summary>The external source IDs of the message</summary>
     </member>
     <member name="P:ChatWootApi.Application.Message.AdditionalAttributes">
-      <summary>The additional attributes of the message.</summary>
+      <summary>The additional attributes of the message</summary>
     </member>
     <member name="P:ChatWootApi.Application.Message.ProcessedMessageContent">
-      <summary>The processed message content.</summary>
+      <summary>The processed message content</summary>
     </member>
     <member name="P:ChatWootApi.Application.Message.Sentiment">
-      <summary>The sentiment of the message.</summary>
+      <summary>The sentiment of the message</summary>
     </member>
     <member name="P:ChatWootApi.Application.Message.Conversation">
-      <summary>The conversation object.</summary>
+      <summary>The conversation object</summary>
     </member>
     <member name="P:ChatWootApi.Application.Message.Attachment">
-      <summary>The file object attached to the image.</summary>
+      <summary>The file object attached to the image</summary>
     </member>
     <member name="P:ChatWootApi.Application.Message.Sender">
-      <summary>User/Agent/AgentBot object.</summary>
+      <summary>User/Agent/AgentBot object</summary>
     </member>
     <member name="P:ChatWootApi.Application.Message.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -3159,46 +3175,46 @@ Available for: `Website` `Email`.</summary>
       <summary>Chatwoot application Message Detailed model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.MessageDetailed.Id">
-      <summary>The ID of the message.</summary>
+      <summary>The ID of the message</summary>
     </member>
     <member name="P:ChatWootApi.Application.MessageDetailed.Content">
-      <summary>The text content of the message.</summary>
+      <summary>The text content of the message</summary>
     </member>
     <member name="P:ChatWootApi.Application.MessageDetailed.InboxId">
-      <summary>The ID of the inbox.</summary>
+      <summary>The ID of the inbox</summary>
     </member>
     <member name="P:ChatWootApi.Application.MessageDetailed.ConversationId">
-      <summary>The ID of the conversation.</summary>
+      <summary>The ID of the conversation</summary>
     </member>
     <member name="P:ChatWootApi.Application.MessageDetailed.MessageType">
-      <summary>The type of the message (0: incoming, 1: outgoing, 2: activity, 3: template).</summary>
+      <summary>The type of the message (0: incoming, 1: outgoing, 2: activity, 3: template)</summary>
     </member>
     <member name="P:ChatWootApi.Application.MessageDetailed.ContentType">
-      <summary>The type of the message content.</summary>
+      <summary>The type of the message content</summary>
     </member>
     <member name="P:ChatWootApi.Application.MessageDetailed.Status">
-      <summary>The status of the message.</summary>
+      <summary>The status of the message</summary>
     </member>
     <member name="P:ChatWootApi.Application.MessageDetailed.ContentAttributes">
-      <summary>The content attributes for each content_type.</summary>
+      <summary>The content attributes for each content_type</summary>
     </member>
     <member name="P:ChatWootApi.Application.MessageDetailed.EchoId">
-      <summary>The echo ID of the message, used for deduplication.</summary>
+      <summary>The echo ID of the message, used for deduplication</summary>
     </member>
     <member name="P:ChatWootApi.Application.MessageDetailed.CreatedAt">
-      <summary>The timestamp when message was created.</summary>
+      <summary>The timestamp when message was created</summary>
     </member>
     <member name="P:ChatWootApi.Application.MessageDetailed.Private">
-      <summary>The flag which shows whether the message is private or not.</summary>
+      <summary>The flag which shows whether the message is private or not</summary>
     </member>
     <member name="P:ChatWootApi.Application.MessageDetailed.SourceId">
-      <summary>The source ID of the message.</summary>
+      <summary>The source ID of the message</summary>
     </member>
     <member name="P:ChatWootApi.Application.MessageDetailed.Sender">
-      <summary>Sender.</summary>
+      <summary>The sender of the message (only for incoming messages)</summary>
     </member>
     <member name="P:ChatWootApi.Application.MessageDetailed.Attachments">
-      <summary>The list of attachments associated with the message.</summary>
+      <summary>The list of attachments associated with the message</summary>
     </member>
     <member name="P:ChatWootApi.Application.MessageDetailed.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -3213,10 +3229,10 @@ Available for: `Website` `Email`.</summary>
       <summary>Chatwoot application Platform Account model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.PlatformAccount.Id">
-      <summary>Account ID.</summary>
+      <summary>Account ID</summary>
     </member>
     <member name="P:ChatWootApi.Application.PlatformAccount.Name">
-      <summary>Name of the account.</summary>
+      <summary>Name of the account</summary>
     </member>
     <member name="P:ChatWootApi.Application.PlatformAccount.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -3225,22 +3241,22 @@ Available for: `Website` `Email`.</summary>
       <summary>Chatwoot application Platform Agent Bot Create Update Payload model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.PlatformAgentBotCreateUpdatePayload.Name">
-      <summary>The name of the agent bot.</summary>
+      <summary>The name of the agent bot</summary>
     </member>
     <member name="P:ChatWootApi.Application.PlatformAgentBotCreateUpdatePayload.Description">
-      <summary>The description of the agent bot.</summary>
+      <summary>The description of the agent bot</summary>
     </member>
     <member name="P:ChatWootApi.Application.PlatformAgentBotCreateUpdatePayload.OutgoingUrl">
-      <summary>The webhook URL for the bot.</summary>
+      <summary>The webhook URL for the bot</summary>
     </member>
     <member name="P:ChatWootApi.Application.PlatformAgentBotCreateUpdatePayload.AccountId">
-      <summary>The account ID to associate the agent bot with.</summary>
+      <summary>The account ID to associate the agent bot with</summary>
     </member>
     <member name="P:ChatWootApi.Application.PlatformAgentBotCreateUpdatePayload.Avatar">
-      <summary>Send the form data with the avatar image binary or use the avatar_url.</summary>
+      <summary>Send the form data with the avatar image binary or use the avatar_url</summary>
     </member>
     <member name="P:ChatWootApi.Application.PlatformAgentBotCreateUpdatePayload.AvatarUrl">
-      <summary>The url to a jpeg, png file for the agent bot avatar.</summary>
+      <summary>The url to a jpeg, png file for the agent bot avatar</summary>
     </member>
     <member name="P:ChatWootApi.Application.PlatformAgentBotCreateUpdatePayload.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -3258,7 +3274,7 @@ Available for: `Website` `Email`.</summary>
       <summary>Configuration settings for the portal.</summary>
     </member>
     <member name="P:ChatWootApi.Application.PortalConfig.AllowedLocales">
-      <summary>List of allowed locales for the portal.</summary>
+      <summary>List of allowed locales for the portal</summary>
     </member>
     <member name="P:ChatWootApi.Application.PortalConfig.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -3267,31 +3283,31 @@ Available for: `Website` `Email`.</summary>
       <summary>Chatwoot application Portal Create Update Payload model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.PortalCreateUpdatePayload.Color">
-      <summary>Header color for help-center in hex format.</summary>
+      <summary>Header color for help-center in hex format</summary>
     </member>
     <member name="P:ChatWootApi.Application.PortalCreateUpdatePayload.CustomDomain">
       <summary>Custom domain to display help center.</summary>
     </member>
     <member name="P:ChatWootApi.Application.PortalCreateUpdatePayload.HeaderText">
-      <summary>Help center header.</summary>
+      <summary>Help center header</summary>
     </member>
     <member name="P:ChatWootApi.Application.PortalCreateUpdatePayload.HomepageLink">
-      <summary>link to main dashboard.</summary>
+      <summary>link to main dashboard</summary>
     </member>
     <member name="P:ChatWootApi.Application.PortalCreateUpdatePayload.Name">
-      <summary>Name for the portal.</summary>
+      <summary>Name for the portal</summary>
     </member>
     <member name="P:ChatWootApi.Application.PortalCreateUpdatePayload.PageTitle">
-      <summary>Page title for the portal.</summary>
+      <summary>Page title for the portal</summary>
     </member>
     <member name="P:ChatWootApi.Application.PortalCreateUpdatePayload.Slug">
-      <summary>Slug for the portal to display in link.</summary>
+      <summary>Slug for the portal to display in link</summary>
     </member>
     <member name="P:ChatWootApi.Application.PortalCreateUpdatePayload.Archived">
-      <summary>Status to check if portal is live.</summary>
+      <summary>Status to check if portal is live</summary>
     </member>
     <member name="P:ChatWootApi.Application.PortalCreateUpdatePayload.Config">
-      <summary>Configuration about supporting locales.</summary>
+      <summary>Configuration about supporting locales</summary>
     </member>
     <member name="P:ChatWootApi.Application.PortalCreateUpdatePayload.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -3300,37 +3316,37 @@ Available for: `Website` `Email`.</summary>
       <summary>Chatwoot application Portal Item model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.PortalItem.Id">
-      <summary>The ID of the portal.</summary>
+      <summary>The ID of the portal</summary>
     </member>
     <member name="P:ChatWootApi.Application.PortalItem.Archived">
-      <summary>Whether the portal is archived.</summary>
+      <summary>Whether the portal is archived</summary>
     </member>
     <member name="P:ChatWootApi.Application.PortalItem.Color">
-      <summary>The color code for the portal.</summary>
+      <summary>The color code for the portal</summary>
     </member>
     <member name="P:ChatWootApi.Application.PortalItem.Config">
       <summary>Configuration settings for the portal.</summary>
     </member>
     <member name="P:ChatWootApi.Application.PortalItem.CustomDomain">
-      <summary>Custom domain for the portal.</summary>
+      <summary>Custom domain for the portal</summary>
     </member>
     <member name="P:ChatWootApi.Application.PortalItem.HeaderText">
-      <summary>The header text for the portal.</summary>
+      <summary>The header text for the portal</summary>
     </member>
     <member name="P:ChatWootApi.Application.PortalItem.HomepageLink">
-      <summary>Homepage link for the portal.</summary>
+      <summary>Homepage link for the portal</summary>
     </member>
     <member name="P:ChatWootApi.Application.PortalItem.Name">
-      <summary>Name of the portal.</summary>
+      <summary>Name of the portal</summary>
     </member>
     <member name="P:ChatWootApi.Application.PortalItem.Slug">
-      <summary>URL slug for the portal.</summary>
+      <summary>URL slug for the portal</summary>
     </member>
     <member name="P:ChatWootApi.Application.PortalItem.PageTitle">
-      <summary>Page title for the portal.</summary>
+      <summary>Page title for the portal</summary>
     </member>
     <member name="P:ChatWootApi.Application.PortalItem.AccountId">
-      <summary>ID of the account the portal belongs to.</summary>
+      <summary>ID of the account the portal belongs to</summary>
     </member>
     <member name="P:ChatWootApi.Application.PortalItem.Inbox">
       <summary>Inbox.</summary>
@@ -3348,25 +3364,25 @@ Available for: `Website` `Email`.</summary>
       <summary>Chatwoot application Portal Logo model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.PortalLogo.Id">
-      <summary>ID of the logo file.</summary>
+      <summary>ID of the logo file</summary>
     </member>
     <member name="P:ChatWootApi.Application.PortalLogo.PortalId">
-      <summary>ID of the portal this logo belongs to.</summary>
+      <summary>ID of the portal this logo belongs to</summary>
     </member>
     <member name="P:ChatWootApi.Application.PortalLogo.FileType">
-      <summary>MIME type of the file.</summary>
+      <summary>MIME type of the file</summary>
     </member>
     <member name="P:ChatWootApi.Application.PortalLogo.AccountId">
-      <summary>ID of the account.</summary>
+      <summary>ID of the account</summary>
     </member>
     <member name="P:ChatWootApi.Application.PortalLogo.FileUrl">
-      <summary>URL to access the logo file.</summary>
+      <summary>URL to access the logo file</summary>
     </member>
     <member name="P:ChatWootApi.Application.PortalLogo.BlobId">
-      <summary>ID of the blob.</summary>
+      <summary>ID of the blob</summary>
     </member>
     <member name="P:ChatWootApi.Application.PortalLogo.Filename">
-      <summary>Name of the file.</summary>
+      <summary>Name of the file</summary>
     </member>
     <member name="P:ChatWootApi.Application.PortalLogo.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -3375,22 +3391,22 @@ Available for: `Website` `Email`.</summary>
       <summary>Chatwoot application Portal Meta model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.PortalMeta.AllArticlesCount">
-      <summary>Total number of articles.</summary>
+      <summary>Total number of articles</summary>
     </member>
     <member name="P:ChatWootApi.Application.PortalMeta.ArchivedArticlesCount">
-      <summary>Number of archived articles.</summary>
+      <summary>Number of archived articles</summary>
     </member>
     <member name="P:ChatWootApi.Application.PortalMeta.PublishedCount">
-      <summary>Number of published articles.</summary>
+      <summary>Number of published articles</summary>
     </member>
     <member name="P:ChatWootApi.Application.PortalMeta.DraftArticlesCount">
-      <summary>Number of draft articles.</summary>
+      <summary>Number of draft articles</summary>
     </member>
     <member name="P:ChatWootApi.Application.PortalMeta.CategoriesCount">
-      <summary>Number of categories.</summary>
+      <summary>Number of categories</summary>
     </member>
     <member name="P:ChatWootApi.Application.PortalMeta.DefaultLocale">
-      <summary>Default locale for the portal.</summary>
+      <summary>Default locale for the portal</summary>
     </member>
     <member name="P:ChatWootApi.Application.PortalMeta.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -3399,7 +3415,7 @@ Available for: `Website` `Email`.</summary>
       <summary>Chatwoot application Portal Single model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.PortalSingle.Payload">
-      <summary>Payload.</summary>
+      <summary>A single portal object (for show/update endpoints)</summary>
     </member>
     <member name="P:ChatWootApi.Application.PortalSingle.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -3408,22 +3424,22 @@ Available for: `Website` `Email`.</summary>
       <summary>Chatwoot application Public Contact model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicContact.Id">
-      <summary>Id of the contact.</summary>
+      <summary>Id of the contact</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicContact.SourceId">
-      <summary>The session identifier of the contact.</summary>
+      <summary>The session identifier of the contact</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicContact.Name">
-      <summary>Name of the contact when available.</summary>
+      <summary>Name of the contact when available</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicContact.Email">
-      <summary>Email of the contact.</summary>
+      <summary>Email of the contact</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicContact.PhoneNumber">
-      <summary>Phone number of the contact.</summary>
+      <summary>Phone number of the contact</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicContact.PubsubToken">
-      <summary>The token to be used to connect to chatwoot websocket.</summary>
+      <summary>The token to be used to connect to chatwoot websocket</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicContact.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -3432,25 +3448,25 @@ Available for: `Website` `Email`.</summary>
       <summary>Chatwoot application Public Contact Create Update Payload model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicContactCreateUpdatePayload.Identifier">
-      <summary>External identifier of the contact.</summary>
+      <summary>External identifier of the contact</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicContactCreateUpdatePayload.IdentifierHash">
-      <summary>Identifier hash prepared for HMAC authentication.</summary>
+      <summary>Identifier hash prepared for HMAC authentication</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicContactCreateUpdatePayload.Email">
-      <summary>Email of the contact.</summary>
+      <summary>Email of the contact</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicContactCreateUpdatePayload.Name">
-      <summary>Name of the contact.</summary>
+      <summary>Name of the contact</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicContactCreateUpdatePayload.PhoneNumber">
-      <summary>Phone number of the contact.</summary>
+      <summary>Phone number of the contact</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicContactCreateUpdatePayload.Avatar">
-      <summary>Send the form data with the avatar image binary or use the avatar_url.</summary>
+      <summary>Send the form data with the avatar image binary or use the avatar_url</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicContactCreateUpdatePayload.CustomAttributes">
-      <summary>Custom attributes of the customer.</summary>
+      <summary>Custom attributes of the customer</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicContactCreateUpdatePayload.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -3459,61 +3475,61 @@ Available for: `Website` `Email`.</summary>
       <summary>Full serialized contact record returned when the public API renders a Contact model directly.</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicContactRecord.Id">
-      <summary>Id of the contact.</summary>
+      <summary>Id of the contact</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicContactRecord.Name">
-      <summary>Name of the contact when available.</summary>
+      <summary>Name of the contact when available</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicContactRecord.Email">
-      <summary>Email of the contact.</summary>
+      <summary>Email of the contact</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicContactRecord.PhoneNumber">
-      <summary>Phone number of the contact.</summary>
+      <summary>Phone number of the contact</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicContactRecord.Identifier">
-      <summary>Identifier of the contact.</summary>
+      <summary>Identifier of the contact</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicContactRecord.Blocked">
-      <summary>Whether the contact is blocked.</summary>
+      <summary>Whether the contact is blocked</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicContactRecord.AdditionalAttributes">
-      <summary>Additional attributes of the contact when present.</summary>
+      <summary>Additional attributes of the contact when present</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicContactRecord.CustomAttributes">
-      <summary>Custom attributes of the contact when present.</summary>
+      <summary>Custom attributes of the contact when present</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicContactRecord.ContactType">
-      <summary>Contact type of the contact when available.</summary>
+      <summary>Contact type of the contact when available</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicContactRecord.CountryCode">
-      <summary>Country code of the contact.</summary>
+      <summary>Country code of the contact</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicContactRecord.LastActivityAt">
-      <summary>Last activity timestamp of the contact in ISO 8601 format.</summary>
+      <summary>Last activity timestamp of the contact in ISO 8601 format</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicContactRecord.CreatedAt">
-      <summary>Created timestamp of the contact in ISO 8601 format.</summary>
+      <summary>Created timestamp of the contact in ISO 8601 format</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicContactRecord.UpdatedAt">
-      <summary>Updated timestamp of the contact in ISO 8601 format.</summary>
+      <summary>Updated timestamp of the contact in ISO 8601 format</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicContactRecord.LastName">
-      <summary>Last name of the contact.</summary>
+      <summary>Last name of the contact</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicContactRecord.MiddleName">
-      <summary>Middle name of the contact.</summary>
+      <summary>Middle name of the contact</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicContactRecord.Location">
-      <summary>Location of the contact.</summary>
+      <summary>Location of the contact</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicContactRecord.AccountId">
-      <summary>Account id of the contact.</summary>
+      <summary>Account id of the contact</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicContactRecord.CompanyId">
-      <summary>Company id of the contact.</summary>
+      <summary>Company id of the contact</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicContactRecord.LabelList">
-      <summary>Labels applied to the contact.</summary>
+      <summary>Labels applied to the contact</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicContactRecord.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -3522,25 +3538,25 @@ Available for: `Website` `Email`.</summary>
       <summary>Chatwoot application Public Conversation model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicConversation.Id">
-      <summary>Id of the conversation.</summary>
+      <summary>Id of the conversation</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicConversation.Uuid">
-      <summary>UUID of the conversation.</summary>
+      <summary>UUID of the conversation</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicConversation.InboxId">
-      <summary>The inbox id of the conversation.</summary>
+      <summary>The inbox id of the conversation</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicConversation.ContactLastSeenAt">
-      <summary>Timestamp of when the contact last seen the conversation (Unix timestamp).</summary>
+      <summary>Timestamp of when the contact last seen the conversation (Unix timestamp)</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicConversation.Status">
-      <summary>The status of the conversation.</summary>
+      <summary>The status of the conversation</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicConversation.AgentLastSeenAt">
-      <summary>Timestamp of when the agent last seen the conversation (Unix timestamp).</summary>
+      <summary>Timestamp of when the agent last seen the conversation (Unix timestamp)</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicConversation.Messages">
-      <summary>Messages in the conversation.</summary>
+      <summary>Messages in the conversation</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicConversation.Contact">
       <summary>Full serialized contact record returned when the public API renders a Contact model directly.</summary>
@@ -3552,7 +3568,7 @@ Available for: `Website` `Email`.</summary>
       <summary>Chatwoot application Public Conversation Create Payload model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicConversationCreatePayload.CustomAttributes">
-      <summary>Custom attributes of the conversation.</summary>
+      <summary>Custom attributes of the conversation</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicConversationCreatePayload.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -3561,28 +3577,28 @@ Available for: `Website` `Email`.</summary>
       <summary>Chatwoot application Public Inbox model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicInbox.Identifier">
-      <summary>Inbox identifier.</summary>
+      <summary>Inbox identifier</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicInbox.Name">
-      <summary>Name of the inbox.</summary>
+      <summary>Name of the inbox</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicInbox.Timezone">
-      <summary>The timezone defined on the inbox.</summary>
+      <summary>The timezone defined on the inbox</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicInbox.WorkingHours">
-      <summary>The working hours defined on the inbox.</summary>
+      <summary>The working hours defined on the inbox</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicInbox.WorkingHoursEnabled">
-      <summary>Whether of not the working hours are enabled on the inbox.</summary>
+      <summary>Whether of not the working hours are enabled on the inbox</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicInbox.CsatSurveyEnabled">
-      <summary>Whether of not the Customer Satisfaction survey is enabled on the inbox.</summary>
+      <summary>Whether of not the Customer Satisfaction survey is enabled on the inbox</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicInbox.GreetingEnabled">
-      <summary>Whether of not the Greeting Message is enabled on the inbox.</summary>
+      <summary>Whether of not the Greeting Message is enabled on the inbox</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicInbox.IdentityValidationEnabled">
-      <summary>Whether of not the User Identity Validation is enforced on the inbox.</summary>
+      <summary>Whether of not the User Identity Validation is enforced on the inbox</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicInbox.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -3591,28 +3607,28 @@ Available for: `Website` `Email`.</summary>
       <summary>Chatwoot application Public Message model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicMessage.Id">
-      <summary>Id of the message.</summary>
+      <summary>Id of the message</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicMessage.Content">
       <summary>Text content of the message. Can be null for attachment-only messages.</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicMessage.MessageType">
-      <summary>Denotes the message type. Possible values: 0 (incoming), 1 (outgoing), 2 (activity), 3 (template).</summary>
+      <summary>Denotes the message type. Possible values: 0 (incoming), 1 (outgoing), 2 (activity), 3 (template)</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicMessage.ContentType">
-      <summary>Content type of the message.</summary>
+      <summary>Content type of the message</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicMessage.ContentAttributes">
-      <summary>Additional content attributes of the message.</summary>
+      <summary>Additional content attributes of the message</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicMessage.CreatedAt">
-      <summary>Created at Unix timestamp of the message.</summary>
+      <summary>Created at Unix timestamp of the message</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicMessage.ConversationId">
-      <summary>Display Id of the conversation the message belongs to.</summary>
+      <summary>Display Id of the conversation the message belongs to</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicMessage.Attachments">
-      <summary>Attachments if any.</summary>
+      <summary>Attachments if any</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicMessage.Sender">
       <summary>Polymorphic sender payload returned by push_event_data. Available fields vary by sender type.</summary>
@@ -3624,49 +3640,49 @@ Available for: `Website` `Email`.</summary>
       <summary>Attachment payload. Available fields vary by attachment file_type.</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicMessageAttachment.Id">
-      <summary>Id of the attachment.</summary>
+      <summary>Id of the attachment</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicMessageAttachment.MessageId">
-      <summary>Id of the parent message.</summary>
+      <summary>Id of the parent message</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicMessageAttachment.FileType">
-      <summary>Type of the attached file.</summary>
+      <summary>Type of the attached file</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicMessageAttachment.AccountId">
-      <summary>Id of the account.</summary>
+      <summary>Id of the account</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicMessageAttachment.Extension">
-      <summary>File extension.</summary>
+      <summary>File extension</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicMessageAttachment.DataUrl">
       <summary>URL of the file. Can be null when an attachment variant has no external URL.</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicMessageAttachment.ThumbUrl">
-      <summary>URL of the file thumbnail.</summary>
+      <summary>URL of the file thumbnail</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicMessageAttachment.FileSize">
-      <summary>File size in bytes.</summary>
+      <summary>File size in bytes</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicMessageAttachment.Width">
-      <summary>Width of the attachment when available.</summary>
+      <summary>Width of the attachment when available</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicMessageAttachment.Height">
-      <summary>Height of the attachment when available.</summary>
+      <summary>Height of the attachment when available</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicMessageAttachment.CoordinatesLat">
-      <summary>Latitude for location attachments.</summary>
+      <summary>Latitude for location attachments</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicMessageAttachment.CoordinatesLong">
-      <summary>Longitude for location attachments.</summary>
+      <summary>Longitude for location attachments</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicMessageAttachment.FallbackTitle">
-      <summary>Fallback title for location, fallback, and contact attachments when available.</summary>
+      <summary>Fallback title for location, fallback, and contact attachments when available</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicMessageAttachment.Meta">
-      <summary>Metadata for contact attachments.</summary>
+      <summary>Metadata for contact attachments</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicMessageAttachment.TranscribedText">
-      <summary>Transcribed text for audio attachments.</summary>
+      <summary>Transcribed text for audio attachments</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicMessageAttachment.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -3675,10 +3691,10 @@ Available for: `Website` `Email`.</summary>
       <summary>Chatwoot application Public Message Create Payload model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicMessageCreatePayload.Content">
-      <summary>Content for the message.</summary>
+      <summary>Content for the message</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicMessageCreatePayload.EchoId">
-      <summary>Temporary identifier which will be passed back via websockets.</summary>
+      <summary>Temporary identifier which will be passed back via websockets</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicMessageCreatePayload.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -3687,10 +3703,10 @@ Available for: `Website` `Email`.</summary>
       <summary>Polymorphic sender payload returned by push_event_data. Available fields vary by sender type.</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicMessageSender.Id">
-      <summary>Id of the sender.</summary>
+      <summary>Id of the sender</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicMessageSender.Name">
-      <summary>Name of the sender when available.</summary>
+      <summary>Name of the sender when available</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicMessageSender.AvatarUrl">
       <summary>Avatar URL of the sender. Present for senders of type user, agent_bot, and captain_assistant. Not present for contact senders (use thumbnail instead).</summary>
@@ -3699,37 +3715,37 @@ Available for: `Website` `Email`.</summary>
       <summary>Avatar/thumbnail URL of the sender. Contact senders use this field; user senders may also include it.</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicMessageSender.Type">
-      <summary>Type of the sender.</summary>
+      <summary>Type of the sender</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicMessageSender.AvailableName">
-      <summary>Display name for user senders.</summary>
+      <summary>Display name for user senders</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicMessageSender.AvailabilityStatus">
-      <summary>Availability status for user senders.</summary>
+      <summary>Availability status for user senders</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicMessageSender.Email">
-      <summary>Email of the sender when the sender is a contact.</summary>
+      <summary>Email of the sender when the sender is a contact</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicMessageSender.PhoneNumber">
-      <summary>Phone number of the sender when the sender is a contact.</summary>
+      <summary>Phone number of the sender when the sender is a contact</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicMessageSender.Identifier">
-      <summary>Identifier of the sender when the sender is a contact.</summary>
+      <summary>Identifier of the sender when the sender is a contact</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicMessageSender.Blocked">
-      <summary>Whether the sender is blocked when the sender is a contact.</summary>
+      <summary>Whether the sender is blocked when the sender is a contact</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicMessageSender.AdditionalAttributes">
-      <summary>Additional attributes when the sender is a contact and available.</summary>
+      <summary>Additional attributes when the sender is a contact and available</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicMessageSender.CustomAttributes">
-      <summary>Custom attributes when the sender is a contact and available.</summary>
+      <summary>Custom attributes when the sender is a contact and available</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicMessageSender.Description">
-      <summary>Description when the sender is a captain assistant.</summary>
+      <summary>Description when the sender is a captain assistant</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicMessageSender.CreatedAt">
-      <summary>Created timestamp in ISO 8601 format when the sender is a captain assistant.</summary>
+      <summary>Created timestamp in ISO 8601 format when the sender is a captain assistant</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicMessageSender.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -3738,7 +3754,7 @@ Available for: `Website` `Email`.</summary>
       <summary>Chatwoot application Public Message Update Payload model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicMessageUpdatePayload.SubmittedValues">
-      <summary>Replies to the Bot Message Types.</summary>
+      <summary>Replies to the Bot Message Types</summary>
     </member>
     <member name="P:ChatWootApi.Application.PublicMessageUpdatePayload.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -3747,40 +3763,40 @@ Available for: `Website` `Email`.</summary>
       <summary>Chatwoot application Reporting Event model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.ReportingEvent.Id">
-      <summary>ID of the reporting event.</summary>
+      <summary>ID of the reporting event</summary>
     </member>
     <member name="P:ChatWootApi.Application.ReportingEvent.Name">
-      <summary>Name of the event (e.g., first_response, resolution, reply_time).</summary>
+      <summary>Name of the event (e.g., first_response, resolution, reply_time)</summary>
     </member>
     <member name="P:ChatWootApi.Application.ReportingEvent.Value">
-      <summary>Value of the metric in seconds.</summary>
+      <summary>Value of the metric in seconds</summary>
     </member>
     <member name="P:ChatWootApi.Application.ReportingEvent.ValueInBusinessHours">
-      <summary>Value of the metric in seconds, calculated only for business hours.</summary>
+      <summary>Value of the metric in seconds, calculated only for business hours</summary>
     </member>
     <member name="P:ChatWootApi.Application.ReportingEvent.EventStartTime">
-      <summary>The timestamp when the event started.</summary>
+      <summary>The timestamp when the event started</summary>
     </member>
     <member name="P:ChatWootApi.Application.ReportingEvent.EventEndTime">
-      <summary>The timestamp when the event ended.</summary>
+      <summary>The timestamp when the event ended</summary>
     </member>
     <member name="P:ChatWootApi.Application.ReportingEvent.AccountId">
-      <summary>ID of the account.</summary>
+      <summary>ID of the account</summary>
     </member>
     <member name="P:ChatWootApi.Application.ReportingEvent.ConversationId">
-      <summary>ID of the conversation.</summary>
+      <summary>ID of the conversation</summary>
     </member>
     <member name="P:ChatWootApi.Application.ReportingEvent.InboxId">
-      <summary>ID of the inbox.</summary>
+      <summary>ID of the inbox</summary>
     </member>
     <member name="P:ChatWootApi.Application.ReportingEvent.UserId">
-      <summary>ID of the user/agent.</summary>
+      <summary>ID of the user/agent</summary>
     </member>
     <member name="P:ChatWootApi.Application.ReportingEvent.CreatedAt">
-      <summary>The timestamp when the reporting event was created.</summary>
+      <summary>The timestamp when the reporting event was created</summary>
     </member>
     <member name="P:ChatWootApi.Application.ReportingEvent.UpdatedAt">
-      <summary>The timestamp when the reporting event was last updated.</summary>
+      <summary>The timestamp when the reporting event was last updated</summary>
     </member>
     <member name="P:ChatWootApi.Application.ReportingEvent.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -3789,13 +3805,13 @@ Available for: `Website` `Email`.</summary>
       <summary>Chatwoot application Reporting Event Meta model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.ReportingEventMeta.Count">
-      <summary>Total number of reporting events.</summary>
+      <summary>Total number of reporting events</summary>
     </member>
     <member name="P:ChatWootApi.Application.ReportingEventMeta.CurrentPage">
-      <summary>Current page number.</summary>
+      <summary>Current page number</summary>
     </member>
     <member name="P:ChatWootApi.Application.ReportingEventMeta.TotalPages">
-      <summary>Total number of pages.</summary>
+      <summary>Total number of pages</summary>
     </member>
     <member name="P:ChatWootApi.Application.ReportingEventMeta.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -3804,10 +3820,10 @@ Available for: `Website` `Email`.</summary>
       <summary>Chatwoot application Reporting Events List Response model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.ReportingEventsListResponse.Meta">
-      <summary>Meta.</summary>
+      <summary>Metadata about the reporting events list response</summary>
     </member>
     <member name="P:ChatWootApi.Application.ReportingEventsListResponse.Payload">
-      <summary>List of reporting events.</summary>
+      <summary>List of reporting events</summary>
     </member>
     <member name="P:ChatWootApi.Application.ReportingEventsListResponse.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -3831,22 +3847,22 @@ Available for: `Website` `Email`.</summary>
       <summary>Chatwoot application Team model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.Team.Id">
-      <summary>The ID of the team.</summary>
+      <summary>The ID of the team</summary>
     </member>
     <member name="P:ChatWootApi.Application.Team.Name">
-      <summary>The name of the team.</summary>
+      <summary>The name of the team</summary>
     </member>
     <member name="P:ChatWootApi.Application.Team.Description">
-      <summary>The description about the team.</summary>
+      <summary>The description about the team</summary>
     </member>
     <member name="P:ChatWootApi.Application.Team.AllowAutoAssign">
-      <summary>If this setting is turned on, the system would automatically assign the conversation to an agent in the team while assigning the conversation to a team.</summary>
+      <summary>If this setting is turned on, the system would automatically assign the conversation to an agent in the team while assigning the conversation to a team</summary>
     </member>
     <member name="P:ChatWootApi.Application.Team.AccountId">
-      <summary>The ID of the account with the team is a part of.</summary>
+      <summary>The ID of the account with the team is a part of</summary>
     </member>
     <member name="P:ChatWootApi.Application.Team.IsMember">
-      <summary>This field shows whether the current user is a part of the team.</summary>
+      <summary>This field shows whether the current user is a part of the team</summary>
     </member>
     <member name="P:ChatWootApi.Application.Team.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -3855,13 +3871,13 @@ Available for: `Website` `Email`.</summary>
       <summary>Chatwoot application Team Create Update Payload model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.TeamCreateUpdatePayload.Name">
-      <summary>The name of the team.</summary>
+      <summary>The name of the team</summary>
     </member>
     <member name="P:ChatWootApi.Application.TeamCreateUpdatePayload.Description">
-      <summary>The description of the team.</summary>
+      <summary>The description of the team</summary>
     </member>
     <member name="P:ChatWootApi.Application.TeamCreateUpdatePayload.AllowAutoAssign">
-      <summary>If this setting is turned on, the system would automatically assign the conversation to an agent in the team while assigning the conversation to a team.</summary>
+      <summary>If this setting is turned on, the system would automatically assign the conversation to an agent in the team while assigning the conversation to a team</summary>
     </member>
     <member name="P:ChatWootApi.Application.TeamCreateUpdatePayload.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -3942,19 +3958,19 @@ Available for: `Website` `Email`.</summary>
       <summary>Chatwoot application User Create Update Payload model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.UserCreateUpdatePayload.Name">
-      <summary>Name of the user.</summary>
+      <summary>Name of the user</summary>
     </member>
     <member name="P:ChatWootApi.Application.UserCreateUpdatePayload.DisplayName">
-      <summary>Display name of the user.</summary>
+      <summary>Display name of the user</summary>
     </member>
     <member name="P:ChatWootApi.Application.UserCreateUpdatePayload.Email">
-      <summary>Email of the user.</summary>
+      <summary>Email of the user</summary>
     </member>
     <member name="P:ChatWootApi.Application.UserCreateUpdatePayload.Password">
-      <summary>Password must contain uppercase, lowercase letters, number and a special character.</summary>
+      <summary>Password must contain uppercase, lowercase letters, number and a special character</summary>
     </member>
     <member name="P:ChatWootApi.Application.UserCreateUpdatePayload.CustomAttributes">
-      <summary>Custom attributes you want to associate with the user.</summary>
+      <summary>Custom attributes you want to associate with the user</summary>
     </member>
     <member name="P:ChatWootApi.Application.UserCreateUpdatePayload.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -3963,22 +3979,22 @@ Available for: `Website` `Email`.</summary>
       <summary>Chatwoot application Webhook model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.Webhook.Id">
-      <summary>The ID of the webhook.</summary>
+      <summary>The ID of the webhook</summary>
     </member>
     <member name="P:ChatWootApi.Application.Webhook.Url">
-      <summary>The url to which the events will be send.</summary>
+      <summary>The url to which the events will be send</summary>
     </member>
     <member name="P:ChatWootApi.Application.Webhook.Name">
-      <summary>The name of the webhook.</summary>
+      <summary>The name of the webhook</summary>
     </member>
     <member name="P:ChatWootApi.Application.Webhook.Subscriptions">
-      <summary>The list of subscribed events.</summary>
+      <summary>The list of subscribed events</summary>
     </member>
     <member name="P:ChatWootApi.Application.Webhook.Secret">
       <summary>Secret used to sign webhook requests. Signed webhook deliveries include `X-Chatwoot-Timestamp` and `X-Chatwoot-Signature`; the signature is `sha256=` followed by the HMAC-SHA256 of `{timestamp}.{raw_request_body}` using this secret. Deliveries also include `X-Chatwoot-Delivery` when a delivery id is available.</summary>
     </member>
     <member name="P:ChatWootApi.Application.Webhook.AccountId">
-      <summary>The id of the account which the webhook object belongs to.</summary>
+      <summary>The id of the account which the webhook object belongs to</summary>
     </member>
     <member name="P:ChatWootApi.Application.Webhook.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -3987,10 +4003,10 @@ Available for: `Website` `Email`.</summary>
       <summary>Chatwoot application Webhook Create Update Payload model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.WebhookCreateUpdatePayload.Url">
-      <summary>The url where the events should be sent.</summary>
+      <summary>The url where the events should be sent</summary>
     </member>
     <member name="P:ChatWootApi.Application.WebhookCreateUpdatePayload.Name">
-      <summary>The name of the webhook.</summary>
+      <summary>The name of the webhook</summary>
     </member>
     <member name="P:ChatWootApi.Application.WebhookCreateUpdatePayload.Subscriptions">
       <summary>The events you want to subscribe to.</summary>
@@ -4491,22 +4507,22 @@ Available for: `Website` `Email`.</summary>
       <summary>Chatwoot client Conversation model.</summary>
     </member>
     <member name="P:ChatWootApi.Client.Conversation.Id">
-      <summary>Id of the conversation.</summary>
+      <summary>ID of the conversation</summary>
     </member>
     <member name="P:ChatWootApi.Client.Conversation.Uuid">
-      <summary>UUID of the conversation.</summary>
+      <summary>UUID of the conversation</summary>
     </member>
     <member name="P:ChatWootApi.Client.Conversation.InboxId">
-      <summary>The inbox id of the conversation.</summary>
+      <summary>ID of the inbox</summary>
     </member>
     <member name="P:ChatWootApi.Client.Conversation.ContactLastSeenAt">
-      <summary>Timestamp of when the contact last seen the conversation (Unix timestamp).</summary>
+      <summary>The last activity at of the contact</summary>
     </member>
     <member name="P:ChatWootApi.Client.Conversation.Status">
-      <summary>The status of the conversation.</summary>
+      <summary>The status of the conversation</summary>
     </member>
     <member name="P:ChatWootApi.Client.Conversation.AgentLastSeenAt">
-      <summary>Timestamp of when the agent last seen the conversation (Unix timestamp).</summary>
+      <summary>The last activity at of the agent</summary>
     </member>
     <member name="P:ChatWootApi.Client.Conversation.Messages">
       <summary>Messages in the conversation.</summary>
@@ -4518,7 +4534,7 @@ Available for: `Website` `Email`.</summary>
       <summary>Chatwoot client Conversation Create Payload model.</summary>
     </member>
     <member name="P:ChatWootApi.Client.ConversationCreatePayload.CustomAttributes">
-      <summary>Custom attributes of the conversation.</summary>
+      <summary>The object to save custom attributes for conversation, accepts custom attributes key and value</summary>
     </member>
     <member name="T:ChatWootApi.Client.Inbox">
       <summary>Chatwoot client Inbox model.</summary>
@@ -4527,22 +4543,22 @@ Available for: `Website` `Email`.</summary>
       <summary>Inbox identifier.</summary>
     </member>
     <member name="P:ChatWootApi.Client.Inbox.Name">
-      <summary>Name of the inbox.</summary>
+      <summary>The name of the inbox</summary>
     </member>
     <member name="P:ChatWootApi.Client.Inbox.Timezone">
-      <summary>The timezone defined on the inbox.</summary>
+      <summary>Timezone configuration for the inbox</summary>
     </member>
     <member name="P:ChatWootApi.Client.Inbox.WorkingHours">
-      <summary>The working hours defined on the inbox.</summary>
+      <summary>Configuration for working hours of the inbox</summary>
     </member>
     <member name="P:ChatWootApi.Client.Inbox.WorkingHoursEnabled">
-      <summary>Whether of not the working hours are enabled on the inbox.</summary>
+      <summary>The flag which shows whether working hours feature is enabled</summary>
     </member>
     <member name="P:ChatWootApi.Client.Inbox.CsatSurveyEnabled">
-      <summary>Whether of not the Customer Satisfaction survey is enabled on the inbox.</summary>
+      <summary>The flag to enable CSAT survey</summary>
     </member>
     <member name="P:ChatWootApi.Client.Inbox.GreetingEnabled">
-      <summary>Whether of not the Greeting Message is enabled on the inbox.</summary>
+      <summary>The flag which shows whether greeting is enabled</summary>
     </member>
     <member name="P:ChatWootApi.Client.Inbox.IdentityValidationEnabled">
       <summary>Whether of not the User Identity Validation is enforced on the inbox.</summary>
@@ -4575,31 +4591,31 @@ Available for: `Website` `Email`.</summary>
       <summary>Chatwoot client Message model.</summary>
     </member>
     <member name="P:ChatWootApi.Client.Message.Id">
-      <summary>Id of the message.</summary>
+      <summary>The ID of the message</summary>
     </member>
     <member name="P:ChatWootApi.Client.Message.Content">
-      <summary>Text content of the message. Can be null for attachment-only messages.</summary>
+      <summary>The text content of the message</summary>
     </member>
     <member name="P:ChatWootApi.Client.Message.MessageType">
-      <summary>Denotes the message type. Possible values: 0 (incoming), 1 (outgoing), 2 (activity), 3 (template).</summary>
+      <summary>The type of the message</summary>
     </member>
     <member name="P:ChatWootApi.Client.Message.ContentType">
-      <summary>Content type of the message.</summary>
+      <summary>The type of the template message</summary>
     </member>
     <member name="P:ChatWootApi.Client.Message.ContentAttributes">
-      <summary>Additional content attributes of the message.</summary>
+      <summary>The content attributes for each content_type</summary>
     </member>
     <member name="P:ChatWootApi.Client.Message.CreatedAt">
-      <summary>Created at Unix timestamp of the message.</summary>
+      <summary>The time at which message was created</summary>
     </member>
     <member name="P:ChatWootApi.Client.Message.ConversationId">
-      <summary>Display Id of the conversation the message belongs to.</summary>
+      <summary>The ID of the conversation</summary>
     </member>
     <member name="P:ChatWootApi.Client.Message.Attachments">
       <summary>Attachments if any.</summary>
     </member>
     <member name="P:ChatWootApi.Client.Message.Sender">
-      <summary>Polymorphic sender payload returned by push_event_data. Available fields vary by sender type.</summary>
+      <summary>User/Agent/AgentBot object</summary>
     </member>
     <member name="T:ChatWootApi.Client.MessageAttachment">
       <summary>Attachment payload. Available fields vary by attachment file_type.</summary>
@@ -4875,25 +4891,25 @@ Available for: `Website` `Email`.</summary>
       <summary>Chatwoot platform Account Create Update Payload model.</summary>
     </member>
     <member name="P:ChatWootApi.Platform.AccountCreateUpdatePayload.Name">
-      <summary>Name of the account.</summary>
+      <summary>Name of the account</summary>
     </member>
     <member name="P:ChatWootApi.Platform.AccountCreateUpdatePayload.Locale">
-      <summary>The locale of the account.</summary>
+      <summary>The locale of the account</summary>
     </member>
     <member name="P:ChatWootApi.Platform.AccountCreateUpdatePayload.Domain">
-      <summary>The domain of the account.</summary>
+      <summary>The domain of the account</summary>
     </member>
     <member name="P:ChatWootApi.Platform.AccountCreateUpdatePayload.SupportEmail">
-      <summary>The support email of the account.</summary>
+      <summary>The support email of the account</summary>
     </member>
     <member name="P:ChatWootApi.Platform.AccountCreateUpdatePayload.Status">
-      <summary>The status of the account.</summary>
+      <summary>The status of the account</summary>
     </member>
     <member name="P:ChatWootApi.Platform.AccountCreateUpdatePayload.Limits">
-      <summary>The limits of the account.</summary>
+      <summary>The limits of the account</summary>
     </member>
     <member name="P:ChatWootApi.Platform.AccountCreateUpdatePayload.CustomAttributes">
-      <summary>The custom attributes of the account.</summary>
+      <summary>The custom attributes of the account</summary>
     </member>
     <member name="T:ChatWootApi.Platform.AccountUser">
       <summary>Array of account users.</summary>
@@ -4911,43 +4927,43 @@ Available for: `Website` `Email`.</summary>
       <summary>Chatwoot platform Account User Create Update Payload model.</summary>
     </member>
     <member name="P:ChatWootApi.Platform.AccountUserCreateUpdatePayload.UserId">
-      <summary>The ID of the user.</summary>
+      <summary>The ID of the user</summary>
     </member>
     <member name="P:ChatWootApi.Platform.AccountUserCreateUpdatePayload.Role">
-      <summary>whether user is an administrator or agent.</summary>
+      <summary>whether user is an administrator or agent</summary>
     </member>
     <member name="T:ChatWootApi.Platform.AgentBot">
       <summary>Chatwoot platform Agent Bot model.</summary>
     </member>
     <member name="P:ChatWootApi.Platform.AgentBot.Id">
-      <summary>ID of the agent bot.</summary>
+      <summary>ID of the agent bot</summary>
     </member>
     <member name="P:ChatWootApi.Platform.AgentBot.Name">
-      <summary>The name of the agent bot.</summary>
+      <summary>The name of the agent bot</summary>
     </member>
     <member name="P:ChatWootApi.Platform.AgentBot.Description">
-      <summary>The description about the agent bot.</summary>
+      <summary>The description about the agent bot</summary>
     </member>
     <member name="P:ChatWootApi.Platform.AgentBot.Thumbnail">
-      <summary>The thumbnail of the agent bot.</summary>
+      <summary>The thumbnail of the agent bot</summary>
     </member>
     <member name="P:ChatWootApi.Platform.AgentBot.OutgoingUrl">
-      <summary>The webhook URL for the bot.</summary>
+      <summary>The webhook URL for the bot</summary>
     </member>
     <member name="P:ChatWootApi.Platform.AgentBot.BotType">
-      <summary>The type of the bot.</summary>
+      <summary>The type of the bot</summary>
     </member>
     <member name="P:ChatWootApi.Platform.AgentBot.BotConfig">
-      <summary>The configuration of the bot.</summary>
+      <summary>The configuration of the bot</summary>
     </member>
     <member name="P:ChatWootApi.Platform.AgentBot.AccountId">
-      <summary>Account ID if it's an account specific bot.</summary>
+      <summary>Account ID if it's an account specific bot</summary>
     </member>
     <member name="P:ChatWootApi.Platform.AgentBot.AccessToken">
-      <summary>The access token for the bot.</summary>
+      <summary>The access token for the bot</summary>
     </member>
     <member name="P:ChatWootApi.Platform.AgentBot.SystemBot">
-      <summary>Whether the bot is a system bot.</summary>
+      <summary>Whether the bot is a system bot</summary>
     </member>
     <member name="P:ChatWootApi.Platform.AgentBot.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -4956,31 +4972,31 @@ Available for: `Website` `Email`.</summary>
       <summary>Chatwoot platform Agent Bot Create Update Payload model.</summary>
     </member>
     <member name="P:ChatWootApi.Platform.AgentBotCreateUpdatePayload.Name">
-      <summary>The name of the agent bot.</summary>
+      <summary>The name of the agent bot</summary>
     </member>
     <member name="P:ChatWootApi.Platform.AgentBotCreateUpdatePayload.Description">
-      <summary>The description of the agent bot.</summary>
+      <summary>The description of the agent bot</summary>
     </member>
     <member name="P:ChatWootApi.Platform.AgentBotCreateUpdatePayload.OutgoingUrl">
-      <summary>The webhook URL for the bot.</summary>
+      <summary>The webhook URL for the bot</summary>
     </member>
     <member name="P:ChatWootApi.Platform.AgentBotCreateUpdatePayload.AccountId">
       <summary>The account ID to associate the agent bot with.</summary>
     </member>
     <member name="P:ChatWootApi.Platform.AgentBotCreateUpdatePayload.Avatar">
-      <summary>Send the form data with the avatar image binary or use the avatar_url.</summary>
+      <summary>Send the form data with the avatar image binary or use the avatar_url</summary>
     </member>
     <member name="P:ChatWootApi.Platform.AgentBotCreateUpdatePayload.AvatarUrl">
-      <summary>The url to a jpeg, png file for the agent bot avatar.</summary>
+      <summary>The url to a jpeg, png file for the agent bot avatar</summary>
     </member>
     <member name="T:ChatWootApi.Platform.PlatformAccount">
       <summary>Chatwoot platform Platform Account model.</summary>
     </member>
     <member name="P:ChatWootApi.Platform.PlatformAccount.Id">
-      <summary>Account ID.</summary>
+      <summary>Account ID</summary>
     </member>
     <member name="P:ChatWootApi.Platform.PlatformAccount.Name">
-      <summary>Name of the account.</summary>
+      <summary>Name of the account</summary>
     </member>
     <member name="P:ChatWootApi.Platform.PlatformAccount.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -5091,19 +5107,19 @@ Available for: `Website` `Email`.</summary>
       <summary>Chatwoot platform User Create Update Payload model.</summary>
     </member>
     <member name="P:ChatWootApi.Platform.UserCreateUpdatePayload.Name">
-      <summary>Name of the user.</summary>
+      <summary>Name of the user</summary>
     </member>
     <member name="P:ChatWootApi.Platform.UserCreateUpdatePayload.DisplayName">
-      <summary>Display name of the user.</summary>
+      <summary>Display name of the user</summary>
     </member>
     <member name="P:ChatWootApi.Platform.UserCreateUpdatePayload.Email">
-      <summary>Email of the user.</summary>
+      <summary>Email of the user</summary>
     </member>
     <member name="P:ChatWootApi.Platform.UserCreateUpdatePayload.Password">
-      <summary>Password must contain uppercase, lowercase letters, number and a special character.</summary>
+      <summary>Password must contain uppercase, lowercase letters, number and a special character</summary>
     </member>
     <member name="P:ChatWootApi.Platform.UserCreateUpdatePayload.CustomAttributes">
-      <summary>Custom attributes you want to associate with the user.</summary>
+      <summary>Custom attributes you want to associate with the user</summary>
     </member>
     <member name="T:ChatWootApi.Platform.UserSsoUrl">
       <summary>Chatwoot platform User SSO URL model.</summary>

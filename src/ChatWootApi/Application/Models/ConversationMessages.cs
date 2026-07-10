@@ -9,13 +9,13 @@ namespace ChatWootApi.Application.Models;
 public sealed record ConversationMessages
 {
     /// <summary>
-    /// 元数据
+    /// 有关对话的元信息
     /// </summary>
     [JsonPropertyName("meta")]
     public ConversationMeta? Meta { get; init; }
 
     /// <summary>
-    /// 载荷
+    /// 对话中的消息列表
     /// </summary>
     [JsonPropertyName("payload")]
     public IReadOnlyList<MessageDetailed>? Payload { get; init; }
@@ -24,5 +24,5 @@ public sealed record ConversationMessages
     /// Swagger 未显式建模的附加 JSON 字段
     /// </summary>
     [JsonExtensionData]
-    public IDictionary<string, JsonElement>? ExtensionData { get; init; }
+    public IDictionary<string, JsonElement>? ExtensionData { get; set; }
 }

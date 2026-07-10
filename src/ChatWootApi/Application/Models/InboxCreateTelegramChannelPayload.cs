@@ -15,7 +15,7 @@ public sealed record InboxCreateTelegramChannelPayload
     public string? Type { get; init; }
 
     /// <summary>
-    /// 机器人令牌
+    /// Telegram 机器人令牌
     /// </summary>
     [JsonPropertyName("bot_token")]
     public string? BotToken { get; init; }
@@ -24,5 +24,5 @@ public sealed record InboxCreateTelegramChannelPayload
     /// Swagger 未显式建模的附加 JSON 字段
     /// </summary>
     [JsonExtensionData]
-    public IDictionary<string, JsonElement>? ExtensionData { get; init; }
+    public IDictionary<string, JsonElement>? ExtensionData { get; set; }
 }

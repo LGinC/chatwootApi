@@ -9,7 +9,7 @@ namespace ChatWootApi.Application.Models;
 public sealed record AutomationRule
 {
     /// <summary>
-    /// 载荷
+    /// 包含自动化规则的响应负载
     /// </summary>
     [JsonPropertyName("payload")]
     public JsonElement? Payload { get; init; }
@@ -18,5 +18,5 @@ public sealed record AutomationRule
     /// Swagger 未显式建模的附加 JSON 字段
     /// </summary>
     [JsonExtensionData]
-    public IDictionary<string, JsonElement>? ExtensionData { get; init; }
+    public IDictionary<string, JsonElement>? ExtensionData { get; set; }
 }

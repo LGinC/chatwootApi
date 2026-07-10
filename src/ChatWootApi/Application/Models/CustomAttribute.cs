@@ -9,7 +9,7 @@ namespace ChatWootApi.Application.Models;
 public sealed record CustomAttribute
 {
     /// <summary>
-    /// ID
+    /// 标识符
     /// </summary>
     [JsonPropertyName("id")]
     public long? Id { get; init; }
@@ -21,31 +21,31 @@ public sealed record CustomAttribute
     public string? AttributeDisplayName { get; init; }
 
     /// <summary>
-    /// 属性显示类型
+    /// 属性显示类型（文本、数字、货币、百分比、链接、日期、列表、复选框）
     /// </summary>
     [JsonPropertyName("attribute_display_type")]
     public string? AttributeDisplayType { get; init; }
 
     /// <summary>
-    /// 属性Description
+    /// 属性说明
     /// </summary>
     [JsonPropertyName("attribute_description")]
     public string? AttributeDescription { get; init; }
 
     /// <summary>
-    /// 属性Key
+    /// 属性唯一键值
     /// </summary>
     [JsonPropertyName("attribute_key")]
     public string? AttributeKey { get; init; }
 
     /// <summary>
-    /// RegexPattern
+    /// 正则表达式模式
     /// </summary>
     [JsonPropertyName("regex_pattern")]
     public string? RegexPattern { get; init; }
 
     /// <summary>
-    /// RegexCue
+    /// 正则表达式提示
     /// </summary>
     [JsonPropertyName("regex_cue")]
     public string? RegexCue { get; init; }
@@ -57,25 +57,25 @@ public sealed record CustomAttribute
     public string? AttributeValues { get; init; }
 
     /// <summary>
-    /// 属性Model
+    /// 属性类型(conversation_attribute/contact_attribute)
     /// </summary>
     [JsonPropertyName("attribute_model")]
     public string? AttributeModel { get; init; }
 
     /// <summary>
-    /// Default值
+    /// 属性默认值
     /// </summary>
     [JsonPropertyName("default_value")]
     public string? DefaultValue { get; init; }
 
     /// <summary>
-    /// 创建时间
+    /// 创建自定义属性的日期和时间
     /// </summary>
     [JsonPropertyName("created_at")]
     public string? CreatedAt { get; init; }
 
     /// <summary>
-    /// 更新时间
+    /// 更新自定义属性的日期和时间
     /// </summary>
     [JsonPropertyName("updated_at")]
     public string? UpdatedAt { get; init; }
@@ -84,5 +84,5 @@ public sealed record CustomAttribute
     /// Swagger 未显式建模的附加 JSON 字段
     /// </summary>
     [JsonExtensionData]
-    public IDictionary<string, JsonElement>? ExtensionData { get; init; }
+    public IDictionary<string, JsonElement>? ExtensionData { get; set; }
 }

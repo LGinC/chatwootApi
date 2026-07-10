@@ -9,8 +9,20 @@ namespace ChatWootApi.Application.Models;
 public sealed record AccountShowResponse
 {
     /// <summary>
+    /// Chatwoot 可用的最新版本
+    /// </summary>
+    [JsonPropertyName("latest_chatwoot_version")]
+    public string? LatestChatwootVersion { get; init; }
+
+    /// <summary>
+    /// 已订阅的企业版功能列表
+    /// </summary>
+    [JsonPropertyName("subscribed_features")]
+    public IReadOnlyList<string>? SubscribedFeatures { get; init; }
+
+    /// <summary>
     /// Swagger 未显式建模的附加 JSON 字段
     /// </summary>
     [JsonExtensionData]
-    public IDictionary<string, JsonElement>? ExtensionData { get; init; }
+    public IDictionary<string, JsonElement>? ExtensionData { get; set; }
 }

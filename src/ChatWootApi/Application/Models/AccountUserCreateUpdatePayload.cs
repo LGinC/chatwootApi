@@ -9,13 +9,13 @@ namespace ChatWootApi.Application.Models;
 public sealed record AccountUserCreateUpdatePayload
 {
     /// <summary>
-    /// 用户ID。
+    /// 用户ID
     /// </summary>
     [JsonPropertyName("user_id")]
     public long? UserId { get; set; }
 
     /// <summary>
-    /// 角色。
+    /// 用户是否是管理员或代理
     /// </summary>
     [JsonPropertyName("role")]
     public string? Role { get; set; }

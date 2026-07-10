@@ -9,19 +9,19 @@ namespace ChatWootApi.Application.Models;
 public sealed record InboxUpdateWhatsappChannelPayload
 {
     /// <summary>
-    /// 电话号码
+    /// WhatsApp 电话号码
     /// </summary>
     [JsonPropertyName("phone_number")]
     public string? PhoneNumber { get; init; }
 
     /// <summary>
-    /// 提供者
+    /// WhatsApp 提供商。仅现有已弃用的 360dialog 设置支持“默认”。
     /// </summary>
     [JsonPropertyName("provider")]
     public string? Provider { get; init; }
 
     /// <summary>
-    /// 提供者配置
+    /// WhatsApp 提供商配置。云通道使用`api_key`、`phone_number_id`和`business_account_id`；旧版 360dialog 频道使用“api_key”。
     /// </summary>
     [JsonPropertyName("provider_config")]
     public IDictionary<string, JsonElement>? ProviderConfig { get; init; }
@@ -30,5 +30,5 @@ public sealed record InboxUpdateWhatsappChannelPayload
     /// Swagger 未显式建模的附加 JSON 字段
     /// </summary>
     [JsonExtensionData]
-    public IDictionary<string, JsonElement>? ExtensionData { get; init; }
+    public IDictionary<string, JsonElement>? ExtensionData { get; set; }
 }

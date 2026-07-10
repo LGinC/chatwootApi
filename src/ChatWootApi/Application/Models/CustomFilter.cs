@@ -9,37 +9,37 @@ namespace ChatWootApi.Application.Models;
 public sealed record CustomFilter
 {
     /// <summary>
-    /// ID
+    /// 自定义过滤器的ID
     /// </summary>
     [JsonPropertyName("id")]
-    public decimal? Id { get; init; }
+    public long? Id { get; init; }
 
     /// <summary>
-    /// 名称
+    /// 自定义过滤器的名称
     /// </summary>
     [JsonPropertyName("name")]
     public string? Name { get; init; }
 
     /// <summary>
-    /// 类型
+    /// 关于自定义过滤器的说明
     /// </summary>
     [JsonPropertyName("type")]
     public string? Type { get; init; }
 
     /// <summary>
-    /// Query
+    /// 需要保存为自定义过滤器的查询
     /// </summary>
     [JsonPropertyName("query")]
     public IDictionary<string, JsonElement>? Query { get; init; }
 
     /// <summary>
-    /// 创建时间
+    /// 创建自定义过滤器的时间
     /// </summary>
     [JsonPropertyName("created_at")]
     public string? CreatedAt { get; init; }
 
     /// <summary>
-    /// 更新时间
+    /// 自定义过滤器更新的时间
     /// </summary>
     [JsonPropertyName("updated_at")]
     public string? UpdatedAt { get; init; }
@@ -48,5 +48,5 @@ public sealed record CustomFilter
     /// Swagger 未显式建模的附加 JSON 字段
     /// </summary>
     [JsonExtensionData]
-    public IDictionary<string, JsonElement>? ExtensionData { get; init; }
+    public IDictionary<string, JsonElement>? ExtensionData { get; set; }
 }

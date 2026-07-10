@@ -9,37 +9,37 @@ namespace ChatWootApi.Application.Models;
 public sealed record PlatformAgentBotCreateUpdatePayload
 {
     /// <summary>
-    /// 名称
+    /// 代理机器人的名称
     /// </summary>
     [JsonPropertyName("name")]
     public string? Name { get; init; }
 
     /// <summary>
-    /// Description
+    /// 代理机器人的描述
     /// </summary>
     [JsonPropertyName("description")]
     public string? Description { get; init; }
 
     /// <summary>
-    /// 外发URL
+    /// 机器人的 Webhook URL
     /// </summary>
     [JsonPropertyName("outgoing_url")]
     public string? OutgoingUrl { get; init; }
 
     /// <summary>
-    /// 账号ID
+    /// 与代理机器人关联的帐户 ID
     /// </summary>
     [JsonPropertyName("account_id")]
     public long? AccountId { get; init; }
 
     /// <summary>
-    /// 头像
+    /// 使用头像图像二进制文件发送表单数据或使用 avatar_url
     /// </summary>
     [JsonPropertyName("avatar")]
     public string? Avatar { get; init; }
 
     /// <summary>
-    /// 头像URL
+    /// 代理机器人头像的 jpeg、png 文件的 url
     /// </summary>
     [JsonPropertyName("avatar_url")]
     public string? AvatarUrl { get; init; }
@@ -48,5 +48,5 @@ public sealed record PlatformAgentBotCreateUpdatePayload
     /// Swagger 未显式建模的附加 JSON 字段
     /// </summary>
     [JsonExtensionData]
-    public IDictionary<string, JsonElement>? ExtensionData { get; init; }
+    public IDictionary<string, JsonElement>? ExtensionData { get; set; }
 }

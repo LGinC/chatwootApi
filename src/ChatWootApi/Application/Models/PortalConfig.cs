@@ -9,7 +9,7 @@ namespace ChatWootApi.Application.Models;
 public sealed record PortalConfig
 {
     /// <summary>
-    /// 允许区域设置
+    /// 门户允许的区域设置列表
     /// </summary>
     [JsonPropertyName("allowed_locales")]
     public IReadOnlyList<IDictionary<string, JsonElement>?>? AllowedLocales { get; init; }
@@ -18,5 +18,5 @@ public sealed record PortalConfig
     /// Swagger 未显式建模的附加 JSON 字段
     /// </summary>
     [JsonExtensionData]
-    public IDictionary<string, JsonElement>? ExtensionData { get; init; }
+    public IDictionary<string, JsonElement>? ExtensionData { get; set; }
 }

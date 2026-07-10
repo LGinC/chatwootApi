@@ -9,13 +9,13 @@ namespace ChatWootApi.Platform.Models;
 public sealed record PlatformAccount
 {
     /// <summary>
-    /// ID
+    /// 账户ID
     /// </summary>
     [JsonPropertyName("id")]
     public long? Id { get; init; }
 
     /// <summary>
-    /// 名称
+    /// 账户名称
     /// </summary>
     [JsonPropertyName("name")]
     public string? Name { get; init; }
@@ -24,5 +24,5 @@ public sealed record PlatformAccount
     /// Swagger 未显式建模的附加 JSON 字段
     /// </summary>
     [JsonExtensionData]
-    public IDictionary<string, JsonElement>? ExtensionData { get; init; }
+    public IDictionary<string, JsonElement>? ExtensionData { get; set; }
 }

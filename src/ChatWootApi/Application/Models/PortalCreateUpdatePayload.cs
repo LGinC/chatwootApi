@@ -9,55 +9,55 @@ namespace ChatWootApi.Application.Models;
 public sealed record PortalCreateUpdatePayload
 {
     /// <summary>
-    /// 颜色。
+    /// 十六进制格式的帮助中心的标题颜色
     /// </summary>
     [JsonPropertyName("color")]
     public string? Color { get; set; }
 
     /// <summary>
-    /// 自定义域名。
+    /// 用于显示帮助中心的自定义域。
     /// </summary>
     [JsonPropertyName("custom_domain")]
     public string? CustomDomain { get; set; }
 
     /// <summary>
-    /// HeaderText。
+    /// 帮助中心标题
     /// </summary>
     [JsonPropertyName("header_text")]
     public string? HeaderText { get; set; }
 
     /// <summary>
-    /// HomepageLink。
+    /// 链接到主仪表板
     /// </summary>
     [JsonPropertyName("homepage_link")]
     public string? HomepageLink { get; set; }
 
     /// <summary>
-    /// 名称。
+    /// 门户的名称
     /// </summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
     /// <summary>
-    /// Page标题。
+    /// 门户的页面标题
     /// </summary>
     [JsonPropertyName("page_title")]
     public string? PageTitle { get; set; }
 
     /// <summary>
-    /// Slug。
+    /// 用于在链接中显示的门户的 Slug
     /// </summary>
     [JsonPropertyName("slug")]
     public string? Slug { get; set; }
 
     /// <summary>
-    /// 归档。
+    /// 检查门户是否处于活动状态
     /// </summary>
     [JsonPropertyName("archived")]
     public bool? Archived { get; set; }
 
     /// <summary>
-    /// 配置。
+    /// 有关支持区域设置的配置
     /// </summary>
     [JsonPropertyName("config")]
     public IDictionary<string, object>? Config { get; set; }

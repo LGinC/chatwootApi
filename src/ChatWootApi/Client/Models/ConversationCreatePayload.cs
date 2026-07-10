@@ -8,7 +8,7 @@ namespace ChatWootApi.Client.Models;
 public sealed record ConversationCreatePayload
 {
     /// <summary>
-    /// 自定义属性
+    /// 保存对话自定义属性的对象，接受自定义属性键和值
     /// </summary>
     [JsonPropertyName("custom_attributes")]
     public IDictionary<string, object?>? CustomAttributes { get; set; }

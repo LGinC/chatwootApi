@@ -9,49 +9,49 @@ namespace ChatWootApi.Application.Models;
 public sealed record PublicMessage
 {
     /// <summary>
-    /// ID
+    /// 消息id
     /// </summary>
     [JsonPropertyName("id")]
     public long? Id { get; init; }
 
     /// <summary>
-    /// 内容
+    /// 消息的文本内容。对于仅包含附件的消息可以为 null。
     /// </summary>
     [JsonPropertyName("content")]
     public string? Content { get; init; }
 
     /// <summary>
-    /// 消息类型
+    /// 表示消息类型。可能的值：0（传入）、1（传出）、2（活动）、3（模板）
     /// </summary>
     [JsonPropertyName("message_type")]
     public long? MessageType { get; init; }
 
     /// <summary>
-    /// 内容类型
+    /// 消息的内容类型
     /// </summary>
     [JsonPropertyName("content_type")]
     public string? ContentType { get; init; }
 
     /// <summary>
-    /// 内容属性
+    /// 消息的附加内容属性
     /// </summary>
     [JsonPropertyName("content_attributes")]
     public IDictionary<string, JsonElement>? ContentAttributes { get; init; }
 
     /// <summary>
-    /// 创建时间
+    /// 在消息的 Unix 时间戳处创建
     /// </summary>
     [JsonPropertyName("created_at")]
     public long? CreatedAt { get; init; }
 
     /// <summary>
-    /// 会话ID
+    /// 消息所属会话的显示 ID
     /// </summary>
     [JsonPropertyName("conversation_id")]
     public long? ConversationId { get; init; }
 
     /// <summary>
-    /// 附件
+    /// 附件（如有）
     /// </summary>
     [JsonPropertyName("attachments")]
     public IReadOnlyList<PublicMessageAttachment>? Attachments { get; init; }
@@ -66,5 +66,5 @@ public sealed record PublicMessage
     /// Swagger 未显式建模的附加 JSON 字段
     /// </summary>
     [JsonExtensionData]
-    public IDictionary<string, JsonElement>? ExtensionData { get; init; }
+    public IDictionary<string, JsonElement>? ExtensionData { get; set; }
 }

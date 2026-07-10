@@ -15,7 +15,7 @@ public sealed record Article
     public long? Id { get; init; }
 
     /// <summary>
-    /// 内容
+    /// 文字内容。
     /// </summary>
     [JsonPropertyName("content")]
     public string? Content { get; init; }
@@ -87,7 +87,7 @@ public sealed record Article
     public long? FolderId { get; init; }
 
     /// <summary>
-    /// Associated文章ID
+    /// 将相似的文章相互关联，例如提供参考链接。
     /// </summary>
     [JsonPropertyName("associated_article_id")]
     public long? AssociatedArticleId { get; init; }
@@ -96,5 +96,5 @@ public sealed record Article
     /// Swagger 未显式建模的附加 JSON 字段
     /// </summary>
     [JsonExtensionData]
-    public IDictionary<string, JsonElement>? ExtensionData { get; init; }
+    public IDictionary<string, JsonElement>? ExtensionData { get; set; }
 }

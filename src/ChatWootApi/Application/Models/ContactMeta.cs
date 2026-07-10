@@ -9,13 +9,13 @@ namespace ChatWootApi.Application.Models;
 public sealed record ContactMeta
 {
     /// <summary>
-    /// 数量
+    /// 联系人总数
     /// </summary>
     [JsonPropertyName("count")]
     public long? Count { get; init; }
 
     /// <summary>
-    /// 当前Page
+    /// 当前页码
     /// </summary>
     [JsonPropertyName("current_page")]
     public string? CurrentPage { get; init; }
@@ -24,5 +24,5 @@ public sealed record ContactMeta
     /// Swagger 未显式建模的附加 JSON 字段
     /// </summary>
     [JsonExtensionData]
-    public IDictionary<string, JsonElement>? ExtensionData { get; init; }
+    public IDictionary<string, JsonElement>? ExtensionData { get; set; }
 }

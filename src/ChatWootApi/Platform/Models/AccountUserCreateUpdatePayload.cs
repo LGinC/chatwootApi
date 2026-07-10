@@ -14,7 +14,7 @@ public sealed record AccountUserCreateUpdatePayload
     public long UserId { get; set; }
 
     /// <summary>
-    /// 角色
+    /// 用户是否是管理员或代理
     /// </summary>
     [JsonPropertyName("role")]
     public string Role { get; set; } = string.Empty;

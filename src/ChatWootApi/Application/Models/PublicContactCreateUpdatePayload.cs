@@ -9,43 +9,43 @@ namespace ChatWootApi.Application.Models;
 public sealed record PublicContactCreateUpdatePayload
 {
     /// <summary>
-    /// 标识符
+    /// 联系人的外部标识符
     /// </summary>
     [JsonPropertyName("identifier")]
     public string? Identifier { get; init; }
 
     /// <summary>
-    /// 标识符Hash
+    /// 为 HMAC 身份验证准备的标识符哈希
     /// </summary>
     [JsonPropertyName("identifier_hash")]
     public string? IdentifierHash { get; init; }
 
     /// <summary>
-    /// 邮箱
+    /// 联系人的电子邮件
     /// </summary>
     [JsonPropertyName("email")]
     public string? Email { get; init; }
 
     /// <summary>
-    /// 名称
+    /// 联系人姓名
     /// </summary>
     [JsonPropertyName("name")]
     public string? Name { get; init; }
 
     /// <summary>
-    /// 电话号码
+    /// 联系人的电话号码
     /// </summary>
     [JsonPropertyName("phone_number")]
     public string? PhoneNumber { get; init; }
 
     /// <summary>
-    /// 头像
+    /// 使用头像图像二进制文件发送表单数据或使用 avatar_url
     /// </summary>
     [JsonPropertyName("avatar")]
     public string? Avatar { get; init; }
 
     /// <summary>
-    /// 自定义属性
+    /// 客户的自定义属性
     /// </summary>
     [JsonPropertyName("custom_attributes")]
     public IDictionary<string, JsonElement>? CustomAttributes { get; init; }
@@ -54,5 +54,5 @@ public sealed record PublicContactCreateUpdatePayload
     /// Swagger 未显式建模的附加 JSON 字段
     /// </summary>
     [JsonExtensionData]
-    public IDictionary<string, JsonElement>? ExtensionData { get; init; }
+    public IDictionary<string, JsonElement>? ExtensionData { get; set; }
 }

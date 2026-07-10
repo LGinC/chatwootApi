@@ -9,13 +9,13 @@ namespace ChatWootApi.Application.Models;
 public sealed record ReportingEventsListResponse
 {
     /// <summary>
-    /// 元数据
+    /// 有关报告事件列表响应的元数据
     /// </summary>
     [JsonPropertyName("meta")]
     public ReportingEventMeta? Meta { get; init; }
 
     /// <summary>
-    /// 载荷
+    /// 报告事件列表
     /// </summary>
     [JsonPropertyName("payload")]
     public IReadOnlyList<ReportingEvent>? Payload { get; init; }
@@ -24,5 +24,5 @@ public sealed record ReportingEventsListResponse
     /// Swagger 未显式建模的附加 JSON 字段
     /// </summary>
     [JsonExtensionData]
-    public IDictionary<string, JsonElement>? ExtensionData { get; init; }
+    public IDictionary<string, JsonElement>? ExtensionData { get; set; }
 }

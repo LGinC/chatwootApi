@@ -9,13 +9,13 @@ namespace ChatWootApi.Client.Models;
 public sealed record Message
 {
     /// <summary>
-    /// ID
+    /// 消息ID
     /// </summary>
     [JsonPropertyName("id")]
     public long? Id { get; init; }
 
     /// <summary>
-    /// 内容
+    /// 消息的文本内容
     /// </summary>
     [JsonPropertyName("content")]
     public string? Content { get; init; }
@@ -27,25 +27,25 @@ public sealed record Message
     public int? MessageType { get; init; }
 
     /// <summary>
-    /// 内容类型
+    /// 模板消息类型
     /// </summary>
     [JsonPropertyName("content_type")]
     public string? ContentType { get; init; }
 
     /// <summary>
-    /// 内容属性
+    /// 每个 content_type 的内容属性
     /// </summary>
     [JsonPropertyName("content_attributes")]
     public IDictionary<string, JsonElement>? ContentAttributes { get; init; }
 
     /// <summary>
-    /// 创建时间
+    /// 消息创建时间
     /// </summary>
     [JsonPropertyName("created_at")]
     public long? CreatedAt { get; init; }
 
     /// <summary>
-    /// 会话ID
+    /// 对话的ID
     /// </summary>
     [JsonPropertyName("conversation_id")]
     public long? ConversationId { get; init; }
@@ -57,7 +57,7 @@ public sealed record Message
     public IReadOnlyList<MessageAttachment>? Attachments { get; init; }
 
     /// <summary>
-    /// 发送者
+    /// 用户/代理/AgentBot 对象
     /// </summary>
     [JsonPropertyName("sender")]
     public MessageSender? Sender { get; init; }

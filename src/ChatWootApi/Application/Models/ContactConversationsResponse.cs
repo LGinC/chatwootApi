@@ -9,7 +9,7 @@ namespace ChatWootApi.Application.Models;
 public sealed record ContactConversationsResponse
 {
     /// <summary>
-    /// 载荷
+    /// 联系人的对话列表
     /// </summary>
     [JsonPropertyName("payload")]
     public IReadOnlyList<JsonElement>? Payload { get; init; }
@@ -18,5 +18,5 @@ public sealed record ContactConversationsResponse
     /// Swagger 未显式建模的附加 JSON 字段
     /// </summary>
     [JsonExtensionData]
-    public IDictionary<string, JsonElement>? ExtensionData { get; init; }
+    public IDictionary<string, JsonElement>? ExtensionData { get; set; }
 }

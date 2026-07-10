@@ -9,19 +9,19 @@ namespace ChatWootApi.Application.Models;
 public sealed record CustomFilterCreateUpdatePayload
 {
     /// <summary>
-    /// 名称。
+    /// 自定义过滤器的名称
     /// </summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
     /// <summary>
-    /// 类型。
+    /// 关于自定义过滤器的说明
     /// </summary>
     [JsonPropertyName("type")]
     public string? Type { get; set; }
 
     /// <summary>
-    /// Query。
+    /// 需要保存为自定义过滤器的查询
     /// </summary>
     [JsonPropertyName("query")]
     public IDictionary<string, object>? Query { get; set; }

@@ -21,55 +21,55 @@ public sealed record Agent
     public long? AccountId { get; init; }
 
     /// <summary>
-    /// 可用状态状态
+    /// 代理的有效可用性状态，源自配置的可用性、自动离线设置和当前状态。要更新代理配置的可用性，请在创建或更新请求中使用可用性字段。
     /// </summary>
     [JsonPropertyName("availability_status")]
     public string? AvailabilityStatus { get; init; }
 
     /// <summary>
-    /// AutoOffline
+    /// 座席离开时是否自动标记为离线。
     /// </summary>
     [JsonPropertyName("auto_offline")]
     public bool? AutoOffline { get; init; }
 
     /// <summary>
-    /// 已确认
+    /// 代理是否已确认其电子邮件地址。
     /// </summary>
     [JsonPropertyName("confirmed")]
     public bool? Confirmed { get; init; }
 
     /// <summary>
-    /// 邮箱
+    /// 代理人的电子邮件
     /// </summary>
     [JsonPropertyName("email")]
     public string? Email { get; init; }
 
     /// <summary>
-    /// 可用名称
+    /// 可用的代理名称
     /// </summary>
     [JsonPropertyName("available_name")]
     public string? AvailableName { get; init; }
 
     /// <summary>
-    /// 名称
+    /// 代理人姓名
     /// </summary>
     [JsonPropertyName("name")]
     public string? Name { get; init; }
 
     /// <summary>
-    /// 角色
+    /// 代理人的角色
     /// </summary>
     [JsonPropertyName("role")]
     public string? Role { get; init; }
 
     /// <summary>
-    /// 缩略图
+    /// 代理的缩略图
     /// </summary>
     [JsonPropertyName("thumbnail")]
     public string? Thumbnail { get; init; }
 
     /// <summary>
-    /// 自定义角色ID
+    /// 代理的自定义角色 ID
     /// </summary>
     [JsonPropertyName("custom_role_id")]
     public long? CustomRoleId { get; init; }
@@ -78,5 +78,5 @@ public sealed record Agent
     /// Swagger 未显式建模的附加 JSON 字段
     /// </summary>
     [JsonExtensionData]
-    public IDictionary<string, JsonElement>? ExtensionData { get; init; }
+    public IDictionary<string, JsonElement>? ExtensionData { get; set; }
 }

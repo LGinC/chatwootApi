@@ -117,7 +117,7 @@ public sealed record User
     public string? Type { get; init; }
 
     /// <summary>
-    /// 自定义属性
+    /// 适用于通过平台 API 创建并具有关联的自定义属性的用户。
     /// </summary>
     [JsonPropertyName("custom_attributes")]
     public IDictionary<string, JsonElement>? CustomAttributes { get; init; }
@@ -132,7 +132,7 @@ public sealed record User
     /// Swagger 未显式建模的附加 JSON 字段
     /// </summary>
     [JsonExtensionData]
-    public IDictionary<string, JsonElement>? ExtensionData { get; init; }
+    public IDictionary<string, JsonElement>? ExtensionData { get; set; }
 }
 
 /// <summary>

@@ -9,19 +9,19 @@ namespace ChatWootApi.Application.Models;
 public sealed record Account
 {
     /// <summary>
-    /// ID
+    /// 账户ID
     /// </summary>
     [JsonPropertyName("id")]
-    public decimal? Id { get; init; }
+    public long? Id { get; init; }
 
     /// <summary>
-    /// 名称
+    /// 账户名称
     /// </summary>
     [JsonPropertyName("name")]
     public string? Name { get; init; }
 
     /// <summary>
-    /// 角色
+    /// 帐户中的用户角色
     /// </summary>
     [JsonPropertyName("role")]
     public string? Role { get; init; }
@@ -30,5 +30,5 @@ public sealed record Account
     /// Swagger 未显式建模的附加 JSON 字段
     /// </summary>
     [JsonExtensionData]
-    public IDictionary<string, JsonElement>? ExtensionData { get; init; }
+    public IDictionary<string, JsonElement>? ExtensionData { get; set; }
 }

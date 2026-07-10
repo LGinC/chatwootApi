@@ -9,37 +9,37 @@ namespace ChatWootApi.Application.Models;
 public sealed record AutomationRuleCreateUpdatePayload
 {
     /// <summary>
-    /// 名称。
+    /// 规则名称
     /// </summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
     /// <summary>
-    /// Description。
+    /// 关于自动化和操作的描述
     /// </summary>
     [JsonPropertyName("description")]
     public string? Description { get; set; }
 
     /// <summary>
-    /// 事件名称。
+    /// 当您想要执行自动化操作时的事件
     /// </summary>
     [JsonPropertyName("event_name")]
     public string? EventName { get; set; }
 
     /// <summary>
-    /// Active。
+    /// 启用/禁用自动化规则
     /// </summary>
     [JsonPropertyName("active")]
     public bool? Active { get; set; }
 
     /// <summary>
-    /// Actions。
+    /// 条件匹配时要执行的操作数组，例如，如果消息包含内容帮助，则添加标签支持。
     /// </summary>
     [JsonPropertyName("actions")]
     public IReadOnlyList<IDictionary<string, object>?>? Actions { get; set; }
 
     /// <summary>
-    /// Conditions。
+    /// 对话过滤器起作用的条件数组，例如消息内容包含文本帮助。
     /// </summary>
     [JsonPropertyName("conditions")]
     public IReadOnlyList<IDictionary<string, object>?>? Conditions { get; set; }

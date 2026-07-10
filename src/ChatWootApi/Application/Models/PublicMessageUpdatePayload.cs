@@ -9,7 +9,7 @@ namespace ChatWootApi.Application.Models;
 public sealed record PublicMessageUpdatePayload
 {
     /// <summary>
-    /// 提交值
+    /// 回复机器人消息类型
     /// </summary>
     [JsonPropertyName("submitted_values")]
     public IDictionary<string, JsonElement>? SubmittedValues { get; init; }
@@ -18,5 +18,5 @@ public sealed record PublicMessageUpdatePayload
     /// Swagger 未显式建模的附加 JSON 字段
     /// </summary>
     [JsonExtensionData]
-    public IDictionary<string, JsonElement>? ExtensionData { get; init; }
+    public IDictionary<string, JsonElement>? ExtensionData { get; set; }
 }

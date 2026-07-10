@@ -19,14 +19,14 @@ public sealed class WebhookRequest
     /// </summary>
     [JsonPropertyName("id")]
     [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
-    public decimal? Id { get; init; }
+    public long? Id { get; init; }
 
     /// <summary>
     /// 会话在 Chatwoot 控制台中显示的编号
     /// </summary>
     [JsonPropertyName("display_id")]
     [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
-    public decimal? DisplayId { get; init; }
+    public long? DisplayId { get; init; }
 
     /// <summary>
     /// 消息正文内容
@@ -150,14 +150,14 @@ public sealed class WebhookRequest
     /// </summary>
     [JsonPropertyName("account_id")]
     [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
-    public decimal? AccountId { get; init; }
+    public long? AccountId { get; init; }
 
     /// <summary>
     /// 收件箱标识符
     /// </summary>
     [JsonPropertyName("inbox_id")]
     [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
-    public decimal? InboxId { get; init; }
+    public long? InboxId { get; init; }
 
     /// <summary>
     /// 客服最后查看会话的 Unix 时间戳
@@ -215,7 +215,7 @@ public sealed class WebhookAccount
     /// </summary>
     [JsonPropertyName("id")]
     [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
-    public decimal? Id { get; init; }
+    public long? Id { get; init; }
 
     /// <summary>
     /// 账号名称
@@ -240,7 +240,7 @@ public sealed class WebhookInbox
     /// </summary>
     [JsonPropertyName("id")]
     [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
-    public decimal? Id { get; init; }
+    public long? Id { get; init; }
 
     /// <summary>
     /// 收件箱名称
@@ -265,7 +265,7 @@ public sealed class WebhookActor
     /// </summary>
     [JsonPropertyName("id")]
     [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
-    public decimal? Id { get; init; }
+    public long? Id { get; init; }
 
     /// <summary>
     /// 参与者显示名称
@@ -314,28 +314,28 @@ public sealed class WebhookConversation
     /// </summary>
     [JsonPropertyName("id")]
     [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
-    public decimal? Id { get; init; }
+    public long? Id { get; init; }
 
     /// <summary>
     /// 控制台中显示的会话编号
     /// </summary>
     [JsonPropertyName("display_id")]
     [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
-    public decimal? DisplayId { get; init; }
+    public long? DisplayId { get; init; }
 
     /// <summary>
     /// 会话所属账号标识符
     /// </summary>
     [JsonPropertyName("account_id")]
     [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
-    public decimal? AccountId { get; init; }
+    public long? AccountId { get; init; }
 
     /// <summary>
     /// 会话所属收件箱标识符
     /// </summary>
     [JsonPropertyName("inbox_id")]
     [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
-    public decimal? InboxId { get; init; }
+    public long? InboxId { get; init; }
 
     /// <summary>
     /// 会话附加属性
@@ -424,21 +424,21 @@ public sealed class WebhookContactInbox
     /// </summary>
     [JsonPropertyName("id")]
     [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
-    public decimal? Id { get; init; }
+    public long? Id { get; init; }
 
     /// <summary>
     /// 联系人标识符
     /// </summary>
     [JsonPropertyName("contact_id")]
     [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
-    public decimal? ContactId { get; init; }
+    public long? ContactId { get; init; }
 
     /// <summary>
     /// 收件箱标识符
     /// </summary>
     [JsonPropertyName("inbox_id")]
     [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
-    public decimal? InboxId { get; init; }
+    public long? InboxId { get; init; }
 
     /// <summary>
     /// 外部来源标识

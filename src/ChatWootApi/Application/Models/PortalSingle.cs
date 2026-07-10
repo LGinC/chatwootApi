@@ -9,7 +9,7 @@ namespace ChatWootApi.Application.Models;
 public sealed record PortalSingle
 {
     /// <summary>
-    /// 载荷
+    /// 单个门户对象（用于显示/更新端点）
     /// </summary>
     [JsonPropertyName("payload")]
     public PortalItem? Payload { get; init; }
@@ -18,5 +18,5 @@ public sealed record PortalSingle
     /// Swagger 未显式建模的附加 JSON 字段
     /// </summary>
     [JsonExtensionData]
-    public IDictionary<string, JsonElement>? ExtensionData { get; init; }
+    public IDictionary<string, JsonElement>? ExtensionData { get; set; }
 }

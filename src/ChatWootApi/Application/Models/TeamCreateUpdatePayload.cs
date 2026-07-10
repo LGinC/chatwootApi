@@ -9,19 +9,19 @@ namespace ChatWootApi.Application.Models;
 public sealed record TeamCreateUpdatePayload
 {
     /// <summary>
-    /// 名称。
+    /// 团队名称
     /// </summary>
     [JsonPropertyName("name")]
     public string? Name { get; set; }
 
     /// <summary>
-    /// Description。
+    /// 团队的描述
     /// </summary>
     [JsonPropertyName("description")]
     public string? Description { get; set; }
 
     /// <summary>
-    /// AllowAutoAssign。
+    /// 如果开启此设置，系统在将对话分配给团队的同时，会自动将对话分配给团队中的座席
     /// </summary>
     [JsonPropertyName("allow_auto_assign")]
     public bool? AllowAutoAssign { get; set; }

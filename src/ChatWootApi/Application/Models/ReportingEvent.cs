@@ -9,73 +9,73 @@ namespace ChatWootApi.Application.Models;
 public sealed record ReportingEvent
 {
     /// <summary>
-    /// ID
+    /// 上报事件ID
     /// </summary>
     [JsonPropertyName("id")]
-    public decimal? Id { get; init; }
+    public long? Id { get; init; }
 
     /// <summary>
-    /// 名称
+    /// 事件名称（例如，first_response、resolve、reply_time）
     /// </summary>
     [JsonPropertyName("name")]
     public string? Name { get; init; }
 
     /// <summary>
-    /// 值
+    /// 指标值（以秒为单位）
     /// </summary>
     [JsonPropertyName("value")]
     public decimal? Value { get; init; }
 
     /// <summary>
-    /// 值Business时间
+    /// 指标值（以秒为单位），仅针对工作时间计算
     /// </summary>
     [JsonPropertyName("value_in_business_hours")]
     public decimal? ValueInBusinessHours { get; init; }
 
     /// <summary>
-    /// 事件Start时间
+    /// 事件开始时的时间戳
     /// </summary>
     [JsonPropertyName("event_start_time")]
     public string? EventStartTime { get; init; }
 
     /// <summary>
-    /// 事件End时间
+    /// 事件结束时的时间戳
     /// </summary>
     [JsonPropertyName("event_end_time")]
     public string? EventEndTime { get; init; }
 
     /// <summary>
-    /// 账号ID
+    /// 账户ID
     /// </summary>
     [JsonPropertyName("account_id")]
-    public decimal? AccountId { get; init; }
+    public long? AccountId { get; init; }
 
     /// <summary>
-    /// 会话ID
+    /// 对话ID
     /// </summary>
     [JsonPropertyName("conversation_id")]
-    public decimal? ConversationId { get; init; }
+    public long? ConversationId { get; init; }
 
     /// <summary>
-    /// 收件箱ID
+    /// 收件箱 ID
     /// </summary>
     [JsonPropertyName("inbox_id")]
-    public decimal? InboxId { get; init; }
+    public long? InboxId { get; init; }
 
     /// <summary>
-    /// 用户ID
+    /// 用户/代理 ID
     /// </summary>
     [JsonPropertyName("user_id")]
-    public decimal? UserId { get; init; }
+    public long? UserId { get; init; }
 
     /// <summary>
-    /// 创建时间
+    /// 上报事件创建时的时间戳
     /// </summary>
     [JsonPropertyName("created_at")]
     public string? CreatedAt { get; init; }
 
     /// <summary>
-    /// 更新时间
+    /// 报告事件上次更新的时间戳
     /// </summary>
     [JsonPropertyName("updated_at")]
     public string? UpdatedAt { get; init; }
@@ -84,5 +84,5 @@ public sealed record ReportingEvent
     /// Swagger 未显式建模的附加 JSON 字段
     /// </summary>
     [JsonExtensionData]
-    public IDictionary<string, JsonElement>? ExtensionData { get; init; }
+    public IDictionary<string, JsonElement>? ExtensionData { get; set; }
 }
