@@ -1,5 +1,6 @@
 using ChatWootApi.Application;
 using ChatWootApi.Application.Models;
+using Refit;
 using System.Reflection;
 
 namespace ChatWootApi.Tests;
@@ -24,6 +25,27 @@ public sealed class ApplicationSwaggerContractTests
             nameof(IApplicationInboxesApi.GetInboxAgentBotAsync));
 
         Assert.Equal(typeof(Task<AgentBot>), method.ReturnType);
+    }
+
+    [Fact]
+    public void AddNewAgentToInboxMatchesSwaggerRequestAndResponse()
+    {
+        var method = GetMethod(
+            typeof(IApplicationInboxesApi),
+            nameof(IApplicationInboxesApi.AddNewAgentToInboxAsync));
+
+        Assert.Equal(typeof(Task<InboxMembersResponse>), method.ReturnType);
+
+        var parameters = method.GetParameters();
+        Assert.Collection(
+            parameters,
+            accountId => Assert.Equal(typeof(long), accountId.ParameterType),
+            payload =>
+            {
+                Assert.Equal(typeof(InboxMembersCreatePayload), payload.ParameterType);
+                Assert.NotNull(payload.GetCustomAttribute<BodyAttribute>());
+            },
+            cancellationToken => Assert.Equal(typeof(CancellationToken), cancellationToken.ParameterType));
     }
 
     private static MethodInfo GetMethod(Type interfaceType, string methodName)

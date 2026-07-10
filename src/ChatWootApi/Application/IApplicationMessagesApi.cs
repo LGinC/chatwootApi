@@ -18,7 +18,7 @@ public interface IApplicationMessagesApi
     /// <param name="cancellationToken">用于取消异步操作的令牌</param>
     /// <returns>原始 JSON 响应数据</returns>
     [Get("/api/v1/accounts/{accountId}/conversations/{conversationId}/messages")]
-    Task<JsonElement> ListAllMessagesAsync(long accountId, long conversationId, [Query] IDictionary<string, object?>? query = null, CancellationToken cancellationToken = default);
+    Task<ConversationMessages> ListAllMessagesAsync(long accountId, long conversationId, [Query] IDictionary<string, object?>? query = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// 调用 Chatwoot 应用 API：创建新消息会话
@@ -29,7 +29,7 @@ public interface IApplicationMessagesApi
     /// <param name="cancellationToken">用于取消异步操作的令牌</param>
     /// <returns>原始 JSON 响应数据</returns>
     [Post("/api/v1/accounts/{accountId}/conversations/{conversationId}/messages")]
-    Task<JsonElement> CreateANewMessageInAConversationAsync(long accountId, long conversationId, [Body] ConversationMessageCreatePayload payload, CancellationToken cancellationToken = default);
+    Task<Message> CreateANewMessageInAConversationAsync(long accountId, long conversationId, [Body] ConversationMessageCreatePayload payload, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// 调用 Chatwoot 应用 API：删除消息

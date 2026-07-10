@@ -24,5 +24,5 @@ public interface IApplicationProfileApi
     /// <param name="cancellationToken">用于取消异步操作的令牌</param>
     /// <returns>用户信息</returns>
     [Put("/api/v1/profile")]
-    Task<User> UpdateProfileAsync([Body] JsonElement payload, CancellationToken cancellationToken = default);
+    Task<User> UpdateProfileAsync([Body] ProfileUpdatePayload payload, CancellationToken cancellationToken = default);
 }

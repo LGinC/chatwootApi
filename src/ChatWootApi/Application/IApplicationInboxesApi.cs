@@ -16,7 +16,7 @@ public interface IApplicationInboxesApi
     /// <param name="cancellationToken">用于取消异步操作的令牌</param>
     /// <returns>原始 JSON 响应数据</returns>
     [Get("/api/v1/accounts/{accountId}/inboxes")]
-    Task<JsonElement> ListAllInboxesAsync(long accountId, CancellationToken cancellationToken = default);
+    Task<InboxesListResponse> ListAllInboxesAsync(long accountId, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// 调用 Chatwoot 应用 API：收件箱创建
@@ -68,7 +68,7 @@ public interface IApplicationInboxesApi
     /// <param name="cancellationToken">用于取消异步操作的令牌</param>
     /// <returns>异步操作</returns>
     [Post("/api/v1/accounts/{accountId}/inboxes/{id}/set_agent_bot")]
-    Task UpdateAgentBotAsync(long accountId, long id, [Body] JsonElement payload, CancellationToken cancellationToken = default);
+    Task UpdateAgentBotAsync(long accountId, long id, [Body] InboxAgentBotUpdatePayload payload, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// 调用 Chatwoot 应用 API：获取收件箱成员
@@ -76,19 +76,19 @@ public interface IApplicationInboxesApi
     /// <param name="accountId">账号 ID</param>
     /// <param name="inboxId">inboxID</param>
     /// <param name="cancellationToken">用于取消异步操作的令牌</param>
-    /// <returns>原始 JSON 响应数据</returns>
+    /// <returns>收件箱中的有效坐席列表</returns>
     [Get("/api/v1/accounts/{accountId}/inbox_members/{inboxId}")]
-    Task<JsonElement> GetInboxMembersAsync(long accountId, long inboxId, CancellationToken cancellationToken = default);
+    Task<InboxMembersResponse> GetInboxMembersAsync(long accountId, long inboxId, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// 调用 Chatwoot 应用 API：添加新坐席收件箱
     /// </summary>
     /// <param name="accountId">账号 ID</param>
-    /// <param name="payload">请求载荷</param>
+    /// <param name="payload">收件箱 ID 和要添加的用户 ID 列表</param>
     /// <param name="cancellationToken">用于取消异步操作的令牌</param>
-    /// <returns>原始 JSON 响应数据</returns>
+    /// <returns>收件箱中的有效坐席列表</returns>
     [Post("/api/v1/accounts/{accountId}/inbox_members")]
-    Task<JsonElement> AddNewAgentToInboxAsync(long accountId, [Body] JsonElement payload, CancellationToken cancellationToken = default);
+    Task<InboxMembersResponse> AddNewAgentToInboxAsync(long accountId, [Body] InboxMembersCreatePayload payload, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// 调用 Chatwoot 应用 API：更新坐席收件箱
@@ -96,9 +96,9 @@ public interface IApplicationInboxesApi
     /// <param name="accountId">账号 ID</param>
     /// <param name="payload">请求载荷</param>
     /// <param name="cancellationToken">用于取消异步操作的令牌</param>
-    /// <returns>原始 JSON 响应数据</returns>
+    /// <returns>收件箱中的有效坐席列表</returns>
     [Patch("/api/v1/accounts/{accountId}/inbox_members")]
-    Task<JsonElement> UpdateAgentsInInboxAsync(long accountId, [Body] JsonElement payload, CancellationToken cancellationToken = default);
+    Task<InboxMembersResponse> UpdateAgentsInInboxAsync(long accountId, [Body] InboxMembersUpdatePayload payload, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// 调用 Chatwoot 应用 API：删除坐席收件箱
@@ -108,5 +108,5 @@ public interface IApplicationInboxesApi
     /// <param name="cancellationToken">用于取消异步操作的令牌</param>
     /// <returns>异步操作</returns>
     [Delete("/api/v1/accounts/{accountId}/inbox_members")]
-    Task DeleteAgentInInboxAsync(long accountId, [Body] JsonElement payload, CancellationToken cancellationToken = default);
+    Task DeleteAgentInInboxAsync(long accountId, [Body] InboxMembersUpdatePayload payload, CancellationToken cancellationToken = default);
 }

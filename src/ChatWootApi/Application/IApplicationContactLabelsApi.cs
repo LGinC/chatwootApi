@@ -28,5 +28,5 @@ public interface IApplicationContactLabelsApi
     /// <param name="cancellationToken">用于取消异步操作的令牌</param>
     /// <returns>联系人标签集合</returns>
     [Post("/api/v1/accounts/{accountId}/contacts/{id}/labels")]
-    Task<ContactLabels> ContactAddLabelsAsync(long accountId, long id, [Body] JsonElement payload, CancellationToken cancellationToken = default);
+    Task<ContactLabels> ContactAddLabelsAsync(long accountId, long id, [Body] LabelsPayload payload, CancellationToken cancellationToken = default);
 }

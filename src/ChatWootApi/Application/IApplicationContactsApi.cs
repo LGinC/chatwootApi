@@ -88,7 +88,7 @@ public interface IApplicationContactsApi
     /// <param name="cancellationToken">用于取消异步操作的令牌</param>
     /// <returns>联系人列表</returns>
     [Post("/api/v1/accounts/{accountId}/contacts/filter")]
-    Task<ContactsListResponse> ContactFilterAsync(long accountId, [Body] JsonElement payload, [Query] IDictionary<string, object?>? query = null, CancellationToken cancellationToken = default);
+    Task<ContactsListResponse> ContactFilterAsync(long accountId, [Body] FilterPayload payload, [Query] IDictionary<string, object?>? query = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// 调用 Chatwoot 应用 API：联系人收件箱创建
@@ -99,7 +99,7 @@ public interface IApplicationContactsApi
     /// <param name="cancellationToken">用于取消异步操作的令牌</param>
     /// <returns>联系人收件箱关联</returns>
     [Post("/api/v1/accounts/{accountId}/contacts/{id}/contact_inboxes")]
-    Task<ContactInboxes> ContactInboxCreationAsync(long accountId, long id, [Body] JsonElement payload, CancellationToken cancellationToken = default);
+    Task<ContactInboxes> ContactInboxCreationAsync(long accountId, long id, [Body] ContactInboxCreatePayload payload, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// 调用 Chatwoot 应用 API：获取Contactable收件箱
@@ -119,5 +119,5 @@ public interface IApplicationContactsApi
     /// <param name="cancellationToken">用于取消异步操作的令牌</param>
     /// <returns>联系人基础信息</returns>
     [Post("/api/v1/accounts/{accountId}/actions/contact_merge")]
-    Task<ContactBase> ContactMergeAsync(long accountId, [Body] JsonElement payload, CancellationToken cancellationToken = default);
+    Task<ContactBase> ContactMergeAsync(long accountId, [Body] ContactMergePayload payload, CancellationToken cancellationToken = default);
 }

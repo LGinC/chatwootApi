@@ -78,7 +78,7 @@ public interface IApplicationTeamsApi
     /// <param name="cancellationToken">用于取消异步操作的令牌</param>
     /// <returns>坐席（Agent）信息的只读列表</returns>
     [Post("/api/v1/accounts/{accountId}/teams/{teamId}/team_members")]
-    Task<IReadOnlyList<Agent>> AddNewAgentToTeamAsync(long accountId, long teamId, [Body] JsonElement payload, CancellationToken cancellationToken = default);
+    Task<IReadOnlyList<Agent>> AddNewAgentToTeamAsync(long accountId, long teamId, [Body] TeamMembersUpdatePayload payload, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// 调用 Chatwoot 应用 API：更新坐席团队
@@ -89,7 +89,7 @@ public interface IApplicationTeamsApi
     /// <param name="cancellationToken">用于取消异步操作的令牌</param>
     /// <returns>坐席（Agent）信息的只读列表</returns>
     [Patch("/api/v1/accounts/{accountId}/teams/{teamId}/team_members")]
-    Task<IReadOnlyList<Agent>> UpdateAgentsInTeamAsync(long accountId, long teamId, [Body] JsonElement payload, CancellationToken cancellationToken = default);
+    Task<IReadOnlyList<Agent>> UpdateAgentsInTeamAsync(long accountId, long teamId, [Body] TeamMembersUpdatePayload payload, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// 调用 Chatwoot 应用 API：删除坐席团队
@@ -100,5 +100,5 @@ public interface IApplicationTeamsApi
     /// <param name="cancellationToken">用于取消异步操作的令牌</param>
     /// <returns>异步操作</returns>
     [Delete("/api/v1/accounts/{accountId}/teams/{teamId}/team_members")]
-    Task DeleteAgentInTeamAsync(long accountId, long teamId, [Body] JsonElement payload, CancellationToken cancellationToken = default);
+    Task DeleteAgentInTeamAsync(long accountId, long teamId, [Body] TeamMembersUpdatePayload payload, CancellationToken cancellationToken = default);
 }

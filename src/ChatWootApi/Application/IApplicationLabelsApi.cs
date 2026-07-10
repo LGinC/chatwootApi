@@ -16,7 +16,7 @@ public interface IApplicationLabelsApi
     /// <param name="cancellationToken">用于取消异步操作的令牌</param>
     /// <returns>原始 JSON 响应数据</returns>
     [Get("/api/v1/accounts/{accountId}/labels")]
-    Task<JsonElement> ListAllLabelsAsync(long accountId, CancellationToken cancellationToken = default);
+    Task<LabelsListResponse> ListAllLabelsAsync(long accountId, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// 调用 Chatwoot 应用 API：创建标签

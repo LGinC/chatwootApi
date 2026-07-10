@@ -16,7 +16,7 @@ public interface IApplicationIntegrationsApi
     /// <param name="cancellationToken">用于取消异步操作的令牌</param>
     /// <returns>原始 JSON 响应数据</returns>
     [Get("/api/v1/accounts/{accountId}/integrations/apps")]
-    Task<JsonElement> GetDetailsOfAllIntegrationsAsync(long accountId, CancellationToken cancellationToken = default);
+    Task<IntegrationsAppsResponse> GetDetailsOfAllIntegrationsAsync(long accountId, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// 调用 Chatwoot 应用 API：创建集成钩子

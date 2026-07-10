@@ -27,7 +27,7 @@ public interface IApplicationReportsApi
     /// <param name="cancellationToken">用于取消异步操作的令牌</param>
     /// <returns>会话统计数据字典的只读列表</returns>
     [Get("/api/v2/accounts/{accountId}/reports")]
-    Task<IReadOnlyList<IDictionary<string, JsonElement>?>> ListAllConversationStatisticsAsync(long accountId, [Query] IDictionary<string, object?>? query = null, CancellationToken cancellationToken = default);
+    Task<IReadOnlyList<ConversationStatistic>> ListAllConversationStatisticsAsync(long accountId, [Query] IDictionary<string, object?>? query = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// 调用 Chatwoot 应用 API：列出全部会话Statistics汇总
@@ -47,7 +47,7 @@ public interface IApplicationReportsApi
     /// <param name="cancellationToken">用于取消异步操作的令牌</param>
     /// <returns>原始 JSON 响应数据</returns>
     [Get("/api/v2/accounts/{accountId}/reports/conversations")]
-    Task<JsonElement> GetAccountConversationMetricsAsync(long accountId, [Query] IDictionary<string, object?>? query = null, CancellationToken cancellationToken = default);
+    Task<AccountConversationMetrics> GetAccountConversationMetricsAsync(long accountId, [Query] IDictionary<string, object?>? query = null, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// 调用 Chatwoot 应用 API：获取坐席会话指标
