@@ -6,7 +6,7 @@ namespace ChatWootApi.Application.Models;
 /// <summary>
 /// Chatwoot 应用模型：分类创建更新载荷。
 /// </summary>
-public sealed record CategoryCreateUpdatePayload
+public sealed record CategoryCreateUpdatePayload : JsonExtensionDataPayload
 {
     /// <summary>
     /// 类别名称
@@ -55,10 +55,4 @@ public sealed record CategoryCreateUpdatePayload
     /// </summary>
     [JsonPropertyName("associated_category_id")]
     public long? AssociatedCategoryId { get; set; }
-
-    /// <summary>
-    /// Swagger 未显式建模的附加 JSON 字段。
-    /// </summary>
-    [JsonExtensionData]
-    public IDictionary<string, object>? ExtensionData { get; set; }
 }

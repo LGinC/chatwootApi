@@ -6,7 +6,7 @@ namespace ChatWootApi.Application.Models;
 /// <summary>
 /// Chatwoot 应用模型：门户创建更新载荷。
 /// </summary>
-public sealed record PortalCreateUpdatePayload
+public sealed record PortalCreateUpdatePayload : JsonExtensionDataPayload
 {
     /// <summary>
     /// 十六进制格式的帮助中心的标题颜色
@@ -61,10 +61,4 @@ public sealed record PortalCreateUpdatePayload
     /// </summary>
     [JsonPropertyName("config")]
     public IDictionary<string, object>? Config { get; set; }
-
-    /// <summary>
-    /// Swagger 未显式建模的附加 JSON 字段。
-    /// </summary>
-    [JsonExtensionData]
-    public IDictionary<string, object>? ExtensionData { get; set; }
 }

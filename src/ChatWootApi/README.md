@@ -1,6 +1,6 @@
 # ChatWootApi
 
-English | [简体中文](README.zh-CN.md)
+English | [简体中文](https://github.com/LGinC/chatwootApi/blob/main/src/ChatWootApi/README.zh-CN.md)
 
 Strongly typed .NET interfaces and models for the Chatwoot REST APIs, built on [Refit](https://github.com/reactiveui/refit). The package covers Application, Client, and Platform API surfaces.
 

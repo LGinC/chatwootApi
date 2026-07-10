@@ -6,7 +6,7 @@ namespace ChatWootApi.Application.Models;
 /// <summary>
 /// Chatwoot 应用模型：会话创建载荷。
 /// </summary>
-public sealed record ConversationCreatePayload
+public sealed record ConversationCreatePayload : JsonExtensionDataPayload
 {
     /// <summary>
     /// 对话源 ID
@@ -67,10 +67,4 @@ public sealed record ConversationCreatePayload
     /// </summary>
     [JsonPropertyName("message")]
     public IDictionary<string, object>? Message { get; set; }
-
-    /// <summary>
-    /// Swagger 未显式建模的附加 JSON 字段。
-    /// </summary>
-    [JsonExtensionData]
-    public IDictionary<string, object>? ExtensionData { get; set; }
 }

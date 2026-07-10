@@ -6,7 +6,7 @@ namespace ChatWootApi.Application.Models;
 /// <summary>
 /// Chatwoot 应用模型：收件箱更新载荷。
 /// </summary>
-public sealed record InboxUpdatePayload
+public sealed record InboxUpdatePayload : JsonExtensionDataPayload
 {
     /// <summary>
     /// 收件箱的名称。
@@ -109,10 +109,4 @@ public sealed record InboxUpdatePayload
     /// </summary>
     [JsonPropertyName("channel")]
     public JsonElement? Channel { get; set; }
-
-    /// <summary>
-    /// Swagger 未显式建模的附加 JSON 字段。
-    /// </summary>
-    [JsonExtensionData]
-    public IDictionary<string, object>? ExtensionData { get; set; }
 }

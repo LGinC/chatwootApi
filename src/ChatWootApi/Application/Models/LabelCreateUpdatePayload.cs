@@ -6,7 +6,7 @@ namespace ChatWootApi.Application.Models;
 /// <summary>
 /// Chatwoot 应用模型：标签创建更新载荷。
 /// </summary>
-public sealed record LabelCreateUpdatePayload
+public sealed record LabelCreateUpdatePayload : JsonExtensionDataPayload
 {
     /// <summary>
     /// 标签标题
@@ -31,10 +31,4 @@ public sealed record LabelCreateUpdatePayload
     /// </summary>
     [JsonPropertyName("show_on_sidebar")]
     public bool? ShowOnSidebar { get; set; }
-
-    /// <summary>
-    /// Swagger 未显式建模的附加 JSON 字段。
-    /// </summary>
-    [JsonExtensionData]
-    public IDictionary<string, object>? ExtensionData { get; set; }
 }

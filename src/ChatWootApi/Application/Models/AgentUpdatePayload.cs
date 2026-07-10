@@ -6,7 +6,7 @@ namespace ChatWootApi.Application.Models;
 /// <summary>
 /// Chatwoot 应用模型：坐席更新载荷。
 /// </summary>
-public sealed record AgentUpdatePayload
+public sealed record AgentUpdatePayload : JsonExtensionDataPayload
 {
     /// <summary>
     /// 无论是管理员还是代理人
@@ -25,10 +25,4 @@ public sealed record AgentUpdatePayload
     /// </summary>
     [JsonPropertyName("auto_offline")]
     public bool? AutoOffline { get; set; }
-
-    /// <summary>
-    /// Swagger 未显式建模的附加 JSON 字段。
-    /// </summary>
-    [JsonExtensionData]
-    public IDictionary<string, object>? ExtensionData { get; set; }
 }

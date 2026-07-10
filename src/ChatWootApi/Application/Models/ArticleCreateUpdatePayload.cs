@@ -6,7 +6,7 @@ namespace ChatWootApi.Application.Models;
 /// <summary>
 /// Chatwoot 应用模型：文章创建更新载荷。
 /// </summary>
-public sealed record ArticleCreateUpdatePayload
+public sealed record ArticleCreateUpdatePayload : JsonExtensionDataPayload
 {
     /// <summary>
     /// 文章标题
@@ -73,10 +73,4 @@ public sealed record ArticleCreateUpdatePayload
     /// </summary>
     [JsonPropertyName("meta")]
     public IDictionary<string, object>? Meta { get; set; }
-
-    /// <summary>
-    /// Swagger 未显式建模的附加 JSON 字段。
-    /// </summary>
-    [JsonExtensionData]
-    public IDictionary<string, object>? ExtensionData { get; set; }
 }

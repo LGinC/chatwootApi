@@ -14,7 +14,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Refit" Version="12.1.0" />
+    <PackageReference Include="Refit" Version="13.1.0" />
   </ItemGroup>
 
   <UsingTask TaskName="MergeLocalizedXmlDocumentation" TaskFactory="RoslynCodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.Core.dll">

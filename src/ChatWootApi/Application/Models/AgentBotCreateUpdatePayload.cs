@@ -6,7 +6,7 @@ namespace ChatWootApi.Application.Models;
 /// <summary>
 /// Chatwoot 应用模型：坐席机器人创建更新载荷。
 /// </summary>
-public sealed record AgentBotCreateUpdatePayload
+public sealed record AgentBotCreateUpdatePayload : JsonExtensionDataPayload
 {
     /// <summary>
     /// 代理机器人的名称
@@ -49,10 +49,4 @@ public sealed record AgentBotCreateUpdatePayload
     /// </summary>
     [JsonPropertyName("bot_config")]
     public IDictionary<string, object>? BotConfig { get; set; }
-
-    /// <summary>
-    /// Swagger 未显式建模的附加 JSON 字段。
-    /// </summary>
-    [JsonExtensionData]
-    public IDictionary<string, object>? ExtensionData { get; set; }
 }

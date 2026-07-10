@@ -6,7 +6,7 @@ namespace ChatWootApi.Application.Models;
 /// <summary>
 /// Chatwoot 应用模型：账号更新载荷。
 /// </summary>
-public sealed record AccountUpdatePayload
+public sealed record AccountUpdatePayload : JsonExtensionDataPayload
 {
     /// <summary>
     /// 账户名称
@@ -67,10 +67,4 @@ public sealed record AccountUpdatePayload
     /// </summary>
     [JsonPropertyName("timezone")]
     public string? Timezone { get; set; }
-
-    /// <summary>
-    /// Swagger 未显式建模的附加 JSON 字段。
-    /// </summary>
-    [JsonExtensionData]
-    public IDictionary<string, object>? ExtensionData { get; set; }
 }

@@ -1,4 +1,3 @@
-using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace ChatWootApi.Application.Models;
@@ -6,8 +5,24 @@ namespace ChatWootApi.Application.Models;
 /// <summary>
 /// Chatwoot 应用模型：坐席创建载荷。
 /// </summary>
-public sealed record AgentCreatePayload
+public sealed record AgentCreatePayload : JsonExtensionDataPayload
 {
+    /// <summary>
+    /// 创建空的坐席创建载荷。
+    /// </summary>
+    public AgentCreatePayload()
+    {
+    }
+
+    /// <summary>
+    /// 创建坐席创建载荷，并将附加字段转换为 JSON 元素。
+    /// </summary>
+    /// <param name="extensionData">附加 JSON 字段。</param>
+    public AgentCreatePayload(IDictionary<string, object>? extensionData)
+        : base(extensionData)
+    {
+    }
+
     /// <summary>
     /// 代理人全名
     /// </summary>
@@ -38,9 +53,4 @@ public sealed record AgentCreatePayload
     [JsonPropertyName("auto_offline")]
     public bool? AutoOffline { get; set; }
 
-    /// <summary>
-    /// Swagger 未显式建模的附加 JSON 字段。
-    /// </summary>
-    [JsonExtensionData]
-    public IDictionary<string, object>? ExtensionData { get; set; }
 }

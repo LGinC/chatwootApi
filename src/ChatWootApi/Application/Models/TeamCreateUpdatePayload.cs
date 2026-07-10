@@ -6,7 +6,7 @@ namespace ChatWootApi.Application.Models;
 /// <summary>
 /// Chatwoot 应用模型：团队创建更新载荷。
 /// </summary>
-public sealed record TeamCreateUpdatePayload
+public sealed record TeamCreateUpdatePayload : JsonExtensionDataPayload
 {
     /// <summary>
     /// 团队名称
@@ -25,10 +25,4 @@ public sealed record TeamCreateUpdatePayload
     /// </summary>
     [JsonPropertyName("allow_auto_assign")]
     public bool? AllowAutoAssign { get; set; }
-
-    /// <summary>
-    /// Swagger 未显式建模的附加 JSON 字段。
-    /// </summary>
-    [JsonExtensionData]
-    public IDictionary<string, object>? ExtensionData { get; set; }
 }

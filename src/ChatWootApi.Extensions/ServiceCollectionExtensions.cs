@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Options;
 using Refit;
+using System.Diagnostics.CodeAnalysis;
 using System.Text.Json;
 
 namespace ChatWootApi.Extensions;
@@ -153,7 +154,7 @@ public static class ServiceCollectionExtensions
         services.AddApplicationRefitClient<IApplicationLabelsApi>();
         services.AddApplicationRefitClient<IApplicationMessagesApi>();
         services.AddApplicationRefitClient<IApplicationProfileApi>();
-        services.AddApplicationRefitClient<IApplicationReportsApi>();
+        services.AddApplicationRefitClientWithReflectionFallback<IApplicationReportsApi>();
         services.AddApplicationRefitClient<IApplicationTeamsApi>();
         services.AddApplicationRefitClient<IApplicationWebhooksApi>();
 
@@ -200,6 +201,19 @@ public static class ServiceCollectionExtensions
         where TApi : class
     {
         return services.AddRefitGeneratedClient<TApi>(CreateRefitSettings())
+            .ConfigureHttpClient(ConfigureBaseAddress)
+            .AddHttpMessageHandler<AccountAccessTokenDelegatingHandler>();
+    }
+
+    private static IHttpClientBuilder AddApplicationRefitClientWithReflectionFallback<
+        [DynamicallyAccessedMembers(
+            DynamicallyAccessedMemberTypes.PublicMethods |
+            DynamicallyAccessedMemberTypes.NonPublicMethods |
+            DynamicallyAccessedMemberTypes.Interfaces)] TApi>(
+        this IServiceCollection services)
+        where TApi : class
+    {
+        return services.AddRefitClient<TApi>(CreateRefitSettings())
             .ConfigureHttpClient(ConfigureBaseAddress)
             .AddHttpMessageHandler<AccountAccessTokenDelegatingHandler>();
     }

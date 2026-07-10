@@ -6,7 +6,7 @@ namespace ChatWootApi.Application.Models;
 /// <summary>
 /// Chatwoot 应用模型：集成钩子创建载荷。
 /// </summary>
-public sealed record IntegrationsHookCreatePayload
+public sealed record IntegrationsHookCreatePayload : JsonExtensionDataPayload
 {
     /// <summary>
     /// 正在为其创建集成挂钩的应用程序的 ID
@@ -31,10 +31,4 @@ public sealed record IntegrationsHookCreatePayload
     /// </summary>
     [JsonPropertyName("settings")]
     public IDictionary<string, object>? Settings { get; set; }
-
-    /// <summary>
-    /// Swagger 未显式建模的附加 JSON 字段。
-    /// </summary>
-    [JsonExtensionData]
-    public IDictionary<string, object>? ExtensionData { get; set; }
 }

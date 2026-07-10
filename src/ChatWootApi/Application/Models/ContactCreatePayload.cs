@@ -6,7 +6,7 @@ namespace ChatWootApi.Application.Models;
 /// <summary>
 /// Chatwoot 应用模型：联系人创建载荷。
 /// </summary>
-public sealed record ContactCreatePayload
+public sealed record ContactCreatePayload : JsonExtensionDataPayload
 {
     /// <summary>
     /// 联系人所属收件箱ID
@@ -67,10 +67,4 @@ public sealed record ContactCreatePayload
     /// </summary>
     [JsonPropertyName("custom_attributes")]
     public IDictionary<string, object>? CustomAttributes { get; set; }
-
-    /// <summary>
-    /// Swagger 未显式建模的附加 JSON 字段。
-    /// </summary>
-    [JsonExtensionData]
-    public IDictionary<string, object>? ExtensionData { get; set; }
 }
