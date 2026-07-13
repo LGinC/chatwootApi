@@ -225,6 +225,8 @@ namespace ChatWootApi.Serialization;
 [JsonSerializable(typeof(IReadOnlyList<ChatWootApi.Application.Models.WebhookCreateUpdatePayload>), TypeInfoPropertyName = "IReadOnlyListChatWootApiApplicationWebhookCreateUpdatePayload")]
 [JsonSerializable(typeof(ChatWootApi.Application.Models.WebhookRequest), TypeInfoPropertyName = "ChatWootApiApplicationWebhookRequest")]
 [JsonSerializable(typeof(IReadOnlyList<ChatWootApi.Application.Models.WebhookRequest>), TypeInfoPropertyName = "IReadOnlyListChatWootApiApplicationWebhookRequest")]
+[JsonSerializable(typeof(ChatWootApi.Application.Models.WebhookMessage), TypeInfoPropertyName = "ChatWootApiApplicationWebhookMessage")]
+[JsonSerializable(typeof(IReadOnlyList<ChatWootApi.Application.Models.WebhookMessage>), TypeInfoPropertyName = "IReadOnlyListChatWootApiApplicationWebhookMessage")]
 [JsonSerializable(typeof(ChatWootApi.Application.Models.WebhookAccount), TypeInfoPropertyName = "ChatWootApiApplicationWebhookAccount")]
 [JsonSerializable(typeof(IReadOnlyList<ChatWootApi.Application.Models.WebhookAccount>), TypeInfoPropertyName = "IReadOnlyListChatWootApiApplicationWebhookAccount")]
 [JsonSerializable(typeof(ChatWootApi.Application.Models.WebhookInbox), TypeInfoPropertyName = "ChatWootApiApplicationWebhookInbox")]

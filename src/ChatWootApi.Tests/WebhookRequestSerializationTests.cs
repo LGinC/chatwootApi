@@ -178,6 +178,95 @@ namespace ChatWootApi.Tests
         }
 
         [Fact]
+        public void MessageCreatedPayloadDeserializesNestedMessageDeliveryStatus()
+        {
+            const string json = """
+                {
+                  "event": "message_created",
+                  "conversation": {
+                    "id": 11,
+                    "status": "open",
+                    "labels": ["vip"],
+                    "custom_attributes": { "tier": "gold" },
+                    "snoozed_until": null,
+                    "first_reply_created_at": 1783911738,
+                    "priority": "high",
+                    "waiting_since": 1783912339,
+                    "last_activity_at": 1783918924,
+                    "created_at": 1783681474,
+                    "updated_at": 1783918924.6439064,
+                    "account": { "id": 2, "name": "V-Trust" },
+                    "contact_inbox": {
+                      "pubsub_token": "token-1"
+                    },
+                    "meta": {
+                      "assignee_type": "User",
+                      "team": null,
+                      "hmac_verified": true
+                    },
+                    "messages": [
+                      {
+                        "id": 174,
+                        "content": "转人工",
+                        "account_id": 2,
+                        "inbox_id": 1,
+                        "conversation_id": 11,
+                        "message_type": 0,
+                        "status": "sent",
+                        "source_id": "external-message-1",
+                        "created_at": 1783918924,
+                        "updated_at": "2026-07-13T05:02:04.640Z",
+                        "private": false,
+                        "sender_type": "Contact",
+                        "sender_id": 12,
+                        "external_source_ids": {},
+                        "additional_attributes": {},
+                        "processed_message_content": "转人工",
+                        "sentiment": {},
+                        "account": { "id": 2, "name": "V-Trust" },
+                        "conversation": { "id": 11, "status": "open" },
+                        "inbox": { "id": 1, "name": "Support" }
+                      }
+                    ]
+                  }
+                }
+                """;
+
+            var request = DeserializeWebhook(json);
+            var message = Assert.Single(request.Conversation!.Messages!);
+
+            Assert.Equal(174, message!.Id);
+            Assert.Equal("转人工", message.Content);
+            Assert.Equal(2, message.AccountId);
+            Assert.Equal(1, message.InboxId);
+            Assert.Equal(11, message.ConversationId);
+            Assert.Equal("0", message.MessageType);
+            Assert.Equal("sent", message.Status);
+            Assert.Equal("external-message-1", message.SourceId);
+            Assert.Equal("1783918924", message.CreatedAt);
+            Assert.Equal("2026-07-13T05:02:04.640Z", message.UpdatedAt);
+            Assert.False(message.Private);
+            Assert.Equal("Contact", message.SenderType);
+            Assert.Equal(12, message.SenderId);
+            Assert.Equal("转人工", message.ProcessedMessageContent);
+            Assert.Equal(2, message.Account!.Id);
+            Assert.Equal(11, message.Conversation!.Id);
+            Assert.Equal(1, message.Inbox!.Id);
+            Assert.Equal(["vip"], request.Conversation.Labels);
+            Assert.Equal("gold", request.Conversation.CustomAttributes!["tier"].GetString());
+            Assert.Equal(1783911738m, request.Conversation.FirstReplyCreatedAt);
+            Assert.Equal(ConversationPriority.High, request.Conversation.Priority);
+            Assert.Equal(1783912339m, request.Conversation.WaitingSince);
+            Assert.Equal(1783918924m, request.Conversation.LastActivityAt);
+            Assert.Equal(1783681474m, request.Conversation.CreatedAt);
+            Assert.Equal(1783918924.6439064m, request.Conversation.UpdatedAt);
+            Assert.Equal(2, request.Conversation.Account!.Id);
+            Assert.Equal("token-1", request.Conversation.ContactInbox!.PubsubToken);
+            Assert.Equal("User", request.Conversation.Meta!.AssigneeType);
+            Assert.True(request.Conversation.Meta.HmacVerified);
+        }
+
+        [Fact]
         public void SourceGeneratedContextExposesWebhookRequestMetadata()
         {
             Assert.Same(typeof(WebhookRequest), ChatWootJsonSerializerContext.Default.ChatWootApiApplicationWebhookRequest.Type);

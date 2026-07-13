@@ -292,6 +292,42 @@ public sealed class WebhookActor
     [JsonPropertyName("type")]
     public string? Type { get; init; }
 
+    /// <summary>参与者的可用显示名称</summary>
+    [JsonPropertyName("available_name")]
+    public string? AvailableName { get; init; }
+
+    /// <summary>参与者头像 URL</summary>
+    [JsonPropertyName("avatar_url")]
+    public string? AvatarUrl { get; init; }
+
+    /// <summary>参与者可用性状态</summary>
+    [JsonPropertyName("availability_status")]
+    public string? AvailabilityStatus { get; init; }
+
+    /// <summary>联系人外部标识符</summary>
+    [JsonPropertyName("identifier")]
+    public string? Identifier { get; init; }
+
+    /// <summary>参与者电话号码</summary>
+    [JsonPropertyName("phone_number")]
+    public string? PhoneNumber { get; init; }
+
+    /// <summary>参与者缩略图 URL</summary>
+    [JsonPropertyName("thumbnail")]
+    public string? Thumbnail { get; init; }
+
+    /// <summary>指示联系人是否被阻止</summary>
+    [JsonPropertyName("blocked")]
+    public bool? Blocked { get; init; }
+
+    /// <summary>参与者附加属性</summary>
+    [JsonPropertyName("additional_attributes")]
+    public IDictionary<string, JsonElement>? AdditionalAttributes { get; init; }
+
+    /// <summary>参与者自定义属性</summary>
+    [JsonPropertyName("custom_attributes")]
+    public IDictionary<string, JsonElement>? CustomAttributes { get; init; }
+
     /// <summary>
     /// 联系人归属的账号
     /// </summary>
@@ -338,6 +374,11 @@ public sealed class WebhookConversation
     [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
     public long? InboxId { get; init; }
 
+    /// <summary>会话负责人标识符</summary>
+    [JsonPropertyName("assignee_id")]
+    [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
+    public long? AssigneeId { get; init; }
+
     /// <summary>
     /// 会话附加属性
     /// </summary>
@@ -366,13 +407,60 @@ public sealed class WebhookConversation
     /// 会话中的消息集合
     /// </summary>
     [JsonPropertyName("messages")]
-    public IReadOnlyList<WebhookRequest?>? Messages { get; init; }
+    public IReadOnlyList<WebhookMessage?>? Messages { get; init; }
 
     /// <summary>
     /// 会话元数据，例如发送者和负责人
     /// </summary>
     [JsonPropertyName("meta")]
     public WebhookConversationMeta? Meta { get; init; }
+
+    /// <summary>会话标签</summary>
+    [JsonPropertyName("labels")]
+    public IReadOnlyList<string?>? Labels { get; init; }
+
+    /// <summary>会话自定义属性</summary>
+    [JsonPropertyName("custom_attributes")]
+    public IDictionary<string, JsonElement>? CustomAttributes { get; init; }
+
+    /// <summary>会话休眠恢复时间</summary>
+    [JsonPropertyName("snoozed_until")]
+    [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
+    public decimal? SnoozedUntil { get; init; }
+
+    /// <summary>首次回复时间</summary>
+    [JsonPropertyName("first_reply_created_at")]
+    [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
+    public decimal? FirstReplyCreatedAt { get; init; }
+
+    /// <summary>会话优先级</summary>
+    [JsonPropertyName("priority")]
+    [JsonConverter(typeof(JsonStringEnumConverter<ConversationPriority>))]
+    public ConversationPriority? Priority { get; init; }
+
+    /// <summary>会话等待时间</summary>
+    [JsonPropertyName("waiting_since")]
+    [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
+    public decimal? WaitingSince { get; init; }
+
+    /// <summary>最后活动时间</summary>
+    [JsonPropertyName("last_activity_at")]
+    [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
+    public decimal? LastActivityAt { get; init; }
+
+    /// <summary>会话创建时间</summary>
+    [JsonPropertyName("created_at")]
+    [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
+    public decimal? CreatedAt { get; init; }
+
+    /// <summary>会话更新时间</summary>
+    [JsonPropertyName("updated_at")]
+    [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
+    public decimal? UpdatedAt { get; init; }
+
+    /// <summary>会话所属账号</summary>
+    [JsonPropertyName("account")]
+    public WebhookAccount? Account { get; init; }
 
     /// <summary>
     /// 会话状态
@@ -412,6 +500,116 @@ public sealed class WebhookConversation
     /// <summary>
     /// 会话对象中未建模的附加字段
     /// </summary>
+    [JsonExtensionData]
+    public IDictionary<string, JsonElement>? ExtensionData { get; set; }
+}
+
+/// <summary>
+/// Chatwoot webhook 会话中嵌套的消息对象
+/// </summary>
+public sealed class WebhookMessage
+{
+    /// <summary>消息标识符</summary>
+    [JsonPropertyName("id")]
+    [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
+    public long? Id { get; init; }
+
+    /// <summary>消息正文</summary>
+    [JsonPropertyName("content")]
+    public string? Content { get; init; }
+
+    /// <summary>账号标识符</summary>
+    [JsonPropertyName("account_id")]
+    [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
+    public long? AccountId { get; init; }
+
+    /// <summary>收件箱标识符</summary>
+    [JsonPropertyName("inbox_id")]
+    [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
+    public long? InboxId { get; init; }
+
+    /// <summary>会话标识符</summary>
+    [JsonPropertyName("conversation_id")]
+    [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
+    public long? ConversationId { get; init; }
+
+    /// <summary>消息状态，例如 <c>sent</c>、<c>delivered</c> 或 <c>read</c></summary>
+    [JsonPropertyName("status")]
+    public string? Status { get; init; }
+
+    /// <summary>消息类型；Chatwoot 可能返回字符串或数字</summary>
+    [JsonPropertyName("message_type")]
+    [JsonConverter(typeof(WebhookStringOrNumberConverter))]
+    public string? MessageType { get; init; }
+
+    /// <summary>消息内容类型</summary>
+    [JsonPropertyName("content_type")]
+    public string? ContentType { get; init; }
+
+    /// <summary>消息创建时间，保留 Chatwoot 原始字符串或数字格式</summary>
+    [JsonPropertyName("created_at")]
+    [JsonConverter(typeof(WebhookStringOrNumberConverter))]
+    public string? CreatedAt { get; init; }
+
+    /// <summary>消息更新时间，保留 Chatwoot 原始字符串或数字格式</summary>
+    [JsonPropertyName("updated_at")]
+    [JsonConverter(typeof(WebhookStringOrNumberConverter))]
+    public string? UpdatedAt { get; init; }
+
+    /// <summary>指示消息是否为私有备注</summary>
+    [JsonPropertyName("private")]
+    public bool? Private { get; init; }
+
+    /// <summary>发送者类型</summary>
+    [JsonPropertyName("sender_type")]
+    public string? SenderType { get; init; }
+
+    /// <summary>发送者标识符</summary>
+    [JsonPropertyName("sender_id")]
+    [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
+    public long? SenderId { get; init; }
+
+    /// <summary>外部渠道中的消息来源标识</summary>
+    [JsonPropertyName("source_id")]
+    public string? SourceId { get; init; }
+
+    /// <summary>消息发送者</summary>
+    [JsonPropertyName("sender")]
+    public WebhookActor? Sender { get; init; }
+
+    /// <summary>消息所属账号</summary>
+    [JsonPropertyName("account")]
+    public WebhookAccount? Account { get; init; }
+
+    /// <summary>消息所属会话</summary>
+    [JsonPropertyName("conversation")]
+    public WebhookConversation? Conversation { get; init; }
+
+    /// <summary>消息所属收件箱</summary>
+    [JsonPropertyName("inbox")]
+    public WebhookInbox? Inbox { get; init; }
+
+    /// <summary>消息内容的附加属性</summary>
+    [JsonPropertyName("content_attributes")]
+    public IDictionary<string, JsonElement>? ContentAttributes { get; init; }
+
+    /// <summary>外部系统中的消息标识符集合</summary>
+    [JsonPropertyName("external_source_ids")]
+    public IDictionary<string, JsonElement>? ExternalSourceIds { get; init; }
+
+    /// <summary>消息附加属性</summary>
+    [JsonPropertyName("additional_attributes")]
+    public IDictionary<string, JsonElement>? AdditionalAttributes { get; init; }
+
+    /// <summary>处理后的消息正文</summary>
+    [JsonPropertyName("processed_message_content")]
+    public string? ProcessedMessageContent { get; init; }
+
+    /// <summary>消息情感分析结果</summary>
+    [JsonPropertyName("sentiment")]
+    public IDictionary<string, JsonElement>? Sentiment { get; init; }
+
+    /// <summary>未建模的消息字段</summary>
     [JsonExtensionData]
     public IDictionary<string, JsonElement>? ExtensionData { get; set; }
 }
@@ -468,6 +666,10 @@ public sealed class WebhookContactInbox
     [JsonPropertyName("hmac_verified")]
     public bool? HmacVerified { get; init; }
 
+    /// <summary>用于客户端发布订阅的令牌</summary>
+    [JsonPropertyName("pubsub_token")]
+    public string? PubsubToken { get; init; }
+
     /// <summary>
     /// 关联对象中未建模的附加字段
     /// </summary>
@@ -491,6 +693,18 @@ public sealed class WebhookConversationMeta
     /// </summary>
     [JsonPropertyName("assignee")]
     public WebhookActor? Assignee { get; init; }
+
+    /// <summary>负责人类型</summary>
+    [JsonPropertyName("assignee_type")]
+    public string? AssigneeType { get; init; }
+
+    /// <summary>会话所属团队</summary>
+    [JsonPropertyName("team")]
+    public JsonElement? Team { get; init; }
+
+    /// <summary>HMAC 校验是否通过</summary>
+    [JsonPropertyName("hmac_verified")]
+    public bool? HmacVerified { get; init; }
 
     /// <summary>
     /// 元数据对象中未建模的附加字段
