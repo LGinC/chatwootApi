@@ -13,16 +13,23 @@ public sealed class MessageSenderTypeSerializationTests
         Assert.Equal(MessageSenderType.CaptainAssistant, message!.SenderType);
     }
 
-    [Fact]
-    public void SerializesMessageSenderTypeUsingChatwootValue()
+    [Theory]
+    [InlineData(MessageSenderType.Contact, "Contact")]
+    [InlineData(MessageSenderType.User, "User")]
+    [InlineData(MessageSenderType.AgentBot, "AgentBot")]
+    [InlineData(MessageSenderType.CaptainAssistant, "Captain::Assistant")]
+    public void SerializesMessageSenderTypeUsingJsonStringEnumMemberName(
+        MessageSenderType senderType,
+        string expected)
     {
         var message = new Message
         {
-            SenderType = MessageSenderType.AgentBot
+            SenderType = senderType
         };
 
         var json = JsonSerializer.Serialize(message);
 
-        Assert.Contains("\"sender_type\":\"AgentBot\"", json);
+        using var document = JsonDocument.Parse(json);
+        Assert.Equal(expected, document.RootElement.GetProperty("sender_type").GetString());
     }
 }

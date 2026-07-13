@@ -124,7 +124,7 @@ public sealed class WebhookRequest
     /// 会话状态，例如 <c>open</c>、<c>pending</c> 或 <c>resolved</c>
     /// </summary>
     [JsonPropertyName("status")]
-    [JsonConverter(typeof(JsonStringEnumConverter<ConversationStatus>))]
+    [JsonConverter(typeof(ChatWootStringEnumConverter<ConversationStatus>))]
     public ConversationStatus? Status { get; init; }
 
     /// <summary>
@@ -435,7 +435,7 @@ public sealed class WebhookConversation
 
     /// <summary>会话优先级</summary>
     [JsonPropertyName("priority")]
-    [JsonConverter(typeof(JsonStringEnumConverter<ConversationPriority>))]
+    [JsonConverter(typeof(ChatWootStringEnumConverter<ConversationPriority>))]
     public ConversationPriority? Priority { get; init; }
 
     /// <summary>会话等待时间</summary>
@@ -466,7 +466,7 @@ public sealed class WebhookConversation
     /// 会话状态
     /// </summary>
     [JsonPropertyName("status")]
-    [JsonConverter(typeof(JsonStringEnumConverter<ConversationStatus>))]
+    [JsonConverter(typeof(ChatWootStringEnumConverter<ConversationStatus>))]
     public ConversationStatus? Status { get; init; }
 
     /// <summary>

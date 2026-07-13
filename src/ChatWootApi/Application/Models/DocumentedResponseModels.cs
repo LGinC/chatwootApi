@@ -94,7 +94,7 @@ public sealed record ConversationStatusUpdateResult
     /// <summary>操作是否成功</summary>
     [JsonPropertyName("success")] public bool? Success { get; init; }
     /// <summary>当前会话状态</summary>
-    [JsonPropertyName("current_status")] [JsonConverter(typeof(JsonStringEnumConverter<ConversationStatus>))] public ConversationStatus? CurrentStatus { get; init; }
+    [JsonPropertyName("current_status")] [JsonConverter(typeof(ChatWootStringEnumConverter<ConversationStatus>))] public ConversationStatus? CurrentStatus { get; init; }
     /// <summary>会话 ID</summary>
     [JsonPropertyName("conversation_id")] public long? ConversationId { get; init; }
 }

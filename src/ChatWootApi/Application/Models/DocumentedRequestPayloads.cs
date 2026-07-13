@@ -60,7 +60,7 @@ public sealed record InboxAgentBotUpdatePayload
 public sealed record ConversationUpdatePayload
 {
     /// <summary>会话优先级</summary>
-    [JsonPropertyName("priority")] [JsonConverter(typeof(JsonStringEnumConverter<ConversationPriority>))] public ConversationPriority? Priority { get; init; }
+    [JsonPropertyName("priority")] [JsonConverter(typeof(ChatWootStringEnumConverter<ConversationPriority>))] public ConversationPriority? Priority { get; init; }
     /// <summary>SLA 策略 ID（仅企业版支持）</summary>
     [JsonPropertyName("sla_policy_id")] public long? SlaPolicyId { get; init; }
 }
@@ -69,7 +69,7 @@ public sealed record ConversationUpdatePayload
 public sealed record ConversationStatusUpdatePayload
 {
     /// <summary>目标会话状态</summary>
-    [JsonPropertyName("status")] [JsonConverter(typeof(JsonStringEnumConverter<ConversationStatus>))] public ConversationStatus Status { get; init; }
+    [JsonPropertyName("status")] [JsonConverter(typeof(ChatWootStringEnumConverter<ConversationStatus>))] public ConversationStatus Status { get; init; }
     /// <summary>状态为休眠时的恢复时间（Unix 时间戳，秒）；省略时将在联系人下次回复后恢复，且联系人回复始终会恢复会话</summary>
     [JsonPropertyName("snoozed_until")] public long? SnoozedUntil { get; init; }
 }
@@ -78,14 +78,14 @@ public sealed record ConversationStatusUpdatePayload
 public sealed record ConversationPriorityUpdatePayload
 {
     /// <summary>目标会话优先级</summary>
-    [JsonPropertyName("priority")] [JsonConverter(typeof(JsonStringEnumConverter<ConversationPriority>))] public ConversationPriority Priority { get; init; }
+    [JsonPropertyName("priority")] [JsonConverter(typeof(ChatWootStringEnumConverter<ConversationPriority>))] public ConversationPriority Priority { get; init; }
 }
 
 /// <summary>Chatwoot 应用模型：更新会话输入状态的请求载荷</summary>
 public sealed record ConversationTypingStatusPayload
 {
     /// <summary>目标输入状态</summary>
-    [JsonPropertyName("typing_status")] [JsonConverter(typeof(JsonStringEnumConverter<TypingStatus>))] public TypingStatus TypingStatus { get; init; }
+    [JsonPropertyName("typing_status")] [JsonConverter(typeof(ChatWootStringEnumConverter<TypingStatus>))] public TypingStatus TypingStatus { get; init; }
     /// <summary>输入状态是否针对私密备注</summary>
     [JsonPropertyName("is_private")] public bool? IsPrivate { get; init; }
 }
