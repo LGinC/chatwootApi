@@ -7,6 +7,8 @@ using ChatWootApi.Serialization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Abstractions;
 using Microsoft.Extensions.Options;
 using Refit;
 using System.Diagnostics.CodeAnalysis;
@@ -187,14 +189,16 @@ public static class ServiceCollectionExtensions
         where TApi : class
     {
         return services.AddRefitGeneratedClient<TApi>(CreateRefitSettings())
-            .ConfigureHttpClient(ConfigureBaseAddress);
+            .ConfigureHttpClient(ConfigureBaseAddress)
+            .AddChatWootHttpLoggingHandler<TApi>();
     }
 
     private static IHttpClientBuilder AddOtherRefitClient<TApi>(this IServiceCollection services)
         where TApi : class
     {
         return services.AddRefitGeneratedClient<TApi>(CreateRefitSettings())
-            .ConfigureHttpClient(ConfigureBaseAddress);
+            .ConfigureHttpClient(ConfigureBaseAddress)
+            .AddChatWootHttpLoggingHandler<TApi>();
     }
 
     private static IHttpClientBuilder AddApplicationRefitClient<TApi>(this IServiceCollection services)
@@ -202,7 +206,8 @@ public static class ServiceCollectionExtensions
     {
         return services.AddRefitGeneratedClient<TApi>(CreateRefitSettings())
             .ConfigureHttpClient(ConfigureBaseAddress)
-            .AddHttpMessageHandler<AccountAccessTokenDelegatingHandler>();
+            .AddHttpMessageHandler<AccountAccessTokenDelegatingHandler>()
+            .AddChatWootHttpLoggingHandler<TApi>();
     }
 
     private static IHttpClientBuilder AddApplicationRefitClientWithReflectionFallback<
@@ -215,7 +220,8 @@ public static class ServiceCollectionExtensions
     {
         return services.AddRefitClient<TApi>(CreateRefitSettings())
             .ConfigureHttpClient(ConfigureBaseAddress)
-            .AddHttpMessageHandler<AccountAccessTokenDelegatingHandler>();
+            .AddHttpMessageHandler<AccountAccessTokenDelegatingHandler>()
+            .AddChatWootHttpLoggingHandler<TApi>();
     }
 
     private static IHttpClientBuilder AddPlatformRefitClient<TApi>(this IServiceCollection services)
@@ -223,7 +229,23 @@ public static class ServiceCollectionExtensions
     {
         return services.AddRefitGeneratedClient<TApi>(CreateRefitSettings())
             .ConfigureHttpClient(ConfigureBaseAddress)
-            .AddHttpMessageHandler<PlatformAccessTokenDelegatingHandler>();
+            .AddHttpMessageHandler<PlatformAccessTokenDelegatingHandler>()
+            .AddChatWootHttpLoggingHandler<TApi>();
+    }
+
+    private static IHttpClientBuilder AddChatWootHttpLoggingHandler<TApi>(this IHttpClientBuilder builder)
+        where TApi : class
+    {
+        var apiType = typeof(TApi);
+        var apiName = apiType.Name;
+        var apiFullName = apiType.FullName;
+
+        return builder.AddHttpMessageHandler(serviceProvider =>
+            new HttpLoggingDelegatingHandler(
+                apiName,
+                apiFullName,
+                serviceProvider.GetRequiredService<IOptionsMonitor<ChatWootApiOptions>>(),
+                serviceProvider.GetService<ILoggerFactory>()?.CreateLogger($"ChatWootApi.HttpLogging.{apiName}") ?? NullLogger.Instance));
     }
 
     private static RefitSettings CreateRefitSettings() => SharedRefitSettings.Value;

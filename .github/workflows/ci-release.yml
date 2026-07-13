@@ -89,7 +89,7 @@ jobs:
           PACKAGE_TAGS: ${{ vars.NUGET_TAGS || 'Chatwoot;API;Refit' }}
           PACKAGE_PROJECT_URL: ${{ vars.NUGET_PROJECT_URL || format('{0}/{1}', github.server_url, github.repository) }}
           PACKAGE_RELEASE_NOTES: ${{ github.event.release.body }}
-          PACKAGE_LICENSE_EXPRESSION: ${{ vars.NUGET_LICENSE_EXPRESSION }}
+          PACKAGE_LICENSE_EXPRESSION: ${{ vars.NUGET_LICENSE_EXPRESSION || 'MIT' }}
           PACKAGE_COPYRIGHT: ${{ vars.NUGET_COPYRIGHT }}
         run: |
           package_tags="${PACKAGE_TAGS//;/%3B}"
@@ -114,9 +114,7 @@ jobs:
             -p:ContinuousIntegrationBuild=true
           )
 
-          if [[ -n "${PACKAGE_LICENSE_EXPRESSION}" ]]; then
-            common_pack_args+=(-p:PackageLicenseExpression="${PACKAGE_LICENSE_EXPRESSION}")
-          fi
+          common_pack_args+=(-p:PackageLicenseExpression="${PACKAGE_LICENSE_EXPRESSION}")
 
           if [[ -n "${PACKAGE_COPYRIGHT}" ]]; then
             common_pack_args+=(-p:Copyright="${PACKAGE_COPYRIGHT}")
@@ -148,5 +146,6 @@ jobs:
       - name: Publish to GitHub Packages
         run: >
           dotnet nuget push "${{ env.PACKAGE_OUTPUT_PATH }}/*.nupkg"
+          --api-key "${{ github.token }}"
           --source github
           --skip-duplicate

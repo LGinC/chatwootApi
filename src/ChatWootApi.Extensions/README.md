@@ -60,6 +60,37 @@ builder.Services.AddChatWootPlatformApi(options =>
 });
 ```
 
+## HTTP request and response logging
+
+Logging is disabled by default. Set `EnableLogging` to enable logging for every registered Chatwoot API client:
+
+```json
+{
+  "ChatWootApi": {
+    "BaseAddress": "https://app.chatwoot.com/",
+    "EnableLogging": true,
+    "IncludeBodyInLogs": false
+  }
+}
+```
+
+To log only selected API interfaces, leave `EnableLogging` false and configure `LoggingApiNames`:
+
+```json
+{
+  "ChatWootApi": {
+    "LoggingApiNames": [
+      "IApplicationContactsApi",
+      "ChatWootApi.Platform.IPlatformAccountApi"
+    ]
+  }
+}
+```
+
+`LoggingApiNames` accepts either an API interface short name or its full type name. The handler logs the HTTP method, redacted URI, headers, status code, and duration. Request and response bodies are omitted unless `IncludeBodyInLogs` is enabled. Access tokens, authorization/cookie headers, sensitive query parameters, and common sensitive JSON/form fields are masked before logging; unsupported or oversized bodies are omitted.
+
+The package uses `Microsoft.Extensions.Logging`; configure the logging provider and level in the host application as usual.
+
 ## Calling APIs
 
 After registration, inject a specific API interface:

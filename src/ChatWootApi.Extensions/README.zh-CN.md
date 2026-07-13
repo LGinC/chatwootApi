@@ -58,6 +58,37 @@ builder.Services.AddChatWootPlatformApi(options =>
 });
 ```
 
+## HTTP 请求和响应日志
+
+默认关闭日志。将 `EnableLogging` 设置为 `true` 后，所有已注册的 Chatwoot API 客户端都会记录日志：
+
+```json
+{
+  "ChatWootApi": {
+    "BaseAddress": "https://app.chatwoot.com/",
+    "EnableLogging": true,
+    "IncludeBodyInLogs": false
+  }
+}
+```
+
+如果只需要记录指定 API，请保持 `EnableLogging` 为 `false`，并配置 `LoggingApiNames`：
+
+```json
+{
+  "ChatWootApi": {
+    "LoggingApiNames": [
+      "IApplicationContactsApi",
+      "ChatWootApi.Platform.IPlatformAccountApi"
+    ]
+  }
+}
+```
+
+`LoggingApiNames` 支持 API 接口短名称或完整类型名称。处理器会记录 HTTP 方法、已脱敏的 URI、请求头、响应状态码和耗时。请求体和响应体默认不记录，只有启用 `IncludeBodyInLogs` 后才会记录；access token、Authorization/Cookie 请求头、敏感查询参数以及常见敏感 JSON/表单字段会在记录前掩码，无法安全识别或超过大小限制的内容会省略。
+
+该包使用 `Microsoft.Extensions.Logging`，请按宿主应用的方式配置日志 Provider 和日志级别。
+
 ## 调用 API
 
 注册后直接注入细分接口：
