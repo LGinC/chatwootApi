@@ -91,7 +91,8 @@ public sealed record Message
     /// 发件人类型
     /// </summary>
     [JsonPropertyName("sender_type")]
-    public string? SenderType { get; init; }
+    [JsonConverter(typeof(ChatWootStringEnumConverter<MessageSenderType>))]
+    public MessageSenderType? SenderType { get; init; }
 
     /// <summary>
     /// 发件人 ID
@@ -146,4 +147,26 @@ public sealed record Message
     /// </summary>
     [JsonExtensionData]
     public IDictionary<string, JsonElement>? ExtensionData { get; set; }
+}
+
+/// <summary>
+/// 消息发件人类型。
+/// </summary>
+public enum MessageSenderType
+{
+    /// <summary>联系人。</summary>
+    [JsonStringEnumMemberName("Contact")]
+    Contact,
+
+    /// <summary>用户。</summary>
+    [JsonStringEnumMemberName("User")]
+    User,
+
+    /// <summary>坐席机器人。</summary>
+    [JsonStringEnumMemberName("AgentBot")]
+    AgentBot,
+
+    /// <summary>Captain 助手。</summary>
+    [JsonStringEnumMemberName("Captain::Assistant")]
+    CaptainAssistant
 }

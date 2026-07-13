@@ -189,7 +189,7 @@ namespace ChatWootApi.Tests
                     "labels": ["vip"],
                     "custom_attributes": { "tier": "gold" },
                     "snoozed_until": null,
-                    "first_reply_created_at": 1783911738,
+                    "first_reply_created_at": "2026-07-13T02:02:18.076Z",
                     "priority": "high",
                     "waiting_since": 1783912339,
                     "last_activity_at": 1783918924,
@@ -243,8 +243,8 @@ namespace ChatWootApi.Tests
             Assert.Equal("0", message.MessageType);
             Assert.Equal("sent", message.Status);
             Assert.Equal("external-message-1", message.SourceId);
-            Assert.Equal("1783918924", message.CreatedAt);
-            Assert.Equal("2026-07-13T05:02:04.640Z", message.UpdatedAt);
+            Assert.Equal(1783918924L, message.CreatedAt);
+            Assert.Equal(DateTimeOffset.Parse("2026-07-13T05:02:04.640Z"), message.UpdatedAt);
             Assert.False(message.Private);
             Assert.Equal("Contact", message.SenderType);
             Assert.Equal(12, message.SenderId);
@@ -254,12 +254,12 @@ namespace ChatWootApi.Tests
             Assert.Equal(1, message.Inbox!.Id);
             Assert.Equal(["vip"], request.Conversation.Labels);
             Assert.Equal("gold", request.Conversation.CustomAttributes!["tier"].GetString());
-            Assert.Equal(1783911738m, request.Conversation.FirstReplyCreatedAt);
+            Assert.Equal(DateTimeOffset.Parse("2026-07-13T02:02:18.076Z"), request.Conversation.FirstReplyCreatedAt);
             Assert.Equal(ConversationPriority.High, request.Conversation.Priority);
-            Assert.Equal(1783912339m, request.Conversation.WaitingSince);
-            Assert.Equal(1783918924m, request.Conversation.LastActivityAt);
-            Assert.Equal(1783681474m, request.Conversation.CreatedAt);
-            Assert.Equal(1783918924.6439064m, request.Conversation.UpdatedAt);
+            Assert.Equal(1783912339L, request.Conversation.WaitingSince);
+            Assert.Equal(1783918924L, request.Conversation.LastActivityAt);
+            Assert.Equal(1783681474L, request.Conversation.CreatedAt);
+            Assert.Equal(1783918924L, request.Conversation.UpdatedAt);
             Assert.Equal(2, request.Conversation.Account!.Id);
             Assert.Equal("token-1", request.Conversation.ContactInbox!.PubsubToken);
             Assert.Equal("User", request.Conversation.Meta!.AssigneeType);

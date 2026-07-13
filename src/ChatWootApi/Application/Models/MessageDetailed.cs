@@ -43,13 +43,15 @@ public sealed record MessageDetailed
     /// 消息内容的类型
     /// </summary>
     [JsonPropertyName("content_type")]
-    public string? ContentType { get; init; }
+    [JsonConverter(typeof(ChatWootStringEnumConverter<MessageContentType>))]
+    public MessageContentType? ContentType { get; init; }
 
     /// <summary>
     /// 消息的状态
     /// </summary>
     [JsonPropertyName("status")]
-    public string? Status { get; init; }
+    [JsonConverter(typeof(ChatWootStringEnumConverter<MessageStatus>))]
+    public MessageStatus? Status { get; init; }
 
     /// <summary>
     /// 每个 content_type 的内容属性
@@ -98,4 +100,80 @@ public sealed record MessageDetailed
     /// </summary>
     [JsonExtensionData]
     public IDictionary<string, JsonElement>? ExtensionData { get; set; }
+}
+
+/// <summary>
+/// 消息状态。
+/// </summary>
+public enum MessageStatus
+{
+    /// <summary>已发送。</summary>
+    Sent,
+
+    /// <summary>已送达。</summary>
+    Delivered,
+
+    /// <summary>已读。</summary>
+    Read,
+
+    /// <summary>发送失败。</summary>
+    Failed
+}
+
+/// <summary>
+/// 消息内容类型。
+/// </summary>
+public enum MessageContentType
+{
+    /// <summary>文本。</summary>
+    [JsonStringEnumMemberName("text")]
+    Text,
+
+    /// <summary>单行文本输入。</summary>
+    [JsonStringEnumMemberName("input_text")]
+    InputText,
+
+    /// <summary>多行文本输入。</summary>
+    [JsonStringEnumMemberName("input_textarea")]
+    InputTextarea,
+
+    /// <summary>邮箱输入。</summary>
+    [JsonStringEnumMemberName("input_email")]
+    InputEmail,
+
+    /// <summary>下拉选择输入。</summary>
+    [JsonStringEnumMemberName("input_select")]
+    InputSelect,
+
+    /// <summary>卡片。</summary>
+    [JsonStringEnumMemberName("cards")]
+    Cards,
+
+    /// <summary>表单。</summary>
+    [JsonStringEnumMemberName("form")]
+    Form,
+
+    /// <summary>文章。</summary>
+    [JsonStringEnumMemberName("article")]
+    Article,
+
+    /// <summary>传入邮件。</summary>
+    [JsonStringEnumMemberName("incoming_email")]
+    IncomingEmail,
+
+    /// <summary>客户满意度输入。</summary>
+    [JsonStringEnumMemberName("input_csat")]
+    InputCsat,
+
+    /// <summary>集成。</summary>
+    [JsonStringEnumMemberName("integrations")]
+    Integrations,
+
+    /// <summary>贴纸。</summary>
+    [JsonStringEnumMemberName("sticker")]
+    Sticker,
+
+    /// <summary>语音通话。</summary>
+    [JsonStringEnumMemberName("voice_call")]
+    VoiceCall
 }

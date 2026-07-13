@@ -35,11 +35,11 @@ public sealed class WebhookRequest
     public string? Content { get; init; }
 
     /// <summary>
-    /// 消息或对象创建时间，保留 Chatwoot 原始字符串或数字格式
+    /// 消息或对象创建时间；ISO 字符串会转换为 UTC 时间
     /// </summary>
     [JsonPropertyName("created_at")]
-    [JsonConverter(typeof(WebhookStringOrNumberConverter))]
-    public string? CreatedAt { get; init; }
+    [JsonConverter(typeof(WebhookDateTimeOffsetConverter))]
+    public DateTimeOffset? CreatedAt { get; init; }
 
     /// <summary>
     /// 消息类型，例如 <c>incoming</c>、<c>outgoing</c> 或数字枚举值
@@ -144,7 +144,7 @@ public sealed class WebhookRequest
     /// </summary>
     [JsonPropertyName("unread_count")]
     [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
-    public decimal? UnreadCount { get; init; }
+    public long? UnreadCount { get; init; }
 
     /// <summary>
     /// 账号标识符
@@ -164,22 +164,22 @@ public sealed class WebhookRequest
     /// 客服最后查看会话的 Unix 时间戳
     /// </summary>
     [JsonPropertyName("agent_last_seen_at")]
-    [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
-    public decimal? AgentLastSeenAt { get; init; }
+    [JsonConverter(typeof(WebhookUnixTimestampConverter))]
+    public long? AgentLastSeenAt { get; init; }
 
     /// <summary>
     /// 联系人最后查看会话的 Unix 时间戳
     /// </summary>
     [JsonPropertyName("contact_last_seen_at")]
-    [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
-    public decimal? ContactLastSeenAt { get; init; }
+    [JsonConverter(typeof(WebhookUnixTimestampConverter))]
+    public long? ContactLastSeenAt { get; init; }
 
     /// <summary>
     /// 事件或会话时间戳
     /// </summary>
     [JsonPropertyName("timestamp")]
-    [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
-    public decimal? Timestamp { get; init; }
+    [JsonConverter(typeof(WebhookUnixTimestampConverter))]
+    public long? Timestamp { get; init; }
 
     /// <summary>
     /// 会话附加属性，例如浏览器、来源页面和初始化时间
@@ -425,13 +425,13 @@ public sealed class WebhookConversation
 
     /// <summary>会话休眠恢复时间</summary>
     [JsonPropertyName("snoozed_until")]
-    [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
-    public decimal? SnoozedUntil { get; init; }
+    [JsonConverter(typeof(WebhookUnixTimestampConverter))]
+    public long? SnoozedUntil { get; init; }
 
     /// <summary>首次回复时间</summary>
     [JsonPropertyName("first_reply_created_at")]
-    [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
-    public decimal? FirstReplyCreatedAt { get; init; }
+    [JsonConverter(typeof(WebhookDateTimeOffsetConverter))]
+    public DateTimeOffset? FirstReplyCreatedAt { get; init; }
 
     /// <summary>会话优先级</summary>
     [JsonPropertyName("priority")]
@@ -440,23 +440,23 @@ public sealed class WebhookConversation
 
     /// <summary>会话等待时间</summary>
     [JsonPropertyName("waiting_since")]
-    [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
-    public decimal? WaitingSince { get; init; }
+    [JsonConverter(typeof(WebhookUnixTimestampConverter))]
+    public long? WaitingSince { get; init; }
 
     /// <summary>最后活动时间</summary>
     [JsonPropertyName("last_activity_at")]
-    [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
-    public decimal? LastActivityAt { get; init; }
+    [JsonConverter(typeof(WebhookUnixTimestampConverter))]
+    public long? LastActivityAt { get; init; }
 
     /// <summary>会话创建时间</summary>
     [JsonPropertyName("created_at")]
-    [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
-    public decimal? CreatedAt { get; init; }
+    [JsonConverter(typeof(WebhookUnixTimestampConverter))]
+    public long? CreatedAt { get; init; }
 
     /// <summary>会话更新时间</summary>
     [JsonPropertyName("updated_at")]
-    [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
-    public decimal? UpdatedAt { get; init; }
+    [JsonConverter(typeof(WebhookUnixTimestampConverter))]
+    public long? UpdatedAt { get; init; }
 
     /// <summary>会话所属账号</summary>
     [JsonPropertyName("account")]
@@ -474,28 +474,28 @@ public sealed class WebhookConversation
     /// </summary>
     [JsonPropertyName("unread_count")]
     [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
-    public decimal? UnreadCount { get; init; }
+    public long? UnreadCount { get; init; }
 
     /// <summary>
     /// 客服最后查看会话的 Unix 时间戳
     /// </summary>
     [JsonPropertyName("agent_last_seen_at")]
-    [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
-    public decimal? AgentLastSeenAt { get; init; }
+    [JsonConverter(typeof(WebhookUnixTimestampConverter))]
+    public long? AgentLastSeenAt { get; init; }
 
     /// <summary>
     /// 联系人最后查看会话的 Unix 时间戳
     /// </summary>
     [JsonPropertyName("contact_last_seen_at")]
-    [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
-    public decimal? ContactLastSeenAt { get; init; }
+    [JsonConverter(typeof(WebhookUnixTimestampConverter))]
+    public long? ContactLastSeenAt { get; init; }
 
     /// <summary>
     /// 会话时间戳
     /// </summary>
     [JsonPropertyName("timestamp")]
-    [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
-    public decimal? Timestamp { get; init; }
+    [JsonConverter(typeof(WebhookUnixTimestampConverter))]
+    public long? Timestamp { get; init; }
 
     /// <summary>
     /// 会话对象中未建模的附加字段
@@ -546,15 +546,15 @@ public sealed class WebhookMessage
     [JsonPropertyName("content_type")]
     public string? ContentType { get; init; }
 
-    /// <summary>消息创建时间，保留 Chatwoot 原始字符串或数字格式</summary>
+    /// <summary>消息创建时间（Unix 时间戳）</summary>
     [JsonPropertyName("created_at")]
-    [JsonConverter(typeof(WebhookStringOrNumberConverter))]
-    public string? CreatedAt { get; init; }
+    [JsonConverter(typeof(WebhookUnixTimestampConverter))]
+    public long? CreatedAt { get; init; }
 
-    /// <summary>消息更新时间，保留 Chatwoot 原始字符串或数字格式</summary>
+    /// <summary>消息更新时间</summary>
     [JsonPropertyName("updated_at")]
-    [JsonConverter(typeof(WebhookStringOrNumberConverter))]
-    public string? UpdatedAt { get; init; }
+    [JsonConverter(typeof(WebhookDateTimeOffsetConverter))]
+    public DateTimeOffset? UpdatedAt { get; init; }
 
     /// <summary>指示消息是否为私有备注</summary>
     [JsonPropertyName("private")]
@@ -647,18 +647,18 @@ public sealed class WebhookContactInbox
     public string? SourceId { get; init; }
 
     /// <summary>
-    /// 关联记录创建时间，保留 Chatwoot 原始字符串或数字格式
+    /// 关联记录创建时间
     /// </summary>
     [JsonPropertyName("created_at")]
-    [JsonConverter(typeof(WebhookStringOrNumberConverter))]
-    public string? CreatedAt { get; init; }
+    [JsonConverter(typeof(WebhookDateTimeOffsetConverter))]
+    public DateTimeOffset? CreatedAt { get; init; }
 
     /// <summary>
-    /// 关联记录更新时间，保留 Chatwoot 原始字符串或数字格式
+    /// 关联记录更新时间
     /// </summary>
     [JsonPropertyName("updated_at")]
-    [JsonConverter(typeof(WebhookStringOrNumberConverter))]
-    public string? UpdatedAt { get; init; }
+    [JsonConverter(typeof(WebhookDateTimeOffsetConverter))]
+    public DateTimeOffset? UpdatedAt { get; init; }
 
     /// <summary>
     /// 指示 HMAC 校验是否通过
@@ -801,5 +801,141 @@ internal sealed class WebhookStringOrNumberConverter : JsonConverter<string?>
         }
 
         writer.WriteStringValue(value);
+    }
+}
+
+/// <summary>
+/// 读取 Chatwoot 的 Unix 时间戳。数字小数和数字字符串会截断到秒。
+/// </summary>
+internal sealed class WebhookUnixTimestampConverter : JsonConverter<long?>
+{
+    public override long? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+    {
+        if (reader.TokenType == JsonTokenType.Null)
+        {
+            return null;
+        }
+
+        if (reader.TokenType == JsonTokenType.Number)
+        {
+            if (reader.TryGetInt64(out var integer))
+            {
+                return integer;
+            }
+
+            if (reader.TryGetDecimal(out var decimalValue))
+            {
+                return ToUnixSeconds(decimalValue);
+            }
+        }
+
+        if (reader.TokenType == JsonTokenType.String)
+        {
+            var value = reader.GetString();
+            if (string.IsNullOrWhiteSpace(value))
+            {
+                return null;
+            }
+
+            if (long.TryParse(value, System.Globalization.NumberStyles.Integer, System.Globalization.CultureInfo.InvariantCulture, out var integer))
+            {
+                return integer;
+            }
+
+            if (decimal.TryParse(value, System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.InvariantCulture, out var decimalValue))
+            {
+                return ToUnixSeconds(decimalValue);
+            }
+        }
+
+        throw new JsonException($"Cannot convert {reader.TokenType} to a Unix timestamp.");
+    }
+
+    public override void Write(Utf8JsonWriter writer, long? value, JsonSerializerOptions options)
+    {
+        if (value.HasValue)
+        {
+            writer.WriteNumberValue(value.Value);
+        }
+        else
+        {
+            writer.WriteNullValue();
+        }
+    }
+
+    private static long ToUnixSeconds(decimal value)
+    {
+        try
+        {
+            return checked((long)decimal.Truncate(value));
+        }
+        catch (OverflowException exception)
+        {
+            throw new JsonException("The Unix timestamp is outside the Int64 range.", exception);
+        }
+    }
+}
+
+/// <summary>
+/// 读取 ISO 8601 时间字符串；同时兼容 Chatwoot 偶尔返回的 Unix 秒数字。
+/// </summary>
+internal sealed class WebhookDateTimeOffsetConverter : JsonConverter<DateTimeOffset?>
+{
+    public override DateTimeOffset? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+    {
+        if (reader.TokenType == JsonTokenType.Null)
+        {
+            return null;
+        }
+
+        if (reader.TokenType == JsonTokenType.String)
+        {
+            var value = reader.GetString();
+            if (string.IsNullOrWhiteSpace(value))
+            {
+                return null;
+            }
+
+            // Older webhook examples use a trailing " UTC" instead of an ISO "Z".
+            if (value.EndsWith(" UTC", StringComparison.OrdinalIgnoreCase))
+            {
+                value = string.Concat(value.AsSpan(0, value.Length - 4), "Z");
+            }
+
+            if (DateTimeOffset.TryParse(
+                    value,
+                    System.Globalization.CultureInfo.InvariantCulture,
+                    System.Globalization.DateTimeStyles.AllowWhiteSpaces | System.Globalization.DateTimeStyles.AssumeUniversal,
+                    out var dateTime))
+            {
+                return dateTime;
+            }
+        }
+
+        if (reader.TokenType == JsonTokenType.Number && reader.TryGetDecimal(out var unixSeconds))
+        {
+            try
+            {
+                return DateTimeOffset.UnixEpoch.AddSeconds((double)unixSeconds);
+            }
+            catch (ArgumentOutOfRangeException exception)
+            {
+                throw new JsonException("The Unix timestamp is outside the DateTimeOffset range.", exception);
+            }
+        }
+
+        throw new JsonException($"Cannot convert {reader.TokenType} to DateTimeOffset.");
+    }
+
+    public override void Write(Utf8JsonWriter writer, DateTimeOffset? value, JsonSerializerOptions options)
+    {
+        if (value.HasValue)
+        {
+            writer.WriteStringValue(value.Value);
+        }
+        else
+        {
+            writer.WriteNullValue();
+        }
     }
 }
