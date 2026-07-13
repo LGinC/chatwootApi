@@ -126,7 +126,7 @@ public sealed record Inbox
     /// 收件箱工作时间配置
     /// </summary>
     [JsonPropertyName("working_hours")]
-    public IReadOnlyList<IDictionary<string, JsonElement>?>? WorkingHours { get; init; }
+    public IReadOnlyList<InboxWorkingHour>? WorkingHours { get; init; }
 
     /// <summary>
     /// 收件箱的时区配置
@@ -211,4 +211,31 @@ public sealed record Inbox
     /// </summary>
     [JsonExtensionData]
     public IDictionary<string, JsonElement>? ExtensionData { get; set; }
+}
+
+/// <summary>
+/// Chatwoot 应用模型：收件箱单日工作时间
+/// </summary>
+public sealed record InboxWorkingHour
+{
+    /// <summary>星期几（0 为星期日，6 为星期六）。</summary>
+    [JsonPropertyName("day_of_week")] public int? DayOfWeek { get; init; }
+
+    /// <summary>该日是否全天关闭。</summary>
+    [JsonPropertyName("closed_all_day")] public bool? ClosedAllDay { get; init; }
+
+    /// <summary>开始营业的小时数。</summary>
+    [JsonPropertyName("open_hour")] public int? OpenHour { get; init; }
+
+    /// <summary>开始营业的分钟数。</summary>
+    [JsonPropertyName("open_minutes")] public int? OpenMinutes { get; init; }
+
+    /// <summary>结束营业的小时数。</summary>
+    [JsonPropertyName("close_hour")] public int? CloseHour { get; init; }
+
+    /// <summary>结束营业的分钟数。</summary>
+    [JsonPropertyName("close_minutes")] public int? CloseMinutes { get; init; }
+
+    /// <summary>该日是否全天营业。</summary>
+    [JsonPropertyName("open_all_day")] public bool? OpenAllDay { get; init; }
 }

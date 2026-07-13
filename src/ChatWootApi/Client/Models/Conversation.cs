@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+using ChatWootApi.Application.Models;
 
 namespace ChatWootApi.Client.Models;
 
@@ -35,7 +36,8 @@ public sealed record Conversation
     /// 对话状态
     /// </summary>
     [JsonPropertyName("status")]
-    public string? Status { get; init; }
+    [JsonConverter(typeof(ChatWootStringEnumConverter<ConversationStatus>))]
+    public ConversationStatus? Status { get; init; }
 
     /// <summary>
     /// 代理的最后一次活动

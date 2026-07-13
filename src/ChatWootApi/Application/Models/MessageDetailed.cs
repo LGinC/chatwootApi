@@ -1,5 +1,6 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using ChatWootApi.Client.Models;
 
 namespace ChatWootApi.Application.Models;
 
@@ -90,7 +91,7 @@ public sealed record MessageDetailed
     /// 与邮件关联的附件列表
     /// </summary>
     [JsonPropertyName("attachments")]
-    public IReadOnlyList<IDictionary<string, JsonElement>?>? Attachments { get; init; }
+    public IReadOnlyList<MessageAttachment>? Attachments { get; init; }
 
     /// <summary>
     /// Swagger 未显式建模的附加 JSON 字段

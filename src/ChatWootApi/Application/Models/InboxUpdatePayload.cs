@@ -108,5 +108,5 @@ public sealed record InboxUpdatePayload : JsonExtensionDataPayload
     /// 渠道。
     /// </summary>
     [JsonPropertyName("channel")]
-    public JsonElement? Channel { get; set; }
+    public InboxUpdateChannelPayload? Channel { get; set; }
 }

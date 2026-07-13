@@ -1,5 +1,6 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using ChatWootApi.Client.Models;
 
 namespace ChatWootApi.Application.Models;
 
@@ -126,19 +127,19 @@ public sealed record Message
     /// 对话对象
     /// </summary>
     [JsonPropertyName("conversation")]
-    public IDictionary<string, JsonElement>? Conversation { get; init; }
+    public Conversation? Conversation { get; init; }
 
     /// <summary>
     /// 附加到图像的文件对象
     /// </summary>
     [JsonPropertyName("attachment")]
-    public IDictionary<string, JsonElement>? Attachment { get; init; }
+    public MessageAttachment? Attachment { get; init; }
 
     /// <summary>
     /// 用户/代理/AgentBot 对象
     /// </summary>
     [JsonPropertyName("sender")]
-    public IDictionary<string, JsonElement>? Sender { get; init; }
+    public MessageSender? Sender { get; init; }
 
     /// <summary>
     /// Swagger 未显式建模的附加 JSON 字段

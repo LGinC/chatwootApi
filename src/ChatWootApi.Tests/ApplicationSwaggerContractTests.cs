@@ -48,6 +48,23 @@ public sealed class ApplicationSwaggerContractTests
             cancellationToken => Assert.Equal(typeof(CancellationToken), cancellationToken.ParameterType));
     }
 
+    [Fact]
+    public void ListAllMessagesUsesDocumentedCursorQueryParameters()
+    {
+        var method = GetMethod(
+            typeof(IApplicationMessagesApi),
+            nameof(IApplicationMessagesApi.ListAllMessagesAsync));
+
+        var parameters = method.GetParameters();
+        Assert.Collection(
+            parameters,
+            accountId => Assert.Equal(typeof(long), accountId.ParameterType),
+            conversationId => Assert.Equal(typeof(long), conversationId.ParameterType),
+            after => Assert.Equal(typeof(long?), after.ParameterType),
+            before => Assert.Equal(typeof(long?), before.ParameterType),
+            cancellationToken => Assert.Equal(typeof(CancellationToken), cancellationToken.ParameterType));
+    }
+
     private static MethodInfo GetMethod(Type interfaceType, string methodName)
     {
         var method = interfaceType.GetMethod(methodName, BindingFlags.Instance | BindingFlags.Public);

@@ -1485,47 +1485,8 @@ When grouped by agent, messages sent by bots (AgentBot, Captain::Assistant) are 
     <member name="T:ChatWootApi.Application.AutomationRuleItem">
       <summary>Chatwoot application Automation Rule Item model.</summary>
     </member>
-    <member name="P:ChatWootApi.Application.AutomationRuleItem.Id">
-      <summary>The ID of the automation rule</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.AutomationRuleItem.AccountId">
-      <summary>Account Id</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.AutomationRuleItem.Name">
-      <summary>The name of the rule</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.AutomationRuleItem.Description">
-      <summary>Description to give more context about the rule</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.AutomationRuleItem.EventName">
-      <summary>Automation Rule event, on which we call the actions(conversation_created, conversation_updated, message_created)</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.AutomationRuleItem.Conditions">
-      <summary>Array of conditions on which conversation/message filter would work</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.AutomationRuleItem.Actions">
-      <summary>Array of actions which we perform when condition matches</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.AutomationRuleItem.CreatedOn">
-      <summary>The timestamp when the rule was created</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.AutomationRuleItem.Active">
-      <summary>Enable/disable automation rule</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.AutomationRuleItem.ExtensionData">
-      <summary>Additional fields not modeled explicitly.</summary>
-    </member>
     <member name="T:ChatWootApi.Application.BadRequestError">
       <summary>Chatwoot application Bad Request Error model.</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.BadRequestError.Description">
-      <summary>Description.</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.BadRequestError.Errors">
-      <summary>Errors.</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.BadRequestError.ExtensionData">
-      <summary>Additional fields not modeled explicitly.</summary>
     </member>
     <member name="T:ChatWootApi.Application.CannedResponse">
       <summary>Chatwoot application Canned Response model.</summary>
@@ -1647,15 +1608,6 @@ When grouped by agent, messages sent by bots (AgentBot, Captain::Assistant) are 
     <member name="T:ChatWootApi.Application.ContactableInboxes">
       <summary>Chatwoot application Contactable Inboxes model.</summary>
     </member>
-    <member name="P:ChatWootApi.Application.ContactableInboxes.SourceId">
-      <summary>Contact Inbox Source Id</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.ContactableInboxes.Inbox">
-      <summary>Inbox.</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.ContactableInboxes.ExtensionData">
-      <summary>Additional fields not modeled explicitly.</summary>
-    </member>
     <member name="T:ChatWootApi.Application.ContactableInboxesResponse">
       <summary>Chatwoot application Contactable Inboxes Response model.</summary>
     </member>
@@ -1674,77 +1626,8 @@ When grouped by agent, messages sent by bots (AgentBot, Captain::Assistant) are 
     <member name="T:ChatWootApi.Application.ContactConversationMessage">
       <summary>Chatwoot application Contact Conversation Message model.</summary>
     </member>
-    <member name="P:ChatWootApi.Application.ContactConversationMessage.Id">
-      <summary>ID of the message</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.ContactConversationMessage.Content">
-      <summary>Content of the message</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.ContactConversationMessage.AccountId">
-      <summary>ID of the account</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.ContactConversationMessage.InboxId">
-      <summary>ID of the inbox</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.ContactConversationMessage.ConversationId">
-      <summary>ID of the conversation</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.ContactConversationMessage.MessageType">
-      <summary>Type of the message</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.ContactConversationMessage.CreatedAt">
-      <summary>Timestamp when message was created</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.ContactConversationMessage.UpdatedAt">
-      <summary>Formatted datetime when message was updated</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.ContactConversationMessage.Private">
-      <summary>Whether the message is private</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.ContactConversationMessage.Status">
-      <summary>Status of the message</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.ContactConversationMessage.SourceId">
-      <summary>Source ID of the message</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.ContactConversationMessage.ContentType">
-      <summary>Type of the content</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.ContactConversationMessage.ContentAttributes">
-      <summary>Attributes of the content</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.ContactConversationMessage.SenderType">
-      <summary>Type of the sender</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.ContactConversationMessage.SenderId">
-      <summary>ID of the sender</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.ContactConversationMessage.ExternalSourceIds">
-      <summary>External source IDs</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.ContactConversationMessage.AdditionalAttributes">
-      <summary>Additional attributes of the message</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.ContactConversationMessage.ProcessedMessageContent">
-      <summary>Processed message content</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.ContactConversationMessage.Sentiment">
-      <summary>Sentiment analysis of the message</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.ContactConversationMessage.Conversation">
-      <summary>Conversation details</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.ContactConversationMessage.Sender">
-      <summary>Details of the sender</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.ContactConversationMessage.ExtensionData">
-      <summary>Additional fields not modeled explicitly.</summary>
-    </member>
     <member name="T:ChatWootApi.Application.ContactConversations">
       <summary>array of conversations.</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.ContactConversations.ExtensionData">
-      <summary>Additional fields not modeled explicitly.</summary>
     </member>
     <member name="T:ChatWootApi.Application.ContactConversationsResponse">
       <summary>Chatwoot application Contact Conversations Response model.</summary>
@@ -1862,9 +1745,6 @@ When grouped by agent, messages sent by bots (AgentBot, Captain::Assistant) are 
     </member>
     <member name="T:ChatWootApi.Application.ContactList">
       <summary>array of contacts.</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.ContactList.ExtensionData">
-      <summary>Additional fields not modeled explicitly.</summary>
     </member>
     <member name="T:ChatWootApi.Application.ContactListItem">
       <summary>Chatwoot application Contact List Item model.</summary>
@@ -2190,15 +2070,6 @@ When grouped by agent, messages sent by bots (AgentBot, Captain::Assistant) are 
     <member name="T:ChatWootApi.Application.ConversationStatusToggle">
       <summary>Chatwoot application Conversation Status Toggle model.</summary>
     </member>
-    <member name="P:ChatWootApi.Application.ConversationStatusToggle.Meta">
-      <summary>Meta.</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.ConversationStatusToggle.Payload">
-      <summary>Payload.</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.ConversationStatusToggle.ExtensionData">
-      <summary>Additional fields not modeled explicitly.</summary>
-    </member>
     <member name="T:ChatWootApi.Application.CustomAttribute">
       <summary>Chatwoot application Custom Attribute model.</summary>
     </member>
@@ -2324,12 +2195,6 @@ When grouped by agent, messages sent by bots (AgentBot, Captain::Assistant) are 
     </member>
     <member name="T:ChatWootApi.Application.GenericId">
       <summary>Chatwoot application Generic ID model.</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.GenericId.Id">
-      <summary>Id.</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.GenericId.ExtensionData">
-      <summary>Additional fields not modeled explicitly.</summary>
     </member>
     <member name="T:ChatWootApi.Application.Inbox">
       <summary>Chatwoot application Inbox model.</summary>
@@ -2463,107 +2328,11 @@ When grouped by agent, messages sent by bots (AgentBot, Captain::Assistant) are 
     <member name="T:ChatWootApi.Application.InboxCreateApiChannelPayload">
       <summary>Chatwoot application Inbox Create API Channel Payload model.</summary>
     </member>
-    <member name="P:ChatWootApi.Application.InboxCreateApiChannelPayload.Type">
-      <summary>Type.</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxCreateApiChannelPayload.WebhookUrl">
-      <summary>Webhook URL for API channel inbox callbacks</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxCreateApiChannelPayload.HmacMandatory">
-      <summary>Require HMAC verification for incoming API channel messages</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxCreateApiChannelPayload.AdditionalAttributes">
-      <summary>Additional attributes stored on contacts created through the API channel</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxCreateApiChannelPayload.ExtensionData">
-      <summary>Additional fields not modeled explicitly.</summary>
-    </member>
     <member name="T:ChatWootApi.Application.InboxCreateEmailChannelPayload">
       <summary>Chatwoot application Inbox Create Email Channel Payload model.</summary>
     </member>
-    <member name="P:ChatWootApi.Application.InboxCreateEmailChannelPayload.Type">
-      <summary>Type.</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxCreateEmailChannelPayload.Email">
-      <summary>Email address for the inbox</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxCreateEmailChannelPayload.ImapEnabled">
-      <summary>Enable IMAP for inbound emails</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxCreateEmailChannelPayload.ImapLogin">
-      <summary>IMAP login username</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxCreateEmailChannelPayload.ImapPassword">
-      <summary>IMAP login password</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxCreateEmailChannelPayload.ImapAddress">
-      <summary>IMAP server address</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxCreateEmailChannelPayload.ImapPort">
-      <summary>IMAP server port</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxCreateEmailChannelPayload.ImapEnableSsl">
-      <summary>Enable SSL for IMAP</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxCreateEmailChannelPayload.ImapAuthentication">
-      <summary>IMAP authentication method</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxCreateEmailChannelPayload.SmtpEnabled">
-      <summary>Enable SMTP for outbound emails</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxCreateEmailChannelPayload.SmtpLogin">
-      <summary>SMTP login username</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxCreateEmailChannelPayload.SmtpPassword">
-      <summary>SMTP login password</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxCreateEmailChannelPayload.SmtpAddress">
-      <summary>SMTP server address</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxCreateEmailChannelPayload.SmtpPort">
-      <summary>SMTP server port</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxCreateEmailChannelPayload.SmtpDomain">
-      <summary>SMTP HELO domain</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxCreateEmailChannelPayload.SmtpEnableStarttlsAuto">
-      <summary>Automatically enable STARTTLS for SMTP</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxCreateEmailChannelPayload.SmtpEnableSslTls">
-      <summary>Enable SSL/TLS for SMTP</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxCreateEmailChannelPayload.SmtpOpensslVerifyMode">
-      <summary>OpenSSL certificate verification mode for SMTP</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxCreateEmailChannelPayload.SmtpAuthentication">
-      <summary>SMTP authentication method</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxCreateEmailChannelPayload.Provider">
-      <summary>Email provider</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxCreateEmailChannelPayload.VerifiedForSending">
-      <summary>Whether the inbox is verified for sending emails</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxCreateEmailChannelPayload.ExtensionData">
-      <summary>Additional fields not modeled explicitly.</summary>
-    </member>
     <member name="T:ChatWootApi.Application.InboxCreateLineChannelPayload">
       <summary>Chatwoot application Inbox Create Line Channel Payload model.</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxCreateLineChannelPayload.Type">
-      <summary>Type.</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxCreateLineChannelPayload.LineChannelId">
-      <summary>LINE channel ID</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxCreateLineChannelPayload.LineChannelSecret">
-      <summary>LINE channel secret</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxCreateLineChannelPayload.LineChannelToken">
-      <summary>LINE channel access token</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxCreateLineChannelPayload.ExtensionData">
-      <summary>Additional fields not modeled explicitly.</summary>
     </member>
     <member name="T:ChatWootApi.Application.InboxCreatePayload">
       <summary>Chatwoot application Inbox Create Payload model.</summary>
@@ -2640,77 +2409,14 @@ Available for: `Website` `Email`
     <member name="T:ChatWootApi.Application.InboxCreateSmsChannelPayload">
       <summary>Chatwoot application Inbox Create Sms Channel Payload model.</summary>
     </member>
-    <member name="P:ChatWootApi.Application.InboxCreateSmsChannelPayload.Type">
-      <summary>Type.</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxCreateSmsChannelPayload.PhoneNumber">
-      <summary>SMS phone number</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxCreateSmsChannelPayload.ProviderConfig">
-      <summary>Provider-specific SMS configuration</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxCreateSmsChannelPayload.ExtensionData">
-      <summary>Additional fields not modeled explicitly.</summary>
-    </member>
     <member name="T:ChatWootApi.Application.InboxCreateTelegramChannelPayload">
       <summary>Chatwoot application Inbox Create Telegram Channel Payload model.</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxCreateTelegramChannelPayload.Type">
-      <summary>Type.</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxCreateTelegramChannelPayload.BotToken">
-      <summary>Telegram bot token</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxCreateTelegramChannelPayload.ExtensionData">
-      <summary>Additional fields not modeled explicitly.</summary>
     </member>
     <member name="T:ChatWootApi.Application.InboxCreateWebWidgetChannelPayload">
       <summary>Chatwoot application Inbox Create Web Widget Channel Payload model.</summary>
     </member>
-    <member name="P:ChatWootApi.Application.InboxCreateWebWidgetChannelPayload.Type">
-      <summary>Type.</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxCreateWebWidgetChannelPayload.WebsiteUrl">
-      <summary>URL at which the widget will be loaded</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxCreateWebWidgetChannelPayload.WelcomeTitle">
-      <summary>Welcome title to be displayed on the widget</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxCreateWebWidgetChannelPayload.WelcomeTagline">
-      <summary>Welcome tagline to be displayed on the widget</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxCreateWebWidgetChannelPayload.WidgetColor">
-      <summary>A Hex-color string used to customize the widget</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxCreateWebWidgetChannelPayload.ReplyTime">
-      <summary>Expected reply time shown on the widget</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxCreateWebWidgetChannelPayload.PreChatFormEnabled">
-      <summary>Enable the pre-chat form before starting a conversation</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxCreateWebWidgetChannelPayload.PreChatFormOptions">
-      <summary>Pre-chat form configuration</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxCreateWebWidgetChannelPayload.ContinuityViaEmail">
-      <summary>Continue conversations over email when the contact leaves the website</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxCreateWebWidgetChannelPayload.HmacMandatory">
-      <summary>Require HMAC verification for contacts using the widget</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxCreateWebWidgetChannelPayload.AllowedDomains">
-      <summary>Comma-separated list of domains where the widget is allowed to load</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxCreateWebWidgetChannelPayload.SelectedFeatureFlags">
-      <summary>Enabled widget feature flags</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxCreateWebWidgetChannelPayload.ExtensionData">
-      <summary>Additional fields not modeled explicitly.</summary>
-    </member>
     <member name="T:ChatWootApi.Application.InboxCreateWhatsappChannelPayload">
       <summary>Chatwoot application Inbox Create Whatsapp Channel Payload model.</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxCreateWhatsappChannelPayload.ExtensionData">
-      <summary>Additional fields not modeled explicitly.</summary>
     </member>
     <member name="T:ChatWootApi.Application.InboxLabelMatrix">
       <summary>Inbox-label matrix report showing the count of conversations for each inbox-label combination.</summary>
@@ -2736,98 +2442,11 @@ Available for: `Website` `Email`
     <member name="T:ChatWootApi.Application.InboxUpdateApiChannelPayload">
       <summary>Chatwoot application Inbox Update API Channel Payload model.</summary>
     </member>
-    <member name="P:ChatWootApi.Application.InboxUpdateApiChannelPayload.WebhookUrl">
-      <summary>Webhook URL for API channel inbox callbacks</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxUpdateApiChannelPayload.HmacMandatory">
-      <summary>Require HMAC verification for incoming API channel messages</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxUpdateApiChannelPayload.AdditionalAttributes">
-      <summary>Additional attributes stored on contacts created through the API channel</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxUpdateApiChannelPayload.ExtensionData">
-      <summary>Additional fields not modeled explicitly.</summary>
-    </member>
     <member name="T:ChatWootApi.Application.InboxUpdateEmailChannelPayload">
       <summary>Chatwoot application Inbox Update Email Channel Payload model.</summary>
     </member>
-    <member name="P:ChatWootApi.Application.InboxUpdateEmailChannelPayload.Email">
-      <summary>Email address for the inbox</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxUpdateEmailChannelPayload.ImapEnabled">
-      <summary>Enable IMAP for inbound emails</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxUpdateEmailChannelPayload.ImapLogin">
-      <summary>IMAP login username</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxUpdateEmailChannelPayload.ImapPassword">
-      <summary>IMAP login password</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxUpdateEmailChannelPayload.ImapAddress">
-      <summary>IMAP server address</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxUpdateEmailChannelPayload.ImapPort">
-      <summary>IMAP server port</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxUpdateEmailChannelPayload.ImapEnableSsl">
-      <summary>Enable SSL for IMAP</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxUpdateEmailChannelPayload.ImapAuthentication">
-      <summary>IMAP authentication method</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxUpdateEmailChannelPayload.SmtpEnabled">
-      <summary>Enable SMTP for outbound emails</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxUpdateEmailChannelPayload.SmtpLogin">
-      <summary>SMTP login username</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxUpdateEmailChannelPayload.SmtpPassword">
-      <summary>SMTP login password</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxUpdateEmailChannelPayload.SmtpAddress">
-      <summary>SMTP server address</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxUpdateEmailChannelPayload.SmtpPort">
-      <summary>SMTP server port</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxUpdateEmailChannelPayload.SmtpDomain">
-      <summary>SMTP HELO domain</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxUpdateEmailChannelPayload.SmtpEnableStarttlsAuto">
-      <summary>Automatically enable STARTTLS for SMTP</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxUpdateEmailChannelPayload.SmtpEnableSslTls">
-      <summary>Enable SSL/TLS for SMTP</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxUpdateEmailChannelPayload.SmtpOpensslVerifyMode">
-      <summary>OpenSSL certificate verification mode for SMTP</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxUpdateEmailChannelPayload.SmtpAuthentication">
-      <summary>SMTP authentication method</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxUpdateEmailChannelPayload.Provider">
-      <summary>Email provider</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxUpdateEmailChannelPayload.VerifiedForSending">
-      <summary>Whether the inbox is verified for sending emails</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxUpdateEmailChannelPayload.ExtensionData">
-      <summary>Additional fields not modeled explicitly.</summary>
-    </member>
     <member name="T:ChatWootApi.Application.InboxUpdateLineChannelPayload">
       <summary>Chatwoot application Inbox Update Line Channel Payload model.</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxUpdateLineChannelPayload.LineChannelId">
-      <summary>LINE channel ID</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxUpdateLineChannelPayload.LineChannelSecret">
-      <summary>LINE channel secret</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxUpdateLineChannelPayload.LineChannelToken">
-      <summary>LINE channel access token</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxUpdateLineChannelPayload.ExtensionData">
-      <summary>Additional fields not modeled explicitly.</summary>
     </member>
     <member name="T:ChatWootApi.Application.InboxUpdatePayload">
       <summary>Chatwoot application Inbox Update Payload model.</summary>
@@ -2904,77 +2523,14 @@ Available for: `Website` `Email`
     <member name="T:ChatWootApi.Application.InboxUpdateSmsChannelPayload">
       <summary>Chatwoot application Inbox Update Sms Channel Payload model.</summary>
     </member>
-    <member name="P:ChatWootApi.Application.InboxUpdateSmsChannelPayload.PhoneNumber">
-      <summary>SMS phone number</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxUpdateSmsChannelPayload.ProviderConfig">
-      <summary>Provider-specific SMS configuration</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxUpdateSmsChannelPayload.ExtensionData">
-      <summary>Additional fields not modeled explicitly.</summary>
-    </member>
     <member name="T:ChatWootApi.Application.InboxUpdateTelegramChannelPayload">
       <summary>Chatwoot application Inbox Update Telegram Channel Payload model.</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxUpdateTelegramChannelPayload.BotToken">
-      <summary>Telegram bot token</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxUpdateTelegramChannelPayload.ExtensionData">
-      <summary>Additional fields not modeled explicitly.</summary>
     </member>
     <member name="T:ChatWootApi.Application.InboxUpdateWebWidgetChannelPayload">
       <summary>Chatwoot application Inbox Update Web Widget Channel Payload model.</summary>
     </member>
-    <member name="P:ChatWootApi.Application.InboxUpdateWebWidgetChannelPayload.WebsiteUrl">
-      <summary>URL at which the widget will be loaded</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxUpdateWebWidgetChannelPayload.WelcomeTitle">
-      <summary>Welcome title to be displayed on the widget</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxUpdateWebWidgetChannelPayload.WelcomeTagline">
-      <summary>Welcome tagline to be displayed on the widget</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxUpdateWebWidgetChannelPayload.WidgetColor">
-      <summary>A Hex-color string used to customize the widget</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxUpdateWebWidgetChannelPayload.ReplyTime">
-      <summary>Expected reply time shown on the widget</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxUpdateWebWidgetChannelPayload.PreChatFormEnabled">
-      <summary>Enable the pre-chat form before starting a conversation</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxUpdateWebWidgetChannelPayload.PreChatFormOptions">
-      <summary>Pre-chat form configuration</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxUpdateWebWidgetChannelPayload.ContinuityViaEmail">
-      <summary>Continue conversations over email when the contact leaves the website</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxUpdateWebWidgetChannelPayload.HmacMandatory">
-      <summary>Require HMAC verification for contacts using the widget</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxUpdateWebWidgetChannelPayload.AllowedDomains">
-      <summary>Comma-separated list of domains where the widget is allowed to load</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxUpdateWebWidgetChannelPayload.SelectedFeatureFlags">
-      <summary>Enabled widget feature flags</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxUpdateWebWidgetChannelPayload.ExtensionData">
-      <summary>Additional fields not modeled explicitly.</summary>
-    </member>
     <member name="T:ChatWootApi.Application.InboxUpdateWhatsappChannelPayload">
       <summary>Chatwoot application Inbox Update Whatsapp Channel Payload model.</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxUpdateWhatsappChannelPayload.PhoneNumber">
-      <summary>WhatsApp phone number</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxUpdateWhatsappChannelPayload.Provider">
-      <summary>WhatsApp provider. `default` is supported only for existing deprecated 360dialog setups.</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxUpdateWhatsappChannelPayload.ProviderConfig">
-      <summary>WhatsApp provider configuration. Cloud channels use `api_key`, `phone_number_id`, and `business_account_id`; legacy 360dialog channels use `api_key`.</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.InboxUpdateWhatsappChannelPayload.ExtensionData">
-      <summary>Additional fields not modeled explicitly.</summary>
     </member>
     <member name="T:ChatWootApi.Application.IntegrationsApp">
       <summary>Chatwoot application Integrations App model.</summary>
@@ -3240,27 +2796,6 @@ Available for: `Website` `Email`
     <member name="T:ChatWootApi.Application.PlatformAgentBotCreateUpdatePayload">
       <summary>Chatwoot application Platform Agent Bot Create Update Payload model.</summary>
     </member>
-    <member name="P:ChatWootApi.Application.PlatformAgentBotCreateUpdatePayload.Name">
-      <summary>The name of the agent bot</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.PlatformAgentBotCreateUpdatePayload.Description">
-      <summary>The description of the agent bot</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.PlatformAgentBotCreateUpdatePayload.OutgoingUrl">
-      <summary>The webhook URL for the bot</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.PlatformAgentBotCreateUpdatePayload.AccountId">
-      <summary>The account ID to associate the agent bot with</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.PlatformAgentBotCreateUpdatePayload.Avatar">
-      <summary>Send the form data with the avatar image binary or use the avatar_url</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.PlatformAgentBotCreateUpdatePayload.AvatarUrl">
-      <summary>The url to a jpeg, png file for the agent bot avatar</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.PlatformAgentBotCreateUpdatePayload.ExtensionData">
-      <summary>Additional fields not modeled explicitly.</summary>
-    </member>
     <member name="T:ChatWootApi.Application.Portal">
       <summary>Chatwoot application Portal model.</summary>
     </member>
@@ -3423,53 +2958,8 @@ Available for: `Website` `Email`
     <member name="T:ChatWootApi.Application.PublicContact">
       <summary>Chatwoot application Public Contact model.</summary>
     </member>
-    <member name="P:ChatWootApi.Application.PublicContact.Id">
-      <summary>Id of the contact</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.PublicContact.SourceId">
-      <summary>The session identifier of the contact</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.PublicContact.Name">
-      <summary>Name of the contact when available</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.PublicContact.Email">
-      <summary>Email of the contact</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.PublicContact.PhoneNumber">
-      <summary>Phone number of the contact</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.PublicContact.PubsubToken">
-      <summary>The token to be used to connect to chatwoot websocket</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.PublicContact.ExtensionData">
-      <summary>Additional fields not modeled explicitly.</summary>
-    </member>
     <member name="T:ChatWootApi.Application.PublicContactCreateUpdatePayload">
       <summary>Chatwoot application Public Contact Create Update Payload model.</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.PublicContactCreateUpdatePayload.Identifier">
-      <summary>External identifier of the contact</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.PublicContactCreateUpdatePayload.IdentifierHash">
-      <summary>Identifier hash prepared for HMAC authentication</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.PublicContactCreateUpdatePayload.Email">
-      <summary>Email of the contact</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.PublicContactCreateUpdatePayload.Name">
-      <summary>Name of the contact</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.PublicContactCreateUpdatePayload.PhoneNumber">
-      <summary>Phone number of the contact</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.PublicContactCreateUpdatePayload.Avatar">
-      <summary>Send the form data with the avatar image binary or use the avatar_url</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.PublicContactCreateUpdatePayload.CustomAttributes">
-      <summary>Custom attributes of the customer</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.PublicContactCreateUpdatePayload.ExtensionData">
-      <summary>Additional fields not modeled explicitly.</summary>
     </member>
     <member name="T:ChatWootApi.Application.PublicContactRecord">
       <summary>Full serialized contact record returned when the public API renders a Contact model directly.</summary>
@@ -3537,71 +3027,11 @@ Available for: `Website` `Email`
     <member name="T:ChatWootApi.Application.PublicConversation">
       <summary>Chatwoot application Public Conversation model.</summary>
     </member>
-    <member name="P:ChatWootApi.Application.PublicConversation.Id">
-      <summary>Id of the conversation</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.PublicConversation.Uuid">
-      <summary>UUID of the conversation</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.PublicConversation.InboxId">
-      <summary>The inbox id of the conversation</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.PublicConversation.ContactLastSeenAt">
-      <summary>Timestamp of when the contact last seen the conversation (Unix timestamp)</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.PublicConversation.Status">
-      <summary>The status of the conversation</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.PublicConversation.AgentLastSeenAt">
-      <summary>Timestamp of when the agent last seen the conversation (Unix timestamp)</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.PublicConversation.Messages">
-      <summary>Messages in the conversation</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.PublicConversation.Contact">
-      <summary>Full serialized contact record returned when the public API renders a Contact model directly.</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.PublicConversation.ExtensionData">
-      <summary>Additional fields not modeled explicitly.</summary>
-    </member>
     <member name="T:ChatWootApi.Application.PublicConversationCreatePayload">
       <summary>Chatwoot application Public Conversation Create Payload model.</summary>
     </member>
-    <member name="P:ChatWootApi.Application.PublicConversationCreatePayload.CustomAttributes">
-      <summary>Custom attributes of the conversation</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.PublicConversationCreatePayload.ExtensionData">
-      <summary>Additional fields not modeled explicitly.</summary>
-    </member>
     <member name="T:ChatWootApi.Application.PublicInbox">
       <summary>Chatwoot application Public Inbox model.</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.PublicInbox.Identifier">
-      <summary>Inbox identifier</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.PublicInbox.Name">
-      <summary>Name of the inbox</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.PublicInbox.Timezone">
-      <summary>The timezone defined on the inbox</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.PublicInbox.WorkingHours">
-      <summary>The working hours defined on the inbox</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.PublicInbox.WorkingHoursEnabled">
-      <summary>Whether of not the working hours are enabled on the inbox</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.PublicInbox.CsatSurveyEnabled">
-      <summary>Whether of not the Customer Satisfaction survey is enabled on the inbox</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.PublicInbox.GreetingEnabled">
-      <summary>Whether of not the Greeting Message is enabled on the inbox</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.PublicInbox.IdentityValidationEnabled">
-      <summary>Whether of not the User Identity Validation is enforced on the inbox</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.PublicInbox.ExtensionData">
-      <summary>Additional fields not modeled explicitly.</summary>
     </member>
     <member name="T:ChatWootApi.Application.PublicMessage">
       <summary>Chatwoot application Public Message model.</summary>
@@ -3690,15 +3120,6 @@ Available for: `Website` `Email`
     <member name="T:ChatWootApi.Application.PublicMessageCreatePayload">
       <summary>Chatwoot application Public Message Create Payload model.</summary>
     </member>
-    <member name="P:ChatWootApi.Application.PublicMessageCreatePayload.Content">
-      <summary>Content for the message</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.PublicMessageCreatePayload.EchoId">
-      <summary>Temporary identifier which will be passed back via websockets</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.PublicMessageCreatePayload.ExtensionData">
-      <summary>Additional fields not modeled explicitly.</summary>
-    </member>
     <member name="T:ChatWootApi.Application.PublicMessageSender">
       <summary>Polymorphic sender payload returned by push_event_data. Available fields vary by sender type.</summary>
     </member>
@@ -3752,12 +3173,6 @@ Available for: `Website` `Email`
     </member>
     <member name="T:ChatWootApi.Application.PublicMessageUpdatePayload">
       <summary>Chatwoot application Public Message Update Payload model.</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.PublicMessageUpdatePayload.SubmittedValues">
-      <summary>Replies to the Bot Message Types</summary>
-    </member>
-    <member name="P:ChatWootApi.Application.PublicMessageUpdatePayload.ExtensionData">
-      <summary>Additional fields not modeled explicitly.</summary>
     </member>
     <member name="T:ChatWootApi.Application.ReportingEvent">
       <summary>Chatwoot application Reporting Event model.</summary>

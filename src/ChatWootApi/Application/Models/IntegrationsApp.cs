@@ -48,7 +48,7 @@ public sealed record IntegrationsApp
     /// 如果有为此集成创建的任何挂钩
     /// </summary>
     [JsonPropertyName("hooks")]
-    public IReadOnlyList<IDictionary<string, JsonElement>?>? Hooks { get; init; }
+    public IReadOnlyList<IntegrationsHook>? Hooks { get; init; }
 
     /// <summary>
     /// Swagger 未显式建模的附加 JSON 字段

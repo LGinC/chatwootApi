@@ -1,5 +1,6 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using ChatWootApi.Platform.Models;
 
 namespace ChatWootApi.Application.Models;
 
@@ -126,7 +127,7 @@ public sealed record User
     /// 账号
     /// </summary>
     [JsonPropertyName("accounts")]
-    public IReadOnlyList<IDictionary<string, JsonElement>?>? Accounts { get; init; }
+    public IReadOnlyList<UserAccount>? Accounts { get; init; }
 
     /// <summary>
     /// Swagger 未显式建模的附加 JSON 字段

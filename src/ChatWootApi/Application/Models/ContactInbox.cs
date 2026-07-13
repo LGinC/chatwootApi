@@ -18,7 +18,7 @@ public sealed record ContactInbox
     /// 收件箱
     /// </summary>
     [JsonPropertyName("inbox")]
-    public IDictionary<string, JsonElement>? Inbox { get; init; }
+    public Inbox? Inbox { get; init; }
 
     /// <summary>
     /// Swagger 未显式建模的附加 JSON 字段

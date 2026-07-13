@@ -42,7 +42,8 @@ public sealed record ConversationCreatePayload : JsonExtensionDataPayload
     /// 指定对话是否处于待处理、打开、关闭状态
     /// </summary>
     [JsonPropertyName("status")]
-    public string? Status { get; set; }
+    [JsonConverter(typeof(ChatWootStringEnumConverter<ConversationStatus>))]
+    public ConversationStatus? Status { get; set; }
 
     /// <summary>
     /// 用于将对话分配给代理的代理 ID

@@ -30,7 +30,7 @@ public sealed record ConversationMeta
     /// 分配给对话的代理
     /// </summary>
     [JsonPropertyName("assignee")]
-    public JsonElement? Assignee { get; init; }
+    public Agent? Assignee { get; init; }
 
     /// <summary>
     /// 客服人员上次看到对话的时间戳

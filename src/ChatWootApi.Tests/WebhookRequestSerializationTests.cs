@@ -86,7 +86,7 @@ namespace ChatWootApi.Tests
                   "event": "conversation_updated",
                   "id": 42,
                   "display_id": 1001,
-                  "status": "open",
+                  "status": "OPEN",
                   "account_id": 5,
                   "additional_attributes": {
                     "referer": "https://example.test/pricing"
@@ -113,7 +113,7 @@ namespace ChatWootApi.Tests
             Assert.Equal("conversation_updated", request.Event);
             Assert.Equal<decimal?>(42m, request.Id);
             Assert.Equal<decimal?>(1001m, request.DisplayId);
-            Assert.Equal("open", request.Status);
+            Assert.Equal(ConversationStatus.Open, request.Status);
             Assert.Equal<decimal?>(5m, request.AccountId);
             Assert.Equal("https://example.test/pricing", request.AdditionalAttributes!["referer"].GetString());
 
@@ -144,7 +144,7 @@ namespace ChatWootApi.Tests
                   "conversation": {
                     "id": "11",
                     "display_id": 12,
-                    "status": "open",
+                    "status": "pEnDiNg",
                     "account_id": "13",
                     "additional_attributes": {
                       "browser": {
@@ -167,7 +167,7 @@ namespace ChatWootApi.Tests
             Assert.Equal("conversation_typing_on", request.Event);
             Assert.Equal<decimal?>(11m, request.Conversation!.Id);
             Assert.Equal<decimal?>(12m, request.Conversation.DisplayId);
-            Assert.Equal("open", request.Conversation.Status);
+            Assert.Equal(ConversationStatus.Pending, request.Conversation.Status);
             Assert.Equal<decimal?>(13m, request.Conversation.AccountId);
             Assert.Equal("Firefox", request.Conversation.AdditionalAttributes!["browser"].GetProperty("browser_name").GetString());
             Assert.Equal<decimal?>(9m, request.User!.Id);

@@ -124,7 +124,8 @@ public sealed class WebhookRequest
     /// 会话状态，例如 <c>open</c>、<c>pending</c> 或 <c>resolved</c>
     /// </summary>
     [JsonPropertyName("status")]
-    public string? Status { get; init; }
+    [JsonConverter(typeof(JsonStringEnumConverter<ConversationStatus>))]
+    public ConversationStatus? Status { get; init; }
 
     /// <summary>
     /// 会话来源渠道
@@ -377,7 +378,8 @@ public sealed class WebhookConversation
     /// 会话状态
     /// </summary>
     [JsonPropertyName("status")]
-    public string? Status { get; init; }
+    [JsonConverter(typeof(JsonStringEnumConverter<ConversationStatus>))]
+    public ConversationStatus? Status { get; init; }
 
     /// <summary>
     /// 会话未读消息数

@@ -12,7 +12,7 @@ public sealed record ContactConversationsResponse
     /// 联系人的对话列表
     /// </summary>
     [JsonPropertyName("payload")]
-    public IReadOnlyList<JsonElement>? Payload { get; init; }
+    public IReadOnlyList<Conversation>? Payload { get; init; }
 
     /// <summary>
     /// Swagger 未显式建模的附加 JSON 字段

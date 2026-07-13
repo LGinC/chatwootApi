@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+using ChatWootApi.Application.Models;
 
 namespace ChatWootApi.Client.Models;
 
@@ -11,5 +12,6 @@ public sealed record ConversationTypingStatusPayload
     /// 输入状态，on 或 off
     /// </summary>
     [JsonPropertyName("typing_status")]
-    public string? TypingStatus { get; init; }
+    [JsonConverter(typeof(ChatWootStringEnumConverter<TypingStatus>))]
+    public TypingStatus? TypingStatus { get; init; }
 }

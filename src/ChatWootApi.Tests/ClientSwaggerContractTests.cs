@@ -1,4 +1,5 @@
 using ChatWootApi.Client;
+using TypingStatus = ChatWootApi.Application.Models.TypingStatus;
 using System.Reflection;
 using System.Text.Json;
 using Refit;
@@ -41,13 +42,21 @@ public sealed class ClientSwaggerContractTests
     {
         var payload = new ConversationTypingStatusPayload
         {
-            TypingStatus = "on",
+            TypingStatus = TypingStatus.On,
         };
 
         var json = JsonSerializer.Serialize(payload);
 
         using var document = JsonDocument.Parse(json);
         Assert.Equal("on", document.RootElement.GetProperty("typing_status").GetString());
+    }
+
+    [Fact]
+    public void ConversationTypingStatusPayloadDeserializesIgnoringCase()
+    {
+        var payload = JsonSerializer.Deserialize<ConversationTypingStatusPayload>("""{"typing_status":"OFF"}""");
+
+        Assert.Equal(TypingStatus.Off, payload!.TypingStatus);
     }
 
     private static MethodInfo GetMethod(Type interfaceType, string methodName)

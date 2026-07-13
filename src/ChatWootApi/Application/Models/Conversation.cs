@@ -96,7 +96,8 @@ public sealed record Conversation
     /// 对话状态
     /// </summary>
     [JsonPropertyName("status")]
-    public string? Status { get; init; }
+    [JsonConverter(typeof(ChatWootStringEnumConverter<ConversationStatus>))]
+    public ConversationStatus? Status { get; init; }
 
     /// <summary>
     /// 对话创建时间
@@ -132,7 +133,7 @@ public sealed record Conversation
     /// 最后一条非活动消息
     /// </summary>
     [JsonPropertyName("last_non_activity_message")]
-    public JsonElement? LastNonActivityMessage { get; init; }
+    public Message? LastNonActivityMessage { get; init; }
 
     /// <summary>
     /// 对话的最后一个活动
@@ -144,7 +145,8 @@ public sealed record Conversation
     /// 对话的优先级
     /// </summary>
     [JsonPropertyName("priority")]
-    public string? Priority { get; init; }
+    [JsonConverter(typeof(ChatWootStringEnumConverter<ConversationPriority>))]
+    public ConversationPriority? Priority { get; init; }
 
     /// <summary>
     /// 对话等待的时间
