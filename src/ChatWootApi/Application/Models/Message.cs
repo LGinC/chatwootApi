@@ -52,9 +52,10 @@ public sealed record Message
     public long? CreatedAt { get; init; }
 
     /// <summary>
-    /// 消息更新时间
+    /// 消息更新时间（Unix 秒；Chatwoot 可能返回 number 或 string）
     /// </summary>
     [JsonPropertyName("updated_at")]
+    [JsonConverter(typeof(ChatWootFlexibleLongConverter))]
     public long? UpdatedAt { get; init; }
 
     /// <summary>

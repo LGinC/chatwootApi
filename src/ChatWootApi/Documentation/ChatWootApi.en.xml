@@ -2031,9 +2031,87 @@ When grouped by agent, messages sent by bots (AgentBot, Captain::Assistant) are 
       <summary>Chatwoot application Conversation List model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.ConversationList.Data">
-      <summary>Data.</summary>
+      <summary>Conversation list data containing count metadata and conversation payload.</summary>
     </member>
     <member name="P:ChatWootApi.Application.ConversationList.ExtensionData">
+      <summary>Additional fields not modeled explicitly.</summary>
+    </member>
+    <member name="T:ChatWootApi.Application.Models.ConversationListData">
+      <summary>Conversation list data node with meta counts and payload.</summary>
+    </member>
+    <member name="P:ChatWootApi.Application.Models.ConversationListData.Meta">
+      <summary>Conversation count metadata.</summary>
+    </member>
+    <member name="P:ChatWootApi.Application.Models.ConversationListData.Payload">
+      <summary>Array of conversations.</summary>
+    </member>
+    <member name="P:ChatWootApi.Application.Models.ConversationListData.ExtensionData">
+      <summary>Additional fields not modeled explicitly.</summary>
+    </member>
+    <member name="T:ChatWootApi.Application.Models.ConversationListItem">
+      <summary>Conversation list item (conversation fields plus list meta).</summary>
+    </member>
+    <member name="P:ChatWootApi.Application.Models.ConversationListItem.Meta">
+      <summary>List-item metadata such as sender, channel, and assignee.</summary>
+    </member>
+    <member name="T:ChatWootApi.Application.Models.ConversationListItemMeta">
+      <summary>Metadata attached to a conversation list item or conversation details.</summary>
+    </member>
+    <member name="P:ChatWootApi.Application.Models.ConversationListItemMeta.Sender">
+      <summary>Conversation sender (contact).</summary>
+    </member>
+    <member name="P:ChatWootApi.Application.Models.ConversationListItemMeta.Channel">
+      <summary>Channel type.</summary>
+    </member>
+    <member name="P:ChatWootApi.Application.Models.ConversationListItemMeta.Assignee">
+      <summary>Conversation assignee.</summary>
+    </member>
+    <member name="P:ChatWootApi.Application.Models.ConversationListItemMeta.HmacVerified">
+      <summary>Whether HMAC verification passed.</summary>
+    </member>
+    <member name="P:ChatWootApi.Application.Models.ConversationListItemMeta.ExtensionData">
+      <summary>Additional fields not modeled explicitly.</summary>
+    </member>
+    <member name="T:ChatWootApi.Application.Models.ConversationListSender">
+      <summary>Sender object embedded in conversation list item meta.</summary>
+    </member>
+    <member name="P:ChatWootApi.Application.Models.ConversationListSender.AdditionalAttributes">
+      <summary>Additional attributes of the sender.</summary>
+    </member>
+    <member name="P:ChatWootApi.Application.Models.ConversationListSender.AvailabilityStatus">
+      <summary>Availability status of the sender.</summary>
+    </member>
+    <member name="P:ChatWootApi.Application.Models.ConversationListSender.Email">
+      <summary>Email of the sender.</summary>
+    </member>
+    <member name="P:ChatWootApi.Application.Models.ConversationListSender.Id">
+      <summary>ID of the sender.</summary>
+    </member>
+    <member name="P:ChatWootApi.Application.Models.ConversationListSender.Name">
+      <summary>Name of the sender.</summary>
+    </member>
+    <member name="P:ChatWootApi.Application.Models.ConversationListSender.PhoneNumber">
+      <summary>Phone number of the sender.</summary>
+    </member>
+    <member name="P:ChatWootApi.Application.Models.ConversationListSender.Blocked">
+      <summary>Whether the sender is blocked.</summary>
+    </member>
+    <member name="P:ChatWootApi.Application.Models.ConversationListSender.Identifier">
+      <summary>Identifier of the sender.</summary>
+    </member>
+    <member name="P:ChatWootApi.Application.Models.ConversationListSender.Thumbnail">
+      <summary>Avatar URL of the contact.</summary>
+    </member>
+    <member name="P:ChatWootApi.Application.Models.ConversationListSender.CustomAttributes">
+      <summary>Custom attributes of the sender.</summary>
+    </member>
+    <member name="P:ChatWootApi.Application.Models.ConversationListSender.LastActivityAt">
+      <summary>Last activity timestamp of the sender.</summary>
+    </member>
+    <member name="P:ChatWootApi.Application.Models.ConversationListSender.CreatedAt">
+      <summary>Created-at timestamp of the sender.</summary>
+    </member>
+    <member name="P:ChatWootApi.Application.Models.ConversationListSender.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
     </member>
     <member name="T:ChatWootApi.Application.ConversationMessageCreatePayload">

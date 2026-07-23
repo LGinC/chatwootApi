@@ -6,7 +6,7 @@ namespace ChatWootApi.Application.Models;
 /// <summary>
 /// Chatwoot 应用模型：会话
 /// </summary>
-public sealed record Conversation
+public record Conversation
 {
     /// <summary>
     /// 对话ID
