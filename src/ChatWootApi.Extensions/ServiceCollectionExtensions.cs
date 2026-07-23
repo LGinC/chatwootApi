@@ -189,6 +189,7 @@ public static class ServiceCollectionExtensions
     {
         return services.AddRefitGeneratedClient<TApi>(CreateRefitSettings())
             .ConfigureHttpClient(ConfigureBaseAddress)
+            .AddOmitEmptyQueryParametersHandler()
             .AddChatWootHttpLoggingHandler<TApi>();
     }
 
@@ -197,6 +198,7 @@ public static class ServiceCollectionExtensions
     {
         return services.AddRefitGeneratedClient<TApi>(CreateRefitSettings())
             .ConfigureHttpClient(ConfigureBaseAddress)
+            .AddOmitEmptyQueryParametersHandler()
             .AddChatWootHttpLoggingHandler<TApi>();
     }
 
@@ -205,6 +207,7 @@ public static class ServiceCollectionExtensions
     {
         return services.AddRefitGeneratedClient<TApi>(CreateRefitSettings())
             .ConfigureHttpClient(ConfigureBaseAddress)
+            .AddOmitEmptyQueryParametersHandler()
             .AddHttpMessageHandler<AccountAccessTokenDelegatingHandler>()
             .AddChatWootHttpLoggingHandler<TApi>();
     }
@@ -214,9 +217,13 @@ public static class ServiceCollectionExtensions
     {
         return services.AddRefitGeneratedClient<TApi>(CreateRefitSettings())
             .ConfigureHttpClient(ConfigureBaseAddress)
+            .AddOmitEmptyQueryParametersHandler()
             .AddHttpMessageHandler<PlatformAccessTokenDelegatingHandler>()
             .AddChatWootHttpLoggingHandler<TApi>();
     }
+
+    private static IHttpClientBuilder AddOmitEmptyQueryParametersHandler(this IHttpClientBuilder builder)
+        => builder.AddHttpMessageHandler(() => new OmitEmptyQueryParametersHandler());
 
     private static IHttpClientBuilder AddChatWootHttpLoggingHandler<TApi>(this IHttpClientBuilder builder)
         where TApi : class

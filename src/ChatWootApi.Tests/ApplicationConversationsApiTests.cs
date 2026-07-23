@@ -3,6 +3,7 @@ using System.Reflection;
 using System.Web;
 using ChatWootApi.Application;
 using ChatWootApi.Application.Models;
+using ChatWootApi.Extensions;
 using ChatWootApi.Serialization;
 using Microsoft.Extensions.DependencyInjection;
 using Refit;
@@ -18,6 +19,7 @@ public sealed class ApplicationConversationsApiTests
         var services = new ServiceCollection();
         services.AddRefitGeneratedClient<IApplicationConversationsApi>(CreateRefitSettings())
             .ConfigureHttpClient(client => client.BaseAddress = new Uri("https://example.test/"))
+            .AddHttpMessageHandler(() => new OmitEmptyQueryParametersHandler())
             .ConfigurePrimaryHttpMessageHandler(() => handler);
 
         using var serviceProvider = services.BuildServiceProvider();
@@ -48,12 +50,13 @@ public sealed class ApplicationConversationsApiTests
     }
 
     [Fact]
-    public async Task GeneratedClientSendsEmptyValuesForUnsetConversationListQueryParameters()
+    public async Task GeneratedClientOmitsUnsetConversationListQueryParameters()
     {
         using var handler = new CapturingHandler();
         var services = new ServiceCollection();
         services.AddRefitGeneratedClient<IApplicationConversationsApi>(CreateRefitSettings())
             .ConfigureHttpClient(client => client.BaseAddress = new Uri("https://example.test/"))
+            .AddHttpMessageHandler(() => new OmitEmptyQueryParametersHandler())
             .ConfigurePrimaryHttpMessageHandler(() => handler);
 
         using var serviceProvider = services.BuildServiceProvider();
@@ -61,17 +64,36 @@ public sealed class ApplicationConversationsApiTests
 
         await api.ConversationListAsync(12);
 
+        Assert.Equal(
+            "/api/v1/accounts/12/conversations",
+            handler.Request!.RequestUri!.PathAndQuery);
+    }
+
+    [Fact]
+    public async Task GeneratedClientOmitsOnlyUnsetConversationListQueryParameters()
+    {
+        using var handler = new CapturingHandler();
+        var services = new ServiceCollection();
+        services.AddRefitGeneratedClient<IApplicationConversationsApi>(CreateRefitSettings())
+            .ConfigureHttpClient(client => client.BaseAddress = new Uri("https://example.test/"))
+            .AddHttpMessageHandler(() => new OmitEmptyQueryParametersHandler())
+            .ConfigurePrimaryHttpMessageHandler(() => handler);
+
+        using var serviceProvider = services.BuildServiceProvider();
+        var api = serviceProvider.GetRequiredService<IApplicationConversationsApi>();
+
+        await api.ConversationListAsync(12, status: ConversationStatus.Open, page: 2);
+
         Assert.Equal("/api/v1/accounts/12/conversations", handler.Request!.RequestUri!.AbsolutePath);
 
-        // Single path template keeps all query keys; null Format yields empty values.
         var query = HttpUtility.ParseQueryString(handler.Request.RequestUri.Query);
-        Assert.Equal(string.Empty, query["assignee_type"]);
-        Assert.Equal(string.Empty, query["status"]);
-        Assert.Equal(string.Empty, query["q"]);
-        Assert.Equal(string.Empty, query["inbox_id"]);
-        Assert.Equal(string.Empty, query["team_id"]);
-        Assert.Equal(string.Empty, query["labels"]);
-        Assert.Equal(string.Empty, query["page"]);
+        Assert.Equal("open", query["status"]);
+        Assert.Equal("2", query["page"]);
+        Assert.Null(query["assignee_type"]);
+        Assert.Null(query["q"]);
+        Assert.Null(query["inbox_id"]);
+        Assert.Null(query["team_id"]);
+        Assert.Null(query["labels"]);
     }
 
     [Fact]
@@ -81,6 +103,7 @@ public sealed class ApplicationConversationsApiTests
         var services = new ServiceCollection();
         services.AddRefitGeneratedClient<IApplicationConversationsApi>(CreateRefitSettings())
             .ConfigureHttpClient(client => client.BaseAddress = new Uri("https://example.test/"))
+            .AddHttpMessageHandler(() => new OmitEmptyQueryParametersHandler())
             .ConfigurePrimaryHttpMessageHandler(() => handler);
 
         using var serviceProvider = services.BuildServiceProvider();
@@ -101,6 +124,7 @@ public sealed class ApplicationConversationsApiTests
         var services = new ServiceCollection();
         services.AddRefitGeneratedClient<IApplicationConversationsApi>(CreateRefitSettings())
             .ConfigureHttpClient(client => client.BaseAddress = new Uri("https://example.test/"))
+            .AddHttpMessageHandler(() => new OmitEmptyQueryParametersHandler())
             .ConfigurePrimaryHttpMessageHandler(() => handler);
 
         using var serviceProvider = services.BuildServiceProvider();
