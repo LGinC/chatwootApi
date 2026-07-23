@@ -19,7 +19,7 @@ public sealed class ApplicationMessagesApiTests
         using var serviceProvider = services.BuildServiceProvider();
         var api = serviceProvider.GetRequiredService<IApplicationMessagesApi>();
 
-        await api.ListAllMessagesAsync(12, 34, after: 56, before: 78);
+        await api.ListAllMessagesAsync(12, 34, after: 56, before: 78, cancellationToken: TestContext.Current.CancellationToken);
 
         Assert.Equal(HttpMethod.Get, handler.Request!.Method);
         Assert.Equal(
@@ -39,7 +39,7 @@ public sealed class ApplicationMessagesApiTests
         using var serviceProvider = services.BuildServiceProvider();
         var api = serviceProvider.GetRequiredService<IApplicationMessagesApi>();
 
-        await api.ListAllMessagesAsync(12, 34);
+        await api.ListAllMessagesAsync(12, 34, cancellationToken: TestContext.Current.CancellationToken);
 
         Assert.Equal(
             "/api/v1/accounts/12/conversations/34/messages",

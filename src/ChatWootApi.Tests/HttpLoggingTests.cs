@@ -49,7 +49,7 @@ public sealed class HttpLoggingTests
         };
         request.Headers.TryAddWithoutValidation("api_access_token", "header-secret");
 
-        using var response = await client.SendAsync(request);
+        using var response = await client.SendAsync(request, TestContext.Current.CancellationToken);
 
         var allLogs = string.Join(Environment.NewLine, logMessages);
 
@@ -92,12 +92,12 @@ public sealed class HttpLoggingTests
             new StubHandler(_ => new HttpResponseMessage(HttpStatusCode.OK)));
 
         using (var selectedClient = new HttpClient(selectedHandler))
-        using (var selectedResponse = await selectedClient.GetAsync("https://example.test/selected"))
+        using (var selectedResponse = await selectedClient.GetAsync("https://example.test/selected", TestContext.Current.CancellationToken))
         {
         }
 
         using (var unselectedClient = new HttpClient(unselectedHandler))
-        using (var unselectedResponse = await unselectedClient.GetAsync("https://example.test/unselected"))
+        using (var unselectedResponse = await unselectedClient.GetAsync("https://example.test/unselected", TestContext.Current.CancellationToken))
         {
         }
 

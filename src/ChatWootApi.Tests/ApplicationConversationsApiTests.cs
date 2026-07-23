@@ -33,7 +33,8 @@ public sealed class ApplicationConversationsApiTests
             inboxId: 7,
             teamId: 9,
             labels: ["vip", "priority"],
-            page: 2);
+            page: 2,
+            cancellationToken: TestContext.Current.CancellationToken);
 
         Assert.Equal(HttpMethod.Get, handler.Request!.Method);
         Assert.Equal("/api/v1/accounts/12/conversations", handler.Request.RequestUri!.AbsolutePath);
@@ -62,7 +63,7 @@ public sealed class ApplicationConversationsApiTests
         using var serviceProvider = services.BuildServiceProvider();
         var api = serviceProvider.GetRequiredService<IApplicationConversationsApi>();
 
-        await api.ConversationListAsync(12);
+        await api.ConversationListAsync(12, cancellationToken: TestContext.Current.CancellationToken);
 
         Assert.Equal(
             "/api/v1/accounts/12/conversations",
@@ -82,7 +83,7 @@ public sealed class ApplicationConversationsApiTests
         using var serviceProvider = services.BuildServiceProvider();
         var api = serviceProvider.GetRequiredService<IApplicationConversationsApi>();
 
-        await api.ConversationListAsync(12, status: ConversationStatus.Open, page: 2);
+        await api.ConversationListAsync(12, status: ConversationStatus.Open, page: 2, cancellationToken: TestContext.Current.CancellationToken);
 
         Assert.Equal("/api/v1/accounts/12/conversations", handler.Request!.RequestUri!.AbsolutePath);
 
@@ -109,7 +110,7 @@ public sealed class ApplicationConversationsApiTests
         using var serviceProvider = services.BuildServiceProvider();
         var api = serviceProvider.GetRequiredService<IApplicationConversationsApi>();
 
-        await api.ConversationFilterAsync(12, new FilterPayload(), page: 3);
+        await api.ConversationFilterAsync(12, new FilterPayload(), page: 3, cancellationToken: TestContext.Current.CancellationToken);
 
         Assert.Equal(HttpMethod.Post, handler.Request!.Method);
         Assert.Equal(
@@ -130,7 +131,7 @@ public sealed class ApplicationConversationsApiTests
         using var serviceProvider = services.BuildServiceProvider();
         var api = serviceProvider.GetRequiredService<IApplicationConversationsApi>();
 
-        await api.ConversationFilterAsync(12, new FilterPayload(), page: null);
+        await api.ConversationFilterAsync(12, new FilterPayload(), page: null, cancellationToken: TestContext.Current.CancellationToken);
 
         Assert.Equal(
             "/api/v1/accounts/12/conversations/filter",

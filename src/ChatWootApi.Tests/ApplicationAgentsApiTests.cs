@@ -35,7 +35,8 @@ public sealed class ApplicationAgentsApiTests
             {
                 ["custom_role_id"] = 7,
                 ["welcome_message"] = new { Text = "Hello" },
-            }));
+            }),
+            cancellationToken: TestContext.Current.CancellationToken);
 
         Assert.Equal(HttpMethod.Post, handler.Request!.Method);
         Assert.Equal("/api/v1/accounts/12/agents", handler.Request.RequestUri!.AbsolutePath);

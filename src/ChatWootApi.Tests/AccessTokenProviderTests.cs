@@ -15,12 +15,12 @@ public sealed class AccessTokenProviderTests
 
         using (provider.UseApplicationAccessToken("scoped-account"))
         {
-            var scopedToken = await provider.GetAccessTokenAsync(AccessTokenKind.Account);
+            var scopedToken = await provider.GetAccessTokenAsync(AccessTokenKind.Account, TestContext.Current.CancellationToken);
 
             Assert.Equal("scoped-account", scopedToken);
         }
 
-        var restoredToken = await provider.GetAccessTokenAsync(AccessTokenKind.Account);
+        var restoredToken = await provider.GetAccessTokenAsync(AccessTokenKind.Account, TestContext.Current.CancellationToken);
 
         Assert.Equal("configured-account", restoredToken);
     }
@@ -32,7 +32,7 @@ public sealed class AccessTokenProviderTests
 
         using (provider.UseApplicationAccessToken("scoped-account"))
         {
-            var scopedToken = await provider.GetAccessTokenAsync(AccessTokenKind.Account);
+            var scopedToken = await provider.GetAccessTokenAsync(AccessTokenKind.Account, TestContext.Current.CancellationToken);
 
             Assert.Equal("scoped-account", scopedToken);
         }
@@ -47,12 +47,12 @@ public sealed class AccessTokenProviderTests
         {
             using (provider.UseApplicationAccessToken("inner-account"))
             {
-                var innerToken = await provider.GetAccessTokenAsync(AccessTokenKind.Account);
+                var innerToken = await provider.GetAccessTokenAsync(AccessTokenKind.Account, TestContext.Current.CancellationToken);
 
                 Assert.Equal("inner-account", innerToken);
             }
 
-            var restoredOuterToken = await provider.GetAccessTokenAsync(AccessTokenKind.Account);
+            var restoredOuterToken = await provider.GetAccessTokenAsync(AccessTokenKind.Account, TestContext.Current.CancellationToken);
 
             Assert.Equal("outer-account", restoredOuterToken);
         }
@@ -67,7 +67,7 @@ public sealed class AccessTokenProviderTests
 
         using (provider.UseApplicationAccessToken("scoped-account"))
         {
-            var platformToken = await provider.GetAccessTokenAsync(AccessTokenKind.Platform);
+            var platformToken = await provider.GetAccessTokenAsync(AccessTokenKind.Platform, TestContext.Current.CancellationToken);
 
             Assert.Equal("configured-platform", platformToken);
         }
@@ -79,7 +79,7 @@ public sealed class AccessTokenProviderTests
         var provider = CreateProvider(accountAccessToken: null);
 
         var exception = await Assert.ThrowsAsync<InvalidOperationException>(async () =>
-            await provider.GetAccessTokenAsync(AccessTokenKind.Account));
+            await provider.GetAccessTokenAsync(AccessTokenKind.Account, TestContext.Current.CancellationToken));
 
         Assert.Equal(
             "ChatWootApiOptions.AccountAccessToken is required for Account API calls.",

@@ -16,7 +16,7 @@ public sealed class OmitEmptyQueryParametersHandlerTests
             HttpMethod.Get,
             "/api/v1/accounts/12/conversations?assignee_type=&status=open&q=&inbox_id=&team_id=&labels=&page=2");
 
-        await invoker.SendAsync(request, CancellationToken.None);
+        await invoker.SendAsync(request, TestContext.Current.CancellationToken);
 
         Assert.Equal(
             "/api/v1/accounts/12/conversations?status=open&page=2",
@@ -34,7 +34,7 @@ public sealed class OmitEmptyQueryParametersHandlerTests
             HttpMethod.Get,
             "/api/v1/accounts/12/conversations?assignee_type=&status=&q=&inbox_id=&team_id=&labels=&page=");
 
-        await invoker.SendAsync(request, CancellationToken.None);
+        await invoker.SendAsync(request, TestContext.Current.CancellationToken);
 
         Assert.Equal(
             "/api/v1/accounts/12/conversations",
@@ -52,7 +52,7 @@ public sealed class OmitEmptyQueryParametersHandlerTests
             HttpMethod.Get,
             "/api/v1/accounts/12/conversations?status=open&page=2");
 
-        await invoker.SendAsync(request, CancellationToken.None);
+        await invoker.SendAsync(request, TestContext.Current.CancellationToken);
 
         Assert.Equal(
             "/api/v1/accounts/12/conversations?status=open&page=2",
@@ -70,7 +70,7 @@ public sealed class OmitEmptyQueryParametersHandlerTests
             HttpMethod.Get,
             "https://example.test/api/v1/accounts/12/conversations?status=open&team_id=&page=");
 
-        await invoker.SendAsync(request, CancellationToken.None);
+        await invoker.SendAsync(request, TestContext.Current.CancellationToken);
 
         Assert.Equal(
             "https://example.test/api/v1/accounts/12/conversations?status=open",
