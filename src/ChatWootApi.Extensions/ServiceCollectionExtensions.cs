@@ -11,7 +11,6 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
 using Microsoft.Extensions.Options;
 using Refit;
-using System.Diagnostics.CodeAnalysis;
 using System.Text.Json;
 
 namespace ChatWootApi.Extensions;
@@ -156,7 +155,7 @@ public static class ServiceCollectionExtensions
         services.AddApplicationRefitClient<IApplicationLabelsApi>();
         services.AddApplicationRefitClient<IApplicationMessagesApi>();
         services.AddApplicationRefitClient<IApplicationProfileApi>();
-        services.AddApplicationRefitClientWithReflectionFallback<IApplicationReportsApi>();
+        services.AddApplicationRefitClient<IApplicationReportsApi>();
         services.AddApplicationRefitClient<IApplicationTeamsApi>();
         services.AddApplicationRefitClient<IApplicationWebhooksApi>();
 
@@ -210,20 +209,6 @@ public static class ServiceCollectionExtensions
             .AddChatWootHttpLoggingHandler<TApi>();
     }
 
-    private static IHttpClientBuilder AddApplicationRefitClientWithReflectionFallback<
-        [DynamicallyAccessedMembers(
-            DynamicallyAccessedMemberTypes.PublicMethods |
-            DynamicallyAccessedMemberTypes.NonPublicMethods |
-            DynamicallyAccessedMemberTypes.Interfaces)] TApi>(
-        this IServiceCollection services)
-        where TApi : class
-    {
-        return services.AddRefitClient<TApi>(CreateRefitSettings())
-            .ConfigureHttpClient(ConfigureBaseAddress)
-            .AddHttpMessageHandler<AccountAccessTokenDelegatingHandler>()
-            .AddChatWootHttpLoggingHandler<TApi>();
-    }
-
     private static IHttpClientBuilder AddPlatformRefitClient<TApi>(this IServiceCollection services)
         where TApi : class
     {
@@ -257,7 +242,10 @@ public static class ServiceCollectionExtensions
             TypeInfoResolver = ChatWootJsonSerializerContext.Default
         };
 
-        return new RefitSettings(new SystemTextJsonContentSerializer(jsonOptions));
+        return new RefitSettings(new SystemTextJsonContentSerializer(jsonOptions))
+        {
+            UrlParameterFormatter = new ChatWootUrlParameterFormatter(),
+        };
     }
 
     private static void ConfigureBaseAddress(IServiceProvider serviceProvider, HttpClient httpClient)

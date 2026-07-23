@@ -40,10 +40,10 @@ public sealed record Message
     public long? ConversationId { get; init; }
 
     /// <summary>
-    /// 消息类型
+    /// 消息类型（0：传入、1：传出、2：活动、3：模板）
     /// </summary>
     [JsonPropertyName("message_type")]
-    public long? MessageType { get; init; }
+    public MessageType? MessageType { get; init; }
 
     /// <summary>
     /// 消息创建时间
@@ -147,6 +147,24 @@ public sealed record Message
     /// </summary>
     [JsonExtensionData]
     public IDictionary<string, JsonElement>? ExtensionData { get; set; }
+}
+
+/// <summary>
+/// 消息类型。
+/// </summary>
+public enum MessageType
+{
+    /// <summary>传入消息。</summary>
+    Incoming = 0,
+
+    /// <summary>传出消息。</summary>
+    Outgoing = 1,
+
+    /// <summary>活动消息。</summary>
+    Activity = 2,
+
+    /// <summary>模板消息。</summary>
+    Template = 3
 }
 
 /// <summary>

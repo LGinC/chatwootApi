@@ -1,4 +1,3 @@
-using System.Text.Json;
 using Refit;
 using ChatWootApi.Application.Models;
 
@@ -13,11 +12,14 @@ public interface IApplicationCustomAttributesApi
     /// 调用 Chatwoot 应用 API：获取账号自定义属性
     /// </summary>
     /// <param name="accountId">账号 ID</param>
-    /// <param name="query">查询参数</param>
+    /// <param name="attributeModel">属性模型：会话属性(0)/联系人属性(1)</param>
     /// <param name="cancellationToken">用于取消异步操作的令牌</param>
     /// <returns>自定义属性定义的只读列表</returns>
-    [Get("/api/v1/accounts/{accountId}/custom_attribute_definitions")]
-    Task<IReadOnlyList<CustomAttribute>> GetAccountCustomAttributeAsync(long accountId, [Query] IDictionary<string, object?>? query = null, CancellationToken cancellationToken = default);
+    [Get("/api/v1/accounts/{accountId}/custom_attribute_definitions?attribute_model={attributeModel}")]
+    Task<IReadOnlyList<CustomAttribute>> GetAccountCustomAttributeAsync(
+        long accountId,
+        CustomAttributeModel attributeModel,
+        CancellationToken cancellationToken = default);
 
     /// <summary>
     /// 调用 Chatwoot 应用 API：添加新自定义属性账号

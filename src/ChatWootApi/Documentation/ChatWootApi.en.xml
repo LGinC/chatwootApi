@@ -89,12 +89,12 @@
     <member name="T:ChatWootApi.Application.IApplicationAuditLogsApi">
       <summary>Chatwoot application API for Application Audit Logs Api.</summary>
     </member>
-    <member name="M:ChatWootApi.Application.IApplicationAuditLogsApi.GetAccountAuditLogsAsync(System.Int64,System.Collections.Generic.IDictionary{System.String,System.Object},System.Threading.CancellationToken)">
+    <member name="M:ChatWootApi.Application.IApplicationAuditLogsApi.GetAccountAuditLogsAsync(System.Int64,System.Nullable{System.Int64},System.Threading.CancellationToken)">
       <summary>Get Details of Audit Log entries for an Account. This endpoint is only available in Enterprise editions and requires the audit_logs feature to be enabled.</summary>
       <param name="accountId">The numeric ID of the account.</param>
-      <param name="query">Query parameters.</param>
+      <param name="page">Page number for pagination.</param>
       <param name="cancellationToken">Token used to cancel the asynchronous operation.</param>
-      <returns>API response.</returns>
+      <returns>Audit logs response.</returns>
     </member>
     <member name="T:ChatWootApi.Application.IApplicationAutomationRuleApi">
       <summary>Chatwoot application API for Application Automation Rule Api.</summary>
@@ -228,20 +228,22 @@
       <param name="cancellationToken">Token used to cancel the asynchronous operation.</param>
       <returns>API response.</returns>
     </member>
-    <member name="M:ChatWootApi.Application.IApplicationContactsApi.ContactSearchAsync(System.Int64,System.Collections.Generic.IDictionary{System.String,System.Object},System.Threading.CancellationToken)">
+    <member name="M:ChatWootApi.Application.IApplicationContactsApi.ContactSearchAsync(System.Int64,System.String,System.Nullable{ChatWootApi.Application.Models.ContactSort},System.Nullable{System.Int64},System.Threading.CancellationToken)">
       <summary>Search the resolved contacts using a search key, currently supports email search (Page size = 15). Resolved contacts are the ones with a value for identifier, email or phone number.</summary>
       <param name="accountId">The numeric ID of the account.</param>
-      <param name="query">Query parameters.</param>
+      <param name="q">Search using contact name, identifier, email or phone number.</param>
+      <param name="sort">The attribute by which list should be sorted.</param>
+      <param name="page">The page parameter.</param>
       <param name="cancellationToken">Token used to cancel the asynchronous operation.</param>
-      <returns>API response.</returns>
+      <returns>Contacts list response.</returns>
     </member>
-    <member name="M:ChatWootApi.Application.IApplicationContactsApi.ContactFilterAsync(System.Int64,System.Text.Json.JsonElement,System.Collections.Generic.IDictionary{System.String,System.Object},System.Threading.CancellationToken)">
+    <member name="M:ChatWootApi.Application.IApplicationContactsApi.ContactFilterAsync(System.Int64,ChatWootApi.Application.Models.FilterPayload,System.Nullable{System.Int64},System.Threading.CancellationToken)">
       <summary>Filter contacts with custom filter options and pagination.</summary>
       <param name="accountId">The numeric ID of the account.</param>
       <param name="payload">Request payload.</param>
-      <param name="query">Query parameters.</param>
+      <param name="page">Page number.</param>
       <param name="cancellationToken">Token used to cancel the asynchronous operation.</param>
-      <returns>API response.</returns>
+      <returns>Contacts list response.</returns>
     </member>
     <member name="M:ChatWootApi.Application.IApplicationContactsApi.ContactInboxCreationAsync(System.Int64,System.Int64,System.Text.Json.JsonElement,System.Threading.CancellationToken)">
       <summary>Create a contact inbox record for an inbox.</summary>
@@ -283,22 +285,32 @@ mergee contact will be moved to the base contact.</summary>
     <member name="T:ChatWootApi.Application.IApplicationConversationsApi">
       <summary>Chatwoot application API for Application Conversations Api.</summary>
     </member>
-    <member name="M:ChatWootApi.Application.IApplicationConversationsApi.ConversationListMetaAsync(System.Int64,System.Collections.Generic.IDictionary{System.String,System.Object},System.Threading.CancellationToken)">
+    <member name="M:ChatWootApi.Application.IApplicationConversationsApi.ConversationListMetaAsync(System.Int64,System.Nullable{ChatWootApi.Application.Models.ConversationStatus},System.String,System.Nullable{System.Int64},System.Nullable{System.Int64},System.Collections.Generic.IEnumerable{System.String},System.Threading.CancellationToken)">
       <summary>Get open, unassigned and all Conversation counts.</summary>
       <param name="accountId">The numeric ID of the account.</param>
-      <param name="query">Query parameters.</param>
+      <param name="status">Filter by conversation status.</param>
+      <param name="q">Filters conversations with messages containing the search term.</param>
+      <param name="inboxId">Inbox ID.</param>
+      <param name="teamId">Team ID.</param>
+      <param name="labels">Label list.</param>
       <param name="cancellationToken">Token used to cancel the asynchronous operation.</param>
-      <returns>API response.</returns>
+      <returns>Conversation count metadata.</returns>
     </member>
-    <member name="M:ChatWootApi.Application.IApplicationConversationsApi.ConversationListAsync(System.Int64,System.Collections.Generic.IDictionary{System.String,System.Object},System.Threading.CancellationToken)">
+    <member name="M:ChatWootApi.Application.IApplicationConversationsApi.ConversationListAsync(System.Int64,System.Nullable{ChatWootApi.Application.Models.ConversationAssigneeType},System.Nullable{ChatWootApi.Application.Models.ConversationStatus},System.String,System.Nullable{System.Int64},System.Nullable{System.Int64},System.Collections.Generic.IEnumerable{System.String},System.Nullable{System.Int64},System.Threading.CancellationToken)">
       <summary>List all the conversations with pagination.</summary>
       <param name="accountId">The numeric ID of the account.</param>
-      <param name="query">Query parameters.</param>
+      <param name="assigneeType">Filter conversations by assignee type.</param>
+      <param name="status">Filter by conversation status.</param>
+      <param name="q">Filters conversations with messages containing the search term.</param>
+      <param name="inboxId">Inbox ID.</param>
+      <param name="teamId">Team ID.</param>
+      <param name="labels">Label list.</param>
+      <param name="page">Paginate through conversations.</param>
       <param name="cancellationToken">Token used to cancel the asynchronous operation.</param>
-      <returns>API response.</returns>
+      <returns>Conversation list.</returns>
     </member>
     <member name="M:ChatWootApi.Application.IApplicationConversationsApi.NewConversationAsync(System.Int64,ChatWootApi.Application.ConversationCreatePayload,System.Threading.CancellationToken)">
-      <summary>Creating a conversation in chatwoot requires a source id. 
+      <summary>Creating a conversation in chatwoot requires a source id.
 
  Learn more about source_id: https://www.chatwoot.com/hc/user-guide/articles/1677839703-how-to-create-an-api-channel-inbox#send-messages-to-the-api-channel.</summary>
       <param name="accountId">The numeric ID of the account.</param>
@@ -306,13 +318,13 @@ mergee contact will be moved to the base contact.</summary>
       <param name="cancellationToken">Token used to cancel the asynchronous operation.</param>
       <returns>API response.</returns>
     </member>
-    <member name="M:ChatWootApi.Application.IApplicationConversationsApi.ConversationFilterAsync(System.Int64,System.Text.Json.JsonElement,System.Collections.Generic.IDictionary{System.String,System.Object},System.Threading.CancellationToken)">
+    <member name="M:ChatWootApi.Application.IApplicationConversationsApi.ConversationFilterAsync(System.Int64,ChatWootApi.Application.Models.FilterPayload,System.Nullable{System.Int64},System.Threading.CancellationToken)">
       <summary>Filter conversations with custom filter options and pagination.</summary>
       <param name="accountId">The numeric ID of the account.</param>
       <param name="payload">Request payload.</param>
-      <param name="query">Query parameters.</param>
+      <param name="page">Page number.</param>
       <param name="cancellationToken">Token used to cancel the asynchronous operation.</param>
-      <returns>API response.</returns>
+      <returns>Conversation list.</returns>
     </member>
     <member name="M:ChatWootApi.Application.IApplicationConversationsApi.GetDetailsOfAConversationAsync(System.Int64,System.Int64,System.Threading.CancellationToken)">
       <summary>Get all details regarding a conversation with all messages in the conversation.</summary>
@@ -391,12 +403,12 @@ reply from the contact.</summary>
     <member name="T:ChatWootApi.Application.IApplicationCustomAttributesApi">
       <summary>Chatwoot application API for Application Custom Attributes Api.</summary>
     </member>
-    <member name="M:ChatWootApi.Application.IApplicationCustomAttributesApi.GetAccountCustomAttributeAsync(System.Int64,System.Collections.Generic.IDictionary{System.String,System.Object},System.Threading.CancellationToken)">
+    <member name="M:ChatWootApi.Application.IApplicationCustomAttributesApi.GetAccountCustomAttributeAsync(System.Int64,ChatWootApi.Application.Models.CustomAttributeModel,System.Threading.CancellationToken)">
       <summary>Get details of custom attributes in an Account.</summary>
       <param name="accountId">The numeric ID of the account.</param>
-      <param name="query">Query parameters.</param>
+      <param name="attributeModel">conversation_attribute(0)/contact_attribute(1).</param>
       <param name="cancellationToken">Token used to cancel the asynchronous operation.</param>
-      <returns>API response.</returns>
+      <returns>Custom attributes list.</returns>
     </member>
     <member name="M:ChatWootApi.Application.IApplicationCustomAttributesApi.AddNewCustomAttributeToAccountAsync(System.Int64,ChatWootApi.Application.CustomAttributeCreateUpdatePayload,System.Threading.CancellationToken)">
       <summary>Add a new custom attribute to account.</summary>
@@ -430,20 +442,20 @@ reply from the contact.</summary>
     <member name="T:ChatWootApi.Application.IApplicationCustomFiltersApi">
       <summary>Chatwoot application API for Application Custom Filters Api.</summary>
     </member>
-    <member name="M:ChatWootApi.Application.IApplicationCustomFiltersApi.ListAllFiltersAsync(System.Int64,System.Collections.Generic.IDictionary{System.String,System.Object},System.Threading.CancellationToken)">
+    <member name="M:ChatWootApi.Application.IApplicationCustomFiltersApi.ListAllFiltersAsync(System.Int64,System.Nullable{ChatWootApi.Application.Models.CustomFilterType},System.Threading.CancellationToken)">
       <summary>List all custom filters in a category of a user.</summary>
       <param name="accountId">The numeric ID of the account.</param>
-      <param name="query">Query parameters.</param>
+      <param name="filterType">The type of custom filter.</param>
       <param name="cancellationToken">Token used to cancel the asynchronous operation.</param>
-      <returns>API response.</returns>
+      <returns>Custom filters list.</returns>
     </member>
-    <member name="M:ChatWootApi.Application.IApplicationCustomFiltersApi.CreateACustomFilterAsync(System.Int64,ChatWootApi.Application.CustomFilterCreateUpdatePayload,System.Collections.Generic.IDictionary{System.String,System.Object},System.Threading.CancellationToken)">
+    <member name="M:ChatWootApi.Application.IApplicationCustomFiltersApi.CreateACustomFilterAsync(System.Int64,ChatWootApi.Application.Models.CustomFilterCreateUpdatePayload,System.Nullable{ChatWootApi.Application.Models.CustomFilterType},System.Threading.CancellationToken)">
       <summary>Create a custom filter in the account.</summary>
       <param name="accountId">The numeric ID of the account.</param>
       <param name="payload">Request payload.</param>
-      <param name="query">Query parameters.</param>
+      <param name="filterType">The type of custom filter.</param>
       <param name="cancellationToken">Token used to cancel the asynchronous operation.</param>
-      <returns>API response.</returns>
+      <returns>Custom filter.</returns>
     </member>
     <member name="M:ChatWootApi.Application.IApplicationCustomFiltersApi.GetDetailsOfASingleCustomFilterAsync(System.Int64,System.Int64,System.Threading.CancellationToken)">
       <summary>Get the details of a custom filter in the account.</summary>
@@ -760,108 +772,134 @@ Templates must be pre-approved in WhatsApp Business Manager.
     <member name="T:ChatWootApi.Application.IApplicationReportsApi">
       <summary>Chatwoot application API for Application Reports Api.</summary>
     </member>
-    <member name="M:ChatWootApi.Application.IApplicationReportsApi.GetAccountReportingEventsAsync(System.Int64,System.Collections.Generic.IDictionary{System.String,System.Object},System.Threading.CancellationToken)">
+    <member name="M:ChatWootApi.Application.IApplicationReportsApi.GetAccountReportingEventsAsync(System.Int64,System.Nullable{System.Int64},System.String,System.String,System.Nullable{System.Int64},System.Nullable{System.Int64},System.String,System.Threading.CancellationToken)">
       <summary>Get paginated reporting events for the account. This endpoint returns reporting events such as first response time, resolution time, and other metrics. Only administrators can access this endpoint. Results are paginated with 25 items per page.</summary>
       <param name="accountId">The numeric ID of the account.</param>
-      <param name="query">Query parameters.</param>
+      <param name="page">The page parameter.</param>
+      <param name="since">The timestamp from where events should start (Unix timestamp in seconds).</param>
+      <param name="until">The timestamp from where events should stop (Unix timestamp in seconds).</param>
+      <param name="inboxId">Filter events by inbox ID.</param>
+      <param name="userId">Filter events by user/agent ID.</param>
+      <param name="name">Filter events by event name.</param>
       <param name="cancellationToken">Token used to cancel the asynchronous operation.</param>
-      <returns>API response.</returns>
+      <returns>Reporting events list response.</returns>
     </member>
-    <member name="M:ChatWootApi.Application.IApplicationReportsApi.ListAllConversationStatisticsAsync(System.Int64,System.Collections.Generic.IDictionary{System.String,System.Object},System.Threading.CancellationToken)">
+    <member name="M:ChatWootApi.Application.IApplicationReportsApi.ListAllConversationStatisticsAsync(System.Int64,ChatWootApi.Application.Models.ReportMetric,ChatWootApi.Application.Models.ReportType,System.String,System.String,System.String,System.Threading.CancellationToken)">
       <summary>Get Account reports for a specific type, metric and date range.</summary>
       <param name="accountId">The numeric ID of the account.</param>
-      <param name="query">Query parameters.</param>
+      <param name="metric">The type of metric.</param>
+      <param name="type">Type of report.</param>
+      <param name="id">The Id of specific object in case of agent/inbox/label.</param>
+      <param name="since">The timestamp from where report should start.</param>
+      <param name="until">The timestamp from where report should stop.</param>
       <param name="cancellationToken">Token used to cancel the asynchronous operation.</param>
-      <returns>API response.</returns>
+      <returns>Conversation statistics list.</returns>
     </member>
-    <member name="M:ChatWootApi.Application.IApplicationReportsApi.ListAllConversationStatisticsSummaryAsync(System.Int64,System.Collections.Generic.IDictionary{System.String,System.Object},System.Threading.CancellationToken)">
+    <member name="M:ChatWootApi.Application.IApplicationReportsApi.ListAllConversationStatisticsSummaryAsync(System.Int64,ChatWootApi.Application.Models.ReportType,System.String,System.String,System.String,System.Threading.CancellationToken)">
       <summary>Get Account reports summary for a specific type and date range.</summary>
       <param name="accountId">The numeric ID of the account.</param>
-      <param name="query">Query parameters.</param>
+      <param name="type">Type of report.</param>
+      <param name="id">The Id of specific object in case of agent/inbox/label.</param>
+      <param name="since">The timestamp from where report should start.</param>
+      <param name="until">The timestamp from where report should stop.</param>
       <param name="cancellationToken">Token used to cancel the asynchronous operation.</param>
-      <returns>API response.</returns>
+      <returns>Account summary.</returns>
     </member>
-    <member name="M:ChatWootApi.Application.IApplicationReportsApi.GetAccountConversationMetricsAsync(System.Int64,System.Collections.Generic.IDictionary{System.String,System.Object},System.Threading.CancellationToken)">
+    <member name="M:ChatWootApi.Application.IApplicationReportsApi.GetAccountConversationMetricsAsync(System.Int64,ChatWootApi.Application.Models.ReportType,System.Threading.CancellationToken)">
       <summary>Get conversation metrics for Account.</summary>
       <param name="accountId">The numeric ID of the account.</param>
-      <param name="query">Query parameters.</param>
+      <param name="type">Type of report (account).</param>
       <param name="cancellationToken">Token used to cancel the asynchronous operation.</param>
-      <returns>API response.</returns>
+      <returns>Account conversation metrics.</returns>
     </member>
-    <member name="M:ChatWootApi.Application.IApplicationReportsApi.GetAgentConversationMetricsAsync(System.Int64,System.Collections.Generic.IDictionary{System.String,System.Object},System.Threading.CancellationToken)">
+    <member name="M:ChatWootApi.Application.IApplicationReportsApi.GetAgentConversationMetricsAsync(System.Int64,ChatWootApi.Application.Models.ReportType,System.String,System.Threading.CancellationToken)">
       <summary>Get conversation metrics for Agent.</summary>
       <param name="accountId">The numeric ID of the account.</param>
-      <param name="query">Query parameters.</param>
+      <param name="type">Type of report (agent).</param>
+      <param name="userId">The numeric ID of the user.</param>
       <param name="cancellationToken">Token used to cancel the asynchronous operation.</param>
-      <returns>API response.</returns>
+      <returns>Agent conversation metrics.</returns>
     </member>
-    <member name="M:ChatWootApi.Application.IApplicationReportsApi.GetChannelSummaryReportAsync(System.Int64,System.Collections.Generic.IDictionary{System.String,System.Object},System.Threading.CancellationToken)">
+    <member name="M:ChatWootApi.Application.IApplicationReportsApi.GetChannelSummaryReportAsync(System.Int64,System.String,System.String,System.Threading.CancellationToken)">
       <summary>Get conversation counts grouped by channel type and status for a given date range.
 Returns statistics for each channel type including open, resolved, pending, snoozed, and total conversation counts.
 
 **Note:** This API endpoint is available only in Chatwoot version 4.10.0 and above. The date range is limited to a maximum of 6 months.</summary>
       <param name="accountId">The numeric ID of the account.</param>
-      <param name="query">Query parameters.</param>
+      <param name="since">The timestamp from where report should start.</param>
+      <param name="until">The timestamp from where report should stop.</param>
       <param name="cancellationToken">Token used to cancel the asynchronous operation.</param>
-      <returns>API response.</returns>
+      <returns>Channel summary.</returns>
     </member>
-    <member name="M:ChatWootApi.Application.IApplicationReportsApi.GetInboxSummaryReportAsync(System.Int64,System.Collections.Generic.IDictionary{System.String,System.Object},System.Threading.CancellationToken)">
+    <member name="M:ChatWootApi.Application.IApplicationReportsApi.GetInboxSummaryReportAsync(System.Int64,System.String,System.String,System.Nullable{System.Boolean},System.Threading.CancellationToken)">
       <summary>Get conversation statistics grouped by inbox for a given date range.
 Returns metrics for each inbox including conversation counts, resolution counts,
 average first response time, average resolution time, and average reply time.</summary>
       <param name="accountId">The numeric ID of the account.</param>
-      <param name="query">Query parameters.</param>
+      <param name="since">The timestamp from where report should start.</param>
+      <param name="until">The timestamp from where report should stop.</param>
+      <param name="businessHours">Whether to calculate metrics using business hours only.</param>
       <param name="cancellationToken">Token used to cancel the asynchronous operation.</param>
-      <returns>API response.</returns>
+      <returns>Inbox summary.</returns>
     </member>
-    <member name="M:ChatWootApi.Application.IApplicationReportsApi.GetAgentSummaryReportAsync(System.Int64,System.Collections.Generic.IDictionary{System.String,System.Object},System.Threading.CancellationToken)">
+    <member name="M:ChatWootApi.Application.IApplicationReportsApi.GetAgentSummaryReportAsync(System.Int64,System.String,System.String,System.Nullable{System.Boolean},System.Threading.CancellationToken)">
       <summary>Get conversation statistics grouped by agent for a given date range.
 Returns metrics for each agent including conversation counts, resolution counts,
 average first response time, average resolution time, and average reply time.</summary>
       <param name="accountId">The numeric ID of the account.</param>
-      <param name="query">Query parameters.</param>
+      <param name="since">The timestamp from where report should start.</param>
+      <param name="until">The timestamp from where report should stop.</param>
+      <param name="businessHours">Whether to calculate metrics using business hours only.</param>
       <param name="cancellationToken">Token used to cancel the asynchronous operation.</param>
-      <returns>API response.</returns>
+      <returns>Agent summary.</returns>
     </member>
-    <member name="M:ChatWootApi.Application.IApplicationReportsApi.GetTeamSummaryReportAsync(System.Int64,System.Collections.Generic.IDictionary{System.String,System.Object},System.Threading.CancellationToken)">
+    <member name="M:ChatWootApi.Application.IApplicationReportsApi.GetTeamSummaryReportAsync(System.Int64,System.String,System.String,System.Nullable{System.Boolean},System.Threading.CancellationToken)">
       <summary>Get conversation statistics grouped by team for a given date range.
 Returns metrics for each team including conversation counts, resolution counts,
 average first response time, average resolution time, and average reply time.</summary>
       <param name="accountId">The numeric ID of the account.</param>
-      <param name="query">Query parameters.</param>
+      <param name="since">The timestamp from where report should start.</param>
+      <param name="until">The timestamp from where report should stop.</param>
+      <param name="businessHours">Whether to calculate metrics using business hours only.</param>
       <param name="cancellationToken">Token used to cancel the asynchronous operation.</param>
-      <returns>API response.</returns>
+      <returns>Team summary.</returns>
     </member>
-    <member name="M:ChatWootApi.Application.IApplicationReportsApi.GetFirstResponseTimeDistributionAsync(System.Int64,System.Collections.Generic.IDictionary{System.String,System.Object},System.Threading.CancellationToken)">
+    <member name="M:ChatWootApi.Application.IApplicationReportsApi.GetFirstResponseTimeDistributionAsync(System.Int64,System.String,System.String,System.Threading.CancellationToken)">
       <summary>Get the distribution of first response times grouped by channel type.
 Returns conversation counts in different time buckets (0-1h, 1-4h, 4-8h, 8-24h, 24h+) for each channel type.
 
 **Note:** This API endpoint is available only in Chatwoot version 4.11.0 and above.</summary>
       <param name="accountId">The numeric ID of the account.</param>
-      <param name="query">Query parameters.</param>
+      <param name="since">The timestamp from where report should start.</param>
+      <param name="until">The timestamp from where report should stop.</param>
       <param name="cancellationToken">Token used to cancel the asynchronous operation.</param>
-      <returns>API response.</returns>
+      <returns>First response time distribution.</returns>
     </member>
-    <member name="M:ChatWootApi.Application.IApplicationReportsApi.GetInboxLabelMatrixAsync(System.Int64,System.Collections.Generic.IDictionary{System.String,System.Object},System.Threading.CancellationToken)">
+    <member name="M:ChatWootApi.Application.IApplicationReportsApi.GetInboxLabelMatrixAsync(System.Int64,System.String,System.String,System.Collections.Generic.IEnumerable{System.Int64},System.Collections.Generic.IEnumerable{System.Int64},System.Threading.CancellationToken)">
       <summary>Get a matrix showing the count of conversations for each inbox-label combination.
 Returns a list of inboxes, labels, and a 2D matrix where each cell contains the count of conversations
 in a specific inbox that have a specific label applied.
 
 **Note:** This API endpoint is available only in Chatwoot version 4.11.0 and above.</summary>
       <param name="accountId">The numeric ID of the account.</param>
-      <param name="query">Query parameters.</param>
+      <param name="since">The timestamp from where report should start.</param>
+      <param name="until">The timestamp from where report should stop.</param>
+      <param name="inboxIds">Filter by specific inbox IDs.</param>
+      <param name="labelIds">Filter by specific label IDs.</param>
       <param name="cancellationToken">Token used to cancel the asynchronous operation.</param>
-      <returns>API response.</returns>
+      <returns>Inbox label matrix.</returns>
     </member>
-    <member name="M:ChatWootApi.Application.IApplicationReportsApi.GetOutgoingMessagesCountAsync(System.Int64,System.Collections.Generic.IDictionary{System.String,System.Object},System.Threading.CancellationToken)">
+    <member name="M:ChatWootApi.Application.IApplicationReportsApi.GetOutgoingMessagesCountAsync(System.Int64,ChatWootApi.Application.Models.OutgoingMessagesGroupBy,System.String,System.String,System.Threading.CancellationToken)">
       <summary>Get the count of outgoing messages grouped by a specified entity (agent, team, inbox, or label).
 When grouped by agent, messages sent by bots (AgentBot, Captain::Assistant) are excluded.
 
 **Note:** This API endpoint is available only in Chatwoot version 4.11.0 and above.</summary>
       <param name="accountId">The numeric ID of the account.</param>
-      <param name="query">Query parameters.</param>
+      <param name="groupBy">The entity to group outgoing message counts by.</param>
+      <param name="since">The timestamp from where report should start.</param>
+      <param name="until">The timestamp from where report should stop.</param>
       <param name="cancellationToken">Token used to cancel the asynchronous operation.</param>
-      <returns>API response.</returns>
+      <returns>Outgoing messages count.</returns>
     </member>
     <member name="T:ChatWootApi.Application.IApplicationTeamsApi">
       <summary>Chatwoot application API for Application Teams Api.</summary>

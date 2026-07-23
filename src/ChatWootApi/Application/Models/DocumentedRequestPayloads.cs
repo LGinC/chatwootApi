@@ -174,6 +174,8 @@ public enum ConversationPriority
 /// <summary>会话状态</summary>
 public enum ConversationStatus
 {
+    /// <summary>全部</summary>
+    All,
     /// <summary>打开</summary>
     Open,
     /// <summary>已解决</summary>
@@ -190,4 +192,117 @@ public enum TypingStatus
     On,
     /// <summary>关闭</summary>
     Off
+}
+
+/// <summary>会话负责人筛选类型</summary>
+public enum ConversationAssigneeType
+{
+    /// <summary>当前用户负责</summary>
+    Me,
+    /// <summary>未分配</summary>
+    Unassigned,
+    /// <summary>全部</summary>
+    All,
+    /// <summary>已分配</summary>
+    Assigned
+}
+
+/// <summary>联系人列表排序字段</summary>
+public enum ContactSort
+{
+    /// <summary>按名称升序</summary>
+    Name,
+    /// <summary>按邮箱升序</summary>
+    Email,
+    /// <summary>按电话号码升序</summary>
+    [JsonStringEnumMemberName("phone_number")]
+    PhoneNumber,
+    /// <summary>按最后活动时间升序</summary>
+    [JsonStringEnumMemberName("last_activity_at")]
+    LastActivityAt,
+    /// <summary>按名称降序</summary>
+    [JsonStringEnumMemberName("-name")]
+    NameDesc,
+    /// <summary>按邮箱降序</summary>
+    [JsonStringEnumMemberName("-email")]
+    EmailDesc,
+    /// <summary>按电话号码降序</summary>
+    [JsonStringEnumMemberName("-phone_number")]
+    PhoneNumberDesc,
+    /// <summary>按最后活动时间降序</summary>
+    [JsonStringEnumMemberName("-last_activity_at")]
+    LastActivityAtDesc
+}
+
+/// <summary>自定义属性模型类型</summary>
+public enum CustomAttributeModel
+{
+    /// <summary>会话属性</summary>
+    [JsonStringEnumMemberName("0")]
+    ConversationAttribute = 0,
+    /// <summary>联系人属性</summary>
+    [JsonStringEnumMemberName("1")]
+    ContactAttribute = 1
+}
+
+/// <summary>自定义筛选器类型</summary>
+public enum CustomFilterType
+{
+    /// <summary>会话筛选器</summary>
+    Conversation,
+    /// <summary>联系人筛选器</summary>
+    Contact,
+    /// <summary>报表筛选器</summary>
+    Report
+}
+
+/// <summary>报表指标类型</summary>
+public enum ReportMetric
+{
+    /// <summary>会话数量</summary>
+    [JsonStringEnumMemberName("conversations_count")]
+    ConversationsCount,
+    /// <summary>入站消息数量</summary>
+    [JsonStringEnumMemberName("incoming_messages_count")]
+    IncomingMessagesCount,
+    /// <summary>出站消息数量</summary>
+    [JsonStringEnumMemberName("outgoing_messages_count")]
+    OutgoingMessagesCount,
+    /// <summary>平均首次响应时间</summary>
+    [JsonStringEnumMemberName("avg_first_response_time")]
+    AvgFirstResponseTime,
+    /// <summary>平均解决时间</summary>
+    [JsonStringEnumMemberName("avg_resolution_time")]
+    AvgResolutionTime,
+    /// <summary>解决数量</summary>
+    [JsonStringEnumMemberName("resolutions_count")]
+    ResolutionsCount
+}
+
+/// <summary>报表对象类型</summary>
+public enum ReportType
+{
+    /// <summary>账号</summary>
+    Account,
+    /// <summary>坐席</summary>
+    Agent,
+    /// <summary>收件箱</summary>
+    Inbox,
+    /// <summary>标签</summary>
+    Label,
+    /// <summary>团队</summary>
+    Team
+}
+
+/// <summary>出站消息统计分组维度</summary>
+public enum OutgoingMessagesGroupBy
+{
+    /// <summary>按坐席</summary>
+    Agent,
+    /// <summary>按团队</summary>
+    Team,
+    /// <summary>按收件箱</summary>
+    Inbox,
+    /// <summary>按标签</summary>
+    Label
 }

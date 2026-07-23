@@ -1,4 +1,3 @@
-using System.Text.Json;
 using Refit;
 using ChatWootApi.Application.Models;
 
@@ -13,21 +12,77 @@ public interface IApplicationConversationsApi
     /// 调用 Chatwoot 应用 API：会话列表元数据
     /// </summary>
     /// <param name="accountId">账号 ID</param>
-    /// <param name="query">查询参数</param>
+    /// <param name="status">按会话状态筛选</param>
+    /// <param name="q">按消息内容搜索词筛选</param>
+    /// <param name="inboxId">收件箱 ID</param>
+    /// <param name="teamId">团队 ID</param>
+    /// <param name="labels">标签列表</param>
     /// <param name="cancellationToken">用于取消异步操作的令牌</param>
-    /// <returns>原始 JSON 响应数据</returns>
-    [Get("/api/v1/accounts/{accountId}/conversations/meta")]
-    Task<ConversationListMetaResponse> ConversationListMetaAsync(long accountId, [Query] IDictionary<string, object?>? query = null, CancellationToken cancellationToken = default);
+    /// <returns>会话列表计数</returns>
+    Task<ConversationListMetaResponse> ConversationListMetaAsync(
+        long accountId,
+        ConversationStatus? status = null,
+        string? q = null,
+        long? inboxId = null,
+        long? teamId = null,
+        IEnumerable<string>? labels = null,
+        CancellationToken cancellationToken = default)
+    {
+        string? labelsQuery = labels is null ? null : string.Join(",", labels);
+        return ConversationListMetaAsync(accountId, status, q, inboxId, teamId, labelsQuery, cancellationToken);
+    }
+
+    /// <summary>会话列表元数据（path query 模板）。</summary>
+    [Get("/api/v1/accounts/{accountId}/conversations/meta?status={status}&q={q}&inbox_id={inboxId}&team_id={teamId}&labels={labels}")]
+    Task<ConversationListMetaResponse> ConversationListMetaAsync(
+        long accountId,
+        ConversationStatus? status,
+        string? q,
+        long? inboxId,
+        long? teamId,
+        string? labels,
+        CancellationToken cancellationToken = default);
 
     /// <summary>
     /// 调用 Chatwoot 应用 API：列出会话
     /// </summary>
     /// <param name="accountId">账号 ID</param>
-    /// <param name="query">查询参数</param>
+    /// <param name="assigneeType">按负责人类型筛选</param>
+    /// <param name="status">按会话状态筛选</param>
+    /// <param name="q">按消息内容搜索词筛选</param>
+    /// <param name="inboxId">收件箱 ID</param>
+    /// <param name="teamId">团队 ID</param>
+    /// <param name="labels">标签列表</param>
+    /// <param name="page">分页页码</param>
     /// <param name="cancellationToken">用于取消异步操作的令牌</param>
     /// <returns>会话列表</returns>
-    [Get("/api/v1/accounts/{accountId}/conversations")]
-    Task<ConversationList> ConversationListAsync(long accountId, [Query] IDictionary<string, object?>? query = null, CancellationToken cancellationToken = default);
+    Task<ConversationList> ConversationListAsync(
+        long accountId,
+        ConversationAssigneeType? assigneeType = null,
+        ConversationStatus? status = null,
+        string? q = null,
+        long? inboxId = null,
+        long? teamId = null,
+        IEnumerable<string>? labels = null,
+        long? page = null,
+        CancellationToken cancellationToken = default)
+    {
+        string? labelsQuery = labels is null ? null : string.Join(",", labels);
+        return ConversationListAsync(accountId, assigneeType, status, q, inboxId, teamId, labelsQuery, page, cancellationToken);
+    }
+
+    /// <summary>列出会话（path query 模板）。</summary>
+    [Get("/api/v1/accounts/{accountId}/conversations?assignee_type={assigneeType}&status={status}&q={q}&inbox_id={inboxId}&team_id={teamId}&labels={labels}&page={page}")]
+    Task<ConversationList> ConversationListAsync(
+        long accountId,
+        ConversationAssigneeType? assigneeType,
+        ConversationStatus? status,
+        string? q,
+        long? inboxId,
+        long? teamId,
+        string? labels,
+        long? page,
+        CancellationToken cancellationToken = default);
 
     /// <summary>
     /// 调用 Chatwoot 应用 API：新会话
@@ -44,11 +99,32 @@ public interface IApplicationConversationsApi
     /// </summary>
     /// <param name="accountId">账号 ID</param>
     /// <param name="payload">请求载荷</param>
-    /// <param name="query">查询参数</param>
+    /// <param name="page">分页页码</param>
     /// <param name="cancellationToken">用于取消异步操作的令牌</param>
     /// <returns>会话列表</returns>
+    Task<ConversationList> ConversationFilterAsync(
+        long accountId,
+        FilterPayload payload,
+        long? page = null,
+        CancellationToken cancellationToken = default)
+        => page is long pageNumber
+            ? ConversationFilterByPageAsync(accountId, payload, pageNumber, cancellationToken)
+            : ConversationFilterAsync(accountId, payload, cancellationToken);
+
+    /// <summary>筛选会话（不带分页）。</summary>
     [Post("/api/v1/accounts/{accountId}/conversations/filter")]
-    Task<ConversationList> ConversationFilterAsync(long accountId, [Body] FilterPayload payload, [Query] IDictionary<string, object?>? query = null, CancellationToken cancellationToken = default);
+    Task<ConversationList> ConversationFilterAsync(
+        long accountId,
+        [Body] FilterPayload payload,
+        CancellationToken cancellationToken = default);
+
+    /// <summary>按页码筛选会话。</summary>
+    [Post("/api/v1/accounts/{accountId}/conversations/filter?page={page}")]
+    Task<ConversationList> ConversationFilterByPageAsync(
+        long accountId,
+        [Body] FilterPayload payload,
+        long page,
+        CancellationToken cancellationToken = default);
 
     /// <summary>
     /// 调用 Chatwoot 应用 API：获取详情会话

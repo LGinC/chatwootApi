@@ -73,22 +73,135 @@ public interface IApplicationContactsApi
     /// 调用 Chatwoot 应用 API：搜索联系人
     /// </summary>
     /// <param name="accountId">账号 ID</param>
-    /// <param name="query">查询参数</param>
+    /// <param name="q">按联系人名称、标识符、邮箱或电话搜索</param>
+    /// <param name="sort">列表排序字段</param>
+    /// <param name="page">分页页码</param>
     /// <param name="cancellationToken">用于取消异步操作的令牌</param>
     /// <returns>联系人列表</returns>
+    Task<ContactsListResponse> ContactSearchAsync(
+        long accountId,
+        string? q = null,
+        ContactSort? sort = null,
+        long? page = null,
+        CancellationToken cancellationToken = default)
+    {
+        if (q is not null)
+        {
+            if (sort is ContactSort sortWithQ)
+            {
+                return page is long pageWithQSort
+                    ? ContactSearchWithQSortAndPageAsync(accountId, q, sortWithQ, pageWithQSort, cancellationToken)
+                    : ContactSearchWithQAndSortAsync(accountId, q, sortWithQ, cancellationToken);
+            }
+
+            return page is long pageWithQ
+                ? ContactSearchWithQAndPageAsync(accountId, q, pageWithQ, cancellationToken)
+                : ContactSearchWithQAsync(accountId, q, cancellationToken);
+        }
+
+        if (sort is ContactSort sortOnly)
+        {
+            return page is long pageWithSort
+                ? ContactSearchWithSortAndPageAsync(accountId, sortOnly, pageWithSort, cancellationToken)
+                : ContactSearchWithSortAsync(accountId, sortOnly, cancellationToken);
+        }
+
+        return page is long pageOnly
+            ? ContactSearchWithPageAsync(accountId, pageOnly, cancellationToken)
+            : ContactSearchAsync(accountId, cancellationToken);
+    }
+
+    /// <summary>搜索联系人（无查询参数）。</summary>
     [Get("/api/v1/accounts/{accountId}/contacts/search")]
-    Task<ContactsListResponse> ContactSearchAsync(long accountId, [Query] IDictionary<string, object?>? query = null, CancellationToken cancellationToken = default);
+    Task<ContactsListResponse> ContactSearchAsync(
+        long accountId,
+        CancellationToken cancellationToken = default);
+
+    /// <summary>按关键词搜索联系人。</summary>
+    [Get("/api/v1/accounts/{accountId}/contacts/search?q={q}")]
+    Task<ContactsListResponse> ContactSearchWithQAsync(
+        long accountId,
+        string q,
+        CancellationToken cancellationToken = default);
+
+    /// <summary>按排序字段搜索联系人。</summary>
+    [Get("/api/v1/accounts/{accountId}/contacts/search?sort={sort}")]
+    Task<ContactsListResponse> ContactSearchWithSortAsync(
+        long accountId,
+        ContactSort sort,
+        CancellationToken cancellationToken = default);
+
+    /// <summary>按页码搜索联系人。</summary>
+    [Get("/api/v1/accounts/{accountId}/contacts/search?page={page}")]
+    Task<ContactsListResponse> ContactSearchWithPageAsync(
+        long accountId,
+        long page,
+        CancellationToken cancellationToken = default);
+
+    /// <summary>按关键词与排序搜索联系人。</summary>
+    [Get("/api/v1/accounts/{accountId}/contacts/search?q={q}&sort={sort}")]
+    Task<ContactsListResponse> ContactSearchWithQAndSortAsync(
+        long accountId,
+        string q,
+        ContactSort sort,
+        CancellationToken cancellationToken = default);
+
+    /// <summary>按关键词与页码搜索联系人。</summary>
+    [Get("/api/v1/accounts/{accountId}/contacts/search?q={q}&page={page}")]
+    Task<ContactsListResponse> ContactSearchWithQAndPageAsync(
+        long accountId,
+        string q,
+        long page,
+        CancellationToken cancellationToken = default);
+
+    /// <summary>按排序与页码搜索联系人。</summary>
+    [Get("/api/v1/accounts/{accountId}/contacts/search?sort={sort}&page={page}")]
+    Task<ContactsListResponse> ContactSearchWithSortAndPageAsync(
+        long accountId,
+        ContactSort sort,
+        long page,
+        CancellationToken cancellationToken = default);
+
+    /// <summary>按关键词、排序与页码搜索联系人。</summary>
+    [Get("/api/v1/accounts/{accountId}/contacts/search?q={q}&sort={sort}&page={page}")]
+    Task<ContactsListResponse> ContactSearchWithQSortAndPageAsync(
+        long accountId,
+        string q,
+        ContactSort sort,
+        long page,
+        CancellationToken cancellationToken = default);
 
     /// <summary>
     /// 调用 Chatwoot 应用 API：筛选联系人
     /// </summary>
     /// <param name="accountId">账号 ID</param>
     /// <param name="payload">请求载荷</param>
-    /// <param name="query">查询参数</param>
+    /// <param name="page">分页页码</param>
     /// <param name="cancellationToken">用于取消异步操作的令牌</param>
     /// <returns>联系人列表</returns>
+    Task<ContactsListResponse> ContactFilterAsync(
+        long accountId,
+        FilterPayload payload,
+        long? page = null,
+        CancellationToken cancellationToken = default)
+        => page is long pageNumber
+            ? ContactFilterByPageAsync(accountId, payload, pageNumber, cancellationToken)
+            : ContactFilterAsync(accountId, payload, cancellationToken);
+
+    /// <summary>筛选联系人（不带分页）。</summary>
     [Post("/api/v1/accounts/{accountId}/contacts/filter")]
-    Task<ContactsListResponse> ContactFilterAsync(long accountId, [Body] FilterPayload payload, [Query] IDictionary<string, object?>? query = null, CancellationToken cancellationToken = default);
+    Task<ContactsListResponse> ContactFilterAsync(
+        long accountId,
+        [Body] FilterPayload payload,
+        CancellationToken cancellationToken = default);
+
+    /// <summary>按页码筛选联系人。</summary>
+    [Post("/api/v1/accounts/{accountId}/contacts/filter?page={page}")]
+    Task<ContactsListResponse> ContactFilterByPageAsync(
+        long accountId,
+        [Body] FilterPayload payload,
+        long page,
+        CancellationToken cancellationToken = default);
 
     /// <summary>
     /// 调用 Chatwoot 应用 API：联系人收件箱创建
