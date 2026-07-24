@@ -24,7 +24,8 @@ public sealed record PublicMessageAttachment
     /// 附件类型
     /// </summary>
     [JsonPropertyName("file_type")]
-    public string? FileType { get; init; }
+    [JsonConverter(typeof(ChatWootStringEnumConverter<AttachmentFileType>))]
+    public AttachmentFileType? FileType { get; init; }
 
     /// <summary>
     /// 账户id
@@ -60,13 +61,13 @@ public sealed record PublicMessageAttachment
     /// 可用附件的宽度
     /// </summary>
     [JsonPropertyName("width")]
-    public long? Width { get; init; }
+    public int? Width { get; init; }
 
     /// <summary>
     /// 可用时附件的高度
     /// </summary>
     [JsonPropertyName("height")]
-    public long? Height { get; init; }
+    public int? Height { get; init; }
 
     /// <summary>
     /// 位置附件的纬度

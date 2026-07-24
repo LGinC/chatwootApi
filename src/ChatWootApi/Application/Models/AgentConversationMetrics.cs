@@ -36,13 +36,38 @@ public sealed record AgentConversationMetrics
     /// 可用状态
     /// </summary>
     [JsonPropertyName("availability")]
-    public string? Availability { get; init; }
+    [JsonConverter(typeof(ChatWootStringEnumConverter<AgentAvailability>))]
+    public AgentAvailability? Availability { get; init; }
 
     /// <summary>
-    /// Metric
+    /// 会话计数指标
     /// </summary>
     [JsonPropertyName("metric")]
-    public IDictionary<string, JsonElement>? Metric { get; init; }
+    public AgentConversationMetricCounts? Metric { get; init; }
+
+    /// <summary>
+    /// Swagger 未显式建模的附加 JSON 字段
+    /// </summary>
+    [JsonExtensionData]
+    public IDictionary<string, JsonElement>? ExtensionData { get; set; }
+}
+
+/// <summary>
+/// Chatwoot 应用模型：坐席会话计数指标
+/// </summary>
+public sealed record AgentConversationMetricCounts
+{
+    /// <summary>
+    /// 打开会话数
+    /// </summary>
+    [JsonPropertyName("open")]
+    public int? Open { get; init; }
+
+    /// <summary>
+    /// 未处理会话数
+    /// </summary>
+    [JsonPropertyName("unattended")]
+    public int? Unattended { get; init; }
 
     /// <summary>
     /// Swagger 未显式建模的附加 JSON 字段

@@ -18,7 +18,7 @@ public sealed record ConversationMeta
     /// 对话的附加属性
     /// </summary>
     [JsonPropertyName("additional_attributes")]
-    public IDictionary<string, JsonElement>? AdditionalAttributes { get; init; }
+    public ConversationAdditionalAttributes? AdditionalAttributes { get; init; }
 
     /// <summary>
     /// 联系方式

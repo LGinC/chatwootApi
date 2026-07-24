@@ -37,7 +37,7 @@ public sealed record MessageDetailed
     /// 消息类型（0：传入、1：传出、2：活动、3：模板）
     /// </summary>
     [JsonPropertyName("message_type")]
-    public long? MessageType { get; init; }
+    public MessageType? MessageType { get; init; }
 
     /// <summary>
     /// 消息内容的类型
@@ -57,7 +57,7 @@ public sealed record MessageDetailed
     /// 每个 content_type 的内容属性
     /// </summary>
     [JsonPropertyName("content_attributes")]
-    public IDictionary<string, JsonElement>? ContentAttributes { get; init; }
+    public MessageContentAttributes? ContentAttributes { get; init; }
 
     /// <summary>
     /// 消息的echo ID，用于重复数据删除

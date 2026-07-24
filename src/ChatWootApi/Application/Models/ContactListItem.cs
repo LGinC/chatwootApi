@@ -12,13 +12,14 @@ public sealed record ContactListItem
     /// 包含与联系人相关的附加属性的对象
     /// </summary>
     [JsonPropertyName("additional_attributes")]
-    public IDictionary<string, JsonElement>? AdditionalAttributes { get; init; }
+    public ContactAdditionalAttributes? AdditionalAttributes { get; init; }
 
     /// <summary>
     /// 联系人的空闲状态
     /// </summary>
     [JsonPropertyName("availability_status")]
-    public string? AvailabilityStatus { get; init; }
+    [JsonConverter(typeof(ChatWootStringEnumConverter<AgentAvailability>))]
+    public AgentAvailability? AvailabilityStatus { get; init; }
 
     /// <summary>
     /// 联系人的电子邮件地址

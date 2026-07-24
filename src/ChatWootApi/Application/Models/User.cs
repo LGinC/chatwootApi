@@ -97,7 +97,8 @@ public sealed record User
     /// 角色
     /// </summary>
     [JsonPropertyName("role")]
-    public string? Role { get; init; }
+    [JsonConverter(typeof(ChatWootStringEnumConverter<AccountUserRole>))]
+    public AccountUserRole? Role { get; init; }
 
     /// <summary>
     /// 界面设置

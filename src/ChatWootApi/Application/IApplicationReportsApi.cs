@@ -124,7 +124,7 @@ public interface IApplicationReportsApi
     /// <param name="cancellationToken">用于取消异步操作的令牌</param>
     /// <returns>收件箱汇总报告</returns>
     [Get("/api/v2/accounts/{accountId}/summary_reports/inbox?since={since}&until={until}&business_hours={businessHours}")]
-    Task<InboxSummary> GetInboxSummaryReportAsync(
+    Task<IReadOnlyList<InboxSummary>> GetInboxSummaryReportAsync(
         long accountId,
         string? since = null,
         string? until = null,
@@ -141,7 +141,7 @@ public interface IApplicationReportsApi
     /// <param name="cancellationToken">用于取消异步操作的令牌</param>
     /// <returns>坐席汇总报告</returns>
     [Get("/api/v2/accounts/{accountId}/summary_reports/agent?since={since}&until={until}&business_hours={businessHours}")]
-    Task<AgentSummary> GetAgentSummaryReportAsync(
+    Task<IReadOnlyList<AgentSummary>> GetAgentSummaryReportAsync(
         long accountId,
         string? since = null,
         string? until = null,
@@ -158,7 +158,7 @@ public interface IApplicationReportsApi
     /// <param name="cancellationToken">用于取消异步操作的令牌</param>
     /// <returns>团队汇总报告</returns>
     [Get("/api/v2/accounts/{accountId}/summary_reports/team?since={since}&until={until}&business_hours={businessHours}")]
-    Task<TeamSummary> GetTeamSummaryReportAsync(
+    Task<IReadOnlyList<TeamSummary>> GetTeamSummaryReportAsync(
         long accountId,
         string? since = null,
         string? until = null,
@@ -225,7 +225,7 @@ public interface IApplicationReportsApi
     /// <param name="cancellationToken">用于取消异步操作的令牌</param>
     /// <returns>出站消息计数</returns>
     [Get("/api/v2/accounts/{accountId}/reports/outgoing_messages_count?group_by={groupBy}&since={since}&until={until}")]
-    Task<OutgoingMessagesCount> GetOutgoingMessagesCountAsync(
+    Task<IReadOnlyList<OutgoingMessagesCount>> GetOutgoingMessagesCountAsync(
         long accountId,
         OutgoingMessagesGroupBy groupBy,
         string? since = null,

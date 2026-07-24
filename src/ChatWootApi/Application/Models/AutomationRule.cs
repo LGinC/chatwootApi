@@ -56,7 +56,9 @@ public sealed record AutomationRuleItem
     [JsonPropertyName("description")] public string? Description { get; init; }
 
     /// <summary>触发规则的事件名称。</summary>
-    [JsonPropertyName("event_name")] public string? EventName { get; init; }
+    [JsonPropertyName("event_name")]
+    [JsonConverter(typeof(ChatWootStringEnumConverter<AutomationRuleEvent>))]
+    public AutomationRuleEvent? EventName { get; init; }
 
     /// <summary>规则条件。</summary>
     [JsonPropertyName("conditions")]

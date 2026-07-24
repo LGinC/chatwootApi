@@ -306,3 +306,591 @@ public enum OutgoingMessagesGroupBy
     /// <summary>按标签</summary>
     Label
 }
+
+/// <summary>账号用户 / 坐席角色</summary>
+public enum AccountUserRole
+{
+    /// <summary>普通坐席</summary>
+    Agent,
+    /// <summary>管理员</summary>
+    Administrator
+}
+
+/// <summary>坐席或联系人可用性状态</summary>
+public enum AgentAvailability
+{
+    /// <summary>在线</summary>
+    Online,
+    /// <summary>忙碌（仅坐席）</summary>
+    Busy,
+    /// <summary>离线</summary>
+    Offline
+}
+
+/// <summary>账号状态</summary>
+public enum AccountStatus
+{
+    /// <summary>活跃</summary>
+    Active,
+    /// <summary>已暂停</summary>
+    Suspended
+}
+
+/// <summary>Webhook 可订阅事件</summary>
+public enum WebhookSubscriptionEvent
+{
+    /// <summary>会话已创建</summary>
+    [JsonStringEnumMemberName("conversation_created")]
+    ConversationCreated,
+    /// <summary>会话状态已变更</summary>
+    [JsonStringEnumMemberName("conversation_status_changed")]
+    ConversationStatusChanged,
+    /// <summary>会话已更新</summary>
+    [JsonStringEnumMemberName("conversation_updated")]
+    ConversationUpdated,
+    /// <summary>联系人已创建</summary>
+    [JsonStringEnumMemberName("contact_created")]
+    ContactCreated,
+    /// <summary>联系人已更新</summary>
+    [JsonStringEnumMemberName("contact_updated")]
+    ContactUpdated,
+    /// <summary>消息已创建</summary>
+    [JsonStringEnumMemberName("message_created")]
+    MessageCreated,
+    /// <summary>消息已更新</summary>
+    [JsonStringEnumMemberName("message_updated")]
+    MessageUpdated,
+    /// <summary>网页小部件被触发</summary>
+    [JsonStringEnumMemberName("webwidget_triggered")]
+    WebwidgetTriggered,
+    /// <summary>会话开始输入</summary>
+    [JsonStringEnumMemberName("conversation_typing_on")]
+    ConversationTypingOn,
+    /// <summary>会话停止输入</summary>
+    [JsonStringEnumMemberName("conversation_typing_off")]
+    ConversationTypingOff
+}
+
+/// <summary>自动化规则触发事件</summary>
+public enum AutomationRuleEvent
+{
+    /// <summary>会话已创建</summary>
+    [JsonStringEnumMemberName("conversation_created")]
+    ConversationCreated,
+    /// <summary>会话已更新</summary>
+    [JsonStringEnumMemberName("conversation_updated")]
+    ConversationUpdated,
+    /// <summary>会话已解决</summary>
+    [JsonStringEnumMemberName("conversation_resolved")]
+    ConversationResolved,
+    /// <summary>消息已创建</summary>
+    [JsonStringEnumMemberName("message_created")]
+    MessageCreated
+}
+
+/// <summary>审计日志操作</summary>
+public enum AuditLogAction
+{
+    /// <summary>创建</summary>
+    Create,
+    /// <summary>更新</summary>
+    Update,
+    /// <summary>删除</summary>
+    Destroy
+}
+
+/// <summary>出站邮件发件人姓名类型</summary>
+public enum SenderNameType
+{
+    /// <summary>友好名称</summary>
+    Friendly,
+    /// <summary>专业名称</summary>
+    Professional
+}
+
+/// <summary>网页小部件预计回复时间</summary>
+public enum WidgetReplyTime
+{
+    /// <summary>几分钟内</summary>
+    [JsonStringEnumMemberName("in_a_few_minutes")]
+    InAFewMinutes,
+    /// <summary>几小时内</summary>
+    [JsonStringEnumMemberName("in_a_few_hours")]
+    InAFewHours,
+    /// <summary>一天内</summary>
+    [JsonStringEnumMemberName("in_a_day")]
+    InADay
+}
+
+/// <summary>CSAT 展示样式</summary>
+public enum CsatDisplayType
+{
+    /// <summary>表情</summary>
+    Emoji,
+    /// <summary>星级</summary>
+    Star
+}
+
+/// <summary>网页小部件功能开关</summary>
+public enum WebWidgetFeatureFlag
+{
+    /// <summary>附件</summary>
+    Attachments,
+    /// <summary>表情选择器</summary>
+    [JsonStringEnumMemberName("emoji_picker")]
+    EmojiPicker,
+    /// <summary>结束会话</summary>
+    [JsonStringEnumMemberName("end_conversation")]
+    EndConversation,
+    /// <summary>机器人使用收件箱头像</summary>
+    [JsonStringEnumMemberName("use_inbox_avatar_for_bot")]
+    UseInboxAvatarForBot,
+    /// <summary>允许移动端 WebView</summary>
+    [JsonStringEnumMemberName("allow_mobile_webview")]
+    AllowMobileWebview
+}
+
+/// <summary>WhatsApp 渠道提供商</summary>
+public enum WhatsAppProvider
+{
+    /// <summary>WhatsApp Cloud API</summary>
+    [JsonStringEnumMemberName("whatsapp_cloud")]
+    WhatsappCloud,
+    /// <summary>旧版 360dialog（仅存量）</summary>
+    Default
+}
+
+/// <summary>消息附件文件类型</summary>
+public enum AttachmentFileType
+{
+    /// <summary>图片</summary>
+    Image,
+    /// <summary>音频</summary>
+    Audio,
+    /// <summary>视频</summary>
+    Video,
+    /// <summary>文件</summary>
+    File,
+    /// <summary>位置</summary>
+    Location,
+    /// <summary>回退</summary>
+    Fallback,
+    /// <summary>分享</summary>
+    Share,
+    /// <summary>动态提及</summary>
+    [JsonStringEnumMemberName("story_mention")]
+    StoryMention,
+    /// <summary>联系人</summary>
+    Contact,
+    /// <summary>Instagram Reel</summary>
+    [JsonStringEnumMemberName("ig_reel")]
+    IgReel,
+    /// <summary>Instagram 帖子</summary>
+    [JsonStringEnumMemberName("ig_post")]
+    IgPost,
+    /// <summary>Instagram 快拍</summary>
+    [JsonStringEnumMemberName("ig_story")]
+    IgStory,
+    /// <summary>嵌入内容</summary>
+    Embed
+}
+
+/// <summary>公开消息发送者类型</summary>
+public enum PublicMessageSenderType
+{
+    /// <summary>联系人</summary>
+    Contact,
+    /// <summary>用户</summary>
+    User,
+    /// <summary>坐席机器人</summary>
+    [JsonStringEnumMemberName("agent_bot")]
+    AgentBot,
+    /// <summary>Captain 助手</summary>
+    [JsonStringEnumMemberName("captain_assistant")]
+    CaptainAssistant
+}
+
+/// <summary>CSAT 调查配置</summary>
+public sealed record CsatConfig
+{
+    /// <summary>CSAT 展示样式</summary>
+    [JsonPropertyName("display_type")]
+    [JsonConverter(typeof(ChatWootStringEnumConverter<CsatDisplayType>))]
+    public CsatDisplayType? DisplayType { get; set; }
+
+    /// <summary>随 CSAT 调查显示的消息</summary>
+    [JsonPropertyName("message")]
+    public string? Message { get; set; }
+
+    /// <summary>CSAT 调查按钮文案</summary>
+    [JsonPropertyName("button_text")]
+    public string? ButtonText { get; set; }
+
+    /// <summary>CSAT 调查语言代码</summary>
+    [JsonPropertyName("language")]
+    public string? Language { get; set; }
+
+    /// <summary>决定何时展示 CSAT 调查的规则</summary>
+    [JsonPropertyName("survey_rules")]
+    public CsatSurveyRules? SurveyRules { get; set; }
+}
+
+/// <summary>CSAT 展示规则</summary>
+public sealed record CsatSurveyRules
+{
+    /// <summary>比较运算符（例如 contains）</summary>
+    [JsonPropertyName("operator")]
+    public string? Operator { get; set; }
+
+    /// <summary>匹配值列表</summary>
+    [JsonPropertyName("values")]
+    public IReadOnlyList<string>? Values { get; set; }
+}
+
+/// <summary>WhatsApp 模板类别</summary>
+public enum WhatsAppTemplateCategory
+{
+    /// <summary>实用类</summary>
+    [JsonStringEnumMemberName("UTILITY")]
+    Utility,
+    /// <summary>营销类</summary>
+    [JsonStringEnumMemberName("MARKETING")]
+    Marketing,
+    /// <summary>物流更新</summary>
+    [JsonStringEnumMemberName("SHIPPING_UPDATE")]
+    ShippingUpdate,
+    /// <summary>工单更新</summary>
+    [JsonStringEnumMemberName("TICKET_UPDATE")]
+    TicketUpdate,
+    /// <summary>问题解决</summary>
+    [JsonStringEnumMemberName("ISSUE_RESOLUTION")]
+    IssueResolution
+}
+
+/// <summary>WhatsApp 模板页眉媒体类型</summary>
+public enum WhatsAppTemplateMediaType
+{
+    /// <summary>图片</summary>
+    Image,
+    /// <summary>视频</summary>
+    Video,
+    /// <summary>文档</summary>
+    Document
+}
+
+/// <summary>WhatsApp 模板按钮参数类型</summary>
+public enum WhatsAppTemplateButtonType
+{
+    /// <summary>URL 按钮</summary>
+    Url,
+    /// <summary>复制验证码按钮</summary>
+    [JsonStringEnumMemberName("copy_code")]
+    CopyCode
+}
+
+/// <summary>发送结构化 WhatsApp 模板消息的参数</summary>
+public sealed record WhatsAppTemplateParams
+{
+    /// <summary>已在 WhatsApp Business Manager 中批准的模板名称</summary>
+    [JsonPropertyName("name")]
+    public string? Name { get; set; }
+
+    /// <summary>模板类别</summary>
+    [JsonPropertyName("category")]
+    [JsonConverter(typeof(ChatWootStringEnumConverter<WhatsAppTemplateCategory>))]
+    public WhatsAppTemplateCategory? Category { get; set; }
+
+    /// <summary>模板语言代码（BCP 47）</summary>
+    [JsonPropertyName("language")]
+    public string? Language { get; set; }
+
+    /// <summary>按组件类型组织的已处理模板参数</summary>
+    [JsonPropertyName("processed_params")]
+    public WhatsAppTemplateProcessedParams? ProcessedParams { get; set; }
+}
+
+/// <summary>WhatsApp 模板已处理参数</summary>
+public sealed record WhatsAppTemplateProcessedParams
+{
+    /// <summary>正文变量占位符（键为变量序号）</summary>
+    [JsonPropertyName("body")]
+    public IDictionary<string, string>? Body { get; set; }
+
+    /// <summary>页眉媒体参数</summary>
+    [JsonPropertyName("header")]
+    public WhatsAppTemplateHeaderParams? Header { get; set; }
+
+    /// <summary>交互按钮参数</summary>
+    [JsonPropertyName("buttons")]
+    public IReadOnlyList<WhatsAppTemplateButtonParam>? Buttons { get; set; }
+}
+
+/// <summary>WhatsApp 模板页眉参数</summary>
+public sealed record WhatsAppTemplateHeaderParams
+{
+    /// <summary>图片 / 视频 / 文档页眉的公开可访问 URL</summary>
+    [JsonPropertyName("media_url")]
+    public string? MediaUrl { get; set; }
+
+    /// <summary>页眉媒体类型</summary>
+    [JsonPropertyName("media_type")]
+    [JsonConverter(typeof(ChatWootStringEnumConverter<WhatsAppTemplateMediaType>))]
+    public WhatsAppTemplateMediaType? MediaType { get; set; }
+}
+
+/// <summary>WhatsApp 模板按钮参数</summary>
+public sealed record WhatsAppTemplateButtonParam
+{
+    /// <summary>按钮参数类型</summary>
+    [JsonPropertyName("type")]
+    [JsonConverter(typeof(ChatWootStringEnumConverter<WhatsAppTemplateButtonType>))]
+    public WhatsAppTemplateButtonType? Type { get; set; }
+
+    /// <summary>按钮动态参数值</summary>
+    [JsonPropertyName("parameter")]
+    public string? Parameter { get; set; }
+}
+
+/// <summary>创建会话时发送的初始消息</summary>
+public sealed record ConversationCreateMessage
+{
+    /// <summary>消息正文（必填）</summary>
+    [JsonPropertyName("content")]
+    public string? Content { get; set; }
+
+    /// <summary>WhatsApp 渠道下的模板参数</summary>
+    [JsonPropertyName("template_params")]
+    public WhatsAppTemplateParams? TemplateParams { get; set; }
+}
+
+/// <summary>账号设置（响应 <c>account_detail.settings</c>）</summary>
+public sealed record AccountSettings
+{
+    /// <summary>指定分钟后自动解决会话</summary>
+    [JsonPropertyName("auto_resolve_after")]
+    public long? AutoResolveAfter { get; init; }
+
+    /// <summary>自动解决时发送的消息</summary>
+    [JsonPropertyName("auto_resolve_message")]
+    public string? AutoResolveMessage { get; init; }
+
+    /// <summary>自动解决时是否忽略等待中的会话</summary>
+    [JsonPropertyName("auto_resolve_ignore_waiting")]
+    public bool? AutoResolveIgnoreWaiting { get; init; }
+
+    /// <summary>Swagger 未显式建模的附加 JSON 字段</summary>
+    [JsonExtensionData]
+    public IDictionary<string, JsonElement>? ExtensionData { get; set; }
+}
+
+/// <summary>WhatsApp 渠道提供商配置（Cloud 与旧版 360dialog 共用字段）</summary>
+public sealed record WhatsAppProviderConfig
+{
+    /// <summary>提供商 API Key</summary>
+    [JsonPropertyName("api_key")]
+    public string? ApiKey { get; init; }
+
+    /// <summary>WhatsApp Cloud 电话号码 ID</summary>
+    [JsonPropertyName("phone_number_id")]
+    public string? PhoneNumberId { get; init; }
+
+    /// <summary>WhatsApp Cloud 企业账号 ID</summary>
+    [JsonPropertyName("business_account_id")]
+    public string? BusinessAccountId { get; init; }
+
+    /// <summary>Swagger 未显式建模的附加 JSON 字段</summary>
+    [JsonExtensionData]
+    public IDictionary<string, JsonElement>? ExtensionData { get; set; }
+}
+
+/// <summary>联系人附加属性（响应）</summary>
+public sealed record ContactAdditionalAttributes
+{
+    /// <summary>城市</summary>
+    [JsonPropertyName("city")]
+    public string? City { get; init; }
+
+    /// <summary>国家</summary>
+    [JsonPropertyName("country")]
+    public string? Country { get; init; }
+
+    /// <summary>国家代码</summary>
+    [JsonPropertyName("country_code")]
+    public string? CountryCode { get; init; }
+
+    /// <summary>创建联系人时的 IP</summary>
+    [JsonPropertyName("created_at_ip")]
+    public string? CreatedAtIp { get; init; }
+
+    /// <summary>Swagger 未显式建模的附加 JSON 字段</summary>
+    [JsonExtensionData]
+    public IDictionary<string, JsonElement>? ExtensionData { get; set; }
+}
+
+/// <summary>会话附加属性中的浏览器信息</summary>
+public sealed record ConversationBrowserInfo
+{
+    /// <summary>设备名称</summary>
+    [JsonPropertyName("device_name")]
+    public string? DeviceName { get; init; }
+
+    /// <summary>浏览器名称</summary>
+    [JsonPropertyName("browser_name")]
+    public string? BrowserName { get; init; }
+
+    /// <summary>平台名称</summary>
+    [JsonPropertyName("platform_name")]
+    public string? PlatformName { get; init; }
+
+    /// <summary>浏览器版本</summary>
+    [JsonPropertyName("browser_version")]
+    public string? BrowserVersion { get; init; }
+
+    /// <summary>平台版本</summary>
+    [JsonPropertyName("platform_version")]
+    public string? PlatformVersion { get; init; }
+
+    /// <summary>Swagger 未显式建模的附加 JSON 字段</summary>
+    [JsonExtensionData]
+    public IDictionary<string, JsonElement>? ExtensionData { get; set; }
+}
+
+/// <summary>会话发起时间信息</summary>
+public sealed record ConversationInitiatedAt
+{
+    /// <summary>发起时间戳</summary>
+    [JsonPropertyName("timestamp")]
+    public string? Timestamp { get; init; }
+
+    /// <summary>Swagger 未显式建模的附加 JSON 字段</summary>
+    [JsonExtensionData]
+    public IDictionary<string, JsonElement>? ExtensionData { get; set; }
+}
+
+/// <summary>会话附加属性（响应）</summary>
+public sealed record ConversationAdditionalAttributes
+{
+    /// <summary>浏览器信息</summary>
+    [JsonPropertyName("browser")]
+    public ConversationBrowserInfo? Browser { get; init; }
+
+    /// <summary>来源 URL</summary>
+    [JsonPropertyName("referer")]
+    public string? Referer { get; init; }
+
+    /// <summary>会话发起时间</summary>
+    [JsonPropertyName("initiated_at")]
+    public ConversationInitiatedAt? InitiatedAt { get; init; }
+
+    /// <summary>浏览器语言</summary>
+    [JsonPropertyName("browser_language")]
+    public string? BrowserLanguage { get; init; }
+
+    /// <summary>会话语言</summary>
+    [JsonPropertyName("conversation_language")]
+    public string? ConversationLanguage { get; init; }
+
+    /// <summary>Swagger 未显式建模的附加 JSON 字段</summary>
+    [JsonExtensionData]
+    public IDictionary<string, JsonElement>? ExtensionData { get; set; }
+}
+
+/// <summary>账号自定义属性（响应 <c>account_detail.custom_attributes</c>）</summary>
+public sealed record AccountCustomAttributes
+{
+    /// <summary>订阅计划名称</summary>
+    [JsonPropertyName("plan_name")]
+    public string? PlanName { get; init; }
+
+    /// <summary>订阅数量</summary>
+    [JsonPropertyName("subscribed_quantity")]
+    public long? SubscribedQuantity { get; init; }
+
+    /// <summary>订阅状态</summary>
+    [JsonPropertyName("subscription_status")]
+    public string? SubscriptionStatus { get; init; }
+
+    /// <summary>订阅结束日期</summary>
+    [JsonPropertyName("subscription_ends_on")]
+    public string? SubscriptionEndsOn { get; init; }
+
+    /// <summary>行业</summary>
+    [JsonPropertyName("industry")]
+    public string? Industry { get; init; }
+
+    /// <summary>公司规模</summary>
+    [JsonPropertyName("company_size")]
+    public string? CompanySize { get; init; }
+
+    /// <summary>时区</summary>
+    [JsonPropertyName("timezone")]
+    public string? Timezone { get; init; }
+
+    /// <summary>Logo URL</summary>
+    [JsonPropertyName("logo")]
+    public string? Logo { get; init; }
+
+    /// <summary>当前入驻步骤</summary>
+    [JsonPropertyName("onboarding_step")]
+    public string? OnboardingStep { get; init; }
+
+    /// <summary>标记删除时间</summary>
+    [JsonPropertyName("marked_for_deletion_at")]
+    public string? MarkedForDeletionAt { get; init; }
+
+    /// <summary>标记删除原因</summary>
+    [JsonPropertyName("marked_for_deletion_reason")]
+    public string? MarkedForDeletionReason { get; init; }
+
+    /// <summary>Swagger 未显式建模的附加 JSON 字段</summary>
+    [JsonExtensionData]
+    public IDictionary<string, JsonElement>? ExtensionData { get; set; }
+}
+
+/// <summary>消息 content_attributes（至少文档了 in_reply_to）</summary>
+public sealed record MessageContentAttributes
+{
+    /// <summary>所回复消息的 ID</summary>
+    [JsonPropertyName("in_reply_to")]
+    public string? InReplyTo { get; init; }
+
+    /// <summary>随 content_type 变化的其它字段</summary>
+    [JsonExtensionData]
+    public IDictionary<string, JsonElement>? ExtensionData { get; set; }
+}
+
+/// <summary>门户允许的区域设置项（响应）</summary>
+public sealed record PortalLocaleConfig
+{
+    /// <summary>语言代码</summary>
+    [JsonPropertyName("code")]
+    public string? Code { get; init; }
+
+    /// <summary>该区域设置下的文章数</summary>
+    [JsonPropertyName("articles_count")]
+    public int? ArticlesCount { get; init; }
+
+    /// <summary>该区域设置下的分类数</summary>
+    [JsonPropertyName("categories_count")]
+    public int? CategoriesCount { get; init; }
+
+    /// <summary>Swagger 未显式建模的附加 JSON 字段</summary>
+    [JsonExtensionData]
+    public IDictionary<string, JsonElement>? ExtensionData { get; set; }
+}
+
+/// <summary>创建/更新门户时的 config 载荷（example 形态）</summary>
+public sealed record PortalCreateUpdateConfig
+{
+    /// <summary>允许的区域设置代码列表</summary>
+    [JsonPropertyName("allowed_locales")]
+    public IReadOnlyList<string>? AllowedLocales { get; set; }
+
+    /// <summary>默认区域设置</summary>
+    [JsonPropertyName("default_locale")]
+    public string? DefaultLocale { get; set; }
+
+    /// <summary>Swagger 未显式建模的附加 JSON 字段</summary>
+    [JsonExtensionData]
+    public IDictionary<string, JsonElement>? ExtensionData { get; set; }
+}

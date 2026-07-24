@@ -12,7 +12,7 @@ public sealed record PortalConfig
     /// 门户允许的区域设置列表
     /// </summary>
     [JsonPropertyName("allowed_locales")]
-    public IReadOnlyList<IDictionary<string, JsonElement>?>? AllowedLocales { get; init; }
+    public IReadOnlyList<PortalLocaleConfig?>? AllowedLocales { get; init; }
 
     /// <summary>
     /// Swagger 未显式建模的附加 JSON 字段

@@ -1,5 +1,6 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using ChatWootApi.Application.Models;
 
 namespace ChatWootApi.Client.Models;
 
@@ -24,13 +25,14 @@ public sealed record Message
     /// 消息类型
     /// </summary>
     [JsonPropertyName("message_type")]
-    public int? MessageType { get; init; }
+    public MessageType? MessageType { get; init; }
 
     /// <summary>
     /// 模板消息类型
     /// </summary>
     [JsonPropertyName("content_type")]
-    public string? ContentType { get; init; }
+    [JsonConverter(typeof(ChatWootStringEnumConverter<MessageContentType>))]
+    public MessageContentType? ContentType { get; init; }
 
     /// <summary>
     /// 每个 content_type 的内容属性

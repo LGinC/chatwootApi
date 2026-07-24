@@ -27,7 +27,8 @@ public sealed record AutomationRuleCreateUpdatePayload : JsonExtensionDataPayloa
     /// 当您想要执行自动化操作时的事件
     /// </summary>
     [JsonPropertyName("event_name")]
-    public string? EventName { get; set; }
+    [JsonConverter(typeof(ChatWootStringEnumConverter<AutomationRuleEvent>))]
+    public AutomationRuleEvent? EventName { get; set; }
 
     /// <summary>
     /// 启用/禁用自动化规则

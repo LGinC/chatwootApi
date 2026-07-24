@@ -39,13 +39,15 @@ public sealed record AgentCreatePayload : JsonExtensionDataPayload
     /// 无论是管理员还是代理人
     /// </summary>
     [JsonPropertyName("role")]
-    public string? Role { get; set; }
+    [JsonConverter(typeof(ChatWootStringEnumConverter<AccountUserRole>))]
+    public AccountUserRole? Role { get; set; }
 
     /// <summary>
     /// 代理的已配置可用性。
     /// </summary>
     [JsonPropertyName("availability")]
-    public string? Availability { get; set; }
+    [JsonConverter(typeof(ChatWootStringEnumConverter<AgentAvailability>))]
+    public AgentAvailability? Availability { get; set; }
 
     /// <summary>
     /// 座席离开时是否自动标记为离线。

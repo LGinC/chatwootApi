@@ -1638,13 +1638,22 @@ When grouped by agent, messages sent by bots (AgentBot, Captain::Assistant) are 
       <summary>Chatwoot application Contact model.</summary>
     </member>
     <member name="P:ChatWootApi.Application.Contact.Payload">
-      <summary>Payload.</summary>
+      <summary>Array of contact entries.</summary>
     </member>
     <member name="P:ChatWootApi.Application.Contact.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
     </member>
     <member name="T:ChatWootApi.Application.ContactableInboxes">
       <summary>Chatwoot application Contactable Inboxes model.</summary>
+    </member>
+    <member name="P:ChatWootApi.Application.ContactableInboxes.SourceId">
+      <summary>Contact Inbox Source Id.</summary>
+    </member>
+    <member name="P:ChatWootApi.Application.ContactableInboxes.Inbox">
+      <summary>Inbox details for a contactable inbox.</summary>
+    </member>
+    <member name="P:ChatWootApi.Application.ContactableInboxes.ExtensionData">
+      <summary>Additional fields not modeled explicitly.</summary>
     </member>
     <member name="T:ChatWootApi.Application.ContactableInboxesResponse">
       <summary>Chatwoot application Contactable Inboxes Response model.</summary>
@@ -1656,7 +1665,13 @@ When grouped by agent, messages sent by bots (AgentBot, Captain::Assistant) are 
       <summary>Additional fields not modeled explicitly.</summary>
     </member>
     <member name="T:ChatWootApi.Application.ContactBase">
-      <summary>Chatwoot application Contact Base model.</summary>
+      <summary>Contact base response (generic id + contact payload array).</summary>
+    </member>
+    <member name="P:ChatWootApi.Application.ContactBase.Id">
+      <summary>Contact identifier.</summary>
+    </member>
+    <member name="P:ChatWootApi.Application.ContactBase.Payload">
+      <summary>Array of contact entries.</summary>
     </member>
     <member name="P:ChatWootApi.Application.ContactBase.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>
@@ -2298,7 +2313,16 @@ When grouped by agent, messages sent by bots (AgentBot, Captain::Assistant) are 
       <summary>Additional fields not modeled explicitly.</summary>
     </member>
     <member name="T:ChatWootApi.Application.ExtendedContact">
-      <summary>Chatwoot application Extended Contact model.</summary>
+      <summary>Extended contact response (contact payload array plus id and availability status).</summary>
+    </member>
+    <member name="P:ChatWootApi.Application.ExtendedContact.Id">
+      <summary>Contact or user identifier.</summary>
+    </member>
+    <member name="P:ChatWootApi.Application.ExtendedContact.AvailabilityStatus">
+      <summary>Availability status of the contact.</summary>
+    </member>
+    <member name="P:ChatWootApi.Application.ExtendedContact.Payload">
+      <summary>Array of contact entries.</summary>
     </member>
     <member name="P:ChatWootApi.Application.ExtendedContact.ExtensionData">
       <summary>Additional fields not modeled explicitly.</summary>

@@ -12,7 +12,7 @@ public sealed record ContactDetail
     /// 包含与联系人相关的附加属性的对象
     /// </summary>
     [JsonPropertyName("additional_attributes")]
-    public IDictionary<string, JsonElement>? AdditionalAttributes { get; init; }
+    public ContactAdditionalAttributes? AdditionalAttributes { get; init; }
 
     /// <summary>
     /// 联系人的自定义属性

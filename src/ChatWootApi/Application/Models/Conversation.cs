@@ -36,19 +36,19 @@ public record Conversation
     /// 包含与对话相关的附加属性的对象
     /// </summary>
     [JsonPropertyName("additional_attributes")]
-    public IDictionary<string, JsonElement>? AdditionalAttributes { get; init; }
+    public ConversationAdditionalAttributes? AdditionalAttributes { get; init; }
 
     /// <summary>
     /// 代理的最后一次活动
     /// </summary>
     [JsonPropertyName("agent_last_seen_at")]
-    public decimal? AgentLastSeenAt { get; init; }
+    public long? AgentLastSeenAt { get; init; }
 
     /// <summary>
     /// 受让人的最后一次活动
     /// </summary>
     [JsonPropertyName("assignee_last_seen_at")]
-    public decimal? AssigneeLastSeenAt { get; init; }
+    public long? AssigneeLastSeenAt { get; init; }
 
     /// <summary>
     /// 对话是否可以回复
@@ -60,7 +60,7 @@ public record Conversation
     /// 联系人的最后活动时间
     /// </summary>
     [JsonPropertyName("contact_last_seen_at")]
-    public decimal? ContactLastSeenAt { get; init; }
+    public long? ContactLastSeenAt { get; init; }
 
     /// <summary>
     /// 保存对话自定义属性的对象，接受自定义属性键和值
@@ -90,7 +90,7 @@ public record Conversation
     /// 对话取消静音的时间
     /// </summary>
     [JsonPropertyName("snoozed_until")]
-    public decimal? SnoozedUntil { get; init; }
+    public long? SnoozedUntil { get; init; }
 
     /// <summary>
     /// 对话状态
@@ -103,31 +103,31 @@ public record Conversation
     /// 对话创建时间
     /// </summary>
     [JsonPropertyName("created_at")]
-    public decimal? CreatedAt { get; init; }
+    public long? CreatedAt { get; init; }
 
     /// <summary>
     /// 对话更新时间
     /// </summary>
     [JsonPropertyName("updated_at")]
-    public decimal? UpdatedAt { get; init; }
+    public long? UpdatedAt { get; init; }
 
     /// <summary>
     /// 对话创建时间
     /// </summary>
     [JsonPropertyName("timestamp")]
-    public decimal? Timestamp { get; init; }
+    public long? Timestamp { get; init; }
 
     /// <summary>
     /// 创建第一个回复的时间
     /// </summary>
     [JsonPropertyName("first_reply_created_at")]
-    public decimal? FirstReplyCreatedAt { get; init; }
+    public long? FirstReplyCreatedAt { get; init; }
 
     /// <summary>
     /// 未读消息数
     /// </summary>
     [JsonPropertyName("unread_count")]
-    public decimal? UnreadCount { get; init; }
+    public int? UnreadCount { get; init; }
 
     /// <summary>
     /// 最后一条非活动消息
@@ -139,7 +139,7 @@ public record Conversation
     /// 对话的最后一个活动
     /// </summary>
     [JsonPropertyName("last_activity_at")]
-    public decimal? LastActivityAt { get; init; }
+    public long? LastActivityAt { get; init; }
 
     /// <summary>
     /// 对话的优先级
@@ -152,7 +152,7 @@ public record Conversation
     /// 对话等待的时间
     /// </summary>
     [JsonPropertyName("waiting_since")]
-    public decimal? WaitingSince { get; init; }
+    public long? WaitingSince { get; init; }
 
     /// <summary>
     /// SLA策略ID

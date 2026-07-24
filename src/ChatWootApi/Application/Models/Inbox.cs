@@ -156,7 +156,8 @@ public sealed record Inbox
     /// 要显示的发件人姓名类型（例如，友好）
     /// </summary>
     [JsonPropertyName("sender_name_type")]
-    public string? SenderNameType { get; init; }
+    [JsonConverter(typeof(ChatWootStringEnumConverter<SenderNameType>))]
+    public SenderNameType? SenderNameType { get; init; }
 
     /// <summary>
     /// 与收件箱关联的公司名称
@@ -174,13 +175,14 @@ public sealed record Inbox
     /// 收件箱的选定功能标志
     /// </summary>
     [JsonPropertyName("selected_feature_flags")]
-    public IReadOnlyList<string?>? SelectedFeatureFlags { get; init; }
+    public IReadOnlyList<WebWidgetFeatureFlag?>? SelectedFeatureFlags { get; init; }
 
     /// <summary>
     /// 预计回复时间
     /// </summary>
     [JsonPropertyName("reply_time")]
-    public string? ReplyTime { get; init; }
+    [JsonConverter(typeof(ChatWootStringEnumConverter<WidgetReplyTime>))]
+    public WidgetReplyTime? ReplyTime { get; init; }
 
     /// <summary>
     /// SMS 提供商的消息服务 SID

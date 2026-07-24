@@ -30,7 +30,7 @@ public sealed record Webhook
     /// 订阅事件列表
     /// </summary>
     [JsonPropertyName("subscriptions")]
-    public IReadOnlyList<string?>? Subscriptions { get; init; }
+    public IReadOnlyList<WebhookSubscriptionEvent?>? Subscriptions { get; init; }
 
     /// <summary>
     /// 用于签署 Webhook 请求的秘密。签名的 webhook 交付包括“X-Chatwoot-Timestamp”和“X-Chatwoot-Signature”；签名是“sha256=”，后跟使用此密钥的“{timestamp}.{raw_request_body}”的 HMAC-SHA256。当交付 ID 可用时，交付还包括“X-Chatwoot-Delivery”。

@@ -24,13 +24,14 @@ public sealed record PublicMessage
     /// 表示消息类型。可能的值：0（传入）、1（传出）、2（活动）、3（模板）
     /// </summary>
     [JsonPropertyName("message_type")]
-    public long? MessageType { get; init; }
+    public MessageType? MessageType { get; init; }
 
     /// <summary>
     /// 消息的内容类型
     /// </summary>
     [JsonPropertyName("content_type")]
-    public string? ContentType { get; init; }
+    [JsonConverter(typeof(ChatWootStringEnumConverter<MessageContentType>))]
+    public MessageContentType? ContentType { get; init; }
 
     /// <summary>
     /// 消息的附加内容属性

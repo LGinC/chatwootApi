@@ -1,5 +1,6 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using ChatWootApi.Application.Models;
 
 namespace ChatWootApi.Client.Models;
 
@@ -24,7 +25,8 @@ public sealed record MessageAttachment
     /// 文件类型
     /// </summary>
     [JsonPropertyName("file_type")]
-    public string? FileType { get; init; }
+    [JsonConverter(typeof(ChatWootStringEnumConverter<AttachmentFileType>))]
+    public AttachmentFileType? FileType { get; init; }
 
     /// <summary>
     /// 账号ID

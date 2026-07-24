@@ -42,7 +42,8 @@ public sealed record AccountDetail
     /// 账户状态
     /// </summary>
     [JsonPropertyName("status")]
-    public string? Status { get; init; }
+    [JsonConverter(typeof(ChatWootStringEnumConverter<AccountStatus>))]
+    public AccountStatus? Status { get; init; }
 
     /// <summary>
     /// 帐户的创建日期
@@ -66,13 +67,13 @@ public sealed record AccountDetail
     /// 账户设置
     /// </summary>
     [JsonPropertyName("settings")]
-    public IDictionary<string, JsonElement>? Settings { get; init; }
+    public AccountSettings? Settings { get; init; }
 
     /// <summary>
     /// 帐户的自定义属性
     /// </summary>
     [JsonPropertyName("custom_attributes")]
-    public IDictionary<string, JsonElement>? CustomAttributes { get; init; }
+    public AccountCustomAttributes? CustomAttributes { get; init; }
 
     /// <summary>
     /// Swagger 未显式建模的附加 JSON 字段

@@ -1,5 +1,6 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using ChatWootApi.Application.Models;
 
 namespace ChatWootApi.Platform.Models;
 
@@ -36,7 +37,8 @@ public sealed record AccountCreateUpdatePayload
     /// 账户状态
     /// </summary>
     [JsonPropertyName("status")]
-    public string? Status { get; set; }
+    [JsonConverter(typeof(ChatWootStringEnumConverter<AccountStatus>))]
+    public AccountStatus? Status { get; set; }
 
     /// <summary>
     /// 账户的限制

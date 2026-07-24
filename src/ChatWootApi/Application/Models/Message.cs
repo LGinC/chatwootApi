@@ -68,7 +68,8 @@ public sealed record Message
     /// 消息的状态
     /// </summary>
     [JsonPropertyName("status")]
-    public string? Status { get; init; }
+    [JsonConverter(typeof(ChatWootStringEnumConverter<MessageStatus>))]
+    public MessageStatus? Status { get; init; }
 
     /// <summary>
     /// 消息的源ID
@@ -80,13 +81,14 @@ public sealed record Message
     /// 模板消息类型
     /// </summary>
     [JsonPropertyName("content_type")]
-    public string? ContentType { get; init; }
+    [JsonConverter(typeof(ChatWootStringEnumConverter<MessageContentType>))]
+    public MessageContentType? ContentType { get; init; }
 
     /// <summary>
     /// 每个 content_type 的内容属性
     /// </summary>
     [JsonPropertyName("content_attributes")]
-    public IDictionary<string, JsonElement>? ContentAttributes { get; init; }
+    public MessageContentAttributes? ContentAttributes { get; init; }
 
     /// <summary>
     /// 发件人类型

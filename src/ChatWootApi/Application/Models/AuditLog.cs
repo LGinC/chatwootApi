@@ -66,7 +66,8 @@ public sealed record AuditLog
     /// 对对象执行的操作
     /// </summary>
     [JsonPropertyName("action")]
-    public string? Action { get; init; }
+    [JsonConverter(typeof(ChatWootStringEnumConverter<AuditLogAction>))]
+    public AuditLogAction? Action { get; init; }
 
     /// <summary>
     /// 包含对审核对象所做的更改的 JSON 对象

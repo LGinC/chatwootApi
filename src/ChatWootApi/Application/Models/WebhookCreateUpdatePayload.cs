@@ -24,5 +24,5 @@ public sealed record WebhookCreateUpdatePayload : JsonExtensionDataPayload
     /// 您想要订阅的事件。
     /// </summary>
     [JsonPropertyName("subscriptions")]
-    public IReadOnlyList<string?>? Subscriptions { get; set; }
+    public IReadOnlyList<WebhookSubscriptionEvent?>? Subscriptions { get; set; }
 }

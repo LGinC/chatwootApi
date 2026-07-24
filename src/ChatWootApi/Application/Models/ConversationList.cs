@@ -102,13 +102,14 @@ public sealed record ConversationListSender
     /// 发送者附加属性
     /// </summary>
     [JsonPropertyName("additional_attributes")]
-    public IDictionary<string, JsonElement>? AdditionalAttributes { get; init; }
+    public ContactAdditionalAttributes? AdditionalAttributes { get; init; }
 
     /// <summary>
     /// 发送者可用性状态
     /// </summary>
     [JsonPropertyName("availability_status")]
-    public string? AvailabilityStatus { get; init; }
+    [JsonConverter(typeof(ChatWootStringEnumConverter<AgentAvailability>))]
+    public AgentAvailability? AvailabilityStatus { get; init; }
 
     /// <summary>
     /// 发送者邮箱
@@ -162,13 +163,13 @@ public sealed record ConversationListSender
     /// 发送者最后活动时间（Unix 时间戳）
     /// </summary>
     [JsonPropertyName("last_activity_at")]
-    public decimal? LastActivityAt { get; init; }
+    public long? LastActivityAt { get; init; }
 
     /// <summary>
     /// 发送者创建时间（Unix 时间戳）
     /// </summary>
     [JsonPropertyName("created_at")]
-    public decimal? CreatedAt { get; init; }
+    public long? CreatedAt { get; init; }
 
     /// <summary>
     /// Swagger 未显式建模的附加 JSON 字段

@@ -24,7 +24,8 @@ public sealed record Agent
     /// 代理的有效可用性状态，源自配置的可用性、自动离线设置和当前状态。要更新代理配置的可用性，请在创建或更新请求中使用可用性字段。
     /// </summary>
     [JsonPropertyName("availability_status")]
-    public string? AvailabilityStatus { get; init; }
+    [JsonConverter(typeof(ChatWootStringEnumConverter<AgentAvailability>))]
+    public AgentAvailability? AvailabilityStatus { get; init; }
 
     /// <summary>
     /// 座席离开时是否自动标记为离线。
@@ -60,7 +61,8 @@ public sealed record Agent
     /// 代理人的角色
     /// </summary>
     [JsonPropertyName("role")]
-    public string? Role { get; init; }
+    [JsonConverter(typeof(ChatWootStringEnumConverter<AccountUserRole>))]
+    public AccountUserRole? Role { get; init; }
 
     /// <summary>
     /// 代理的缩略图

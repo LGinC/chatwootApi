@@ -28,22 +28,22 @@ public sealed record LabelsListResponse
 public sealed record AccountConversationMetrics
 {
     /// <summary>打开会话数</summary>
-    [JsonPropertyName("open")] public long? Open { get; init; }
+    [JsonPropertyName("open")] public int? Open { get; init; }
     /// <summary>未处理会话数</summary>
-    [JsonPropertyName("unattended")] public long? Unattended { get; init; }
+    [JsonPropertyName("unattended")] public int? Unattended { get; init; }
     /// <summary>未分配会话数</summary>
-    [JsonPropertyName("unassigned")] public long? Unassigned { get; init; }
+    [JsonPropertyName("unassigned")] public int? Unassigned { get; init; }
 }
 
 /// <summary>Chatwoot 应用模型：审计日志分页响应</summary>
 public sealed record AuditLogsResponse
 {
     /// <summary>每页条目数</summary>
-    [JsonPropertyName("per_page")] public long? PerPage { get; init; }
+    [JsonPropertyName("per_page")] public int? PerPage { get; init; }
     /// <summary>审计日志总数</summary>
-    [JsonPropertyName("total_entries")] public long? TotalEntries { get; init; }
+    [JsonPropertyName("total_entries")] public int? TotalEntries { get; init; }
     /// <summary>当前页码</summary>
-    [JsonPropertyName("current_page")] public long? CurrentPage { get; init; }
+    [JsonPropertyName("current_page")] public int? CurrentPage { get; init; }
     /// <summary>审计日志列表</summary>
     [JsonPropertyName("audit_logs")] public IReadOnlyList<AuditLog> AuditLogs { get; init; } = [];
 }
@@ -59,13 +59,13 @@ public sealed record ConversationListMetaResponse
 public sealed record ConversationListMeta
 {
     /// <summary>当前用户负责的会话数</summary>
-    [JsonPropertyName("mine_count")] public long? MineCount { get; init; }
+    [JsonPropertyName("mine_count")] public int? MineCount { get; init; }
     /// <summary>未分配会话数</summary>
-    [JsonPropertyName("unassigned_count")] public long? UnassignedCount { get; init; }
+    [JsonPropertyName("unassigned_count")] public int? UnassignedCount { get; init; }
     /// <summary>已分配会话数</summary>
-    [JsonPropertyName("assigned_count")] public long? AssignedCount { get; init; }
+    [JsonPropertyName("assigned_count")] public int? AssignedCount { get; init; }
     /// <summary>全部会话数</summary>
-    [JsonPropertyName("all_count")] public long? AllCount { get; init; }
+    [JsonPropertyName("all_count")] public int? AllCount { get; init; }
 }
 
 /// <summary>Chatwoot 应用模型：新建会话响应</summary>

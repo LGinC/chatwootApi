@@ -4,13 +4,13 @@ using System.Text.Json.Serialization;
 namespace ChatWootApi.Application.Models;
 
 /// <summary>
-/// Chatwoot 应用模型：会话详情
+/// Chatwoot 应用模型：会话详情（会话字段 + meta）
 /// </summary>
-public sealed record ConversationShow
+public sealed record ConversationShow : Conversation
 {
     /// <summary>
-    /// Swagger 未显式建模的附加 JSON 字段
+    /// 会话元数据（发送者、渠道、负责人等）
     /// </summary>
-    [JsonExtensionData]
-    public IDictionary<string, JsonElement>? ExtensionData { get; set; }
+    [JsonPropertyName("meta")]
+    public ConversationListItemMeta? Meta { get; init; }
 }

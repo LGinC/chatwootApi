@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+using ChatWootApi.Application.Models;
 
 namespace ChatWootApi.Platform.Models;
 
@@ -17,5 +18,6 @@ public sealed record AccountUserCreateUpdatePayload
     /// 用户是否是管理员或代理
     /// </summary>
     [JsonPropertyName("role")]
-    public string Role { get; set; } = string.Empty;
+    [JsonConverter(typeof(ChatWootStringEnumConverter<AccountUserRole>))]
+    public AccountUserRole Role { get; set; }
 }

@@ -48,7 +48,7 @@ public sealed record InboxUpdatePayload : JsonExtensionDataPayload
     /// CSAT 调查配置。
     /// </summary>
     [JsonPropertyName("csat_config")]
-    public IDictionary<string, object>? CsatConfig { get; set; }
+    public CsatConfig? CsatConfig { get; set; }
 
     /// <summary>
     /// 启用自动分配。
@@ -96,7 +96,8 @@ public sealed record InboxUpdatePayload : JsonExtensionDataPayload
     /// 出站电子邮件回复的发件人姓名类型。 适用于：`网站``电子邮件`
     /// </summary>
     [JsonPropertyName("sender_name_type")]
-    public string? SenderNameType { get; set; }
+    [JsonConverter(typeof(ChatWootStringEnumConverter<SenderNameType>))]
+    public SenderNameType? SenderNameType { get; set; }
 
     /// <summary>
     /// 出站电子邮件回复的公司名称。 适用于：`网站``电子邮件`

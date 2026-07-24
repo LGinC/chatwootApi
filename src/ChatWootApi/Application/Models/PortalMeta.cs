@@ -12,31 +12,31 @@ public sealed record PortalMeta
     /// 文章总数
     /// </summary>
     [JsonPropertyName("all_articles_count")]
-    public long? AllArticlesCount { get; init; }
+    public int? AllArticlesCount { get; init; }
 
     /// <summary>
     /// 存档文章数量
     /// </summary>
     [JsonPropertyName("archived_articles_count")]
-    public long? ArchivedArticlesCount { get; init; }
+    public int? ArchivedArticlesCount { get; init; }
 
     /// <summary>
     /// 发表文章数
     /// </summary>
     [JsonPropertyName("published_count")]
-    public long? PublishedCount { get; init; }
+    public int? PublishedCount { get; init; }
 
     /// <summary>
     /// 条款草案数量
     /// </summary>
     [JsonPropertyName("draft_articles_count")]
-    public long? DraftArticlesCount { get; init; }
+    public int? DraftArticlesCount { get; init; }
 
     /// <summary>
     /// 类别数量
     /// </summary>
     [JsonPropertyName("categories_count")]
-    public long? CategoriesCount { get; init; }
+    public int? CategoriesCount { get; init; }
 
     /// <summary>
     /// 门户的默认区域设置

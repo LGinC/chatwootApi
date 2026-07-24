@@ -67,5 +67,5 @@ public sealed record ConversationCreatePayload : JsonExtensionDataPayload
     /// 要发送到对话的初始消息
     /// </summary>
     [JsonPropertyName("message")]
-    public IDictionary<string, object>? Message { get; set; }
+    public ConversationCreateMessage? Message { get; set; }
 }

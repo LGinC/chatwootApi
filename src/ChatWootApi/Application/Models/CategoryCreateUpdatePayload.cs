@@ -24,7 +24,7 @@ public sealed record CategoryCreateUpdatePayload : JsonExtensionDataPayload
     /// 要排序的门户列表中的类别位置
     /// </summary>
     [JsonPropertyName("position")]
-    public long? Position { get; set; }
+    public int? Position { get; set; }
 
     /// <summary>
     /// URL 中使用的类别 slug

@@ -24,7 +24,8 @@ public sealed record Account
     /// 帐户中的用户角色
     /// </summary>
     [JsonPropertyName("role")]
-    public string? Role { get; init; }
+    [JsonConverter(typeof(ChatWootStringEnumConverter<AccountUserRole>))]
+    public AccountUserRole? Role { get; init; }
 
     /// <summary>
     /// Swagger 未显式建模的附加 JSON 字段

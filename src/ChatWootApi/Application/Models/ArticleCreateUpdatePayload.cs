@@ -24,7 +24,7 @@ public sealed record ArticleCreateUpdatePayload : JsonExtensionDataPayload
     /// 文章在类别中的位置
     /// </summary>
     [JsonPropertyName("position")]
-    public long? Position { get; set; }
+    public int? Position { get; set; }
 
     /// <summary>
     /// 文字内容。

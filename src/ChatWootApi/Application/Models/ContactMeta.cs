@@ -12,7 +12,7 @@ public sealed record ContactMeta
     /// 联系人总数
     /// </summary>
     [JsonPropertyName("count")]
-    public long? Count { get; init; }
+    public int? Count { get; init; }
 
     /// <summary>
     /// 当前页码

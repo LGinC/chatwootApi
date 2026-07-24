@@ -35,7 +35,7 @@ public sealed record InboxCreateWebWidgetChannelPayload : InboxCreateChannelPayl
     /// <summary>小部件的十六进制主题颜色。</summary>
     [JsonPropertyName("widget_color")] public string? WidgetColor { get; init; }
     /// <summary>小部件显示的预计回复时间。</summary>
-    [JsonPropertyName("reply_time")] public string? ReplyTime { get; init; }
+    [JsonPropertyName("reply_time")] [JsonConverter(typeof(ChatWootStringEnumConverter<WidgetReplyTime>))] public WidgetReplyTime? ReplyTime { get; init; }
     /// <summary>是否启用开始会话前的预聊天表单。</summary>
     [JsonPropertyName("pre_chat_form_enabled")] public bool? PreChatFormEnabled { get; init; }
     /// <summary>联系人离开网站后是否通过电子邮件延续会话。</summary>
@@ -43,7 +43,7 @@ public sealed record InboxCreateWebWidgetChannelPayload : InboxCreateChannelPayl
     /// <summary>是否强制对小部件联系人进行 HMAC 验证。</summary>
     [JsonPropertyName("hmac_mandatory")] public bool? HmacMandatory { get; init; }
     /// <summary>启用的小部件功能标志。</summary>
-    [JsonPropertyName("selected_feature_flags")] public IReadOnlyList<string>? SelectedFeatureFlags { get; init; }
+    [JsonPropertyName("selected_feature_flags")] public IReadOnlyList<WebWidgetFeatureFlag>? SelectedFeatureFlags { get; init; }
 }
 /// <summary>创建 API 渠道的载荷。</summary>
 public sealed record InboxCreateApiChannelPayload : InboxCreateChannelPayload
@@ -89,8 +89,8 @@ public sealed record InboxCreateTelegramChannelPayload : InboxCreateChannelPaylo
 public sealed record InboxCreateWhatsappChannelPayload : InboxCreateChannelPayload
 {
     [JsonPropertyName("phone_number")] public string? PhoneNumber { get; init; }
-    [JsonPropertyName("provider")] public string? Provider { get; init; }
-    [JsonPropertyName("provider_config")] public IDictionary<string, JsonElement>? ProviderConfig { get; init; }
+    [JsonPropertyName("provider")] [JsonConverter(typeof(ChatWootStringEnumConverter<WhatsAppProvider>))] public WhatsAppProvider? Provider { get; init; }
+    [JsonPropertyName("provider_config")] public WhatsAppProviderConfig? ProviderConfig { get; init; }
 }
 /// <summary>创建 SMS 渠道的载荷。</summary>
 public sealed record InboxCreateSmsChannelPayload : InboxCreateChannelPayload
@@ -106,11 +106,11 @@ public sealed record InboxUpdateWebWidgetChannelPayload : InboxUpdateChannelPayl
     [JsonPropertyName("welcome_title")] public string? WelcomeTitle { get; init; }
     [JsonPropertyName("welcome_tagline")] public string? WelcomeTagline { get; init; }
     [JsonPropertyName("widget_color")] public string? WidgetColor { get; init; }
-    [JsonPropertyName("reply_time")] public string? ReplyTime { get; init; }
+    [JsonPropertyName("reply_time")] [JsonConverter(typeof(ChatWootStringEnumConverter<WidgetReplyTime>))] public WidgetReplyTime? ReplyTime { get; init; }
     [JsonPropertyName("pre_chat_form_enabled")] public bool? PreChatFormEnabled { get; init; }
     [JsonPropertyName("continuity_via_email")] public bool? ContinuityViaEmail { get; init; }
     [JsonPropertyName("hmac_mandatory")] public bool? HmacMandatory { get; init; }
-    [JsonPropertyName("selected_feature_flags")] public IReadOnlyList<string>? SelectedFeatureFlags { get; init; }
+    [JsonPropertyName("selected_feature_flags")] public IReadOnlyList<WebWidgetFeatureFlag>? SelectedFeatureFlags { get; init; }
 }
 /// <summary>更新 API 渠道的载荷。</summary>
 public sealed record InboxUpdateApiChannelPayload : InboxUpdateChannelPayload
@@ -156,8 +156,8 @@ public sealed record InboxUpdateTelegramChannelPayload : InboxUpdateChannelPaylo
 public sealed record InboxUpdateWhatsappChannelPayload : InboxUpdateChannelPayload
 {
     [JsonPropertyName("phone_number")] public string? PhoneNumber { get; init; }
-    [JsonPropertyName("provider")] public string? Provider { get; init; }
-    [JsonPropertyName("provider_config")] public IDictionary<string, JsonElement>? ProviderConfig { get; init; }
+    [JsonPropertyName("provider")] [JsonConverter(typeof(ChatWootStringEnumConverter<WhatsAppProvider>))] public WhatsAppProvider? Provider { get; init; }
+    [JsonPropertyName("provider_config")] public WhatsAppProviderConfig? ProviderConfig { get; init; }
 }
 /// <summary>更新 SMS 渠道的载荷。</summary>
 public sealed record InboxUpdateSmsChannelPayload : InboxUpdateChannelPayload
@@ -169,7 +169,12 @@ public sealed record InboxUpdateSmsChannelPayload : InboxUpdateChannelPayload
 internal sealed class InboxChannelPayloadConverter<TChannel> : JsonConverter<TChannel> where TChannel : class
 {
     public override TChannel? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options) => throw new NotSupportedException("Inbox channel payloads are request-only.");
-    public override void Write(Utf8JsonWriter writer, TChannel value, JsonSerializerOptions options) => JsonSerializer.Serialize(writer, value, value.GetType(), options);
+
+    public override void Write(Utf8JsonWriter writer, TChannel value, JsonSerializerOptions options)
+    {
+        var runtimeType = value.GetType();
+        JsonSerializer.Serialize(writer, value, options.GetTypeInfo(runtimeType));
+    }
 }
 
 #pragma warning restore CS1591

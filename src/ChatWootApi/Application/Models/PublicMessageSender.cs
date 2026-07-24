@@ -36,7 +36,8 @@ public sealed record PublicMessageSender
     /// 发件人类型
     /// </summary>
     [JsonPropertyName("type")]
-    public string? Type { get; init; }
+    [JsonConverter(typeof(ChatWootStringEnumConverter<PublicMessageSenderType>))]
+    public PublicMessageSenderType? Type { get; init; }
 
     /// <summary>
     /// 用户发件人的显示名称
@@ -48,7 +49,8 @@ public sealed record PublicMessageSender
     /// 用户发件人的可用性状态
     /// </summary>
     [JsonPropertyName("availability_status")]
-    public string? AvailabilityStatus { get; init; }
+    [JsonConverter(typeof(ChatWootStringEnumConverter<AgentAvailability>))]
+    public AgentAvailability? AvailabilityStatus { get; init; }
 
     /// <summary>
     /// 当发件人是联系人时，发件人的电子邮件

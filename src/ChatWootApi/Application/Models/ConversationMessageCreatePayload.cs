@@ -18,7 +18,8 @@ public sealed record ConversationMessageCreatePayload : JsonExtensionDataPayload
     /// 消息类型
     /// </summary>
     [JsonPropertyName("message_type")]
-    public string? MessageType { get; set; }
+    [JsonConverter(typeof(ChatWootStringEnumConverter<MessageType>))]
+    public MessageType? MessageType { get; set; }
 
     /// <summary>
     /// 标记以识别它是否是私人笔记
@@ -30,7 +31,8 @@ public sealed record ConversationMessageCreatePayload : JsonExtensionDataPayload
     /// 消息的内容类型
     /// </summary>
     [JsonPropertyName("content_type")]
-    public string? ContentType { get; set; }
+    [JsonConverter(typeof(ChatWootStringEnumConverter<MessageContentType>))]
+    public MessageContentType? ContentType { get; set; }
 
     /// <summary>
     /// 基于内容类型的属性
@@ -48,5 +50,5 @@ public sealed record ConversationMessageCreatePayload : JsonExtensionDataPayload
     /// 用于发送结构化消息的 WhatsApp 模板参数
     /// </summary>
     [JsonPropertyName("template_params")]
-    public IDictionary<string, object>? TemplateParams { get; set; }
+    public WhatsAppTemplateParams? TemplateParams { get; set; }
 }

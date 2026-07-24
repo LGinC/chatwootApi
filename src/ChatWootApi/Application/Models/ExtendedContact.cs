@@ -1,16 +1,22 @@
-using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace ChatWootApi.Application.Models;
 
 /// <summary>
-/// Chatwoot 应用模型：扩展联系人
+/// Chatwoot 应用模型：扩展联系人（swagger <c>extended_contact</c> = contact + id + availability_status）
 /// </summary>
-public sealed record ExtendedContact
+public sealed record ExtendedContact : Contact
 {
     /// <summary>
-    /// Swagger 未显式建模的附加 JSON 字段
+    /// 联系人 / 用户 ID
     /// </summary>
-    [JsonExtensionData]
-    public IDictionary<string, JsonElement>? ExtensionData { get; set; }
+    [JsonPropertyName("id")]
+    public long? Id { get; init; }
+
+    /// <summary>
+    /// 可用性状态
+    /// </summary>
+    [JsonPropertyName("availability_status")]
+    [JsonConverter(typeof(ChatWootStringEnumConverter<AgentAvailability>))]
+    public AgentAvailability? AvailabilityStatus { get; init; }
 }

@@ -92,7 +92,7 @@ public sealed class ConversationListSerializationTests
         Assert.Equal(9, item.Meta.Sender.Id);
         Assert.Equal("Alice", item.Meta.Sender.Name);
         Assert.Equal("alice@example.com", item.Meta.Sender.Email);
-        Assert.Equal("online", item.Meta.Sender.AvailabilityStatus);
+        Assert.Equal(AgentAvailability.Online, item.Meta.Sender.AvailabilityStatus);
         Assert.False(item.Meta.Sender.Blocked);
         Assert.Equal("contact-9", item.Meta.Sender.Identifier);
         Assert.Equal(1710000000, item.Meta.Sender.LastActivityAt);

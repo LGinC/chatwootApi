@@ -42,7 +42,7 @@ public sealed record Category
     /// 位置
     /// </summary>
     [JsonPropertyName("position")]
-    public long? Position { get; init; }
+    public int? Position { get; init; }
 
     /// <summary>
     /// 门户ID

@@ -24,7 +24,8 @@ public sealed record CustomFilter
     /// 关于自定义过滤器的说明
     /// </summary>
     [JsonPropertyName("type")]
-    public string? Type { get; init; }
+    [JsonConverter(typeof(ChatWootStringEnumConverter<CustomFilterType>))]
+    public CustomFilterType? Type { get; init; }
 
     /// <summary>
     /// 需要保存为自定义过滤器的查询

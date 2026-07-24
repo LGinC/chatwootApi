@@ -60,5 +60,5 @@ public sealed record PortalCreateUpdatePayload : JsonExtensionDataPayload
     /// 有关支持区域设置的配置
     /// </summary>
     [JsonPropertyName("config")]
-    public IDictionary<string, object>? Config { get; set; }
+    public PortalCreateUpdateConfig? Config { get; set; }
 }

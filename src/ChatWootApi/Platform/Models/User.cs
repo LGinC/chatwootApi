@@ -1,5 +1,6 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using ChatWootApi.Application.Models;
 
 namespace ChatWootApi.Platform.Models;
 
@@ -96,7 +97,8 @@ public sealed record User
     /// 角色
     /// </summary>
     [JsonPropertyName("role")]
-    public string? Role { get; init; }
+    [JsonConverter(typeof(ChatWootStringEnumConverter<AccountUserRole>))]
+    public AccountUserRole? Role { get; init; }
 
     /// <summary>
     /// 界面设置
@@ -156,7 +158,8 @@ public sealed record UserAccount
     /// 状态
     /// </summary>
     [JsonPropertyName("status")]
-    public string? Status { get; init; }
+    [JsonConverter(typeof(ChatWootStringEnumConverter<AccountStatus>))]
+    public AccountStatus? Status { get; init; }
 
     /// <summary>
     /// Active时间
@@ -168,7 +171,8 @@ public sealed record UserAccount
     /// 角色
     /// </summary>
     [JsonPropertyName("role")]
-    public string? Role { get; init; }
+    [JsonConverter(typeof(ChatWootStringEnumConverter<AccountUserRole>))]
+    public AccountUserRole? Role { get; init; }
 
     /// <summary>
     /// Permissions
@@ -180,13 +184,15 @@ public sealed record UserAccount
     /// 可用状态
     /// </summary>
     [JsonPropertyName("availability")]
-    public string? Availability { get; init; }
+    [JsonConverter(typeof(ChatWootStringEnumConverter<AgentAvailability>))]
+    public AgentAvailability? Availability { get; init; }
 
     /// <summary>
     /// 可用状态状态
     /// </summary>
     [JsonPropertyName("availability_status")]
-    public string? AvailabilityStatus { get; init; }
+    [JsonConverter(typeof(ChatWootStringEnumConverter<AgentAvailability>))]
+    public AgentAvailability? AvailabilityStatus { get; init; }
 
     /// <summary>
     /// AutoOffline

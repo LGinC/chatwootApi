@@ -30,7 +30,7 @@ public sealed record Article
     /// 位置
     /// </summary>
     [JsonPropertyName("position")]
-    public long? Position { get; init; }
+    public int? Position { get; init; }
 
     /// <summary>
     /// 状态
@@ -54,7 +54,7 @@ public sealed record Article
     /// Views
     /// </summary>
     [JsonPropertyName("views")]
-    public long? Views { get; init; }
+    public int? Views { get; init; }
 
     /// <summary>
     /// 门户ID

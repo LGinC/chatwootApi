@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+using ChatWootApi.Application.Models;
 
 namespace ChatWootApi.Platform.Models;
 
@@ -23,5 +24,6 @@ public sealed record AccountUser
     /// 角色
     /// </summary>
     [JsonPropertyName("role")]
-    public string? Role { get; init; }
+    [JsonConverter(typeof(ChatWootStringEnumConverter<AccountUserRole>))]
+    public AccountUserRole? Role { get; init; }
 }

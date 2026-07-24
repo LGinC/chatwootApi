@@ -144,7 +144,7 @@ public sealed class WebhookRequest
     /// </summary>
     [JsonPropertyName("unread_count")]
     [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
-    public long? UnreadCount { get; init; }
+    public int? UnreadCount { get; init; }
 
     /// <summary>
     /// 账号标识符
@@ -302,7 +302,8 @@ public sealed class WebhookActor
 
     /// <summary>参与者可用性状态</summary>
     [JsonPropertyName("availability_status")]
-    public string? AvailabilityStatus { get; init; }
+    [JsonConverter(typeof(ChatWootStringEnumConverter<AgentAvailability>))]
+    public AgentAvailability? AvailabilityStatus { get; init; }
 
     /// <summary>联系人外部标识符</summary>
     [JsonPropertyName("identifier")]
@@ -474,7 +475,7 @@ public sealed class WebhookConversation
     /// </summary>
     [JsonPropertyName("unread_count")]
     [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
-    public long? UnreadCount { get; init; }
+    public int? UnreadCount { get; init; }
 
     /// <summary>
     /// 客服最后查看会话的 Unix 时间戳

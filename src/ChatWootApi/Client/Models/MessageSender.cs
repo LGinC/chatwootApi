@@ -1,5 +1,6 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using ChatWootApi.Application.Models;
 
 namespace ChatWootApi.Client.Models;
 
@@ -36,7 +37,8 @@ public sealed record MessageSender
     /// 类型
     /// </summary>
     [JsonPropertyName("type")]
-    public string? Type { get; init; }
+    [JsonConverter(typeof(ChatWootStringEnumConverter<PublicMessageSenderType>))]
+    public PublicMessageSenderType? Type { get; init; }
 
     /// <summary>
     /// 可用名称
@@ -48,7 +50,8 @@ public sealed record MessageSender
     /// 可用状态状态
     /// </summary>
     [JsonPropertyName("availability_status")]
-    public string? AvailabilityStatus { get; init; }
+    [JsonConverter(typeof(ChatWootStringEnumConverter<AgentAvailability>))]
+    public AgentAvailability? AvailabilityStatus { get; init; }
 
     /// <summary>
     /// 邮箱

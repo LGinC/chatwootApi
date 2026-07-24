@@ -194,7 +194,11 @@ public sealed class TypedQueryApiTests
 
             return absolutePath.Contains("custom_attribute_definitions", StringComparison.Ordinal)
                 || absolutePath.Contains("custom_filters", StringComparison.Ordinal)
-                || absolutePath.EndsWith("/reports", StringComparison.Ordinal);
+                || absolutePath.EndsWith("/reports", StringComparison.Ordinal)
+                || absolutePath.Contains("summary_reports/agent", StringComparison.Ordinal)
+                || absolutePath.Contains("summary_reports/inbox", StringComparison.Ordinal)
+                || absolutePath.Contains("summary_reports/team", StringComparison.Ordinal)
+                || absolutePath.Contains("outgoing_messages_count", StringComparison.Ordinal);
         }
     }
 }

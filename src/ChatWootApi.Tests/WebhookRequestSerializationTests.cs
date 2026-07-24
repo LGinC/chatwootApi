@@ -60,20 +60,20 @@ namespace ChatWootApi.Tests
             var request = DeserializeWebhook(json);
 
             Assert.Equal("message_created", request.Event);
-            Assert.Equal<decimal?>(1m, request.Id);
+            Assert.Equal(1L, request.Id);
             Assert.Equal("Hi", request.Content);
             Assert.Equal("incoming", request.MessageType);
             Assert.Equal("text", request.ContentType);
             Assert.Equal("enterprise", request.ContentAttributes!["submitted_values"].GetProperty("plan").GetString());
-            Assert.Equal<decimal?>(1m, request.Sender!.Id);
+            Assert.Equal(1L, request.Sender!.Id);
             Assert.Equal("Agent", request.Sender.Name);
             Assert.Equal("agent@example.com", request.Sender.Email);
-            Assert.Equal<decimal?>(2m, request.Contact!.Id);
+            Assert.Equal(2L, request.Contact!.Id);
             Assert.Equal("contact-name", request.Contact.Name);
-            Assert.Equal<decimal?>(3m, request.Conversation!.DisplayId);
+            Assert.Equal(3L, request.Conversation!.DisplayId);
             Assert.Equal("Chrome", request.Conversation.AdditionalAttributes!["browser"].GetProperty("browser_name").GetString());
             Assert.Equal("https://www.chatwoot.com", request.Conversation.AdditionalAttributes["referer"].GetString());
-            Assert.Equal<decimal?>(4m, request.Account!.Id);
+            Assert.Equal(4L, request.Account!.Id);
             Assert.Equal("Chatwoot", request.Account.Name);
             Assert.True(request.ExtensionData!["undocumented_flag"].GetBoolean());
         }
@@ -111,10 +111,10 @@ namespace ChatWootApi.Tests
             var request = DeserializeWebhook(json);
 
             Assert.Equal("conversation_updated", request.Event);
-            Assert.Equal<decimal?>(42m, request.Id);
-            Assert.Equal<decimal?>(1001m, request.DisplayId);
+            Assert.Equal(42L, request.Id);
+            Assert.Equal(1001L, request.DisplayId);
             Assert.Equal(ConversationStatus.Open, request.Status);
-            Assert.Equal<decimal?>(5m, request.AccountId);
+            Assert.Equal(5L, request.AccountId);
             Assert.Equal("https://example.test/pricing", request.AdditionalAttributes!["referer"].GetString());
 
             Assert.Collection(
@@ -165,12 +165,12 @@ namespace ChatWootApi.Tests
             var request = DeserializeWebhook(json);
 
             Assert.Equal("conversation_typing_on", request.Event);
-            Assert.Equal<decimal?>(11m, request.Conversation!.Id);
-            Assert.Equal<decimal?>(12m, request.Conversation.DisplayId);
+            Assert.Equal(11L, request.Conversation!.Id);
+            Assert.Equal(12L, request.Conversation.DisplayId);
             Assert.Equal(ConversationStatus.Pending, request.Conversation.Status);
-            Assert.Equal<decimal?>(13m, request.Conversation.AccountId);
+            Assert.Equal(13L, request.Conversation.AccountId);
             Assert.Equal("Firefox", request.Conversation.AdditionalAttributes!["browser"].GetProperty("browser_name").GetString());
-            Assert.Equal<decimal?>(9m, request.User!.Id);
+            Assert.Equal(9L, request.User!.Id);
             Assert.Equal("Agent Smith", request.User.Name);
             Assert.Equal("smith@example.com", request.User.Email);
             Assert.Equal("user", request.User.Type);

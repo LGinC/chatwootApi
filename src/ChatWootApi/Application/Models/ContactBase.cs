@@ -1,16 +1,15 @@
-using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace ChatWootApi.Application.Models;
 
 /// <summary>
-/// Chatwoot 应用模型：联系人基础
+/// Chatwoot 应用模型：联系人基础（swagger <c>contact_base</c> = generic_id + contact）
 /// </summary>
-public sealed record ContactBase
+public sealed record ContactBase : Contact
 {
     /// <summary>
-    /// Swagger 未显式建模的附加 JSON 字段
+    /// 联系人 ID
     /// </summary>
-    [JsonExtensionData]
-    public IDictionary<string, JsonElement>? ExtensionData { get; set; }
+    [JsonPropertyName("id")]
+    public long? Id { get; init; }
 }

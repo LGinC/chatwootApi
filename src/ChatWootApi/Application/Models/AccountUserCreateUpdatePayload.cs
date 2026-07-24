@@ -18,5 +18,6 @@ public sealed record AccountUserCreateUpdatePayload : JsonExtensionDataPayload
     /// 用户是否是管理员或代理
     /// </summary>
     [JsonPropertyName("role")]
-    public string? Role { get; set; }
+    [JsonConverter(typeof(ChatWootStringEnumConverter<AccountUserRole>))]
+    public AccountUserRole? Role { get; set; }
 }
